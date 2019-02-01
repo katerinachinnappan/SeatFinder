@@ -1,0 +1,11 @@
+Uso: apic {{orgs}} OPTIONS
+
+  Listar as organizações das quais o usuário atualmente autenticado é membro
+
+  Opções
+    --{{type provider|consumer}}          padroniza como o provedor <Stability: prototype>
+    -s, --{{server}} SERVER               terminal do servidor de gerenciamento (required)
+  
+  Use os seguintes comandos para obter ajuda para cada tipo de organização:
+    {{orgs --type provider -h}}
+    {{orgs --type consumer -h}}

@@ -1,0 +1,18 @@
+Syntaxe : apic {{securegateways:get}} ID_PASSERELLE OPTIONS
+
+  Obtenir des informations sur une passerelle sécurisée dans une organisation
+
+  Options
+    -o, --{{organization}} ORGANISATION     organisation de type fournisseur spécifique (obligatoire)
+    -s, --{{server}} SERVEUR                noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  Obtenir une passerelle sécurisée dans l'organisation {{climbonorg}} sur le serveur {{mgmnthost.com}}
+    {{$ apic securegateways:get ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com}}
+    nom : sandbox
+    organisation : {{climbonorg}}
+    statut : ENABLED
+    clients actifs : 0
+    id : {{ctHEKS9ztEH_stage_ng}}
+    jeton : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25maWd1cmF0aW9uX2lkIjoiY3RIRUtTOXp0RUhfcWFiYXJlX2RlZGljYXRlZCIsInJlZ2lvbiI6ImRlZGljYXRlZCIsImlhdCI6MTQ3NTE4MjEwNSwiZXhwIjoxNDgyOTU4MTA1fQ.m-dXQAYojwCK4viMz5fx9JuUccN94TiC2oWlZ4VghRE

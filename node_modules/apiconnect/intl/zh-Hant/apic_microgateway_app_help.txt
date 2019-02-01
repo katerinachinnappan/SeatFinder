@@ -1,0 +1,24 @@
+用法：apic {{microgateway}} OPTIONS
+
+  建立 {{Micro Gateway}} 應用程式
+
+  選項
+    -n, --{{name}} NAME                  應用程式的名稱
+    -s, --{{server}} SERVER              管理伺服器端點
+
+  穩定性：原型
+
+  建立名為 {{my-personal-microgateway}} 的 {{Micro Gateway}} 應用程式
+    {{$ apic microgateway --server mgmnthost.com --name my-personal-microgateway}}
+    正在 /Users/user/{{my-personal-microgateway}} 中建立 microgateway 應用程式
+    正在安裝 {{Micro Gateway}} 應用程式
+    已順利建立 {{Micro Gateway}}。
+
+  在現行目錄中（必須是空的）建立 {{Micro Gateway}} 應用程式
+    {{$ mkdir my-second-microgateway}}
+    {{$ cd my-second-microgateway}}
+    {{$ apic microgateway --server mgmnthost.com}}
+    ? 您的應用程式叫什麼名稱 ({{my-second-microgateway}})
+    正在 /Users/user/{{my-second-microgateway}} 中建立 microgateway 應用程式
+    正在安裝 {{Micro Gateway}} 應用程式
+    已順利建立 {{Micro Gateway}}。

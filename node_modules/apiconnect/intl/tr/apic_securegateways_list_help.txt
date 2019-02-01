@@ -1,0 +1,22 @@
+Kullanım: apic {{securegateways}} SEÇENEKLER
+
+  Kimliği doğrulanmış kullanıcının üyesi olduğu kuruluşlarda bulunan güvenli ağ geçitlerini
+  listele
+
+  Seçenekler
+    -o, --{{organization}} KURULUŞ          belirli bir sağlayıcı kuruluşu (zorunludur)
+    -s, --{{server}} SUNUCU                 yönetim sunucusu uç noktası (zorunludur)
+
+  {{mgmnthost.com}} sunucusu üzerindeki {{climbonorg}} kuruluşunda bulunan güvenli ağ geçitlerini (tanıtıcı - ad) listele
+    {{$ apic securegateways --organization climbonorg --server mgmnthost.com}}
+    {{ctHEKS9ztEH_stage_ng - sandbox}}
+    {{TamqfesDaTP_stage_ng - qa}}
+    {{gIEbdFSyUPx_stage_ng - staging}}
+    {{Y6NyVfESVxo_stage_ng - production}}
+
+  Aşağıdaki ilgili komutlara ilişkin yardım için "apic KOMUT -h" yazın:
+
+    {{securegateways:create}}   Bir kuruluşta güvenli ağ geçidi yarat
+    {{securegateways:get}}      Bir kuruluştaki güvenli ağ geçidiyle ilgili bilgi al
+    {{securegateways:set}}      Bir kuruluştaki güvenli ağ geçidiyle ilgili bilgileri ayarla ya da güncelle
+    {{securegateways:delete}}   Bir kuruluştaki güvenli ağ geçidini sil

@@ -1,0 +1,35 @@
+使用法: {{apic apis:pull}} API_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  カタログまたはスペースから API をプルします
+
+  カタログ・スコープ用のオプション
+    --{{scope catalog}}                       (デフォルト)
+    -{{c}}, --{{catalog}} CATALOG             カタログ名 (必須)
+    -{{o}}, --{{organization}} ORGANIZATION   プロバイダー組織名 (必須)
+    -{{s}}, --{{server}} SERVER               管理サーバー・エンドポイント (必須)
+
+  スペース・スコープ用のオプション
+    --{{scope space}}
+    --{{space}} SPACE                         スペース名 (必須)
+    -{{c}}, --{{catalog}} CATALOG             カタログ名 (必須)
+    -{{o}}, --{{organization}} ORGANIZATION   プロバイダー組織名 (必須)
+    -{{s}}, --{{server}} SERVER               管理サーバー・エンドポイント (必須)
+
+  Stability: prototype
+
+  カタログから API をプルします
+    {{$ apic apis:pull routes --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{routes:1.0.0}} API 定義が {{climbonorg:production [routes.yaml]}} からプルされました
+
+    {{$ apic apis:pull globalweather --catalog production --organization climbonorg --server mgmnthost.com}}
+  {{globalweather:1.0.0}} API 定義が {{climbonorg:production [globalweather_1.0.0.yaml]}} からプルされました
+  {{globalweather:1.0.0}} API WSDL 定義が {{climbonorg:production [globalweather_1.0.0.wsdl]}} からプルされました
+
+
+  スペースから API をプルします
+    {{$ apic apis:pull --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com routes}}
+    {{routes:1.0.0}} API 定義が {{climbonorg:production:sp1 [routes.yaml]}} からプルされました
+
+    {{$ apic apis:pull --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com globalweather}}
+    {{globalweather:1.0.0}} API 定義が {{climbonorg:production:sp1 [globalweather_1.0.0.yaml]}} からプルされました
+    {{globalweather:1.0.0}} API WSDL 定義が {{climbonorg:production:sp1 [globalweather_1.0.0.wsdl]}} からプルされました

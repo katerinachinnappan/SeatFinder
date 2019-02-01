@@ -1,0 +1,36 @@
+用法：apic {{products:clone}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  取回所有產品定義
+
+  型錄範圍的選項
+    --{{scope catalog}}                         （預設值）
+    --{{catalog}} CATALOG | --{{all-catalogs}}  （必要）
+      -{{c}}, --{{catalog}} CATALOG             特定的型錄
+      -{{C}}, --{{all-catalogs}}                所有型錄
+    --{{organization}} ORGANIZATION | --{{all-organizations}}（必要）
+      -{{o}}, --{{organization}} ORGANIZATION   特定的提供者組織
+      -{{O}}, --{{all-organizations}}           所有提供者組織
+    -{{s}}, --{{server}} SERVER                 管理伺服器端點（必要）
+
+  空間範圍的選項
+    --{{scope space}}
+    --{{space}} SPACE                         空間名稱（必要）
+    {{-c}}, --{{catalog}} CATALOG             型錄名稱（必要）
+    {{-o}}, --{{organization}} ORGANIZATION   提供者組織名稱（必要）
+    {{-s}}, --{{server}} SERVER               管理伺服器端點（必要）
+
+  從型錄中取回所有產品
+    {{$ apic products:clone --catalog production --organization climbonorg --server mgmnthost.com}}
+    已從 {{climbonorg}}:production {{[climbon.yaml]}} 取回 {{climbon}}:1.0.0 產品定義
+    已從 {{climbonorg}}:production {{[globalweather-product_1.0.0.yaml]}} 取回 {{globalweather-product}}:1.0.0 產品定義
+    已從 {{climbonorg}}:production {{[hiking.yaml]}} 取回 {{hiking}}:3.0.0 產品定義
+    已從 {{climbonorg}}:production {{[hiking-1.yaml]}} 取回 {{hiking}}:3.0.1 產品定義
+    已從 {{climbonorg}}:production {{[ascents.yaml]}} 取回 {{ascents}}:1.0.0 API 定義
+
+  從空間取回所有產品
+    {{$ apic products:clone --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    已從 {{climbonorg}}:production:flights {{[climbon.yaml]}} 取回 {{climbon}}:1.0.0 產品定義
+    已從 {{climbonorg}}:production:flights {{[climbon-2.yaml]}} 取回 {{climbon}}:1.0.1 產品定義
+    已從 {{climbonorg}}:production:flights {{[globalweather-product_1.0.0.yaml]}} 取回 {{globalweather-product}}:1.0.0 產品定義
+    已從 {{climbonorg}}:production:flights {{[hiking.yaml]}} 取回 {{hiking}}:3.0.0 產品定義
+    已從 {{climbonorg}}:production:flights {{[ascents.yaml]}} 取回 {{ascents}}:1.0.0 API 定義

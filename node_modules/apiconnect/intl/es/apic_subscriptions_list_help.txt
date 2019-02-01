@@ -1,0 +1,56 @@
+Uso: {{apic subscriptions}} [OPCIONES_CATÁLOGO | OPCIONES_ESPACIO | OPCIONES_ORG_CONSUMIDORES]
+
+ Listar las suscripciones de un producto, aplicación, catálogo o espacio
+
+  Opciones para ámbito de catálogo
+    --{{scope catalog}}                                           (valor predeterminado)
+    -{{p}}, --{{product}} NOMBRE_PRODUCTO[:VERSIÓN[:NOMBRE_PLAN]] nombre de plan
+    -{{c}}, --{{catalog}} CATÁLOGO                                nombre de catálogo (obligatorio)
+    -{{o}}, --{{organization}} ORGANIZACIÓN                       una organización de proveedores específica (obligatorio)
+    -{{s}}, --{{server}} SERVIDOR                                 punto final de servidor de gestión (obligatorio)
+
+  Opciones para ámbito de espacio
+    --{{scope space}}                                             (obligatorio)
+    --{{space}}                                                   nombre de espacio (obligatorio)
+    -{{p}}, --{{product}} NOMBRE_PRODUCTO[:VERSIÓN[:NOMBRE_PLAN]] nombre de plan
+    -{{c}}, --{{catalog}} CATÁLOGO                                nombre de catálogo (obligatorio)
+    -{{o}}, --{{organization}} ORGANIZACIÓN                       una organización de proveedores específica (obligatorio)
+    -{{s}}, --{{server}} SERVIDOR                                 punto final de servidor de gestión (obligatorio)
+
+  Opciones para ámbito de organización de consumidores
+    --{{scope consumer-org}}                                (obligatorio)
+    -{{a}}, --{{application}} APLICACIÓN                    aplicación de desarrollador (obligatorio)
+    -{{c}}, --{{catalog}} CATÁLOGO                          nombre de catálogo (obligatorio)
+    -{{o}}, --{{organization}} ORGANIZACIÓN                 una organización de proveedores específica (obligatorio)
+    -{{s}}, --{{server}} SERVIDOR                           punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  Listar las suscripciones de un catálogo
+    {{$ apic subscriptions --catalog production --organization climbonorg --server mgmnthost.com}}
+    suscripción1 en {{climbonapp}} para {{climb-on:1.0.0:premimum}} en {{climbonorg:production}}
+    suscripción2 en {{climbonapp}} para {{climb-on:1.0.0:fremimum}} en {{climbonorg:production}}
+    suscripción3 en {{hikeonapp}} para {{hike-on:1.0.0:premimum}} en {{climbonorg:production}}
+
+  Listar las suscripciones para un producto:versión:plan de un catálogo
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --catalog production --organization climbonorg --server mgmnthost.com}}
+    suscripción1 en {{climbonapp}} para {{climb-on:1.0.0:premimum}} en {{climbonorg:production}}
+
+  Listar las suscripciones de un espacio
+    {{$ apic subscriptions --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    suscripción1 en {{climbonapp}} para {{climb-on:1.0.0:premimum}} en {{climbonorg:production:flights}}
+    suscripción2 en {{climbonapp}} para {{climb-on:1.0.0:fremimum}} en {{climbonorg:production:flights}}
+    suscripción3 en {{hikeonapp}} para {{hike-on:1.0.0:premimum}} en {{climbonorg:production:flights}}
+
+  Listar las suscripciones para un producto:versión:plan de un espacio
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    suscripción1 en {{climbonapp}} para {{climb-on:1.0.0:premimum}} en {{climbonorg:production:flights}}
+
+  Listar las suscripciones de una aplicación
+    {{$ apic subscriptions --application climbonapp --scope consumer-org --catalog production --organization climbonorg --server mgmnthost.com}}
+    suscripción1 en {{climbonapp}} para {{climb-on:1.0.0:premimum}} en {{climbonorg:production}}
+    suscripción2 en {{climbonapp}} para {{climb-on:1.0.0:fremimum}} en {{climbonorg:production}}
+
+  Especifique "apic MANDATO --help" ara obtener más información sobre los mandatos siguientes:
+
+    {{subscriptions:get}}        Obtener información sobre una suscripción

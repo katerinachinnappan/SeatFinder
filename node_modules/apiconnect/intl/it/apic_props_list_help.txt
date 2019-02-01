@@ -1,0 +1,38 @@
+Utilizzo: apic {{props}} OPZIONI
+
+  Elenca le proprietà dei servizi in esecuzione
+
+  Opzioni
+    -r, --{{remote}}                       utilizzare l'app di destinazione remota (impostazione predefinita local)
+    -S, --{{service}} NOME_SERVIZIO        nome servizio
+    -o, --{{organization}} ORGANIZZAZIONE  organizzazione provider
+    -s, --{{server}} SERVER                host endpoint server
+
+  Elenco delle proprietà dei servizi in esecuzione associati all'applicazione LoopBack corrente
+    {{$apic props}}
+    [{{climbon}}] prop1: value1
+    [{{climbon}}] prop2: value2
+    [{{climbon-gw}}] prop3: value3
+    [{{climbon-gw}}] prop4: value4
+
+  Elenco delle proprietà del servizio dell'applicazione LoopBack
+    {{$apic props --service climbon}}
+    prop1: value1
+    prop2: value2
+
+  Elenco delle proprietà del servizio {{Micro Gateway}}
+    {{$apic props --service climbon-gw}}
+    prop1: value1
+    prop2: value2
+
+  Elenco delle proprietà di un'applicazione remota
+    {{$ apic props --remote --service climbon --organization climbon --server mgmnthost.com}}
+    prop1: value1
+    prop2: value2
+
+Immettere "apic COMANDO --help" per la guida ai seguenti comandi correlati:
+
+  {{props:get}}         Richiama una proprietà del servizio
+  {{props:set}}         Imposta o aggiorna una proprietà del servizio
+  {{props:delete}}      Elimina una proprietà del servizio
+  {{props:clear}}       Elimina tutte le proprietà del servizio

@@ -1,0 +1,11 @@
+Syntaxe : apic {{orgs}} OPTIONS
+
+  Répertorier les organisations dont est membre l'utilisateur authentifié
+
+  Options
+    --{{type provider|consumer}}          provider (fournisseur) par défaut <Stabilité : prototype>
+    -s, --{{server}} SERVEUR              noeud final du serveur de gestion (obligatoire)
+  
+  Pour accéder à l'aide sur chaque type d'organisation, utilisez les commandes suivantes :
+    {{orgs --type provider -h}}
+    {{orgs --type consumer -h}}

@@ -1,0 +1,56 @@
+Syntax: {{apic subscriptions}} [KATALOGOPTIONEN | BEREICHSOPTIONEN | OPTIONEN_ZUR_KONSUMENTENORGANISATION]
+
+ Listet Abonnements in einem Produkt, einer Anwendung, einem Katalog oder einem Bereich auf
+
+  Optionen für Katalogbereich
+    --{{scope catalog}}                                     (Standard)
+    -{{p}}, --{{product}} PRODUKTNAME[:VERSION[:PLANNAME]]      Planname
+    -{{c}}, --{{catalog}} KATALOG                               Katalogname (erforderlich)
+    -{{o}}, --{{organization}} ORGANISATION                     eine bestimmte Provider-Organisation (erforderlich)
+    -{{s}}, --{{server}} SERVER                                 Management-Server-Endpunkt (erforderlich)
+
+  Optionen für Bereichsumfang
+    --{{scope space}}                                       (erforderlich)
+    --{{space}}                                             Bereichsname (erforderlich)
+    -{{p}}, --{{product}} PRODUKTNAME[:VERSION[:PLANNAME]]      Planname
+    -{{c}}, --{{catalog}} KATALOG                               Katalogname (erforderlich)
+    -{{o}}, --{{organization}} ORGANISATION                     eine bestimmte Provider-Organisation (erforderlich)
+    -{{s}}, --{{server}} SERVER                                 Management-Server-Endpunkt (erforderlich)
+
+  Optionen für Konsumentenorganisationsbereich
+    --{{scope space}}                                       (erforderlich)
+    -{{a}}, --{{application}} ANWENDUNG                        Entwickleranwendung (erforderlich)
+    -{{c}}, --{{catalog}} KATALOG                              Katalogname (erforderlich)
+    -{{o}}, --{{organization}} ORGANISATION                    eine bestimmte Provider-Organisation (erforderlich)
+    -{{s}}, --{{server}} SERVER                                Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  Abonnements in einem Katalog auflisten
+    {{$ apic subscriptions --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production}}
+    subscription2 in {{climbonapp}} for {{climb-on:1.0.0:fremimum}} in {{climbonorg:production}}
+    subscription3 in {{hikeonapp}} for {{hike-on:1.0.0:premimum}} in {{climbonorg:production}}
+
+  Abonnements für ein(e) product:version:plan in einem Katalog auflisten
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production}}
+
+  Abonnements in einem Bereich auflisten
+    {{$ apic subscriptions --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production:flights}}
+    subscription2 in {{climbonapp}} for {{climb-on:1.0.0:fremimum}} in {{climbonorg:production:flights}}
+    subscription3 in {{hikeonapp}} for {{hike-on:1.0.0:premimum}} in {{climbonorg:production:flights}}
+
+  Abonnements für ein(e) product:version:plan in einem Bereich auflisten
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production:flights}}
+
+  Abonnements für eine App auflisten
+    {{$ apic subscriptions --application climbonapp --scope consumer-org --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production}}
+    subscription2 in {{climbonapp}} for {{climb-on:1.0.0:fremimum}} in {{climbonorg:production}}
+
+  Geben Sie "apic BEFEHL --help" für weitere Informationen zu den folgenden Befehlen ein:
+
+    {{subscriptions:get}}        Information zu einem Abonnement abrufen

@@ -1,0 +1,24 @@
+Kullanım: apic {{login}}                  etkileşimli
+          apic {{login}} SEÇENEKLER       etkileşimli değil
+
+  Yönetim sunucusu üzerinden bir {{API Connect}} bulutunda kimlik doğrulaması gerçekleştirir
+
+  Seçenekler
+    -u, --{{username}} KULLANICI         kullanıcı adı (zorunludur)
+    -p, --{{password}} PAROLA            parola (zorunludur)
+    -s, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+    --{{sso}}                            birleşik kurumsal tanıtıcıyı kullanarak oturum aç
+    -c, --{{passcode}} PAROLA            {{JWT}} için bir kerelik geçiş kodu
+    —k, --{{apikey}}  API ANAHTARI       Bluemix API Anahtarını kullanarak oturum aç
+
+  Bir {{API Connect}} bulutunda yönetim sunucusu üzerinden oturum açmak için:
+    {{$ apic login}}
+    {{API Connect}} kimlik bilgilerinizi girin
+    ? Sunucu: {{mgmnthost.com}}
+    ? Kullanıcı adı: {{tommy}}
+    ? Parola (yazılırken gizlenir) **********
+    {{mgmnthost.com}} üzerinde başarıyla oturum açıldı
+
+  Etkileşimli olmayan oturum açma:
+    {{$ apic login --username tommy --password password --server mgmnthost.com}}
+    {{mgmnthost.com}} üzerinde başarıyla oturum açıldı

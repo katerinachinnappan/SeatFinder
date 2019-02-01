@@ -1,0 +1,27 @@
+사용법: apic {{products:set-migration-target}} OLD_PRODUCT_NAME[:VERSION] NEW_PRODUCT_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  카탈로그나 공간에서 공개되었거나 더 이상 사용되지 않는 제품의 플랜에 대한 마이그레이션 대상을 다른 제품으로 설정
+
+  카탈로그 범위 옵션
+    --{{plans}} SOURCE_PLAN_NAME:TARGET_PLAN_NAME ...   이전 제품 플랜에서 새 제품 플랜으로 맵핑(필수)
+    {{-c}}, --{{catalog}} CATALOG            카탈로그 이름(필수)
+    {{-o}}, --{{organization}} ORGANIZATION  제공자 조직 이름(필수)
+    {{-s}}, --{{server}} SERVER              관리 서버 엔드포인트(필수)
+
+  공간 범위 옵션
+    --{{scope space}}
+    --{{space}} SPACE                    공간 이름(필수)
+    --{{plans}} SOURCE_PLAN_NAME:TARGET_PLAN_NAME ...   이전 제품 플랜에서 새 제품 플랜으로 맵핑(필수)
+    {{-c}}, --{{catalog}} CATALOG            카탈로그 이름(필수)
+    {{-o}}, --{{organization}} ORGANIZATION  제공자 조직 이름(필수)
+    {{-s}}, --{{server}} SERVER              관리 서버 엔드포인트(필수)
+
+  안정성: 프로토타입
+
+  카탈로그의 제품 플랜에 대한 마이그레이션 대상 설정
+    {{$ apic products:set-migration-target climbon:1.0.0 climbon:1.1.0 --plans "basic:silver premium:gold" -c production -o climbonorg -s mgmnthost.com}}
+    Migration target set for {{climbon}}:1.0.0 to {{climbon}}:1.1.0 in {{climbonorg:production}}
+
+  공간의 제품 플랜에 대한 마이그레이션 대상 설정
+    {{$ apic products:set-migration-target --scope space climbon:1.0.0 climbon:1.1.0 --plans "basic:silver premium:gold" --space flights -c production -o climbonorg -s mgmnthost.com}}
+    Migration target set for {{climbon}}:1.0.0 to {{climbon}}:1.1.0 in {{climbonorg:production:flights}}

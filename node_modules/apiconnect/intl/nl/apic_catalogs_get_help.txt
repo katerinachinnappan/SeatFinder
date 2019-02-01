@@ -1,0 +1,17 @@
+Syntaxis: apic {{catalogs:get}} CATALOGUS_NAAM OPTIES
+
+  Informatie ophalen over een catalogus in een organisatie
+
+  Opties
+    -o, --{{organization}} ORGANISATIE      een specifieke providerorganisatie (verplicht)
+    -s, --{{server}} SERVER                 eindpunt van beheerserver (verplicht)
+
+  Stabiliteit: prototype
+
+  Een catalogus in de organisatie {{climbonorg}} op de server {{mgmnthost.com}} ophalen
+    {{$ apic catalogs:get qa --organization climbonorg --server mgmnthost.com}}
+    naam: {{qa}}
+    weergavenaam: Quality Assurance
+    organisatie: {{climbonorg}}
+    type: production
+    ruimten: uitgeschakeld

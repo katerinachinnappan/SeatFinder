@@ -1,0 +1,11 @@
+사용법: apic {{bluemix:publish}} OPTIONS
+
+   앱을 {{IBM Bluemix}}에 공개
+
+옵션:
+    --{{type}} appserver                 공개 유형을 런타임 서버로 설정
+    -o, --{{org}} ORGANIZATION           조직 이름
+    -s, --{{space}} SPACE_NAME           런타임을 배치할 공간의 이름
+    -a, --{{app}} APP_NAME               앱 이름
+    -p, --{{providerOrg}} ORGANIZATION   사용할 제공자 조직의 이름
+    -c, --{{catalog}} CATALOG            제공자 조직에 있는 카탈로그 이름

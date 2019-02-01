@@ -1,0 +1,40 @@
+Uso: {{apic apis:clone}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Obter todas as definições de API de um catálogo ou espaço
+
+  Opções para escopo de catálogo
+    --{{scope catalog}}                         (padrão)
+    --{{catalog}} CATALOG | --{{all-catalogs}}  (obrigatório)
+      -{{c}}, --{{catalog}} CATALOG             um catálogo específico
+      -{{C}}, --{{all-catalogs}}                todos os catálogos
+    --{{organization}} ORGANIZATION | --{{all-organizations}} (obrigatório)
+      -{{o}}, --{{organization}} ORGANIZATION   uma organização do provedor específica
+      -{{O}}, --{{all-organizations}}           todas as organizações do provedor
+    -{{s}}, --{{server}} SERVER                 terminal do servidor de gerenciamento obrigatório)
+
+  Opções para escopo de espaço
+    --{{scope space}}
+    --{{space}} SPACE                         nome do espaço (obrigatório)
+    -{{c}}, --{{catalog}} CATALOG             nome do catálogo (obrigatório)
+    -{{o}}, --{{organization}} ORGANIZATION   nome da organização do provedor (obrigatório)
+    -{{s}}, --{{server}} SERVER               terminal do servidor de gerenciamento (obrigatório)
+
+  Estabilidade: protótipo
+
+  Obter todas as APIs de um catálogo
+    {{$ apic apis:clone --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{ascents:1.0.0}} API definition from {{climbonorg:production [ascents.yaml]}}
+    Pulled {{globalweather:1.0.0}} API definition from {{climbonorg:production [globalweather_1.0.0.yaml]}}
+    Pulled {{globalweather:1.0.0}} API WSDL definition {{from climbonorg:production [globalweather_1.0.0.wsdl]}}
+    Pulled {{routes:1.0.0}} API definition from {{climbonorg:production [routes.yaml]}}
+    Pulled {{routes:1.0.1}} API definition from {{climbonorg:production [routes-2.yaml]}}
+    Pulled {{trails:4.0.0}} API definition from {{climbonorg:production [trails.yaml]}}
+
+  Obter todas as APIs de um espaço
+    {{$ apic apis:clone --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{ascents:1.0.0}} API definition from {{climbonorg:production:sp1 [ascents.yaml]}}
+    Pulled {{globalweather:1.0.0}} API definition from {{climbonorg:production:sp1 [globalweather_1.0.0.yaml]}}
+    Pulled {{globalweather:1.0.0}} API WSDL definition {{from climbonorg:production:sp1 [globalweather_1.0.0.wsdl]}}
+    Pulled {{routes:1.0.0}} API definition from {{climbonorg:production:sp1 [routes.yaml]}}
+    Pulled {{routes:1.0.1}} API definition from {{climbonorg:production:sp1 [routes-2.yaml]}}
+    Pulled {{trails:4.0.0}} API definition from {{climbonorg:production:sp1 [trails.yaml]}}

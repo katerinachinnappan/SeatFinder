@@ -1,0 +1,17 @@
+Syntaxe : apic {{extensions:get}} OPTIONS NOM_EXTENSION[:VERSION]
+
+  Obtenir des informations sur une extension dans un catalogue
+
+  Options
+    -c, --{{catalog}} CATALOGUE          nom du catalogue (obligatoire)
+    -o, --{{organization}} ORGANISATION  nom de l'organisation de type fournisseur (obligatoire)
+    -s, --{{server}} SERVEUR             noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  {{$ apic extensions:get climbextension:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  nom : {{climbextension}}
+  version : 1.0.0
+  titre : Climb Extension
+  catalogue : {{production}}
+  organisation : {{climbonorg}}

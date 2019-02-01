@@ -1,0 +1,27 @@
+Kullanım: apic {{policies}} SEÇENEKLER
+
+  Bir katalogdaki ilkeleri listeler
+
+  Seçenekler
+    --{{catalog}} KATALOG | --{{all-catalogs}} (zorunludur)
+      -c, --{{catalog}} KATALOG            belirli bir katalog
+      -C, --{{all-catalogs}}               tüm kataloglar
+    --{{organization}} KURULUŞ      | --{{all-organizations}} (zorunludur)
+      -o, --{{organization}} KURULUŞ       belirli bir sağlayıcı kuruluşu
+      -O, --{{all-organizations}}          tüm sağlayıcı kuruluşları
+    -s, --{{server}} SUNUCU                yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  Üretim (production) kataloğundaki ilkeleri listelemek için:
+    {{$ apic policies --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} içinde {{invokepolicy}}:1.0.0
+    {{climbonorg:productiong}} içinde {{jwepolicy}}:1.0.0
+
+  Aşağıdaki komutlar hakkında daha fazla bilgi için "apic KOMUT -h" yazın:
+
+    {{policies:publish}}    Bir ilkeyi bir katalogda yayınla
+    {{policies:get}}        Katalogdaki bir ilkeyle ilgili bilgileri al
+    {{policies:pull}}       Katalogdan bir ilkeyi çek
+    {{policies:clone}}      Katalogdan tüm ilkeleri çek
+    {{policies:delete}}     Katalogdaki bir ilkeyi sil

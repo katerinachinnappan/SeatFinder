@@ -1,0 +1,12 @@
+Syntaxe : apic {{orgs:get}} NOM_ORG OPTIONS
+
+  Obtenir des informations sur une organisation de type fournisseur
+
+  Options
+    --{{type}} provider
+    -s, --{{server}} SERVEUR              noeud final du serveur de gestion (obligatoire)
+
+  Obtenir des informations sur une organisation de type fournisseur
+    {{$ apic orgs:get climbonorg --server mgmnthost.com}}
+    nom : climbonorg
+    nom d'affichage : Climbon Organization

@@ -1,0 +1,41 @@
+Uso: apic {{drafts}} OPTIONS
+
+  Listar as APIs e os produtos em rascunhos
+
+  Opções
+    --{{type api | product}}                               subconjunto de lista por tipo de definição
+    --{{organization}} ORGANIZATION | --{{all-organizations}}  (obrigatório)
+      -{{o}}, --{{organization}} ORGANIZATION                  uma organização do provedor específica
+      -{{O}}, --{{all-organizations}}                          todas as organizações do provedor
+    -{{s}}, --{{server}} SERVER                                terminal do servidor de gerenciamento (obrigatório)
+
+  Listar as definições de API e de produtos em rascunhos
+    {{$ apic drafts --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 product definition in {{climbonorg:drafts}}
+    {{climbon}}:1.0.1 product definition in {{climbonorg:drafts}}
+    {{routes}}:1.0.0 API definition in {{climbonorg:drafts}}
+    {{ascents}}:1.0.0 API definition in {{climbonorg:drafts}}
+
+  Listar as definições de API em rascunhos
+    {{$ apic drafts --type api --organization climbonorg --server mgmnthost.com}}
+    {{routes}}:1.0.0 API definition in {{climbonorg:drafts}}
+    {{ascents}}:1.0.0 API definition in {{climbonorg:drafts}}
+
+  Listar as definições em rascunhos entre todas as organizações
+    {{$ apic drafts --all-organizations --server mgmnthost.com}}
+    {{climbon}}:1.0.0 product definition in {{climbonorg:drafts}}
+    {{climbon}}:1.0.1 product definition in {{climbonorg:drafts}}
+    {{routes}}:1.0.0 API definition in {{climbonorg:drafts}}
+    {{ascents}}:1.0.0 API definition in {{climbonorg:drafts}}
+    {{hiking}}:1.0.0 product definition in {{hikingorg:drafts}}
+    {{trails}}:1.0.0 API definition in {{hikingorg:drafts}}
+
+Digite "apic COMMAND -h" para obter mais informações sobre os seguintes comandos:
+
+  {{drafts:push}}     Enviar por push definições locais de API ou produto para rascunhos
+  {{drafts:pull}}     Obter definições de API ou produto de rascunhos
+  {{drafts:clone}}    Obter todas as definições de API e produto de rascunhos
+  {{drafts:get}}      Obter informações sobre uma definição de API ou produto em rascunhos
+  {{drafts:publish}}  Publicar um produto e suas APIs de referência em rascunhos em um catálogo ou espaço
+  {{drafts:delete}}   Excluir uma definição de API ou produto de rascunhos
+  {{drafts:clear}}    Excluir todas as definições de API e produto em rascunhos

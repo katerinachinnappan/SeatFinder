@@ -1,0 +1,16 @@
+사용법: apic {{loopback:remote-method}} OPTIONS
+
+  {{LoopBack}} 애플리케이션에 새 원격 메소드 작성
+
+  옵션
+    -m, --{{model}} MODEL_NAME           {{LoopBack}} 모델 이름(선택사항)
+    -r, --{{remote-method}} METHOD_NAME  원격 메소드 이름(선택사항)
+    --{{skip-cache}}                     프롬프트 응답을 기억하지 않음
+
+  안정성: 프로토타입
+
+  {{LoopBack}} 모델에 새 원격 메소드 추가
+    {{$ apic loopback:remote-method}}
+
+  {{getCreationDate}}로 이름 지정된 노트에 대한 새 원격 메소드 추가
+    {{$ apic loopback:remote-method --model note --remote-method getCreationDate}}

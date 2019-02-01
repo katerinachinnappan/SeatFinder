@@ -1,0 +1,19 @@
+Usage: apic {{apps:publish}} OPTIONS
+
+  Publish a Node.js or Swift Server (Bluemix only) application to a provider app.
+  Publishing to a Collective Controller is deprecated as of 5.0.7.0.
+
+  Options
+    -a, --{{app}} APP                    provider app target for the publish (required)
+    -o, --{{organization}} ORGANIZATION  provider organization name (required)
+    -s, --{{server}} SERVER              management server endpoint (required)
+    --{{scale}} SCALE                    set the scale of the service deployed on APIConnect
+                                         collectives. Defaults to number of hosts (optional)
+
+  Publish the current application to the routes provider app in the {{climbon}}
+  organization on the {{mgmnthost.com}} server
+    {{$ apic apps:publish --app routes --organization climbon --server mgmnthost.com}}
+
+  Publish the current application using the {{apps}} configuration variable
+    {{$ apic config:set app=apic-app://mgmnthost.com/orgs/climbon/apps/sb-app}}
+    {{$ apic apps:publish}}

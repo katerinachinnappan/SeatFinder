@@ -1,0 +1,57 @@
+Syntaxis: apic {{products:set}} PRODUCT_NAME[:VERSION] [CATALOGUSOPTIES | RUIMTEOPTIES]
+
+  Een product in een catalogus of ruimte bijwerken
+
+  Opties voor catalogusbereik
+    --{{status}}
+        {{staged}}                       de status bijwerken naar Klaargezet
+        {{published}}                    de status bijwerken naar Gepubliceerd
+        {{deprecated}}                   de status bijwerken naar Gedeprecieerd
+        {{retired}}                      de status bijwerken naar Uit gebruik genomen
+        {{archived}}                     de status bijwerken naar Gearchiveerd
+    --{{visibility}}
+        {{public}}                       niet-geverifieerde of geverifieerde gebruikers
+        {{authenticated}}                geverifieerde gebruiker
+        ORG | TAG ...                gebruikers in de ORG of in een ORG getagd met TAG
+    --{{subscribability}}
+        {{authenticated}}                geverifieerde gebruikers
+        ORG | TAG ...                gebruikers in de ORG of in een ORG getagd met TAG
+    {{-c}}, --{{catalog}} CATALOGUS          naam van catalogus (verplicht)
+    {{-o}}, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    {{-s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Opties voor ruimtebereik
+    --{{scope space}}
+    --{{space}} RUIMTE                   naam van ruimte (verplicht)
+    --{{status}}
+        {{staged}}                       de status bijwerken naar Klaargezet
+        {{published}}                    de status bijwerken naar Gepubliceerd
+        {{deprecated}}                   de status bijwerken naar Gedeprecieerd
+        {{retired}}                      de status bijwerken naar Uit gebruik genomen
+        {{archived}}                     de status bijwerken naar Gearchiveerd
+    --{{visibility}}
+        {{public}}                       niet-geverifieerde of geverifieerde gebruikers
+        {{authenticated}}                geverifieerde gebruiker
+        ORG | TAG ...                gebruikers in de ORG of in een ORG getagd met TAG
+    --{{subscribability}}
+        {{authenticated}}                geverifieerde gebruikers
+        ORG | TAG ...                gebruikers in de ORG of in een ORG getagd met TAG
+    {{-c}}, --{{catalog}} CATALOGUS          naam van catalogus (verplicht)
+    {{-o}}, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    {{-s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Een product publiceren in een catalogus
+    {{$ apic products:set climbon --status published --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 is bijgewerkt in {{climbonorg:production (status: published)}}
+
+  Zichtbaarheid en abonnementsmogelijkheden van een product bijwerken in een catalogus
+    {{$ apic products:set climbon --visibility public --subscribability authenticated --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 bijgewerkt in {{climbonorg:production}} (zichtbaarheid: {{public}}, abonnementsmogelijkheden: {{authenticated}})
+
+  Een product publiceren in een ruimte
+    {{$ apic products:set --scope space climbon --status published --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 is bijgewerkt in {{climbonorg:production:flights (status: published)}}
+
+  Zichtbaarheid en abonnementsmogelijkheden van een product bijwerken in een ruimte
+    {{$ apic products:set --scope space climbon --visibility public --subscribability authenticated --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 is bijgewerkt in {{climbonorg:production:flights}} (zichtbaarheid: {{public}}, abonnementsmogelijkheden: {{authenticated}})

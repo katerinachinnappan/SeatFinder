@@ -1,0 +1,25 @@
+Syntaxis: apic {{props:get}} OPTIES NAAM
+
+  Een eigenschap voor een service ophalen
+
+  Opties
+    -r, --{{remote}}                     niet-lokale doelapp gebruiken (standaard ingesteld op local)
+    -S, --{{service}} SERVICENAAM        naam van service
+    -o, --{{organization}} ORGANISATIE   providerorganisatie
+    -s, --{{server}} SERVER              host van servereindpunt
+
+  De eigenschappen van de LoopBack-toepassingsservice ophalen
+    {{$ apic props:get prop1}}
+    [{{climbon}}] prop1: value1
+
+  De eigenschappen van de LoopBack-toepassingsservice expliciet ophalen
+    {{$ apic props:get --service climbon prop1}}
+    prop1: value1
+
+  De eigenschappen van de {{Micro Gateway}}-service ophalen
+    {{$ apic props:get --service climbon-gw prop1}}
+    prop1: value1
+
+  De eigenschappen van de niet-lokale toepassing ophalen
+    {{$ apic props:get --remote --service climbon --organization climbon --server mgmnthost.com prop1}}
+    prop1: value1

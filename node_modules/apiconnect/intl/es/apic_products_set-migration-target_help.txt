@@ -1,0 +1,27 @@
+Uso: apic {{products:set-migration-target}} NOMBRE_PRODUCTO_ANTIGUO[:VERSIÓN] NOMBRE_PRODUCTO_NUEVO[:VERSIÓN] [OPCIONES_CATÁLOGO | OPCIONES_ESPACIO]
+
+  Establecer el destino de migración para los planes de un producto publicado o en desuso de un catálogo o espacio con otro producto
+
+  Opciones de ámbito de catálogo
+    --{{plans}} NOMBRE_PLAN_ORIGEN:NOMBRE_PLAN_DESTINO ...   correlaciones de plan de producto antiguo a nuevo (obligatorio)
+    {{-c}}, --{{catalog}} CATÁLOGO           nombre de catálogo (obligatorio)
+    {{-o}}, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    {{-s}}, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Opciones para ámbito de espacio
+    --{{scope space}}
+    --{{space}} ESPACIO                      nombre de espacio (obligatorio)
+    --{{plans}} NOMBRE_PLAN_ORIGEN_ORIGEN:NOMBRE_PLAN_DESTINO ...   correlaciones de plan de producto antiguo a nuevo (obligatorio)
+    {{-c}}, --{{catalog}} CATÁLOGO           nombre de catálogo (obligatorio)
+    {{-o}}, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    {{-s}}, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  Establecer el destino de migración para los planes de un producto de un catálogo
+    {{$ apic products:set-migration-target climbon:1.0.0 climbon:1.1.0 --plans "basic:silver premium:gold" -c production -o climbonorg -s mgmnthost.com}}
+    Destino de migración establecido para {{climbon}}:1.0.0 en {{climbon}}:1.1.0 en {{climbonorg:production}}
+
+  Establecer el destino de migración para los planes de un producto de un espacio
+    {{$ apic products:set-migration-target --scope space climbon:1.0.0 climbon:1.1.0 --plans "basic:silver premium:gold" --space flights -c production -o climbonorg -s mgmnthost.com}}
+    Destino de migración establecido para {{climbon}}:1.0.0 en {{climbon}}:1.1.0 en {{climbonorg:production:flights}}

@@ -1,0 +1,20 @@
+사용법: apic {{policies:publish}} OPTIONS
+
+  정책을 카탈로그에 공개
+
+  옵션
+    -c, --{{catalog}} CATALOG            카탈로그 이름(필수)
+    -o, --{{organization}} ORGANIZATION  제공자 조직 이름(필수)
+    -s, --{{server}} SERVER              관리 서버 엔드포인트(필수)
+    --{{directory}} DIRECTORY            정책의 디렉토리(기본값은 현재 디렉토리임)
+
+  안정성: 프로토타입
+
+  jwe 디렉토리의 정책을 카탈로그에 공개
+    {{$ apic policies:publish --directory jwe --catalog production --organization climbonorg --server mgmnthost.com}}
+    Published {{jwe}} to {{climbonorg:production [jwe-encrypt:1.0.0]}}
+
+  현재 디렉토리의 정책을 카탈로그에 공개
+    {{$ cd jwe}}
+    {{$ apic policies:publish --catalog production --organization climbonorg --server mgmnthost.com}}
+    Published {{jwe climbonorg:production [jwe-encrypt:1.0.0]}}

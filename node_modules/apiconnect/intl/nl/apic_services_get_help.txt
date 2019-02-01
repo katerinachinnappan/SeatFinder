@@ -1,0 +1,20 @@
+Syntaxis: apic {{services:get}} OPTIES
+
+  Opties
+    -S, --{{service}} SERVICE_NAAM       servicenaam
+
+  Informatie ophalen over een service die momenteel wordt uitgevoerd
+
+  Loopback-service voor de huidige toepassing ophalen
+  {{$ apic services:get}}
+  naam: {{climbon}}
+  poort: 4001
+  supervisor_PID: 4853
+  worker_PID's: 4854
+
+  De {{Micro Gateway}}-service ophalen
+  {{$ apic services:get --service climbon-gw}}
+  naam: {{climbon-gw}}
+  poort: 4002
+  supervisor_PID: 4855
+  worker_PID's: 4856

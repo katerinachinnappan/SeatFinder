@@ -1,0 +1,18 @@
+用法：apic {{create --type datasource}} OPTIONS
+
+  在 {{LoopBack}} 应用程序中创建 {{LoopBack}} 数据源定义
+
+  选项
+    --{{name}} NAME                      数据源的名称
+    --{{skip-cache}}                     不记住提示答案
+
+  创建 {{LoopBack}} 应用程序数据源
+    {{$ apic create --type datasource}}
+    ? 输入数据源名称：{{MemoryDB}}
+    ? 选择 {{MemoryDB}}：内存数据库的连接器（{{StrongLoop}} 支持）
+    特定于连接器的配置：
+    ? 用于持久存储的 {{window.localStorage}} 键（仅限浏览器）：{{MemoryDB}}
+    ? 用于持久存储的文件的完整路径（仅限服务器）：{{~/.memorydb}}
+    Done running loopback generator
+    Updating {{swagger}} and product definitions
+    Created {{/Users/shane/mesh/examples/climbon/definitions/climbon.yaml}} {{swagger}} description

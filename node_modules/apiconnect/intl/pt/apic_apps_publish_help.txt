@@ -1,0 +1,19 @@
+Uso: apic {{apps:publish}} OPTIONS
+
+  Publicar um aplicativo Node.js ou Swift Server (somente Bluemix) em um app do provedor.
+  A publicação em um controlador coletivo foi descontinuada desde a versão 5.0.7.0.
+
+  Opções
+    -a, --{{app}} APP                    destino do aplicativo do provedor para a publicação (obrigatório)
+    -o, --{{organization}} ORGANIZATION  nome da organização do provedor (obrigatório)
+    -s, --{{server}} SERVER              terminal do servidor de gerenciamento (obrigatório)
+    --{{scale}} SCALE                    configure a escala do serviço implementado em APIConnect
+                                         coletivos. Padronizado para o número de hosts (opcional)
+
+  Publicar o aplicativo atual no aplicativo provedor de rotas na organização {{climbon}}
+  no servidor {{mgmnthost.com}}
+    {{$ apic apps:publish --app routes --organization climbon --server mgmnthost.com}}
+
+  Publicar o aplicativo atual utilizando a variável de configuração {{apps}}
+    {{$ apic config:set app=apic-app://mgmnthost.com/orgs/climbon/apps/sb-app}}
+    {{$ apic apps:publish}}

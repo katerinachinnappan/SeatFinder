@@ -1,0 +1,28 @@
+Usage: {{apic members}} [ORG_OPTIONS | CONSUMER_ORG_OPTIONS]
+
+  List members in a scope
+
+  Options for org scope
+    --{{scope org}}                               (default)
+    --{{organization}} ORGANIZATION | --{{all-organizations}} (required)
+      -{{o}}, --{{organization}} ORGANIZATION         a specific provider organization
+    -{{s}}, --{{server}} SERVER                       management server endpoint (required)
+
+  Options for consumer-org scope
+    --{{scope consumer-org}}                      (required)
+    --{{consumer-org}} | --{{all-organizations}}      (required)
+      --{{consumer-org}} ORGANIZATION             a specific customer organization
+    -{{c}}, --{{catalog}} CATALOG                     catalog name (required)
+    -{{o}}, --{{organization}} ORGANIZATION           provider organization name (required)
+    -{{s}}, --{{server}} SERVER                       management server endpoint (required)
+
+  Stability: prototype
+
+  List the members that are part of a provider org
+    $ {{apic members --scope org -o climbon --server mgmnthost.com}}
+    User ibmapim+steve@gmail.com having owner role in {{climbon}} org
+    User ibmapim+shavon@gmail.com having developer role in {{climbon}} org
+
+  List the members that are part of a consumer org
+    $ {{apic members --scope consumer-org --consumer-org consumerorg -c qa -o climbon --server mgmnthost.com}}
+    User ibmapim+andre@gmail.com having owner role in {{consumerorg}} org

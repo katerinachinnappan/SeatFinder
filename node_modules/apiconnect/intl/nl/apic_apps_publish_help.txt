@@ -1,0 +1,21 @@
+ Syntaxis: apic {{apps:publish}} OPTIES
+
+  Een Node.js- of Swift Server-toepassing (alleen Bluemix) publiceren naar een provider-app.
+  Publiceren naar een Collective Controller is met ingang van 5.0.7.0 gedeprecieerd.
+
+  Opties
+    -a, --{{app}} APP                    doel providerapp voor de publicatie (verplicht)
+    -o, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    -s, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+    --{{scale}} SCHAAL                   de schaal instellen van de service die is
+                                         geïmplementeerd op APIConnect collectieven.
+                                         Standaard wordt het aantal hosts gebruikt
+                                         (optioneel)
+
+  Huidige toepassing publiceren naar de routeproviderapp in de organisatie {{climbon}} op
+  de server {{mgmnthost.com}}
+    {{$ apic apps:publish --app routes --organization climbon --server mgmnthost.com}}
+
+  Huidige toepassing publiceren met behulp van de configuratievariabele {{apps}}
+    {{$ apic config:set app=apic-app://mgmnthost.com/orgs/climbon/apps/sb-app}}
+    {{$ apic apps:publish}}

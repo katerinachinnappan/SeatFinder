@@ -1,0 +1,21 @@
+Kullanım: apic {{apps:set}} SEÇENEKLER
+
+  Bir uygulamayı günceller
+
+  Seçenekler
+    --{{status}}
+        {{online}}                       uygulamayı çevrimiçine al
+        {{offline}}                      uygulamayı çevrimdışına çıkar
+    -a, --{{app}} UYGULAMA               sağlayıcı uygulaması hedefi (zorunludur)
+    -o, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    -s, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  Bir uygulamayı çevrimdışına çıkarmak için:
+    {{$ apic apps:set --app climbon --organization climbonorg --server mgmnthost.com --status offline}}
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/climbon güncellendi ({{status: offline}})
+
+  Bir uygulamayı çevrimiçine almak için:
+    {{$ apic apps:set --app climbon --organization climbonorg --server mgmnthost.com --status online}}
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/climbon güncellendi ({{status: online}})

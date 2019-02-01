@@ -1,0 +1,21 @@
+Syntaxis: apic {{orgs:get}} ORG_NAAM --{{type consumer}} OPTIES
+
+  Informatie over een consumentenorganisatie ophalen
+
+  Opties
+    --{{space}} RUIMTE                   naam van de ruimte (optioneel)
+    -c, --{{catalog}} CATALOGUS          catalogusnaam (verplicht)
+    -o, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    -s, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Stabiliteit: prototype
+
+  Informatie over een consumentenorganisatie ophalen
+    {{$ apic orgs:get salesorg --catalog climbonorg.prod --server mgmnthost.com}}
+    name: {{salesorg}}
+    display name: {{Sales Organization}}
+    owner name: {{Shavon}}
+    owner email: {{shavon@ibm.com}}
+    owner username: {{shavon}}
+    status: active
+    communities: sales, partner

@@ -1,0 +1,15 @@
+Syntaxe : apic {{securegateways:set}} ID_PASSERELLE OPTIONS
+
+  Définir ou mettre à jour des informations sur une passerelle sécurisée dans une organisation
+
+  Options
+    --{{name}} NOM                                 nom de la passerelle sécurisée
+    --{{status enabled | disabled}} STATUT         statut de la passerelle sécurisée
+    -o, --{{organization}} ORGANISATION            organisation de type fournisseur spécifique (obligatoire)
+    -s, --{{server}} SERVEUR                       noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  Mettre à jour la passerelle sécurisée dans l'organisation {{climbonorg}} sur le serveur {{mgmnthost.com}}
+    {{$ apic securegateways:set ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com --status enabled}}
+    Mise à jour de la passerelle sécurisée {{ctHEKS9ztEH_stage_ng}} dans {{climbonorg}}

@@ -1,0 +1,11 @@
+Syntaxe : apic {{loopback:relation}} OPTIONS
+
+  Créer une nouvelle relation entre deux modèles dans l'application {{LoopBack}}
+
+  Options
+    --{{skip-cache}}                     ne pas mémoriser les réponses aux invites
+
+  Stabilité : prototype
+
+  Ajouter une relation
+    {{$ apic loopback:relation}}

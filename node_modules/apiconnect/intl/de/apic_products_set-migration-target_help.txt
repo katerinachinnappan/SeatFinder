@@ -1,0 +1,27 @@
+Syntax: apic {{products:set-migration-target}} ALTER_PRODUKTNAME[:VERSION] NEUER_PRODUKTNAME[:VERSION] [KATALOGOPTIONEN | BEREICHSOPTIONEN]
+
+  Das Migrationsziel für die Pläne eines veröffentlichten oder veralteten Produkts in einem Katalog oder Bereich mithilfe eines anderen Produkts ersetzen und festlegen
+
+  Optionen für Katalogbereich
+  --{{plans}} QUELLENPLANNAME:ZIELPLANNAME ...   Zuordnungen zwischen altem und neuem Produktplan (erforderlich)
+  {{-c}}, --{{catalog}} KATALOG            Katalogname (erforderlich)
+  {{-o}}, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+  {{-s}}, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Optionen für Bereichsumfang
+    --{{scope space}}
+    --{{space}} BEREICH                    Bereichsname (erforderlich)
+    --{{plans}} QUELLENPLANNAME:ZIELPLANNAME ...   Zuordnungen zwischen altem und neuem Produktplan (erforderlich)
+    {{-c}}, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    {{-o}}, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+    {{-s}}, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  Migrationsziel für die Pläne eines Produkts in einem Katalog festlegen
+    {{$ apic products:set-migration-target climbon:1.0.0 climbon:1.1.0 --plans "basic:silver premium:gold" -c production -o climbonorg -s mgmnthost.com}}
+    Migration target set for {{climbon}}:1.0.0 to {{climbon}}:1.1.0 in {{climbonorg:production}}
+
+  Migrationsziel für die Pläne eines Produkts in einem Bereich festlegen
+    {{$ apic products:set-migration-target --scope space climbon:1.0.0 climbon:1.1.0 --plans "basic:silver premium:gold" --space flights -c production -o climbonorg -s mgmnthost.com}}
+    Migration target set for {{climbon}}:1.0.0 to {{climbon}}:1.1.0 in {{climbonorg:production:flights}}

@@ -1,0 +1,10 @@
+用法：apic {{logout}} OPTIONS
+
+  除去 {{API Connect}} 云的本地认证凭证
+
+  选项
+    -s, --{{server}} SERVER              除去服务器的凭证（必需）
+
+  清除 {{mgmnthost.com}} 的本地认证凭证
+    {{$ apic logout --server mgmnthost.com}}
+    Logged {{tommy}} out of server {{mgmnthost.com}}

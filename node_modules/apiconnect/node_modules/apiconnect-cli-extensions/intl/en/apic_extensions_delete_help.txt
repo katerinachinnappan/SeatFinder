@@ -1,0 +1,13 @@
+Usage: apic {{extensions:delete}} OPTIONS EXTENSION_NAME[:VERSION]
+
+  Delete an extension in a catalog
+
+  Options
+    -c, --{{catalog}} CATALOG            catalog name (required)
+    -o, --{{organization}} ORGANIZATION  provider organization name (required)
+    -s, --{{server}} SERVER              management server endpoint (required)
+
+  Stability: prototype
+
+  {{$ apic extensions:delete climbextension:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  Deleted {{climbextension}}:1.0.0 extension from {{climbonorg:production}}

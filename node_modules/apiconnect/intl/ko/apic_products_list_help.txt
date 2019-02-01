@@ -1,0 +1,55 @@
+사용법: apic {{products}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  제품 목록
+
+  카탈로그 범위 옵션
+    --{{catalog}} CATALOG | --{{all-catalogs}} (필수)
+      {{-c}}, --{{catalog}} CATALOG            특정 카탈로그
+      {{-c}}, --{{all-catalogs}}               모든 카탈로그
+    --{{organization}} ORGANIZATION | --all-organizations (필수)
+      {{-o}}, --{{organization}} ORGANIZATION  특정 제공자 조직
+      {{-o}}, --{{all-organizations}}          모든 제공자 조직
+    {{-s}}, --{{server}} SERVER                관리 서버 엔드포인트(필수)
+
+  공간 범위 옵션
+    --{{scope space}}
+    --{{space}} SPACE                    공간 이름(필수)
+    {{-c}}, --{{catalog}} CATALOG            카탈로그 이름(필수)
+    {{-o}}, --{{organization}} ORGANIZATION  제공자 조직 이름(필수)
+    {{-s}}, --{{server}} SERVER              관리 서버 엔드포인트(필수)
+
+  {{production}} 카탈로그의 제품 나열
+    {{$ apic products --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 in {{climbonorg:production}}
+    {{climbon}}:1.0.1 in {{climbonorg:production}}
+    {{yosar}}:2.0.0 in {{climbonorg:production}}
+
+  모든 조직의 모든 카탈로그에 있는 제품 나열
+    {{$ apic products --all-catalogs --all-organizations --server mgmnthost.com}}
+    {{climbon}}:1.0.0 in {{climbonorg:staging}}
+    {{climbon}}:1.0.0 in {{climbonorg:production}}
+    {{climbon}}:1.0.1 in {{climbonorg:sandbox}}
+    {{climbon}}:1.0.1 in {{climbonorg:qa}}
+    {{climbon}}:1.0.1 in {{climbonorg:production}}
+    {{yosar}}:2.0.0 in {{climbonorg:production}}
+    {{trails}}:1.0.0 in {{hikingorg:staging}}
+    {{trails}}:2.0.0 in {{hikingorg:production}}
+
+  {{flights}} 공간의 제품 나열
+    {{$ apic products --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 in {{climbonorg:production:flights}}
+    {{climbon}}:1.0.1 in {{climbonorg:production:flights}}
+    {{yosar}}:2.0.0 in {{climbonorg:production:flights}}
+
+다음 명령에 대한 자세한 정보를 보려면 "apic COMMAND -h"를 입력하십시오.
+
+  {{products:publish}}    제품 및 참조되는 API를 카탈로그에 공개
+  {{products:get}}        카탈로그의 제품에 대한 정보 가져오기
+  {{products:set}}        카탈로그의 제품 업데이트
+  {{products:pull}}       카탈로그에서 제품 가져오기
+  {{products:clone}}      카탈로그에서 모든 제품 가져오기
+  {{products:delete}}     카탈로그의 제품 삭제
+  {{products:clear}}      카탈로그의 모든 제품 삭제
+  {{products:replace}}    카탈로그의 제품을 다른 제품으로 대체
+  {{products:supersede}}  카탈로그의 제품을 다른 제품으로 대체
+  {{products:set-migration-target}}  카탈로그에 있는 제품의 마이그레이션 대상을 다른 제품으로 설정

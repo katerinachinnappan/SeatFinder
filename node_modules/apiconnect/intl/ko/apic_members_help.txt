@@ -1,0 +1,28 @@
+사용법: {{apic members}} [ORG_OPTIONS | CONSUMER_ORG_OPTIONS]
+
+  범위의 구성원 나열
+
+  조직 범위 옵션
+    --{{scope org}}                               (기본값)
+    --{{organization}} ORGANIZATION | --{{all-organizations}} (필수)
+      -{{o}}, --{{organization}} ORGANIZATION         특정 제공자 조직
+    -{{s}}, --{{server}} SERVER                       관리 서버 엔드포인트(필수)
+
+  이용자 조직 범위 옵션
+    --{{scope consumer-org}}                      (필수)
+    --{{consumer-org}} | --{{all-organizations}}      (필수)
+      --{{consumer-org}} ORGANIZATION             특정 고객 조직
+    -{{c}}, --{{catalog}} CATALOG                     카탈로그 이름(필수)
+    -{{o}}, --{{organization}} ORGANIZATION           제공자 조직 이름(필수)
+    -{{s}}, --{{server}} SERVER                       관리 서버 엔드포인트(필수)
+
+  안정성: 프로토타입
+
+  제공자 조직의 일부인 구성원 나열
+    $ {{apic members --scope org -o climbon --server mgmnthost.com}}
+    User ibmapim+steve@gmail.com having owner role in {{climbon}} org
+    User ibmapim+shavon@gmail.com having developer role in {{climbon}} org
+
+  이용자 조직의 일부인 구성원 나열
+    $ {{apic members --scope consumer-org --consumer-org consumerorg -c qa -o climbon --server mgmnthost.com}}
+    User ibmapim+andre@gmail.com having owner role in {{consumerorg}} org

@@ -1,0 +1,16 @@
+用法：apic {{apps:publish}} OPTIONS
+
+  将 Node.js 或 Swift Server（仅适用于 Bluemix）应用程序发布到提供者应用程序。自 5.0.7.0 起，不推荐发布到集合体控制器。
+
+  选项
+    -a, --{{app}} APP                    发布的提供者应用程序目标（必需）
+    -o, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    -s, --{{server}} SERVER              管理服务器端点（必需）
+    --{{scale}} SCALE                    设置 APIConnect 集合体上部署的服务的规模。缺省为主机数（可选）
+
+  将当前应用程序发布到 {{mgmnthost.com}} 服务器上 {{climbon}} 组织中的路径提供者应用程序
+    {{$ apic apps:publish --app routes --organization climbon --server mgmnthost.com}}
+
+  使用 {{apps}} 配置变量发布当前应用程序
+    {{$ apic config:set app=apic-app://mgmnthost.com/orgs/climbon/apps/sb-app}}
+    {{$ apic apps:publish}}

@@ -1,0 +1,43 @@
+用法：{{apic apis}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  列出型錄或空間中的 API
+
+  型錄範圍的選項
+    --{{scope catalog}}                         （預設值）
+    --{{catalog}} CATALOG | --{{all-catalogs}}  （必要）
+      -{{c}}, --{{catalog}} CATALOG             特定的型錄
+      -{{C}}, --{{all-catalogs}}                所有型錄
+    --{{organization}} ORGANIZATION | --{{all-organizations}}（必要）
+      -{{o}}, --{{organization}} ORGANIZATION   特定的提供者組織
+      -{{O}}, --{{all-organizations}}           所有提供者組織
+    -{{s}}, --{{server}} SERVER                 管理伺服器端點（必要）
+
+  空間範圍的選項
+    --{{scope space}}
+    --{{space}} SPACE     -{{c}}, --{{catalog}} CATALOG               a specific catalog     -{{o}}, --{{organization}} ORGANIZATION     特定的提供者組織     -{{s}}, --{{server}} SERVER                 管理伺服器端點（必要）
+
+  穩定性：原型
+
+  列出型錄中的 API 定義
+    {{$ apic apis --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} 中的 {{routes:2.0.0}}
+    {{climbonorg:production}} 中的 {{trails:2.0.0}}
+
+  列出所有組織的所有型錄中的 API 定義
+    {{$ apic apis --all-catalogs --all-organizations --server mgmnthost.com}}
+    {{climbonorg:staging}} 中的 {{routes:1.0.0}}
+    {{climbonorg:production}} 中的 {{routes:2.0.0}}
+    {{hikingorg:staging}} 中的 {{trails:1.0.0}}
+    {{hikingorg:production}} 中的 {{trails:2.0.0}}
+
+  列出空間中的 API 定義
+    {{$ apic apis --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production:sp1}} 中的 {{routes:2.0.0}}
+    {{climbonorg:production:sp1}} 中的 {{trails:2.0.0}}
+
+如需下列指令的相關資訊，請鍵入 "{{apic COMMAND --help}}"：
+
+  {{apis:get}}     取得型錄或空間中 API 的相關資訊
+  {{apis:set}}     更新型錄或空間中的 API
+  {{apis:pull}}    從型錄或空間中取回 API
+  {{apis:clone}}   從型錄或空間中取回所有 API

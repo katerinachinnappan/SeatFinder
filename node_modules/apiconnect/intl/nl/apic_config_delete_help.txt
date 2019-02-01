@@ -1,0 +1,68 @@
+Syntaxis: apic {{config:delete}} OPTIES NAAM
+
+  Een configuratievariabele wissen
+
+  Opties
+    -l, --{{local}}      de lokale toepassingsconfiguratievariabele wissen (alleen {{loopback}}-project)
+    -g, --{{global}}     de globale configuratievariabele wissen
+
+  Configuratievariabelen:
+
+    {{catalog}}
+      De catalogusconfiguratievariabele moet worden ingesteld op de URI van een
+      API Connect-catalogus.  De waarde van de catalogus biedt de standaardidentiteit
+      van een catalogus voor alle opdrachten die worden gebruikt om aspecten van een
+      catalogus te beheren.  De standaardwaarden die zijn gedefinieerd door de URI van
+      de catalogus kunnen worden overschreven met behulp van de opdrachtregelopties
+      --{{server}}, --{{organization}} en --{{catalog}}.  De catalogus-URI heeft de indeling:
+      apic-catalog://BEHEERSERVER/orgs/ORGANISATIENAAM/catalogs/CATALOGUSNAAM
+
+    {{app}}
+      De configuratievariabele van de app moet ingesteld worden op de URI van de API
+      Connect-app. De waarde van de app levert de standaardidentiteit van een app
+      voor alle opdrachten die gebruik worden voor het beheer van aspecten van een
+      app. De standaardwaarden die zijn gedefinieerd door de URI van
+      de app kunnen worden overschreven met behulp van de opdrachtregelopties
+      --{{server}}, --{{organization}} en --{{app}}.
+De app-URI heeft indeling:
+      apic-app://BEHEERSERVER/orgs/ORGANISATIENAAM/apps/APPNAAM
+
+    {{org}}
+      De standaardwaarde van org gedefinieerd door de URI van de app of catalogus kan
+      worden ingesteld met de org-URI.  De org-URI heeft de indeling:
+      apic-org://BEHEERSERVER/orgs/ORGANISATIENAAM
+
+    {{space}}
+      De configuratievariabele voor de ruimte moet worden ingesteld op de URI van een
+      API Connect-ruimte. De waarde van de ruimte biedt de standaardidentiteit
+      van een ruimte voor alle opdrachten die worden gebruikt om aspecten van een
+      ruimte te beheren. De standaardwaarden die zijn gedefinieerd door de URI van
+      de ruimte kunnen worden overschreven met behulp van de opdrachtregelopties
+      --{{server}}, --{{organization}}, --{{catalog}} en --{{space}}. De URI voor de ruimte heeft de volgende indeling:
+      apic-space://BEHEERSERVER//orgs/ORGANISATIENAAM/catalogs/CATALOGUSNAAM/spaces/RUIMTENAAM
+
+    {{accessibility-mode}}
+      Activeert toegankelijkheidsfuncties. Waarde moet worden ingesteld op '{{enabled}}' of '{{disabled}}'.
+      Als deze waarde niet wordt ingesteld, is {{accessibility-mode}} uitgeschakeld.
+
+    {{oauth-redirect-uri}}
+      Om OAuth te testen, moet de OAuth Redirect URI worden ingesteld. Dit gebeurt meestal met de
+      Development Portal. Dankzij deze variabele kunt u datzelfde realiseren met alleen de toolkit.
+
+    {{template-path}}
+      Lijst van plaatsen om te zoeken naar handlebarsjablonen
+
+    {{template-default-api}}
+      Definieert de standaard {{api}}-sjabloon
+
+    {{template-default-product}}
+      Definieert de standaard productsjabloon
+
+  {{$ apic config:delete catalog}}
+  {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}} gewist
+
+  {{$ apic config:delete org}}
+  {{org: apic-org://mgmnthost.com/orgs/climbon}} gewist
+
+  {{$ apic config:delete template-path}}
+  {{template-path: /etc/templates}} gewist

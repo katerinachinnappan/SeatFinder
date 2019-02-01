@@ -1,0 +1,18 @@
+用法：apic {{catalogs:create}} DISPLAY_NAME OPTIONS
+
+  在組織中建立型錄
+
+  選項
+    --{{name}} NAME                         型錄名稱（預設值衍生自顯示名稱）
+    -o, --{{organization}} ORGANIZATION     特定的提供者組織（必要）
+    -s, --{{server}} SERVER                 管理伺服器端點（必要）
+
+  穩定性：原型
+
+  在 {{mgmnthost.com}} 伺服器上的 {{climbonorg}} 組織中，建立具有唯一名稱的型錄
+    {{$ apic catalogs:create Production --organization climbonorg --server mgmnthost.com}}
+    已建立 {{climbonorg:production}}
+
+  在 {{mgmnthost.com}} 伺服器上的 {{climbonorg}} 組織中建立型錄
+    {{$ apic catalogs:create Production --name prod --organization climbonorg --server mgmnthost.com}}
+    已建立 {{climbonorg:prod}}

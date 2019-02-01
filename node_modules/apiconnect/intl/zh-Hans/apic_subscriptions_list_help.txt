@@ -1,0 +1,56 @@
+用法：{{apic subscriptions}} [CATALOG_OPTIONS | SPACE_OPTIONS | CONSUMER-ORG_OPTIONS]
+
+ 列出产品、应用程序、目录或空间中的预订
+
+  space 作用域的选项
+    --{{scope catalog}}                                     （缺省值）
+    -{{p}}, --{{product}} PRODUCT_NAME[:VERSION[:PLAN_NAME]]    计划名称
+    -{{c}}, --{{catalog}} CATALOG                               目录名称（必需）
+    -{{o}}, --{{organization}} ORGANIZATION                     特定提供者组织（必需）
+    -{{s}}, --{{server}} SERVER                                 管理服务器端点（必需）
+
+  space 作用域的选项
+    --{{scope space}}                                       （必需）
+    --{{space}}                                             空间名称（必需）
+    -{{p}}, --{{product}} PRODUCT_NAME[:VERSION[:PLAN_NAME]]    计划名称
+    -{{c}}, --{{catalog}} CATALOG                               目录名称（必需）
+    -{{o}}, --{{organization}} ORGANIZATION                     特定提供者组织（必需）
+    -{{s}}, --{{server}} SERVER                                 管理服务器端点（必需）
+
+  consumer-org 作用域的选项
+    --{{scope consumer-org}}                                （必需）
+    -{{a}}, --{{application}} APPLICATION                       开发者应用程序（必需）
+    -{{c}}, --{{catalog}} CATALOG                               目录名称（必需）
+    -{{o}}, --{{organization}} ORGANIZATION                     特定提供者组织（必需）
+    -{{s}}, --{{server}} SERVER                                 管理服务器端点（必需）
+
+  稳定性：原型
+
+  列出目录中的预订
+    {{$ apic subscriptions --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production}}
+    subscription2 in {{climbonapp}} for {{climb-on:1.0.0:fremimum}} in {{climbonorg:production}}
+    subscription3 in {{hikeonapp}} for {{hike-on:1.0.0:premimum}} in {{climbonorg:production}}
+
+  列出目录中 product:version:plan 的预订
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production}}
+
+  列出空间中的预订
+    {{$ apic subscriptions --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production:flights}}
+    subscription2 in {{climbonapp}} for {{climb-on:1.0.0:fremimum}} in {{climbonorg:production:flights}}
+    subscription3 in {{hikeonapp}} for {{hike-on:1.0.0:premimum}} in {{climbonorg:production:flights}}
+
+  列出空间中 product:version:plan 的预订
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production:flights}}
+
+  列出应用程序的预订
+    {{$ apic subscriptions --application climbonapp --scope consumer-org --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production}}
+    subscription2 in {{climbonapp}} for {{climb-on:1.0.0:fremimum}} in {{climbonorg:production}}
+
+  输入“apic COMMAND --help”以获取有关以下命令的更多信息：
+
+    {{subscriptions:get}}        获取有关预订的信息

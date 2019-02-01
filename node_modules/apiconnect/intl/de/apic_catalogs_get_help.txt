@@ -1,0 +1,17 @@
+Syntax: apic {{catalogs:get}} KATALOGNAME OPTIONEN
+
+  Informationen zu einem Katalog in einer Organisation abrufen
+
+  Optionen
+    -o, --{{organization}} ORGANISATION     eine bestimmte Provider-Organisation (erforderlich)
+    -s, --{{server}} SERVER                 Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  Katalog in der {{climbonorg}}-Organisation auf dem {{mgmnthost.com}}-Server abrufen
+    {{$ apic catalogs:get qa --organization climbonorg --server mgmnthost.com}}
+    name: {{qa}}
+    display name: Quality Assurance
+    organization: {{climbonorg}}
+    type: production
+    spaces: disabled

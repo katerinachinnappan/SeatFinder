@@ -1,0 +1,25 @@
+用法：{{components}}
+
+  列出组件
+
+  选项O
+    --{{organization}} ORGANIZATION | --all-organizations （必需）
+      {{-o}}, --{{organization}} ORGANIZATION  特定提供者组织
+      {{-o}}, --{{all-organizations}}          所有提供者组织
+    {{-s}}, --{{server}} SERVER                管理服务器端点（必需）
+
+  列出所有组织中的所有组件
+    {{$ apic components --all-organizations --server mgmnthost.com}}
+    {{climbon}}:1.0.0 in {{climbonorg:staging}}
+    {{climbon}}:1.0.0 in {{climbonorg:production}}
+    {{climbon}}:1.0.1 in {{climbonorg:sandbox}}
+    {{climbon}}:1.0.1 in {{climbonorg:qa}}
+    {{climbon}}:1.0.1 in {{climbonorg:production}}
+    {{yosar}}:2.0.0 in {{climbonorg:production}}
+    {{trails}}:1.0.0 in {{hikingorg:staging}}
+    {{trails}}:2.0.0 in {{hikingorg:production}}
+
+输入“apic COMMAND -h”以获取有关以下命令的更多信息：
+
+  {{components:get}}                      获取有关目录中组件的信息
+

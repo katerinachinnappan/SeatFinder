@@ -1,0 +1,25 @@
+Syntaxis: apic  {{components}}
+
+  Overzicht van componenten opsommen
+
+  Opties
+    --{{organization}} ORGANISATIE  | --all-organizations (verplicht)
+      {{-o}}, --{{organization}} ORGANISATIE   een bepaalde providerorganisatie
+      {{-o}}, --{{all-organizations}}          alle providerorganisaties
+    {{-s}}, --{{server}} SERVER                beheerserver-eindpunt (verplicht)
+
+  Lijst afbeelden van alle componenten in alle organisaties
+    {{$ apic components --all-organizations --server mgmnthost.com}}
+    {{climbon}}:1.0.0 in {{climbonorg:staging}}
+    {{climbon}}:1.0.0 in {{climbonorg:production}}
+    {{climbon}}:1.0.1 in {{climbonorg:sandbox}}
+    {{climbon}}:1.0.1 in {{climbonorg:qa}}
+    {{climbon}}:1.0.1 in {{climbonorg:production}}
+    {{yosar}}:2.0.0 in {{climbonorg:production}}
+    {{trails}}:1.0.0 in {{hikingorg:staging}}
+    {{trails}}:2.0.0 in {{hikingorg:production}}
+
+Typ "apic COMMAND -h" voor meer informatie over de volgende opdrachten:
+
+  {{components:get}}                      Informatie over een component in een catalogus ophalen
+

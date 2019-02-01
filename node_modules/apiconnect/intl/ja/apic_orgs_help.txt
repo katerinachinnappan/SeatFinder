@@ -1,0 +1,11 @@
+使用法: apic {{orgs}} OPTIONS
+
+  現在認証されているユーザーがメンバーとして属している組織をリストします
+
+  オプション
+    --{{type provider|consumer}}          デフォルトはプロバイダー <Stability: prototype>
+    -s, --{{server}} SERVER               管理サーバー・エンドポイント (必須)
+
+  各組織タイプに関するヘルプを表示するには、以下のコマンドを使用します
+    {{orgs --type provider -h}}
+    {{orgs --type consumer -h}}

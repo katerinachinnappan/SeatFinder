@@ -1,0 +1,33 @@
+用法：apic {{drafts:publish}} [CATALOG_OPTIONS | SPCAE_OPTIONS] NAME[:VERSION]
+
+  将草稿中的产品及其引用的 API 发布到目录或空间
+
+  目录作用域的选项
+    --{{scope catalog}}                     （缺省值）
+    --{{stage}}                              将发布限制到登台
+    -{{c}}, --{{catalog}} CATALOG            目录名称（必需）
+    -{{o}}, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    -{{s}}, --{{server}} SERVER              管理服务器端点（必需）
+
+  空间作用域的选项
+    --{{scope space}}                      （必需）
+    --{{space}} SPACE                       空间名称（必需）
+    --{{stage}}                             将发布限制到登台
+    -{{c}}, --{{catalog}} CATALOG           目录名称（必需）
+    -{{o}}, --{{organization}} ORGANIZATION 提供者组织名称（必需）
+    -{{s}}, --{{server}} SERVER              管理服务器端点（必需）
+
+  将草稿中的产品发布到目录
+    {{$ apic drafts:publish climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    Staged {{climbon}}:1.0.0 to {{climbonorg:production}}
+    Published {{climbon}}:1.0.0 to {{climbonorg:production}}
+
+  使草稿中的产品登台到目录
+    {{$ apic drafts:publish --stage climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    Staged {{climbon}}:1.0.0 to {{climbonorg:production}}
+
+  将草稿中的产品发布到空间
+    {{$ apic drafts:publish climbon --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Staged {{climbon:1.0.0}} to {{climbonorg:production:flights}}
+    Published {{climbon:1.0.0}} to {{climbonorg:production:flights}}
+

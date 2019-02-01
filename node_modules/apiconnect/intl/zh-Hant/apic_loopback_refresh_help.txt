@@ -1,0 +1,7 @@
+用法：apic {{loopback:refresh}}
+
+  從 {{LoopBack}} 應用程式模型產生產品和 API 定義
+
+  穩定性：原型
+
+  {{$ apic loopback:refresh}}

@@ -1,0 +1,10 @@
+Kullanım: apic {{logout}} SEÇENEKLER
+
+  Bir {{API Connect}} bulutuna ilişkin yerel kimlik doğrulaması kimlik bilgilerini kaldırır
+
+  Seçenekler
+    -s, --{{server}} SUNUCU              sunucunun kimlik bilgilerini kaldır (zorunludur)
+
+  {{mgmnthost.com}} için yerel kimlik doğrulaması kimlik bilgilerini temizlemek için:
+    {{$ apic logout --server mgmnthost.com}}
+    {{tommy}}, {{mgmnthost.com}} sunucusunda oturum kapattı

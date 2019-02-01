@@ -1,0 +1,24 @@
+Syntaxis: apic {{microgateway}} OPTIES
+
+  Een {{Micro Gateway}}-toepassing maken
+
+  Opties
+    -n, --{{name}} NAAM                  naam van de toepassing
+    -s, --{{server}} SERVER              eindpunt van beheerserver
+
+  Stabiliteit: prototype
+
+  Een {{Micro Gateway}}-toepassing met de naam {{mijn-persoonlijke-microgateway}} maken
+    {{$ apic microgateway --server mgmnthost.com --name mijn-persoonlijke-microgateway}}
+    microgateway-toepassing wordt gemaakt in /Users/user/{{mijn-persoonlijke-microgateway}}
+    Toepassing {{Micro Gateway}} wordt geïnstalleerd
+    Maken van {{Micro Gateway}} is voltooid.
+
+  Een {{Micro Gateway}}-toepassing maken in de huidige directory (moet leeg zijn)
+    {{$ mkdir mijn-tweede-microgateway}}
+    {{$ cd mijn-tweede-microgateway}}
+    {{$ apic microgateway --server mgmnthost.com}}
+    ? Wat is de naam van uw toepassing ({{mijn-tweede-microgateway}})
+    microgateway-toepassing wordt gemaakt in /Users/user/{{mijn-tweede-microgateway}}
+    Toepassing {{Micro Gateway}} wordt geïnstalleerd
+    Maken van {{Micro Gateway}} is voltooid.

@@ -1,0 +1,30 @@
+Kullanım: apic {{loopback}} SEÇENEKLER
+
+  Bir {{LoopBack}} uygulaması yaratır
+
+  Seçenekler
+    -n, --{{name}} AD                    uygulamanın adı (isteğe bağlı)
+    --{{skip-install}}                   bağımlılıkları otomatik olarak kurma
+    --{{skip-next-steps}}                "sonraki adımlar" bilgisini yazdırma
+    --{{explorer}}                       projeye LoopBack Explorer ekle
+
+  {{climbon}} adlı bir {{LoopBack}} uygulaması yaratmak için:
+    {{$ apic loopback --name climbon}}
+    ? Uygulamanızın adı ne? {{climbon}}
+    ? Projeyi içerecek dizinin adını girin: {{climbon}}
+    ? Aklınızda ne tür bir uygulama var? hello-world (bir bellek veritabanı da içinde olmak üzere, temel bir çalışma örneğini içeren proje)
+
+Aşağıdaki ilgili komutlara ilişkin yardım için "apic KOMUT -h" yazın:
+
+  {{create}}                           Yapay nesne tanımları yarat
+  {{edit}}                             API Designer'ı çalıştır
+  {{services}}                         Hizmet yönetimi
+  {{loopback:acl}}                     ACL yarat
+  {{loopback:boot-script}}             {{boot}} komut dosyası yarat
+  {{loopback:export-api-def}}          Modellerden {{OpenAPI (Swagger)}} tanımları oluştur
+  {{loopback:middleware}}              Ara katman yazılımı yarat
+  {{loopback:property}}                Yeni bir model özelliği yarat
+  {{loopback:relation}}                Modeller arasında yeni ilişki yarat
+  {{loopback:remote-method}}           Yeni bir uzak yöntem yarat
+  {{loopback:swagger}}                 {{OpenAPI (Swagger)}} tanımından uygulama yarat
+  {{loopback:refresh}}                 Bir ürün ve {{OpenAPI (Swagger)}} tanımı yarat

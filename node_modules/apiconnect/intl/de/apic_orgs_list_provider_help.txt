@@ -1,0 +1,20 @@
+Syntax: apic {{orgs}} OPTIONEN
+        apic {{orgs}} --{{type provider}} OPTIONEN
+
+  Provider-Organisationen auflisten, bei denen der aktuell authentifizierte Benutzer Mitglied ist
+
+  Optionen
+    --{{type provider}}
+    -s, --{{server}} SERVER               Management-Server-Endpunkt (erforderlich)
+
+  Organisationen (Provider-Organisationen) auflisten, bei denen der aktuell authentifizierte Benutzer ein Mitglied auf mgmnthost.com ist
+    {{$ apic orgs --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+    {{$ apic orgs --type provider --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+  Geben Sie "apic BEFEHL -h" für Hilfeinformationen zu den folgenden zugehörigen Befehlen ein:
+    {{orgs:get}}          Informationen zu einer Provider-Organisation abrufen

@@ -1,0 +1,66 @@
+Syntax: apic {{create --type api}}           interaktiv
+       apic {{create --type api}} OPTIONEN    nicht interaktiv
+
+  Eine {{OpenAPI (Swagger)}}-Definition erstellen
+
+  Optionen
+    --{{title}} TITEL                    Titelwert (erforderlich)
+    --{{name}} NAME                      {{x-ibm-name}}-Wert (vom Titel abgeleiteter Standardwert)
+    --{{basepath}} BASISPFAD             Basispfadwert (vom Namen abgeleiteter Standardwert)
+    --{{template}} Vorlage               Providervorlage verwenden (wenn leer, wird standardmäßig die apic-Vorlage verwendet)
+    --{{filename}} API-DATEINAME         Dateiname (vom Namen abgeleiteter Standardwert)
+    --{{product}} PRODUKTTITEL           Produktdefinition generieren, die auf die API verweist
+    --{{hostname}} HOSTNAME              Hostwert (Standard-{{$(catalog.host)}})
+    --{{schemes}} SCHEMAS                Liste der Schemas (gültige Optionen sind http, https, ws und wss)
+    --{{target-url}} ZIEL-URL            Ziel-URL
+    -v, --{{version}} VERSION            Versionswert (Standardwert 1.0.0)
+    --{{wsdl}} DATEINAME                 wsdl-Datei, die als Quelle verwendet wird (Authentifizierung über {{apic login}} erforderlich)
+
+  API erstellen
+    {{$ apic create --type api --title Routes}}
+    Created {{routes.yaml}} API definition {{[routes:1.0.0]}}
+
+  API erstellen und Produkt generieren, das auf die API verweist
+    {{$ apic create --type api --title Routes --product "Climb On"}}
+    Created {{routes.yaml}} API definition {{[routes:1.0.0]}}
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  API interaktiv erstellen
+    {{$ apic create --type api}}
+    Title: Routes
+    Name ({{routes}}): {{routes}}
+    File ({{routes.yaml}}): {{routes.yaml}}
+    Template: ()
+    Basepath ({{/routes}}): {{/routes}}
+    Hostname ({{$(catalog.host)}}): {{$(catalog.host)}}
+    Schemes:
+    Target url: ()
+    Create product [true]: true
+    Product title (Routes Product): {{Climb On}}
+    Product name ({{climb-on}}): {{climb-on}}
+    Product file ({{climb-on.yaml}}): {{climb-on.yaml}}
+    Created {{routes.yaml}} API definition {{[routes:1.0.0]}}
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  API aus einem WSDL-Dokument erstellen
+    {{$ apic create --type api --wsdl globalweather.wsdl}}
+    Created {{globalweather.yaml}} API definition {{[globalweather.yaml:1.0.0]}}
+
+  API mithilfe der Standard-{{OAuth 2}}-Providervorlage von APIC erstellen
+    {{$ apic create --type api --title "OAuth2 Provider" --template oauth2}}
+    Created {{oauth2-provider.yaml}} API definition {{[oauth2-provider:1.0.0]}}
+
+  API mithilfe einer Ihrer Vorlagen erstellen
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy.hbs staging.hbs
+    {{$ apic create --type api --title "Proxy Provider" --template proxy}}
+    Created {{proxy-provider.yaml}} API definition {{[proxy-provider:1.0.0]}}
+
+  API mithilfe Ihrer Standardvorlage erstellen
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy.hbs staging.hbs
+    {{$ apic config:set --global template-default-api=staging}}
+    {{$ apic create --type api --title "Staging Provider"}}
+    Created {{staging-provider.yaml}} API definition {{[staging-provider:1.0.0]}}

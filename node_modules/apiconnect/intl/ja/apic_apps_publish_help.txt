@@ -1,0 +1,18 @@
+使用法: apic {{apps:publish}} OPTIONS
+
+  Node.js アプリケーションまたは Swift Server (Bluemix のみ) アプリケーションをプロバイダー・アプリケーションに公開します。
+  Collective コントローラーへの公開は、5.0.7.0 の時点で非推奨になりました。
+
+  オプション
+    -a, --{{app}} APP                    公開先のプロバイダー・アプリケーション (必須)
+    -o, --{{organization}} ORGANIZATION  プロバイダー組織名 (必須)
+    -s, --{{server}} SERVER              管理サーバー・エンドポイント (必須)
+    --{{scale}} SCALE                    API Connect Collective にデプロイされるサービスの目盛りを
+                                         設定します。デフォルトはホストの数です (オプション)
+
+  {{mgmnthost.com}} サーバーの {{climbon}} 組織内の経路プロバイダー・アプリケーションに現在のアプリケーションを公開します
+    {{$ apic apps:publish --app routes --organization climbon --server mgmnthost.com}}
+
+  {{apps}} 構成変数を使用して現在のアプリケーションを公開します
+    {{$ apic config:set app=apic-app://mgmnthost.com/orgs/climbon/apps/sb-app}}
+    {{$ apic apps:publish}}

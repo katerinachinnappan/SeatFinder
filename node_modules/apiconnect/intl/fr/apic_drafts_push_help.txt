@@ -1,0 +1,27 @@
+Syntaxe : apic {{drafts:push}} OPTIONS NOM_FICHIER_API | NOM_FICHIER_PRODUIT
+
+  Envoyer les définitions de produit ou d'API locales dans des brouillons
+
+  Options
+    --{{product-only}}                       ne pas envoyer les API référencées
+    -{{r}}, --{{replace}} NOM:VERSION        remplacer par une définition nommée/versionnée différemment
+    -{{o}}, --{{organization}} ORGANISATION  nom de l'organisation de type fournisseur (obligatoire)
+    -{{s}}, --{{server}} SERVEUR             noeud final du serveur de gestion (obligatoire)
+
+  Envoyer une définition d'API dans des brouillons
+    {{$ apic drafts:push routes.yaml --organization climbonorg --server mgmnthost.com}}
+    Envoi de la définition d'API {{routes.yaml}} dans {{climbonorg:drafts [routes:1.0.0]}}
+
+  Envoyer une définition d'API dans des brouillons remplaçant une version précédente
+    {{$ apic drafts:push routes.yaml -r routes:1.0.0 --organization climbonorg --server mgmnthost.com}}
+    Envoi de la définition d'API {{routes.yaml}} dans {{climbonorg:drafts [routes:2.0.0]}}
+
+  Envoyer une définition de produit et ses définitions d'API référencées dans des brouillons
+    {{$ apic drafts:push climbon.yaml --organization climbonorg --server mgmnthost.com}}
+    Envoi de la définition de produit {{climbon.yaml}} dans {{climbonorg:drafts [climbon:1.0.0]}}
+    Envoi de la définition d'API {{routes.yaml}} dans {{climbonorg:drafts [routes:1.0.0]}}
+    Envoi de la définition d'API {{ascents.yaml}} dans {{climbonorg:drafts [ascents:1.0.0]}}
+
+  Envoyer uniquement la définition de produit dans des brouillons
+    {{$ apic drafts:push climbon.yaml --product-only --organization climbonorg --server mgmnthost.com}}
+    Envoi de la définition de produit {{climbon.yaml}} dans {{climbonorg:drafts [climbon:1.0.0]}}

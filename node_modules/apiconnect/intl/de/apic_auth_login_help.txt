@@ -1,0 +1,24 @@
+Syntax: apic {{login}}                  interaktiv
+       apic {{login}} OPTIONEN          nicht interaktiv
+
+  Bei einer {{API Connect}}-Cloud über den Management-Server authentifizieren
+
+  Optionen
+    -u, --{{username}} BENUTZER          Benutzername (erforderlich)
+    -p, --{{password}} KENNWORT          Kennwort (erforderlich)
+    -s, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+    --{{sso}}                            Anmeldung über föderierte unternehmensweite ID
+    -c, --{{passcode}} KENNCODE          einmaliger Kenncode für {{JWT}}
+    —k, --{{apikey}}  API-SCHLÜSSEL      Anmeldung mit Bluemix-API-Schlüssel
+
+  Bei einer {{API Connect}}-Cloud über den Management-Server anmelden
+    {{$ apic login}}
+    Enter your {{API Connect}} credentials
+    ? Server: {{mgmnthost.com}}
+    ? Username: {{tommy}}
+    ? Password (typing will be hidden) **********
+    Logged into {{mgmnthost.com}} successfully
+
+  Nicht interaktive Anmeldung
+    {{$ apic login --username tommy --password password --server mgmnthost.com}}
+    Logged into {{mgmnthost.com}} successfully

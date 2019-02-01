@@ -1,0 +1,19 @@
+사용법: apic {{policies:get}} OPTIONS POLICY_NAME[:VERSION]
+
+  카탈로그의 정책에 대한 정보 가져오기
+
+  옵션
+    -c, --{{catalog}} CATALOG              카탈로그 이름(필수)
+    -o, --{{organization}} ORGANIZATION    제공자 조직 이름(필수)
+    -s, --{{server}} SERVER                관리 서버 엔드포인트(필수)
+
+  안정성: 프로토타입
+
+  {{$ apic policies:get invokepolicy:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  이름: {{invokepolicy}}
+  버전: 1.0.0
+  제목: Invoke policy
+  첨부: {{rest, soap}}
+  게이트웨이: {{datapower-gateway}}
+  카탈로그: {{production}}
+  조직: {{climbonorg}}

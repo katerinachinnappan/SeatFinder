@@ -1,0 +1,35 @@
+Kullanım: apic {{products:clear}} [KATALOG_SEÇENEKLERİ | ALAN_SEÇENEKLERİ]
+
+  Bir katalog ya da alandaki tüm ürünleri sil
+
+  Katalog kapsamı için seçenekler
+    --{{confirm}} KATALOG                onay (zorunludur)
+    {{-c}}, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    {{-o}}, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    {{-s}}, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Alan kapsamı için seçenekler
+    --{{scope space}}
+    --{{confirm}} KATALOG                onay (zorunludur)
+    --{{space}} ALAN                     alan adı (zorunludur)
+    {{-c}}, --{{catalog}} KATALOG        katalog adı (zorunludur)
+    {{-o}}, --{{organization}} KURULUŞ   sağlayıcı kuruluşu adı (zorunludur)
+    {{-s}}, --{{server}} SUNUCU          yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  Bir katalogdaki tüm ürünleri temizle
+    {{$ apic products:clear --confirm production --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 ürün tanımı {{climbonorg}}:production içinden silindi
+    {{climbon}}:1.0.1 ürün tanımı {{climbonorg}}:production içinden silindi
+    {{climbon}}:2.0.0 ürün tanımı {{climbonorg}}:production içinden silindi
+    {{hiking}}:3.0.0 ürün tanımı {{climbonorg}}:production içinden silindi
+    {{hiking}}:3.0.1 ürün tanımı {{climbonorg}}:production içinden silindi
+  
+  Bir alandaki tüm ürünleri temizle
+    {{$ apic products:clear --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com --confirm production}}
+    {{climbon}}:1.0.0 ürün tanımı {{climbonorg}}:production:flights içinden silindi
+    {{climbon}}:1.0.1 ürün tanımı {{climbonorg}}:production:flights içinden silindi
+    {{climbon}}:2.0.0 ürün tanımı {{climbonorg}}:production:flights içinden silindi
+    {{hiking}}:3.0.0 ürün tanımı {{climbonorg}}:production:flights içinden silindi
+    {{hiking}}:3.0.1 ürün tanımı {{climbonorg}}:production:flights içinden silindi

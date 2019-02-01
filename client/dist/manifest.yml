@@ -1,0 +1,7 @@
+applications:
+- name: SeatFinder
+  buildpack: staticfile_buildpack
+  routes:
+  - route: seatfinder.eu-de.mybluemix.net 
+  memory: 1024M
+

@@ -1,0 +1,17 @@
+Syntax: {{apic spaces:get}} BEREICHSNAME OPTIONEN
+
+  Informationen zu einem Bereich in einem Katalog abrufen
+
+  Optionen
+    -c, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    -o, --{{organization}} ORGANISATION  eine bestimmte Provider-Organisation (erforderlich)
+    -s, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  Bereich im {{production}}-Katalog in der {{climbonorg}}-Organisation auf dem {{mgmnthost.com}}-Server abrufen
+    $ {{apic spaces:get flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    name: {{flights}}
+    display name: {{Flights Space}}
+    catalog: {{production}}
+    organization: {{climbonorg}}

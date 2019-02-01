@@ -1,0 +1,29 @@
+用法：apic {{validate}} OPTIONS API_FILENAME | PRODUCT_FILENAME
+
+  验证 API 或产品定义
+
+  选项
+    -p, --{{product-only}}               用于产品定义，不验证引用的 API
+    --{{no-extensions}}                  用于 API 定义，不针对 {{IBM Swagger}} 扩展进行验证
+
+  验证 API 定义
+    {{$ apic validate routes.yaml}}
+    Validated {{routes.yaml}} API definition against the {{Swagger 2.0}} schema {{[routes:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{IBM Swagger 2.0}} schema {{[routes:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{IBM Swagger 2.0}} extensions schema {{[routes:1.0.0]}}
+
+  验证 API 定义而不验证 IBM 扩展
+    {{$ apic validate --no-extensions routes.yaml}}
+    Validated {{routes.yaml}} API definition against the {{Swagger 2.0}} schema {{[routes:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{IBM Swagger 2.0}} schema {{[routes:1.0.0]}}
+
+  验证产品定义及其引用的 API
+    {{$ apic validate climb-on.yaml}}
+    Validated {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{Swagger 2.0}} schema {{[routes:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{IBM Swagger 2.0}} schema {{[routes:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{IBM Swagger 2.0}} extensions schema {{[routes:1.0.0]}}
+
+  验证产品定义而不验证其引用的 API
+    {{$ apic validate --product-only climb-on.yaml}}
+    Validated {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}

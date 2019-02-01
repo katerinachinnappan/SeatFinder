@@ -1,0 +1,44 @@
+Syntax: apic {{create --type product}}           interaktiv
+       apic {{create --type product}} OPTIONS   nicht interaktiv
+
+  Produktdefinition erstellen
+
+  Optionen
+    --{{title}} TITEL                    Titelwert (erforderlich)
+    --{{name}} NAME                      Namenswert (vom Titel abgeleiteter Standardwert)
+    --{{apis}} API-DATEINAME ...         Liste der zu referenzierenden APIs
+    --{{filename}} PRODUKTDATEINAME      Dateiname (Vom Namen abgeleiteter Standardwert)
+    --{{template}} VORLAGE               Providervorlage verwenden (wenn leer, wird standardmäßig die apic-Vorlage verwendet)
+    -v, --{{version}} VERSION            Versionswert (Standardwert 1.0.0)
+
+  Produkt erstellen
+    {{$ apic create --type product --title "Climb On"}}
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  Produkt interaktiv erstellen
+    {{$ apic create --type product}}
+    ? Title: {{Climb On}}
+    ? Name: {{climb-on}}
+    ? File: {{climb-on.yaml}}
+    ? Template:
+    ? API Files:
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  Produkt erstellen, das vorhandene APIs referenziert
+    {{$ apic create --type product --title "Climb On" --apis "routes.yaml ascents.yaml"}}
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  Produkt mit einem Ihrer Vorlagen erstellen
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic create --type product --title "Proxy Product" --template proxy}}
+    Created {{proxy-product.yaml}} product definition {{[proxy-product:1.0.0]}}
+
+  Produkt mit Ihrer Standardvorlage erstellen
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic config:set --global template-default-product=staging}}
+    {{$ apic create --type product --title "Staging Product"}}
+    Created {{staging-product.yaml}} product definition {{[staging-product:1.0.0]}}

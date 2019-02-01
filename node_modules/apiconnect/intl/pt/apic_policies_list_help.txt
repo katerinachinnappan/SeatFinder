@@ -1,0 +1,27 @@
+Uso: apic {{policies}} OPTIONS
+
+  Listar políticas em um catálogo
+
+  Opções
+    --{{catalog}} CATALOG | --{{all-catalogs}} (obrigatório)
+      -c, --{{catalog}} CATALOG            um catálogo específico
+      -C, --{{all-catalogs}}               todos os catálogos
+    --{{organization}} ORGANIZATION | --{{all-organizations}} (obrigatório)
+      -o, --{{organization}} ORGANIZATION  uma organização do provedor específica
+      -O, --{{all-organizations}}          todas as organizações do provedor
+    -s, --{{server}} SERVER                terminal do servidor de gerenciamento (obrigatório)
+
+  Estabilidade: protótipo
+
+  Listar as políticas no catálogo de produção
+    {{$ apic policies --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{invokepolicy}}:1.0.0 in {{climbonorg:production}}
+    {{jwepolicy}}:1.0.0 in {{climbonorg:productiong}}
+
+  Digite "apic COMMAND -h" para obter mais informações sobre os seguintes comandos:
+
+    {{policies:publish}}    Publicar uma política em um catálogo
+    {{policies:get}}        Obter informações sobre uma política em um catálogo
+    {{policies:pull}}       Obter uma política de um catálogo
+    {{policies:clone}}      Obter todas as políticas de um catálogo
+    {{policies:delete}}     Excluir uma política em um catálogo

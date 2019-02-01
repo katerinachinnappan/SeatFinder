@@ -1,0 +1,16 @@
+使用法: {{apic spaces:set}} SPACE_NAME OPTIONS
+
+  カタログ内のスペースに関する情報を設定または更新します
+
+  オプション
+    --name
+    --display-name
+    -c, --{{catalog}} CATALOG               カタログ名 (必須)
+    -o, --{{organization}} ORGANIZATION     特定のプロバイダー組織 (必須)
+    -s, --{{server}} SERVER                 管理サーバー・エンドポイント (必須)
+
+  Stability: prototype
+
+  {{mgmnthost.com}} サーバーの {{climbonorg}} 組織の {{production}} カタログ内のスペースを更新します
+    $ {{apic spaces:set flights --display-name "Flights Space" --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg}} 組織のカタログ {{production}} 内のスペース {{flights}} が更新されました

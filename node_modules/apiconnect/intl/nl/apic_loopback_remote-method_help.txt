@@ -1,0 +1,16 @@
+Syntaxis: apic {{loopback:remote-method}} OPTIES
+
+  Nieuwe niet-lokale methode maken in de toepassing {{LoopBack}}
+
+  Opties
+    -m, --{{model}} NAAM_MODEL           naam van het {{LoopBack}}-model (optioneel)
+    -r, --{{remote-method}} NAAM_METHODE naam van de niet-lokale methode (optioneel)
+    --{{skip-cache}}                     promptantwoorden niet onthouden
+
+  Stabiliteit: prototype
+
+  Nieuwe niet-lokale methode toevoegen aan een {{LoopBack}}-model
+    {{$ apic loopback:remote-method}}
+
+  Nieuwe niet-lokale methode toevoegen voor het notitiemodel genaamd {{getCreationDate}}
+    {{$ apic loopback:remote-method --model note --remote-method getCreationDate}}

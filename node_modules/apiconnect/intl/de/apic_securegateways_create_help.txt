@@ -1,0 +1,15 @@
+
+Syntax: apic {{securegateways:create}} OPTIONEN
+
+  Secure Gateway in einer Organisation erstellen
+
+  Optionen
+    --{{name}} NAME                         Name des Secure Gateway (erforderlich)
+    -o, --{{organization}} ORGANISATION     eine bestimmte Provider-Organisation (erforderlich)
+    -s, --{{server}} SERVER                 Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  Secure Gateway mit einem eindeutigen Namen in der {{climbonorg}}-Organisation auf dem {{mgmnthost.com}}-Server erstellen
+    {{$ apic securegateways:create --name production --organization climbonorg --server mgmnthost.com}}
+    Created secure gateway {{ctHEKS9ztEH_stage_ng}} in {{climbonorg}}

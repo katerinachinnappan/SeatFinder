@@ -1,0 +1,35 @@
+Syntaxe : {{apic subscriptions:get}} NOM_ABONNEMENT [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Obtenir des informations sur un abonnement
+
+  Options de la portée catalogue
+    --{{scope catalog}}                        (par défaut)
+    -{{c}}, --{{catalog}} CATALOGUE            nom du catalogue (obligatoire)
+    -{{o}}, --{{organization}} ORGANISATION    une organisation de type fournisseur spécifique (obligatoire)
+    -{{s}}, --{{server}} SERVEUR               noeud final du serveur de gestion (obligatoire)
+
+  Options de la portée espace
+    --{{scope space}}                         (obligatoire)
+    --{{space}}                               nom de l'espace (obligatoire)
+    -{{c}}, --{{catalog}} CATALOGUE           nom du catalogue (obligatoire)
+    -{{o}}, --{{organization}} ORGANISATION   une organisation de type fournisseur spécifique (obligatoire)
+    -{{s}}, --{{server}} SERVEUR              noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  Obtenir des informations sur un abonnement dans un catalogue
+    {{$ apic subscriptions:get subscription1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    nom : {{subscription1}}
+    app : climbonapp
+    produit : {{climb-on:1.0.0:premimum}}
+    catalogue : {{production}}
+    organisation : {{climbonorg}}
+
+  Obtenir des informations sur un abonnement dans un espace
+    {{$ apic subscriptions:get subscription1 --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    nom : {{subscription1}}
+    app : climbonapp
+    produit : {{climb-on:1.0.0:premimum}}
+    espace : {{flights}}
+    catalogue : {{production}}
+    organisation : {{climbonorg}}

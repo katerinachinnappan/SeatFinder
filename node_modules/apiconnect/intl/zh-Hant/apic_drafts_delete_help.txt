@@ -1,0 +1,23 @@
+用法：apic {{drafts:delete}} OPTIONS NAME[:VERSION]
+
+  從草稿刪除 API 或產品定義
+
+  選項
+    --{{type api | product}}             依定義類型將清單分組
+    --{{product-only}}                   刪除產品，但不刪除其參照的 API
+    -{{o}}, --{{organization}} ORGANIZATION  提供者組織名稱（必要）
+    -{{s}}, --{{server}} SERVER              管理伺服器端點（必要）
+
+  從草稿刪除 API 定義
+    {{$ apic drafts:delete routes --organization climbonorg --server mgmnthost.com}}
+    已從 {{climbonorg:drafts}} 中刪除 {{routes}}:1.0.0 API 定義
+
+  從草稿刪除產品定義及其參照的 API
+    {{$ apic drafts:delete climbon --organization climbonorg --server mgmnthost.com}}
+    已從 {{climbonorg:drafts}} 中刪除 {{climbon}}:1.0.0 產品定義
+    已從 {{climbonorg:drafts}} 中刪除 {{routes}}:1.0.0 API 定義
+    已從 {{climbonorg:drafts}} 中刪除 {{ascents}}:1.0.0 API 定義
+
+  從草稿刪除產品定義
+    {{$ apic drafts:delete climbon --product-only --organization climbonorg --server mgmnthost.com}}
+    已從 {{climbonorg:drafts}} 中刪除 {{climbon}}:1.0.0 產品定義

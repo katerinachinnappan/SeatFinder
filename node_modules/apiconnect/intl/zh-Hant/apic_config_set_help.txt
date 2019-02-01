@@ -1,0 +1,68 @@
+用法：apic {{config:set}} OPTIONS NAME=VALUE ...
+
+  設定或更新一或多個配置變數
+
+  選項
+    -l, --{{local}}       設定本端應用程式配置變數（僅限 {{loopback}} 專案）
+    -g, --{{global}}      設定廣域配置變數
+
+  配置變數：
+
+    {{catalog}}
+      catalog 配置變數應該設為 API Connect 型錄的 URI。catalog 的值提供
+      型錄的預設身分，供所有用來管理型錄各方面的指令使用。如果要置換
+      型錄的 URI 所定義的預設值，您可以使用 --{{server}}、--{{organization}}
+      及 --{{catalog}} 指令行選項。型錄 URI 的格式如下：
+      apic-catalog://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/catalogs/CATALOG_NAME
+
+    {{app}}
+      app 配置變數應該設為 API Connect 應用程式的 URI。app 的值提供應用程式
+      的預設身分，供所有用來管理應用程式各方面的指令使用。如果要置換
+      應用程式的 URI 所定義的預設值，您可以使用 --{{server}}、--{{organization}}
+      及 --{{app}} 指令行選項。應用程式 URI 的格式如下：
+      apic-app://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/apps/APP_NAME
+
+    {{org}}
+      您可以使用組織 URI 來設定應用程式或型錄的 URI 所定義的 org 預設值。
+      組織 URI 的格式如下：
+      apic-org://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME
+
+    {{space}}
+      space 配置變數應該設為 API Connect 空間的 URI。space 的值提供
+      空間的預設身分，供所有用來管理空間各方面的指令使用。如果要置換
+      空間的 URI 所定義的預設值，您可以使用 --{{server}}、--{{organization}}、
+      --{{catalog}} 及 --{{space}} 指令行選項。空間 URI 的格式如下：
+      apic-space://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/catalogs/CATALOG_NAME/spaces/SPACE_NAME
+
+    {{accessibility-mode}}
+      啟用協助工具特性。值應該設為 '{{enabled}}' 或 '{{disabled}}'。
+      如果未設定，則會停用 {{accessibility-mode}}。
+
+    {{oauth-redirect-uri}}
+      若要測試 OAuth，則需要設定 OAuth 重新導向 URI，這通常是使用
+      開發入口網站來完成。使用此變數，以只使用工具箱達到相同效果。
+
+    {{template-path}}
+      用於尋找 handlebar 範本的位置清單
+
+    {{template-default-api}}
+      定義預設 api 範本
+
+    {{template-default-product}}
+      定義預設產品範本
+
+  {{$ apic config:set catalog=apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+  {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+  {{org: apic-org://mgmnthost.com/orgs/climbon}}
+
+  {{$ apic config:set --global app=apic-app://mgmnthost.com/orgs/climbon/apps/sb}}
+  {{app: apic-app://mgmnthost.com/orgs/climbon/apps/sb}}
+  {{org: apic-org://mgmnthost.com/orgs/climbon}}
+
+  {{$ apic config:set org=apic-org://mgmnthost2.com/orgs/hikeon}}
+  {{app: apic-app://mgmnthost2.com/orgs/hikeon/apps/sb}}
+  {{catalog: apic-catalog://mgmnthost2.com/orgs/hikeon/catalogs/sb}}
+  {{org: apic-org://mgmnthost2.com/orgs/hikeon}}
+
+  {{$ apic config:set --global template-path="/etc/templates"}}
+  {{template-path: /etc/templates}}

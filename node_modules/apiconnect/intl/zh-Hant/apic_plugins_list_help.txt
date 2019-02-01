@@ -1,0 +1,15 @@
+用法：apic {{plugins}}
+
+  列出所有已安裝的外掛程式
+
+  {{$ apic plugins}}
+  apiconnect-cli-config 1.0.0
+  apiconnect-cli-create 1.0.0
+  apiconnect-cli-edit 1.0.0
+  ...
+  ...
+
+  如需下列相關指令的說明，請鍵入 "apic COMMAND --{{help}}"：
+
+  {{plugins:install}}      安裝外掛程式
+  {{plugins:uninstall}}    解除安裝外掛程式

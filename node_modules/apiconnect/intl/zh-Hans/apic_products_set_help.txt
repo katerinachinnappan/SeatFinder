@@ -1,0 +1,57 @@
+用法：apic {{products:set}} PRODUCT_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  更新目录或空间中的产品
+
+  catalog 作用域的选项
+    --{{status}}
+        {{staged}}                       将状态更新为已登台
+        {{published}}                    将状态更新为已发布
+        {{deprecated}}                   将状态更新为不推荐
+        {{retired}}                      将状态更新为已引退
+        {{archived}}                     将状态更新为已归档
+    --{{visibility}}
+        {{public}}                       未认证的用户或已认证的用户
+        {{authenticated}}                已认证的用户
+        ORG | TAG ...                ORG 中的用户或标记为 TAG 的任何 ORG 中的用户
+    --{{subscribability}}
+        {{authenticated}}                已认证的用户
+        ORG | TAG ...                ORG 中的用户或标记为 TAG 的任何 ORG 中的用户
+    {{-c}}, --{{catalog}} CATALOG            目录名称（必需）
+    {{-o}}, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    {{-s}}, --{{server}} SERVER              管理服务器端点（必需）
+
+  space 作用域的选项
+    --{{scope space}}
+    --{{space}} SPACE                    空间名称（必需）
+    --{{status}}
+        {{staged}}                       将状态更新为已登台
+        {{published}}                    将状态更新为已发布
+        {{deprecated}}                   将状态更新为不推荐
+        {{retired}}                      将状态更新为已引退
+        {{archived}}                     将状态更新为已归档
+    --{{visibility}}
+        {{public}}                       未认证的用户或已认证的用户
+        {{authenticated}}                已认证的用户
+        ORG | TAG ...                ORG 中的用户或标记为 TAG 的任何 ORG 中的用户
+    --{{subscribability}}
+        {{authenticated}}                已认证的用户
+        ORG | TAG ...                ORG 中的用户或标记为 TAG 的任何 ORG 中的用户
+    {{-c}}, --{{catalog}} CATALOG            目录名称（必需）
+    {{-o}}, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    {{-s}}, --{{server}} SERVER              管理服务器端点（必需）
+
+  发布目录中的产品
+    {{$ apic products:set climbon --status published --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated {{climbon}}:1.0.0 in {{climbonorg:production (status: published)}}
+
+  更新目录中产品的可视性和可预订性
+    {{$ apic products:set climbon --visibility public --subscribability authenticated --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated {{climbon}}:1.0.0 in {{climbonorg:production}} (visibility: {{public}}, subscribability: {{authenticated}})
+
+  发布空间中的产品
+    {{$ apic products:set --scope space climbon --status published --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated {{climbon}}:1.0.0 in {{climbonorg:production:flights (status: published)}}
+
+  更新空间中产品的可视性和可预订性
+    {{$ apic products:set --scope space climbon --visibility public --subscribability authenticated --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated {{climbon}}:1.0.0 in {{climbonorg:production:flights}} (visibility: {{public}}, subscribability: {{authenticated}})

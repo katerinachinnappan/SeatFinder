@@ -1,0 +1,11 @@
+Kullanım: apic {{loopback:property}} SEÇENEKLER
+
+  Geçerli {{LoopBack}} uygulamasında yeni bir {{LoopBack}} model özelliği yaratır
+
+  Seçenekler
+    --{{skip-cache}}                     bilgi istemi yanıtlarını kaydetme
+
+  Kararlılık durumu: prototip
+
+  Var olan bir {{LoopBack}} modeline özellik ekle
+    {{$ apic loopback:property}}

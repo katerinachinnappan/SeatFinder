@@ -1,0 +1,27 @@
+Syntax: apic {{drafts:push}} OPTIONEN API-DATEINAME | PRODUKTDATEINAME
+
+  Lokale API- oder Produktdefinitionen mit Push-Operation in Entwürfe übertragen
+
+  Optionen
+    --{{product-only}}                   referenzierte APIs nicht mit Push-Operation übertragen
+    -{{r}}, --{{replace}} NAME:VERSION       unterschiedlich benannte/versionierte Definition ersetzen
+    -{{o}}, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+    -{{s}}, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  API-Definition mit Push-Operation an Entwürfe übertragen
+    {{$ apic drafts:push routes.yaml --organization climbonorg --server mgmnthost.com}}
+    Pushed {{routes.yaml}} API definition to {{climbonorg:drafts [routes:1.0.0]}}
+
+  API-Definition mit Push-Operation an Entwürfe übertragen, die eine frühere Version ersetzen
+    {{$ apic drafts:push routes.yaml -r routes:1.0.0 --organization climbonorg --server mgmnthost.com}}
+    Pushed {{routes.yaml}} API definition to {{climbonorg:drafts [routes:2.0.0]}}
+
+  Produktdefinition und die referenzierten API-Definitionen an Entwürfe übertragen
+    {{$ apic drafts:push climbon.yaml --organization climbonorg --server mgmnthost.com}}
+    Pushed {{climbon.yaml}} product definition to {{climbonorg:drafts [climbon:1.0.0]}}
+    Pushed {{routes.yaml}} API definition to {{climbonorg:drafts [routes:1.0.0]}}
+    Pushed {{ascents.yaml}} API definition to {{climbonorg:drafts [ascents:1.0.0]}}
+
+  Nur die Produktdefinition mit Push-Operation an Entwürfe übertragen
+    {{$ apic drafts:push climbon.yaml --product-only --organization climbonorg --server mgmnthost.com}}
+    Pushed {{climbon.yaml}} product definition to {{climbonorg:drafts [climbon:1.0.0]}}

@@ -1,0 +1,34 @@
+Uso: apic {{apps}} OPTIONS
+
+  Listar aplicativos provedores contidos em organizações das quais o usuário atualmente autenticado é membro
+
+  Opções
+    --{{organization}} ORGANIZATION | --{{all-organizations}} (obrigatório)
+      -o, --{{organization}} ORGANIZATION  uma organização do provedor específica
+      -O, --{{all-organizations}}          todas as organizações do provedor
+    -s, --{{server}} SERVER                terminal do servidor de gerenciamento (obrigatório)
+
+  Listar os aplicativos provedores na organização {{climbonorg}} no servidor mgmnthost.com
+    {{$ apic apps --organization climbonorg --server mgmnthost.com}}
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-sandbox
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-qa
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-staging
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-production
+
+  Listar os aplicativos provedores em todas as organizações
+    {{$ apic apps --all-organizations --server mgmnthost.com}}
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-sandbox
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-qa
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-staging
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-production
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-sandbox
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-qa
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-staging
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-production
+
+Digite "apic COMMAND -h" para obter mais informações sobre os seguintes comandos:
+
+  {{apps:get}}        Obter informações sobre um aplicativo
+  {{apps:set}}        Atualizar um aplicativo
+  {{apps:build}}      Construir um aplicativo
+  {{apps:publish}}    Publicar um aplicativo para um aplicativo provedor

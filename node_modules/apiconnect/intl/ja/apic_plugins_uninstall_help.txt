@@ -1,0 +1,6 @@
+使用法: apic {{plugins:uninstall}} PLUGIN
+
+  プラグインをアンインストールします。apic {{plugins:list}} コマンドを使用すると、現在インストールされている
+  プラグインのリストを取得することができます。
+
+  {{$ apic plugins:uninstall my-plugin}}

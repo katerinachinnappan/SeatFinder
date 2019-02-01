@@ -1,0 +1,12 @@
+Kullanım: apic {{loopback:swagger}} SEÇENEKLER
+
+  Bir {{OpenAPI (Swagger)}} tanımından {{LoopBack}} projesi oluşturur
+
+  Seçenekler
+    -f, --{{filename}} API_DOSYAADI      {{OpenAPI (Swagger)}} dosyasının adı (isteğe bağlı)
+    --{{skip-cache}}                     bilgi istemi yanıtlarını kaydetme
+
+  Kararlılık durumu: prototip
+
+  Bir {{OpenAPI (Swagger)}} tanımından {{LoopBack}} projesi oluşturmak için:
+    {{$ apic loopback:swagger --filename climbon.yaml}}

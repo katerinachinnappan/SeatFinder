@@ -1,0 +1,10 @@
+用法：apic {{create --type api | product | model | datasource}} OPTIONS
+
+  建立 API、產品、模型或資料來源定義
+
+使用下列指令來取得每一個定義類型的說明：
+
+  apic {{create --type api}} -h
+  apic {{create --type product}} -h
+  apic {{create --type model}} -h
+  apic {{create --type datasource}} -h

@@ -1,0 +1,66 @@
+Syntax: apic {{config:delete}} OPTIONEN NAME
+
+  Eine Konfigurationsvariable löschen
+
+  Optionen
+    -l, --{{local}}       Konfigurationsvariable der lokalen Anwendung löschen (nur {{loopback}}-Projekt)
+    -g, --{{global}}      globale Konfigurationsvariable löschen
+
+  Konfigurationsvariablen:
+
+    {{catalog}}
+      Die Katalogkonfigurationsvariable muss auf den URI eines
+      API Connect-Katalogs gesetzt sein.  Der Wert des Katalogs  stellt die Standardidentität
+      eines Katalogs für alle Befehle bereit, die verwendet werden,
+      um Aspekte eines Katalogs zu verwalten.  Die vom URI des Katalogs definierten Standardwerte
+      können mithilfe der Befehlszeilenoptionen --{{server}}, --{{organization}} und
+      --{{catalog}} überschrieben werden.  Der Katalog-URI hat folgende Form:
+      apic-catalog://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/catalogs/CATALOG_NAME
+
+    {{app}}
+      Die App-Konfigurationsvariable muss auf den URI der API
+      Connect-App gesetzt sein.  Der Wert der App stellt die Standardidentität
+      einer App für alle Befehle bereit, die verwendet werden, um Aspekte
+      einer App zu verwalten.  Die vom URI der App definierten Standardwerte
+      können mithilfe der Befehlszeilenoptionen --{{server}}, --{{organization}} und --{{app}} überschrieben werden.
+      Der App-URI hat folgende Form:
+      apic-app://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/apps/APP_NAME
+
+    {{org}}
+      Der Standardwert von org, der vom URI der App oder des Katalogs definiert wird, kann
+      mithilfe des org-URI festgelegt werden.  Der org-URI hat folgende Form:
+      apic-org://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME
+
+    {{space}}
+      Die Bereichskonfigurationsvariable muss auf den URI eines
+      API Connect-Bereichs gesetzt sein. Der Wert des Bereichs stellt die Standardidentität
+      eines Bereichs für alle Befehle bereit, die verwendet werden,
+      um Aspekte eines Bereichs zu verwalten. Die vom URI des Bereichs definierten Standardwerte
+      können mithilfe der Befehlszeilenoptionen --{{server}}, --{{organization}},
+      --{{catalog}} und --{{space}} überschrieben werden. Der Bereichs-URI hat folgende Form:
+      apic-space://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/catalogs/CATALOG_NAME/spaces/SPACE_NAME
+
+    {{accessibility-mode}}
+      Aktiviert Funktionen zur barrierefreien Bedienung. Der Wert muss auf '{{enabled}}' oder '{{disabled}}' gesetzt werden.
+      Ist er nicht festgelegt, ist {{accessibility-mode}} inaktiviert.
+
+    {{oauth-redirect-uri}}
+      Zum Testen von OAuth müssen Sie den OAuth-Umleitungs-URI festlegen. Dies geschieht normalerweise im Entwicklerportal. Verwenden Sie diese Variable, um dasselbe nur mit dem Toolkit zu erreichen.
+
+    {{template-path}}
+      Liste der Orte, an denen nach handlebar-Vorlagen gesucht werden soll
+
+    {{template-default-api}}
+      Definiert die Standard-{{api}}-Vorlage
+
+    {{template-default-product}}
+      Definiert die Standardproduktvorlage
+
+  {{$ apic config:delete catalog}}
+  Deleted {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+
+  {{$ apic config:delete org}}
+  Deleted {{org: apic-org://mgmnthost.com/orgs/climbon}}
+
+  {{$ apic config:delete template-path}}
+  Deleted {{template-path: /etc/templates}}

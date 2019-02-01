@@ -1,0 +1,28 @@
+用法：{{apic members}} [ORG_OPTIONS | CONSUMER_ORG_OPTIONS]
+
+  列出作用域中的成员
+
+  组织作用域的选项
+    --{{scope org}}                               （缺省值）
+    --{{organization}} ORGANIZATION | --{{all-organizations}} （必需）
+      -{{o}}, --{{organization}} ORGANIZATION         特定提供者组织
+    -{{s}}, --{{server}} SERVER                       管理服务器端点（必需）
+
+  使用者组织作用域的选项
+    --{{scope consumer-org}}                         （必需）
+    --{{consumer-org}} | --{{all-organizations}}     （必需）
+      --{{consumer-org}} ORGANIZATION                 特定客户组织
+    -{{c}}, --{{catalog}} CATALOG                     目录名称（必需）
+    -{{o}}, --{{organization}} ORGANIZATION           提供者组织名称（必需）
+    -{{s}}, --{{server}} SERVER                       管理服务器端点（必需）
+
+  稳定性：原型
+
+  列出属于提供者组织的成员
+    $ {{apic members --scope org -o climbon --server mgmnthost.com}}
+    User ibmapim+steve@gmail.com having owner role in {{climbon}} org
+    User ibmapim+shavon@gmail.com having developer role in {{climbon}} org
+
+  列出属于使用者组织的成员
+    $ {{apic members --scope consumer-org --consumer-org consumerorg -c qa -o climbon --server mgmnthost.com}}
+    User ibmapim+andre@gmail.com having owner role in {{consumerorg}} org

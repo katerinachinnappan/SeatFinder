@@ -1,0 +1,14 @@
+Syntaxis: apic {{services}}
+
+  Lijst afbeelden van services die momenteel worden uitgevoerd
+
+  {{$ apic services}}
+  Service {{climbon}} wordt uitgevoerd via poort 4001
+  Service {{climbon-gw}} wordt uitgevoerd via poort 4002
+
+Typ "apic COMMAND -h" voor Help over de volgende aanverwante opdrachten:
+
+  {{services:start}}    Een service starten
+  {{services:stop}}     Een service stoppen
+  {{services:logs}}     De logboeken ophalen
+  {{services:get}}      Een service ophalen

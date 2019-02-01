@@ -1,0 +1,19 @@
+Uso: apic {{policies:get}} OPCIONES NOMBRE_POLÍTICA[:VERSIÓN]
+
+  Obtener información sobre una política de un catálogo
+
+  Opciones
+    -c, --{{catalog}} CATÁLOGO           nombre de catálogo (obligatorio)
+    -o, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    -s, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  {{$ apic policies:get invokepolicy:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  nombre: {{invokepolicy}}
+  versión: 1.0.0
+  título: Invoke policy
+  adjunto: {{rest, soap}}
+  pasarelas: {{datapower-gateway}}
+  catálogo: {{production}}
+  organización: {{climbonorg}}

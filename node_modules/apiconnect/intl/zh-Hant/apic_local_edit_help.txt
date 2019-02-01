@@ -1,0 +1,13 @@
+用法：apic {{edit}} DIRECTORY
+
+  開啟 {{API Designer}}
+
+  選項
+    DIRECTORY                        要在其中開啟 API Designer 的目錄（選用）
+
+  開啟 {{API Designer}}
+    {{$ apic edit}}
+
+  在 LoopBack 應用程式目錄中開啟 {{API Designer}}
+    {{$ apic loopback --name climbon_application}}
+    {{$ apic edit climbon_application}}

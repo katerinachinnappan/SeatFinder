@@ -1,0 +1,16 @@
+Syntaxe : apic {{build}} OPTIONS
+
+  Générer une application LoopBack ou Swift Server pour la prise en charge du déploiement
+
+  Options
+    -f, --{{format}} zip | tar           format du fichier de sortie (par défaut, zip)
+    -n, --{{no-install}}                 ne pas exécuter {{`npm install`}} avant le conditionnement (LoopBack uniquement)
+    -s, --{{scripts}}                    appeler {{scripts.build}} dans {{package.json}} à {{`npm install`}} (LoopBack uniquement)
+
+  Gérer un fichier zip après l'exécution de {{npm install}}
+    {{$ apic build}}
+    Générer ../climbon-1.0.0.zip
+
+  Générer un fichier tar sans exécuter {{npm install}}
+    {{$ apic build --no-install --format tar}}
+    Générer ../climbon-1.0.0.tgz

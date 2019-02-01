@@ -1,0 +1,30 @@
+사용법: apic {{props:clear}} OPTIONS
+
+  모든 서비스 특성 삭제
+
+  옵션
+    -r, --{{remote}}                     원격 앱 대상 사용(기본값은 local임)
+    -S, --{{service}} SERVICE_NAME       서비스 이름
+    -o, --{{organization}} ORGANIZATION  제공자 조직
+    -s, --{{server}} SERVER              서버 엔드포인트 호스트
+
+  LoopBack 애플리케이션 서비스의 특성 지우기
+    {{$ apic props:clear}}
+    [{{climbon}}] Deleted prop1: value1
+    [{{climbon}}] Deleted prop2: value2
+    [{{climbon}}] Deleted prop3: value3
+
+  LoopBack 애플리케이션 서비스의 특성을 명시적으로 지우기
+    {{$ apic props:clear --service climbon}}
+    Deleted prop1: value1
+    Deleted prop2: value2
+    Deleted prop3: value3
+
+  {{Micro Gateway}} 서비스의 특성 지우기
+    {{$ apic props:clear --service climbon-gw}}
+    Deleted prop1: value1
+    Deleted prop2: value2
+    Deleted prop3: value3
+
+  원격 애플리케이션의 특성 지우기
+    {{$ apic props:clear --remote --service climbon --organization climbon --server mgmnthost.com}}

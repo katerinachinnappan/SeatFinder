@@ -1,0 +1,10 @@
+Usage: apic {{create --type api | product | model | datasource}} OPTIONS
+
+  Create an API, product, model, or datasource definition
+
+Use the following commands to get help on each definition type:
+
+  apic {{create --type api}} -h
+  apic {{create --type product}} -h
+  apic {{create --type model}} -h
+  apic {{create --type datasource}} -h

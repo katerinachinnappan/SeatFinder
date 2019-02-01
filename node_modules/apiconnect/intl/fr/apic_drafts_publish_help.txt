@@ -1,0 +1,33 @@
+Syntaxe : apic {{drafts:publish}} [CATALOG_OPTIONS | SPACE_OPTIONS] NOM[:VERSION]
+
+  Publier un produit et ses API référencées dans des brouillons vers un catalogue ou un espace
+
+  Options for catalog scope
+    --{{scope catalog}}                  (par défaut)
+    --{{stage}}                          limiter la publication à la mise en préproduction
+    -{{c}}, --{{catalog}} CATALOGUE           nom du catalogue (obligatoire)
+    -{{o}}, --{{organization}} ORGANISATION   nom de l'organisation de type fournisseur (obligatoire)
+    -{{s}}, --{{server}} SERVEUR              noeud final du serveur de gestion (obligatoire)
+
+  Options de la porté espace
+    --{{scope space}}                    (obligatoire)
+    --{{space}} SPACE                    nom de l'espace (obligatoire)
+    --{{stage}}                          limiter la publication à la mise en préproduction
+    -{{c}}, --{{catalog}} CATALOGUE          nom du catalogue (obligatoire)
+    -{{o}}, --{{organization}} ORGANISATION  nom de l'organisation de type fournisseur (obligatoire)
+    -{{s}}, --{{server}} SERVEUR             noeud final du serveur de gestion (obligatoire)
+
+  Publier un produit dans des brouillons vers un catalogue
+    {{$ apic drafts:publish climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    Mise en préproduction de {{climbon}}:1.0.0 vers {{climbonorg:production}}
+    Publication de {{climbon}}:1.0.0 vers {{climbonorg:production}}
+
+  Mettre en préproduction un produit dans des brouillons vers un catalogue
+    {{$ apic drafts:publish --stage climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    Mise en préproduction de {{climbon}}:1.0.0 vers {{climbonorg:production}}
+
+  Publier un produit dans des brouillons vers un espace
+    {{$ apic drafts:publish climbon --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Mise en préproduction de {{climbon:1.0.0}} vers {{climbonorg:production:flights}}
+    Publication de {{climbon:1.0.0}} vers {{climbonorg:production:flights}}
+

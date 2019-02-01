@@ -1,0 +1,9 @@
+Syntaxe : apic swiftserver:refresh
+
+  Générer une définition de produit et d'API à partir des modèles d'application Swift Server
+  Generator
+
+  Stabilité : prototype
+
+  $ apic swiftserver:refresh
+

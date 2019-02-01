@@ -1,0 +1,13 @@
+Kullanım: apic {{edit}} DİZİN
+
+  {{API Designer}} olanağını açar
+
+  Seçenekler
+    DİZİN                        API Designer'ın açılacağı dizin (isteğe bağlı)
+
+  {{API Designer}} olanağını açmak için:
+    {{$ apic edit}}
+
+  {{API Designer}} olanağını bir LoopBack uygulaması dizininde açmak için:
+    {{$ apic loopback --name climbon_application}}
+    {{$ apic edit climbon_application}}

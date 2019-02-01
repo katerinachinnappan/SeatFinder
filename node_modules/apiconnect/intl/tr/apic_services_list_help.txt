@@ -1,0 +1,14 @@
+Kullanım: apic {{services}}
+
+  Yürütülmekte olan hizmetleri listeler
+
+  {{$ apic services}}
+  {{climbon}} hizmeti 4001 kapısında çalışıyor
+  {{climbon-gw}} hizmeti 4002 kapısında çalışıyor
+
+Aşağıdaki ilgili komutlara ilişkin yardım için "apic KOMUT -h" yazın:
+
+  {{services:start}}    Bir hizmeti başlat
+  {{services:stop}}     Bir hizmeti durdur
+  {{services:logs}}     Günlükleri al
+  {{services:get}}      Bir hizmeti al

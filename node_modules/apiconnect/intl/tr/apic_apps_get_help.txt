@@ -1,0 +1,17 @@
+Kullanım: apic {{apps:get}} SEÇENEKLER
+
+Bir uygulamayla ilgili bilgileri alır
+
+  Seçenekler
+    -a, --{{app}} UYGULAMA               sağlayıcı uygulaması hedefi (zorunludur)
+    -o, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    -s, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  {{$ apic apps:get --app climbon --organization climbonorg --server mgmnthost.com}}
+  ad: {{climbon}}
+  başlık: {{climbon}}
+  url: apic-app://mgmnthost.com/orgs/climbonorg/apps/climbon
+  durum: {{online}}
+  kuruluş: {{climbonorg}}

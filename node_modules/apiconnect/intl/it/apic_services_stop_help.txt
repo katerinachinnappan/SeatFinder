@@ -1,0 +1,24 @@
+Utilizzo: apic {{stop}} OPZIONI
+
+  Nel contesto di un'applicazione LoopBack arresta l'applicazione LoopBack ed il
+  {{Micro Gateway}}.  Nelle applicazioni non LoopBack arresta il Micro Gateway.
+
+  Opzioni
+    --{{all}}                            arresta tutte le applicazioni LoopBack e {{Micro Gateways}}
+    -S, --{{service}} NOME_SERVIZIO      nome del servizio da arrestare
+
+  Arresto di tutti i servizi dell'applicazione corrente
+  {{$ apic stop}}
+  Arrestato {{climbon}}
+  Arrestato {{climbon-gw}}
+
+  Arresto di uno specifico servizio in esecuzione nell'applicazione corrente
+  {{$ apic stop --service climbon-gw}}
+  Arrestato {{climbon-gw}}
+
+  Arresto di tutti i servizi in esecuzione in tutte le applicazioni
+  {{$ apic stop --all}}
+  Arrestato {{climbon}}
+  Arrestato {{climbon-gw}}
+  Arrestato {{hikeon}}
+  Arrestato {{hikeon-gw}}

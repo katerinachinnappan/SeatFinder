@@ -1,0 +1,27 @@
+用法：apic {{products:set-migration-target}} OLD_PRODUCT_NAME[:VERSION] NEW_PRODUCT_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  通过另一个产品为目录或空间中已发布或已废弃产品的计划设置迁移目标
+
+  catalog 作用域的选项
+    --{{plans}} SOURCE_PLAN_NAME:TARGET_PLAN_NAME ...    旧产品计划到新产品计划映射（必需）
+    {{-c}}, --{{catalog}} CATALOG            目录名称（必需）
+    {{-o}}, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    {{-s}}, --{{server}} SERVER              管理服务器端点（必需）
+
+  space 作用域的选项
+    --{{scope space}}
+    --{{space}} SPACE                    空间名称（必需）
+    --{{plans}} SOURCE_PLAN_NAME:TARGET_PLAN_NAME ...   旧产品计划到新产品计划映射（必需）
+    {{-c}}, --{{catalog}} CATALOG            目录名称（必需）
+    {{-o}}, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    {{-s}}, --{{server}} SERVER              管理服务器端点（必需）
+
+  稳定性：原型
+
+  为目录中的产品计划设置迁移目标
+    {{$ apic products:set-migration-target climbon:1.0.0 climbon:1.1.0 --plans "basic:silver premium:gold" -c production -o climbonorg -s mgmnthost.com}}
+    Migration target set for {{climbon}}:1.0.0 to {{climbon}}:1.1.0 in {{climbonorg:production}}
+
+  为空间中的产品计划设置迁移目标
+    {{$ apic products:set-migration-target --scope space climbon:1.0.0 climbon:1.1.0 --plans "basic:silver premium:gold" --space flights -c production -o climbonorg -s mgmnthost.com}}
+    Migration target set for {{climbon}}:1.0.0 to {{climbon}}:1.1.0 in {{climbonorg:production:flights}}

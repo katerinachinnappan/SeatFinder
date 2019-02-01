@@ -1,0 +1,28 @@
+Syntaxe : {{apic members}} [ORG_OPTIONS | CONSUMER_ORG_OPTIONS]
+
+  Répertorier les membres d'une portée
+
+  Options de la portée organisation
+    --{{scope org}}                               (par défaut)
+    --{{organization}} ORGANISATION | --{{all-organizations}} (obligatoire)
+      -{{o}}, --{{organization}} ORGANISATION         une organisation de type fournisseur spécifique
+    -{{s}}, --{{server}} SERVEUR                      un noeud final de serveur de gestion (obligatoire)
+
+  Options de la portée organisation de type consommateur
+    --{{scope consumer-org}}                      (obligatoire)
+    --{{consumer-org}} | --{{all-organizations}}      (obligatoire)
+      --{{consumer-org}} ORGANISATION                une organisation de type consommateur spécifique
+    -{{c}}, --{{catalog}} CATALOGUE                  nom de catalogue (obligatoire)
+    -{{o}}, --{{organization}} ORGANISATION          nom de l'organisation de type fournisseur (obligatoire)
+    -{{s}}, --{{server}} SERVEUR                     noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  Répertorier les membres qui font partie d'une organisation de type fournisseur
+    $ {{apic members --scope org -o climbon --server mgmnthost.com}}
+    L'utilisateur ibmapim+steve@gmail.com possède le rôle de propriétaire dans l'organisation {{climbon}}
+    L'utilisateur ibmapim+shavon@gmail.com possède le rôle de développeur dans l'organisation {{climbon}}
+
+  Répertorier les membres qui font partie d'une organisation de type consommateur
+    $ {{apic members --scope consumer-org --consumer-org consumerorg -c qa -o climbon --server mgmnthost.com}}
+    L'utilisateur ibmapim+andre@gmail.com possède le rôle de propriétaire dans l'organisation {{consumerorg}}

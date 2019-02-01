@@ -1,0 +1,14 @@
+Uso: apic {{services}}
+
+  Listar los servicios actualmente en ejecución
+
+  {{$ apic services}}
+  Servicio {{climbon}} en ejecución en el puerto 4001
+  Servicio {{climbon-gw}} en ejecución en el puerto 4002
+
+Especifique "apic MANDATO -h" para obtener ayuda acerca de los siguientes mandatos relacionados:
+
+  {{services:start}}    Iniciar un servicio
+  {{services:stop}}     Detener un servicio
+  {{services:logs}}     Obtener los registros
+  {{services:get}}      Obtener un servicio

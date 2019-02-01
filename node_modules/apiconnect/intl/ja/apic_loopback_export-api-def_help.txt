@@ -1,0 +1,16 @@
+使用法: apic {{loopback:export-api-def}} OPTIONS
+
+  {{OpenAPI (Swagger)}} の定義を {{LoopBack}} アプリケーションのモデルから生成します
+
+  オプション
+    -o, --{{output}} FILE                出力ファイル名
+    --{{json}}                           JSON 表記を使用する (デフォルトは YAML)
+    --{{skip-cache}}                     プロンプトに対する応答を記憶しない
+
+  Stability: prototype
+
+  標準出力に対して、{{OpenAPI (Swagger)}} を YAML 形式で生成します
+    {{$ apic loopback:export-api-def}}
+
+  {{swagger.json}} ファイルに対して、{{OpenAPI (Swagger)}} を JSON 形式で生成します
+    {{$ apic loopback:export-api-def --json --output swagger}}

@@ -1,0 +1,58 @@
+Kullanım: apic {{products:set}} ÜRÜN_ADI[:SÜRÜM] [KATALOG_SEÇENEKLERİ | ALAN_SEÇENEKLERİ]
+
+  Bir katalog ya da alandaki ürünü güncelle
+
+  Katalog kapsamı için seçenekler
+    --{{status}}
+        {{staged}}                       durumu hazırlandı olarak güncelle
+        {{published}}                    durumu yayınlandı olarak güncelle
+        {{deprecated}}                   durumu kullanım dışı bırakıldı olarak güncelle
+        {{retired}}                      durumu kullanımdan kaldırıldı olarak güncelle
+        {{archived}}                     durumu arşivlendi olarak güncelle
+    --{{visibility}}
+        {{public}}                       kimliği doğrulanmamış ya da doğrulanmış kullanıcılar
+        {{authenticated}}                kimliği doğrulanmış kullanıcılar
+        ORG | TAG ...                ORG'daki (kuruluş) ya da TAG ile etiketlenmiş herhangi bir ORG'daki kullanıcılar
+    --{{subscribability}}
+        {{authenticated}}                kimliği doğrulanmış kullanıcılar
+        ORG | TAG ...                ORG'daki (kuruluş) ya da TAG ile etiketlenmiş herhangi bir ORG'daki kullanıcılar
+    {{-c}}, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    {{-o}}, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    {{-s}}, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Alan kapsamı için seçenekler
+    --{{scope space}}
+    --{{space}} ALAN                     alan adı (zorunludur)
+    --{{status}}
+        {{staged}}                       durumu hazırlandı olarak güncelle
+        {{published}}                    durumu yayınlandı olarak güncelle
+        {{deprecated}}                   durumu kullanım dışı bırakıldı olarak güncelle
+        {{retired}}                      durumu kullanımdan kaldırıldı olarak güncelle
+        {{archived}}                     durumu arşivlendi olarak güncelle
+    --{{visibility}}
+        {{public}}                       kimliği doğrulanmamış ya da doğrulanmış kullanıcılar
+        {{authenticated}}                kimliği doğrulanmış kullanıcılar
+        ORG | TAG ...                ORG'daki (kuruluş) ya da TAG ile etiketlenmiş herhangi bir ORG'daki kullanıcılar
+    --{{subscribability}}
+        {{authenticated}}                kimliği doğrulanmış kullanıcılar
+        ORG | TAG ...                ORG'daki (kuruluş) ya da TAG ile etiketlenmiş herhangi bir ORG'daki kullanıcılar
+    {{-c}}, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    {{-o}}, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    {{-s}}, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Bir katalogda ürün yayınla
+    {{$ apic products:set climbon --status published --catalog production --organization climbonorg --server mgmnthost.com}}
+     {{climbonorg:production (status: published)}} içinde {{climbon}}:1.0.0 güncellendi
+
+  Bir katalogda ürünün görünürlüğünü ve abone olunabilirliğini güncelle
+    {{$ apic products:set climbon --visibility public --subscribability authenticated --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} (visibility: {{public}}, subscribability: {{authenticated}}) içinde {{climbon}}:1.0.0 güncellendi
+
+  Bir alanda ürün yayınla
+    {{$ apic products:set --scope space climbon --status published --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production:flights (status: published)}} içinde {{climbon}}:1.0.0 güncellendi
+
+  Bir alanda ürünün görünürlüğünü ve abone olunabilirliğini güncelle
+    {{$ apic products:set --scope space climbon --visibility public --subscribability authenticated --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production:flights}} (visibility: {{public}}, subscribability: {{authenticated}}) içinde {{climbon}}:1.0.0 güncellendi
+    

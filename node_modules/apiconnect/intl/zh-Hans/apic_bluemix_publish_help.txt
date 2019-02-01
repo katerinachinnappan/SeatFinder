@@ -1,0 +1,11 @@
+用法：apic {{bluemix:publish}} OPTIONS
+
+   将应用程序发布到 {{IBM Bluemix}}。
+
+选项：
+    --{{type}} appserver                 将发布类型设置为运行时服务器
+    -o, --{{org}} ORGANIZATION           组织的名称
+    -s, --{{space}} SPACE_NAME           要部署运行时的空间的名称
+    -a, --{{app}} APP_NAME               应用程序的名称
+    -p, --{{providerOrg}} ORGANIZATION   要使用的提供者组织的名称
+    -c, --{{catalog}} CATALOG            提供者组织中目录的名称

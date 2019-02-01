@@ -1,0 +1,12 @@
+Kullanım: apic {{orgs:get}} KURULUŞ_ADI SEÇENEKLER
+
+  Bir sağlayıcı kuruluşuyla ilgili bilgileri alır
+
+  Seçenekler
+    --{{type}} provider
+    -s, --{{server}} SUNUCU               yönetim sunucusu uç noktası (zorunludur)
+
+  Bir sağlayıcı kuruluşuyla ilgili bilgileri almak için:
+    {{$ apic orgs:get climbonorg --server mgmnthost.com}}
+    ad: climbonorg
+    görünen ad: Climbon Organization

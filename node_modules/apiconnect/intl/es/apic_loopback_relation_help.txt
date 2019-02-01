@@ -1,0 +1,11 @@
+Uso: apic {{loopback:relation}} OPCIONES
+
+  Crear una relación entre dos modelos de la aplicación {{LoopBack}}
+
+  Opciones
+    --{{skip-cache}}                     no recordar respuestas de solicitud
+
+  Estabilidad: prototipo
+
+  Añadir una relación
+    {{$ apic loopback:relation}}

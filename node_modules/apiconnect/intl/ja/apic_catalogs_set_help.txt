@@ -1,0 +1,16 @@
+使用法: apic {{catalogs:set}} CATALOG_NAME OPTIONS
+
+  組織内のカタログに関する情報を設定または更新します
+
+  オプション
+    --{{name}}
+    --{{display-name}}
+    --{{spaces enabled | disabled}}
+    -o, --{{organization}} ORGANIZATION     特定のプロバイダー組織 (必須)
+    -s, --{{server}} SERVER                 管理サーバー・エンドポイント (必須)
+
+  Stability: prototype
+
+  mgmnthost.com サーバー上の climbonorg 組織内のカタログを更新します
+    {{$ apic catalogs:set qa --organization climbonorg --server mgmnthost.com --spaces enabled}}
+    {{climbonorg}} のカタログ {{qa}} が更新されました

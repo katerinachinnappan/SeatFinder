@@ -1,0 +1,11 @@
+用法：apic {{orgs}} OPTIONS
+
+  列出当前已认证的用户所属的组织
+
+  选项
+    --{{type provider|consumer}}          缺省值为提供者 <稳定性：原型>
+    -s, --{{server}} SERVER               管理服务器端点（必需）
+
+  使用以下命令以获取有关每种组织类型的帮助：
+    {{orgs --type provider -h}}
+    {{orgs --type consumer -h}}

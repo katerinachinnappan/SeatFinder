@@ -1,0 +1,16 @@
+用法：apic {{catalogs:set}} CATALOG_NAME OPTIONS
+
+  設定或更新組織中型錄的相關資訊
+
+  選項
+    --{{name}}
+    --{{display-name}}
+    --{{spaces enabled | disabled}}
+    -o, --{{organization}} ORGANIZATION     特定的提供者組織（必要）
+    -s, --{{server}} SERVER                 管理伺服器端點（必要）
+
+  穩定性：原型
+
+  在 mgmnthost.com 伺服器上，更新 climbonorg 組織中的型錄
+    {{$ apic catalogs:set qa --organization climbonorg --server mgmnthost.com --spaces enabled}}
+    已更新 {{climbonorg}} 中的型錄 {{qa}}

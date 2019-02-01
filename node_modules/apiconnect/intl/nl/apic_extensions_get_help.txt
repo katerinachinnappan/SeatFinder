@@ -1,0 +1,17 @@
+Syntaxis: apic {{extensions:get}} OPTIES EXTENSIENAAM[:VERSIE]
+
+  Informatie over een extensie in een catalogus ophalen
+
+  Opties
+    -c, --{{catalog}} CATALOGUS            catalogusnaam (verplicht)
+    -o, --{{organization}} ORGANISATIE     naam van providerorganisatie (verplicht)
+    -s, --{{server}} SERVER                eindpunt van beheerserver (verplicht)
+
+  Stabiliteit: prototype
+
+  {{$ apic extensions:get climbextension:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  naam: {{climbextension}}
+  versie: 1.0.0
+  titel: Climb Extension
+  catalogus: {{production}}
+  organisatie: {{climbonorg}}

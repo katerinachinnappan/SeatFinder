@@ -1,0 +1,15 @@
+
+Uso: apic {{securegateways:create}} OPCIONES
+
+  Crear una pasarela segura en una organización
+
+  Opciones
+    --{{name}} NOMBRE                       nombre de pasarela segura (obligatorio)
+    -o, --{{organization}} ORGANIZACIÓN     una organización de proveedores específica (obligatorio)
+    -s, --{{server}} SERVIDOR               punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  Crear una pasarela segura con un nombre exclusivo en la organización {{climbonorg}} del servidor {{mgmnthost.com}}
+    {{$ apic securegateways:create --name production --organization climbonorg --server mgmnthost.com}}
+    Se ha creado la pasarela segura {{ctHEKS9ztEH_stage_ng}} en {{climbonorg}}

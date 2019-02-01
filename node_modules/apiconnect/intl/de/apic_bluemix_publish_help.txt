@@ -1,0 +1,11 @@
+Syntax: apic {{bluemix:publish}} OPTIONEN
+
+   App in {{IBM Bluemix}} veröffentlichen.
+
+Optionen:
+    --{{type}} appserver                 Veröffentlichungstyp auf Laufzeitserver setzen
+    -o, --{{org}} ORGANISATION           Name der Organisation
+    -s, --{{space}} BEREICHSNAME         Name des Bereichs, für den die Laufzeit implementiert wird
+    -a, --{{app}} APP-NAME               Name der App
+    -p, --{{providerOrg}} ORGANISATION   Name der zu verwendenden Provider-Organisation
+    -c, --{{catalog}} KATALOG            Name des Katalogs in der Provider-Organisation

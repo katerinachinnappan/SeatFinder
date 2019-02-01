@@ -1,0 +1,27 @@
+用法：apic {{drafts:get}} OPTIONS NAME[:VERSION]
+
+  获取有关草稿中的 API 或产品定义的信息
+
+  选项
+    --{{type api | product}}             按定义类型划分列表子集
+    -{{o}}, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    -{{s}}, --{{server}} SERVER              管理服务器端点（必需）
+
+  获取有关 API 定义的信息
+    {{$ apic drafts:get routes --organization climbonorg --server mgmnthost.com}}
+    type: {{API}}
+    name: {{routes}}
+    version: 1.0.0
+    title: Climbing Routes API
+    basepath: {{/routes}}
+    products: {{"climbon:1.0.0" "climbon:1.0.1"}}
+    organization: {{climbonorg}}
+
+  获取有关产品定义的信息
+    {{$ apic drafts:get climbon}}
+    type: {{product}}
+    name: {{climbon}}
+    version: 1.0.0
+    title: Climbing product
+    apis: {{"routes:1.0.0" "ascents:2.0.0"}}
+    organization: {{climbonorg}}

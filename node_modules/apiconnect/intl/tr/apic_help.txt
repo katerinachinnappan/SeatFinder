@@ -1,0 +1,43 @@
+Kullanım: {{%APPNAME%}} KOMUT SEÇENEKLERİ
+
+  Seçenekler
+    -h, --{{help}}        komut kullanımı
+    -v, --{{version}}     ürün sürümü
+    --{{ext-version}}     ayrıntılı araç takımı sürümü
+
+Komutlar (ek yardım için apic KOMUT -h yazın):
+
+  Yapay nesneleri yaratma ve doğrulama
+    {{config}}          yapılandırma değişkenlerini yönet
+    {{create}}          geliştirme yapay nesneleri yarat
+    {{edit}}            API Designer çalıştır
+    {{explore}}         API Explorer çalıştır
+    {{validate}}        geliştirme yapay nesnelerini doğrula
+
+  Uygulama yaratma ve test etme
+    {{logs}}            hizmet günlüklerini görüntüle
+    {{loopback}}        LoopBack uygulamaları yarat ve yönet
+    {{swiftserver}}     Swift Server Generator uygulamaları yarat ve yönet
+    {{microgateway}}    Micro Gateway uygulamaları yarat
+    {{props}}           hizmet özellikleri
+    {{services}}        hizmet yönetimi
+    {{start}}           hizmetleri başlat
+    {{stop}}            hizmetleri durdur
+
+  Bulutta yayınlama
+    {{apis}}            bir katalogdaki API'leri yönet
+    {{apps}}            sağlayıcı uygulamalarını yönet
+    {{catalogs}}        bir kuruluştaki katalogları yönet
+    {{devapps}}         tüketici uygulamalarını yönet
+    {{drafts}}          taslaklardaki API'leri ve ürünleri yönet
+    {{extensions}}      bir katalogdaki satıcı uzantılarını yönet
+    {{login}}           bir IBM API Connect bulutunda oturum aç
+    {{logout}}          bir IBM API Connect bulutunda oturum kapat
+    {{members}}         üyeleri yönet
+    {{orgs}}            kuruluşları yönet
+    {{policies}}        bir katalogdaki ilkeleri yönet
+    {{products}}        bir katalogdaki ürünleri yönet
+    {{publish}}         ürünleri ve API'leri bir katalogda yayınla
+    {{securegateways}}  güvenli ağ geçitlerini yönet
+    {{spaces}}          bir katalogdaki alanları yönet
+    {{subscriptions}}   abonelikleri yönet

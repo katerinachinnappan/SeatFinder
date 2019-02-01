@@ -1,0 +1,70 @@
+Syntaxe : apic {{config:get}} NOM
+
+  Obtenir une variable de configuration
+
+  Options
+    -l, --{{local}}       obtenir la variable de configuration d'application locale (projet {{loopback}} uniquement)
+    -g, --{{global}}      obtenir la variable de configuration globale
+
+  Variables de configuration :
+
+    {{catalog}}
+      La variable de configuration catalog doit avoir pour valeur l'URI d'un catalogue
+      API Connect.  Sa valeur fournit l'identité par défaut d'un catalogue pour toutes
+      les commandes utilisées pour gérer les aspects d'un catalogue.  Les valeurs par
+      défaut définies par l'URI du catalogue peuvent être remplacées à l'aide des options
+      de ligne de commande --{{server}}, --{{organization}} et --{{catalog}}.
+      L'URI du catalogue est au format :
+      apic-catalog://SERVEUR_GESTION/orgs/NOM_ORGANISATION/catalogs/NOM_CATALOGUE
+
+    {{app}}
+      La variable de configuration app doit avoir pour valeur l'URI de l'application
+      API Connect. Sa valeur fournit l'identité par défaut d'une application pour
+      toutes les commandes utilisées pour gérer les aspects d'une application.
+      Les valeurs par défaut définies par l'URI de l'application peuvent être remplacées
+      à l'aide des options de ligne de commande  --{{server}}, --{{organization}} et --{{app}}.
+      L'URI de l'application est au format :
+      apic-app://SERVEUR_GESTION/orgs/NOM_ORGANISATION/apps/NOM_APP
+
+    {{org}}
+      La valeur par défaut de org définie par l'URI de l'application ou du catalogue peut
+      être définie à l'aide de l'URI de l'organisation.  L'URI de l'organisation est au format :
+      apic-org://SERVEUR_GESTION/orgs/NOM_ORGANISATION
+
+    {{space}}
+      La variable de configuration space doit avoir pour valeur l'URI d'un espace API Connect.
+      Sa valeur fournit l'identité par défaut d'un espace pour toutes les commandes utilisées
+      pour gérer les aspects d'un espace.  Les valeurs par défaut définies par l'URI des espaces
+      peuvent être remplacées à l'aide des options de ligne de commande --{{server}},
+      --{{organization}}, --{{catalog}} et --{{space}}.  L'URI de l'espace URI est au format :
+      apic-space://SREVEUR_GESTION/orgs/NOM_ORGANISATION/catalogs/NOM_CATALOGUE/spaces/NOM_ESPACE
+
+    {{accessibility-mode}}
+      Active les fonctions d'accessibilité. Sa valeur doit être '{{enabled}}' ou '{{disabled}}'.
+      Si elle n'est pas définie, {{accessibility-mode}} est désactivé.
+
+    {{oauth-redirect-uri}}
+      Pour tester OAuth, il est nécessaire de définir l'URI de redirection OAuth,
+      ce qui s'effectue généralement à l'aide du portail de développement.
+      Utilisez cette variable pour effectuer l'opération à l'aide du kit d'outils.
+
+    {{template-path}}
+      Liste des emplacements où rechercher des modèles de poignée
+
+    {{template-default-api}}
+      Définit le modèle d'api par défaut
+
+    {{template-default-product}}
+      Définit le modèle de produit par défaut
+
+  {{$ apic config:get catalog}}
+  {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+
+  {{$ apic config:get org}}
+  {{org: apic-org://mgmnthost.com/orgs/climbon}}
+
+  {{$ apic config:get --global app}}
+  {{app: apic-app://mgmnthost.com/orgs/climbon/apps/sb}}
+
+  {{$ apic config:get template-path}}
+  {{template-path: /etc/templates}}

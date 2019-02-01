@@ -1,0 +1,33 @@
+Syntax: apic {{logs}} OPTIONEN
+
+  Serviceprotokolle nachsetzen
+
+  Optionen
+    -n, --{{no-tail}}                    Protokoll anzeigen, aber nicht nachsetzen
+    -S, --{{service}} SERVICENAME        zu protokollierender Servicename
+
+  Die LoopBack-Anwendungsprotokolle nachsetzen
+  {{$ apic logs}}
+  Tailing logs for `{{climbon}}`
+  2016-03-16T04:25:59.891Z pid:89271 worker:0 INFO strong-agent v2.0.56 profiling app 'climbon' pid '89271'
+  2016-03-16T04:25:59.897Z pid:89271 worker:0 INFO strong-agent[89271] started profiling agent
+  2016-03-16T04:25:59.899Z pid:89271 worker:0 INFO supervisor starting (pid 89271)
+  2016-03-16T04:25:59.900Z pid:89271 worker:0 INFO strong-agent strong-agent using strong-cluster-control v2.2.10
+  2016-03-16T04:25:59.904Z pid:89271 worker:0 INFO supervisor reporting metrics to `internal:`
+
+  Die LoopBack-Anwendungsprotokolle anzeigen, aber nicht nachsetzen
+  {{$ apic logs -n --service climbon}}
+  2016-03-16T04:31:19.128Z pid:89306 worker:0 INFO strong-agent v2.0.56 profiling app 'climbon' pid '89306'
+  2016-03-16T04:31:19.132Z pid:89306 worker:0 INFO strong-agent[89306] started profiling agent
+  2016-03-16T04:31:19.133Z pid:89306 worker:0 INFO supervisor starting (pid 89306)
+  2016-03-16T04:31:19.135Z pid:89306 worker:0 INFO strong-agent strong-agent using strong-cluster-control v2.2.10
+  2016-03-16T04:31:19.137Z pid:89306 worker:0 INFO supervisor reporting metrics to `internal:`
+
+  Die {{Micro Gateway}}-Protokolle nachsetzen
+  {{$ apic logs --service climbon-gw}}
+  Tailing logs for `{{climbon-gw}}`
+  2016-03-16T04:31:21.378Z pid:89308 worker:0 INFO strong-agent v2.0.56 profiling app 'apiconnect-microgateway' pid '89308'
+  2016-03-16T04:31:21.383Z pid:89308 worker:0 INFO strong-agent[89308] started profiling agent
+  2016-03-16T04:31:21.384Z pid:89308 worker:0 INFO supervisor starting (pid 89308)
+  2016-03-16T04:31:21.385Z pid:89308 worker:0 INFO strong-agent strong-agent using strong-cluster-control v2.2.10
+  2016-03-16T04:31:21.388Z pid:89308 worker:0 INFO supervisor reporting metrics to `internal:`

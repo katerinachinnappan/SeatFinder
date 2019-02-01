@@ -1,0 +1,29 @@
+Utilizzo: apic {{validate}} OPZIONI NOMEFILE_API | NOMEFILE_PRODOTTO
+
+  Convalida una definizione API o del prodotto
+
+  Opzioni
+    -p, --{{product-only}}               per le definizioni del prodotto, non convalida le API a cui si fa riferimento
+    --{{no-extensions}}                  per le definizioni dell'API, non convalida rispetto alle estensioni {{IBM Swagger}}
+
+  Convalida di una definizione API
+    {{$ apic validate routes.yaml}}
+    Convalidata definizione API {{routes.yaml}} rispetto allo schema {{Swagger 2.0}} {{[routes:1.0.0]}}
+    Convalidata definizione API {{routes.yaml}} rispetto allo schema {{IBM Swagger 2.0}} {{[routes:1.0.0]}}
+    Convalidata definizione API {{routes.yaml}} rispetto allo schema dell'estensione {{IBM Swagger 2.0}} {{[routes:1.0.0]}}
+
+  Convalida di una definizione API senza estensioni IBM
+    {{$ apic validate --no-extensions routes.yaml}}
+    Convalidata definizione API {{routes.yaml}} rispetto allo schema {{Swagger 2.0}} {{[routes:1.0.0]}}
+    Convalidata definizione API {{routes.yaml}} rispetto allo schema {{IBM Swagger 2.0}} {{[routes:1.0.0]}}
+
+  Convalida di una definizione del prodotto e delle relative API a cui si fa riferimento
+    {{$ apic validate climb-on.yaml}}
+    Convalidata definizione prodotto {{climb-on.yaml}} {{[climb-on:1.0.0]}}
+    Convalidata definizione API {{routes.yaml}} rispetto allo schema {{Swagger 2.0}} {{[routes:1.0.0]}}
+    Convalidata definizione API {{routes.yaml}} rispetto allo schema {{IBM Swagger 2.0}} {{[routes:1.0.0]}}
+    Convalidata definizione API {{routes.yaml}} rispetto allo schema dello schema {{IBM Swagger 2.0}} {{[routes:1.0.0]}}
+
+  Convalida di una definizione del prodotto senza convalida delle relative API a cui si fa riferimento
+    {{$ apic validate --product-only climb-on.yaml}}
+    Convalidata definizione prodotto {{climb-on.yaml}} {{[climb-on:1.0.0]}}

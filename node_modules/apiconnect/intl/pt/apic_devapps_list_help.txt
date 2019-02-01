@@ -1,0 +1,29 @@
+Uso: apic {{devapps}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Listar os aplicativos consumidores contidos em uma organização e um catálogo ou espaço
+
+  Opções para escopo de catálogo
+    --{{scope catalog}}                  (padrão)
+    -{{c}}, --{{catalog}} CATALOG            nome do catálogo (obrigatório)
+    -{{o}}, --{{organization}} ORGANIZATION  nome da organização do provedor (obrigatório)
+    -{{s}}, --{{server}} SERVER              terminal do servidor de gerenciamento (obrigatório)
+
+  Opções para escopo de espaço
+    --{{scope space}}                    (obrigatório)
+    --{{space}} SPACE                    nome do espaço (obrigatório)
+    -{{c}}, --{{catalog}} CATALOG            nome do catálogo (obrigatório)
+    -{{o}}, --{{organization}} ORGANIZATION  nome da organização do provedor (obrigatório)
+    -{{s}}, --{{server}} SERVER              terminal do servidor de gerenciamento (obrigatório)
+
+  Estabilidade: protótipo
+
+  Listar os aplicativos consumidores na organização climbonorg e o catálogo de produção no servidor mgmnthost.com
+    {{$ apic devapps --catalog production --organization climbonorg --server mgmnthost.com}}
+    flights in flightsOrg
+
+  Liste os aplicativos consumidores na organização climbonorg e no catálogo de produção no espaço s1 no servidor mgmnthost.com
+    {{$ apic devapps --scope space --space s1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    flights in flightsOrg
+
+  Digite "apic COMMAND -h" para obter mais informações sobre os seguintes comandos:
+    devapps:get       Obter informações sobre um aplicativo

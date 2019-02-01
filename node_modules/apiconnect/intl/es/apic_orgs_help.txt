@@ -1,0 +1,11 @@
+Uso: apic {{orgs}} OPCIONES
+
+  Listar las organizaciones de las que forma parte el usuario actualmente autenticado
+
+  Opciones
+    --{{type provider|consumer}}          el valor predeterminado es provider <Estabilidad: prototipo>
+    -s, --{{server}} SERVIDOR             punto final de servidor de gestión (obligatorio)
+  
+  Utilice los mandatos siguientes para obtener ayuda para cada tipo de organización:
+    {{orgs --type provider -h}}
+    {{orgs --type consumer -h}}

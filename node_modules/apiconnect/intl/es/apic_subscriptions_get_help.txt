@@ -1,0 +1,35 @@
+Uso: {{apic subscriptions:get}} NOMBRE_SUSCRIPCIÓN [OPCIONES_CATÁLOGO | OPCIONES_ESPACIO]
+
+  Obtener información sobre una suscripción
+
+  Opciones para ámbito de catálogo
+    --{{scope catalog}}                         (valor predeterminado)
+    -{{c}}, --{{catalog}} CATÁLOGO              nombre de catálogo (obligatorio)
+    -{{o}}, --{{organization}} ORGANIZACIÓN     una organización de proveedores específica (obligatorio)
+    -{{s}}, --{{server}} SERVIDOR               punto final de servidor de gestión (obligatorio)
+
+  Opciones para ámbito de espacio
+    --{{scope space}}                           (obligatorio)
+    --{{space}}                                 nombre de espacio (obligatorio)
+    -{{c}}, --{{catalog}} CATÁLOGO              nombre de catálogo (obligatorio)
+    -{{o}}, --{{organization}} ORGANIZACIÓN     una organización de proveedores específica (obligatorio)
+    -{{s}}, --{{server}} SERVIDOR               punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  Obtener información sobre una suscripción de un catálogo
+    {{$ apic subscriptions:get subscription1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    nombre: {{subscription1}}
+    app: climbonapp
+    producto: {{climb-on:1.0.0:premimum}}
+    catálogo: {{production}}
+    organización: {{climbonorg}}
+
+  Obtener información sobre una suscripción de un espacio
+    {{$ apic subscriptions:get subscription1 --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    nombre: {{subscription1}}
+    app: climbonapp
+    producto: {{climb-on:1.0.0:premimum}}
+    espacio: {{flights}}
+    catálogo: {{production}}
+    organización: {{climbonorg}}

@@ -1,0 +1,25 @@
+Syntaxe : apic {{props:delete}} OPTIONS NOM ...
+
+  Supprimer une ou plusieurs propriétés de service
+
+  Options
+    -r, --{{remote}}                     utiliser la cible de l'application distante (local par défaut)
+    -S, --{{service}} NOM_SERVICE        nom du service
+    -o, --{{organization}} ORGANISATION  organisation de type fournisseur
+    -s, --{{server}} SERVEUR             hôte du noeud final de serveur
+
+  Supprimer une propriété du service de l'application LoopBack
+    {{$ apic props:delete prop1}}
+    [{{climbon}}] Suppression de prop1: value1
+
+  Suppression d'une propriété du service de l'application LoopBack de manière explicite
+    {{$ apic props:delete --service climbon prop1}}
+    Suppression de prop1: value1
+
+  Suppression d'une propriété du service {{Micro Gateway}}
+    {{$ apic props:delete --service climbon-gw prop1}}
+    Suppression de prop1: value1
+
+  Suppression d'une propriété de l'application distante
+    {{$ apic props:delete --remote --service climbon --organization climbon --server mgmnthost.com prop1}}
+    Suppression de prop1: value1

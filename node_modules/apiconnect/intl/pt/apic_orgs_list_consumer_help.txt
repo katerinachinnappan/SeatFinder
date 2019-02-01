@@ -1,0 +1,19 @@
+Uso: apic {{orgs}} --{{type consumer}} OPTIONS
+
+  Listar as organizações de consumidor das quais o usuário atualmente autenticado é membro
+
+  Opções
+    --{{space}} SPACE                    nome do espaço (opcional)
+    -c, --{{catalog}} CATALOG            nome do catálogo (obrigatório)
+    -o, --{{organization}} ORGANIZATION  nome da organização do provedor (obrigatório)
+    -s, --{{server}} SERVER              terminal do servidor de gerenciamento (obrigatório)
+
+  Estabilidade: protótipo
+
+  Liste as organizações do consumidor que fazem parte de um catálogo
+    {{$ apic orgs --type consumer --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{retailOrg owned by shavon}}
+    {{salesOrg owned by andre}}
+  
+  Digite "{{apic COMMAND -h}}" para obter ajuda nos seguintes comandos relacionados:
+    {{orgs:get --type consumer}}         Obter informações sobre uma organização consumidora

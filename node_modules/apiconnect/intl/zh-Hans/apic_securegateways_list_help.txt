@@ -1,0 +1,21 @@
+用法：apic {{securegateways}} OPTIONS
+
+  列出当前已认证用户所属组织中包含的 Secure Gateway
+
+  选项
+    -o, --{{organization}} ORGANIZATION     特定提供者组织（必需）
+    -s, --{{server}} SERVER                 管理服务器端点（必需）
+
+  列出 {{mgmnthost.com}} 服务器上 {{climbonorg}} 组织中的 Secure Gateway (id - name)
+    {{$ apic securegateways --organization climbonorg --server mgmnthost.com}}
+    {{ctHEKS9ztEH_stage_ng - sandbox}}
+    {{TamqfesDaTP_stage_ng - qa}}
+    {{gIEbdFSyUPx_stage_ng - staging}}
+    {{Y6NyVfESVxo_stage_ng - production}}
+
+  输入“apic COMMAND -h”以获取有关以下相关命令的帮助：
+
+    {{securegateways:create}}   在组织中创建 Secure Gateway
+    {{securegateways:get}}      获取有关组织中的 Secure Gateway 的信息
+    {{securegateways:set}}      设置或更新有关组织中的 Secure Gateway 的信息
+    {{securegateways:delete}}   删除组织中的 Secure Gateway

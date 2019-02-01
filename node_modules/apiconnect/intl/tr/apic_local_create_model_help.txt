@@ -1,0 +1,21 @@
+Kullanım: apic create --type model-swiftserver SEÇENEKLER
+
+  Bir Swift Server Generator uygulamasında bir model tanımı oluşturun
+
+  Seçenekler
+  --name AD                      modelin adı
+
+  Kararlılık durumu: prototip
+
+  Bir model yaratın
+  $ apic create --type model-swiftserver
+  ? Modelin adını girin: book
+  ? Özel çoğul biçimi (REST URL oluşturmak için kullanılır): books
+  Şimdi bazı books özellikleri ekleyelim.
+
+  Bitirince boş bir özellik adı girin.
+  ? Özellik adını girin: başlık? Özellik tipi: dizgi
+  ? Gerekli mi? Hayır
+  ? Varsayılan mı? Hayır
+  ? Özellik adını girin:
+

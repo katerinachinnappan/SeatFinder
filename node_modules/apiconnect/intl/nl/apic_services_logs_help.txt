@@ -1,0 +1,33 @@
+Syntaxis: apic {{logs}} OPTIES
+
+  De servicelogboeken tailen
+
+  Opties
+    -n, --{{no-tail}}                    logboek afbeelden maar niet tailen
+    -S, --{{service}} NAAM_SERVICE       naam van vast te leggen service
+
+  De LoopBack-toepassingslogboeken tailen
+  {{$ apic logs}}
+  Tailinglogboeken voor '{{climbon}}'
+  2016-03-16T04:25:59.891Z pid:89271 worker:0 INFO strong-agent v2.0.56 profiling app 'climbon' pid '89271'
+  2016-03-16T04:25:59.897Z pid:89271 worker:0 INFO strong-agent[89271] profiling agent gestart
+  2016-03-16T04:25:59.899Z pid:89271 worker:0 INFO supervisor gestart (pid 89271)
+  2016-03-16T04:25:59.900Z pid:89271 worker:0 INFO strong-agent strong-agent met behulp van strong-cluster-control v2.2.10
+  2016-03-16T04:25:59.904Z pid:89271 worker:0 INFO supervisor rapportagemetrics naar 'internal:'
+
+  De LoopBack-toepassingslogboeken afbeelden maar niet tailen
+  {{$ apic logs -n --service climbon}}
+  2016-03-16T04:31:19.128Z pid:89306 worker:0 INFO strong-agent v2.0.56 profiling app 'climbon' pid '89306'
+  2016-03-16T04:31:19.132Z pid:89306 worker:0 INFO strong-agent[89306] profiling agent gestart
+  2016-03-16T04:31:19.133Z pid:89306 worker:0 INFO supervisor gestart (pid 89306)
+  2016-03-16T04:31:19.135Z pid:89306 worker:0 INFO strong-agent strong-agent met behulp van strong-cluster-control v2.2.10
+  2016-03-16T04:31:19.137Z pid:89306 worker:0 INFO supervisor rapportage metrics naar 'internal:'
+
+  De {{Micro Gateway}}-logboeken tailen
+  {{$ apic logs --service climbon-gw}}
+  Tailinglogboeken voor '{{climbon-gw}}'
+  2016-03-16T04:31:21.378Z pid:89308 worker:0 INFO strong-agent v2.0.56 profiling app 'apiconnect-microgateway' pid '89308'
+  2016-03-16T04:31:21.383Z pid:89308 worker:0 INFO strong-agent[89308] profiling agent gestart
+  2016-03-16T04:31:21.384Z pid:89308 worker:0 INFO supervisor gestart (pid 89308)
+  2016-03-16T04:31:21.385Z pid:89308 worker:0 INFO strong-agent strong-agent met behulp van strong-cluster-control v2.2.10
+  2016-03-16T04:31:21.388Z pid:89308 worker:0 INFO supervisor rapportagemetrics naar 'internal:'

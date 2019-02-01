@@ -1,0 +1,36 @@
+Uso: apic {{products:replace}} NOMBRE_PRODUCTO_ANTIGUO[:VERSIÓN] NOMBRE_PRODUCTO_NUEVO[:VERSIÓN] [OPCIONES_CATÁLOGO | OPCIONES_ESPACIO]
+
+  Sustituir un producto publicado o en desuso de un catálogo o espacio por otro producto
+
+  Opciones de ámbito de catálogo
+    --{{plans}} NOMBRE_PLAN_ORIGEN:NOMBRE_PLAN_DESTINO ...   correlaciones de plan de producto antiguo a nuevo (obligatorio)
+    {{-c}}, --{{catalog}} CATÁLOGO           nombre de catálogo (obligatorio)
+    {{-o}}, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    {{-s}}, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Opciones para ámbito de espacio
+    --{{scope space}}
+    --{{space}} ESPACIO                      nombre de espacio (obligatorio)
+    --{{plans}} NOMBRE_PLAN_ORIGEN_ORIGEN:NOMBRE_PLAN_DESTINO ...   correlaciones de plan de producto antiguo a nuevo (obligatorio)
+    {{-c}}, --{{catalog}} CATÁLOGO           nombre de catálogo (obligatorio)
+    {{-o}}, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    {{-s}}, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  Sustituir un producto por una versión más reciente utilizando la variable de configuración catalog
+    {{$ config:set catalog=apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+    {{$ apic products:replace climbon:1.0.0 climbon:2.0.0}}
+    Se ha sustituido {{climbon}}:1.0.0 por {{climbon}}:2.0.0 en {{climbon}}:sb
+
+  Sustituir un producto por un producto diferente
+    {{$ apic products:replace climbon adventure-sports -c production -o climbonorg -s mgmnthost.com}}
+    Se ha sustituido {{climbon}}:2.0.1 por {{adventure-sports}}:1.0.0 en {{climbonorg:production}}
+
+  Sustituir un producto con una nueva versión y correlacionar todos los planes antiguos con planes nuevos
+    {{$ apic products:replace climbon:1.0.1 climbon:1.1.0 --plans "freemium:silver basic:silver premium:gold" -c production -o climbonorg -s mgmnthost.com}}
+    Se ha sustituido {{climbon}}:1.0.1 por {{climbon}}:1.1.0 en {{climbonorg:production}}
+
+  Sustituir un producto por un producto diferente en un espacio
+    {{$ apic products:replace --scope space climbon adventure-sports --space flights -c production -o climbonorg -s mgmnthost.com}}
+    Se ha sustituido {{climbon}}:2.0.1 por {{adventure-sports}}:1.0.0 en {{climbonorg:production:flights}}

@@ -1,0 +1,19 @@
+Usage: apic {{policies:get}} OPTIONS POLICY_NAME[:VERSION]
+
+  Get information on a policy in a catalog
+
+  Options
+    -c, --{{catalog}} CATALOG            catalog name (required)
+    -o, --{{organization}} ORGANIZATION  provider organization name (required)
+    -s, --{{server}} SERVER              management server endpoint (required)
+
+  Stability: prototype
+
+  {{$ apic policies:get invokepolicy:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  name: {{invokepolicy}}
+  version: 1.0.0
+  title: Invoke policy
+  attach: {{rest, soap}}
+  gateways: {{datapower-gateway}}
+  catalog: {{production}}
+  organization: {{climbonorg}}

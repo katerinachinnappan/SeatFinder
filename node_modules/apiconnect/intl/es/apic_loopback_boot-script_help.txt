@@ -1,0 +1,12 @@
+Uso: apic {{loopback:boot-script}} OPCIONES
+
+  Crea un script de arranque en la aplicación {{LoopBack}}
+
+  Opciones
+    -n, --{{name}} NOMBRE                NOMBRE DEL script de arranque (opcional)
+    --{{skip-cache}}                     no recordar respuestas de solicitud
+
+  Estabilidad: prototipo
+
+  {{$ apic loopback:boot-script --name some_boot_script.js}}
+  Este mandato genera un script {{boot}} en {{/server/boot.}}

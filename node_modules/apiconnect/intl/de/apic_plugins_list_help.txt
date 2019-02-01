@@ -1,0 +1,15 @@
+Syntax: apic {{plugins}}
+
+  Alle installierten Plug-ins auflisten
+
+  {{$ apic plugins}}
+  apiconnect-cli-config 1.0.0
+  apiconnect-cli-create 1.0.0
+  apiconnect-cli-edit 1.0.0
+  ...
+  ...
+
+  Geben Sie "apic BEFEHL --{{help}}" für Hilfeinformationen zu folgenden zugehörigen Befehlen ein:
+
+  {{plugins:install}}      Ein Plug-in installieren
+  {{plugins:uninstall}}    Ein Plug-in deinstallieren

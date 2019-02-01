@@ -1,0 +1,28 @@
+Kullanım: {{apic members}} [KURULUŞ_SEÇENEKLERİ | TÜKETİCİ_KURULUŞ_SEÇENEKLERİ]
+
+  Bir kapsamdaki üyeleri listele
+
+  Kuruluş kapsamı için seçenekler
+    --{{scope org}}                               (varsayılan)
+    --{{organization}} KURULUŞ | --{{all-organizations}} (zorunlu)
+      -{{o}}, --{{organization}} KURULUŞ         belirli bir sağlayıcı kuruluşu
+    -{{s}}, --{{server}} SUNUCU                       yönetim sunucusu uç noktası (zorunlu)
+
+  Tüketici kuruluşu kapsamı için seçenekler
+    --{{scope consumer-org}}                      (zorunlu)
+    --{{consumer-org}} | --{{all-organizations}}      (zorunlu)
+      --{{consumer-org}} KURULUŞ                belirli bir müşteri kuruluşu
+    -{{c}}, --{{catalog}} KATALOG               katalog adı (zorunlu)
+    -{{o}}, --{{organization}} KURULUŞ          sağlayıcı kuruluşu adı (zorunlu)
+    -{{s}}, --{{server}} SUNUCU                 yönetim sunucusu uç noktası (zorunlu)
+
+  Kararlılık durumu: prototip
+
+  Bir sağlayıcı kuruluşunun parçası olan üyeleri listele
+    $ {{apic members --scope org -o climbon --server mgmnthost.com}}
+    ibmapim+steve@gmail.com kullanıcısının {{climbon}} kuruluşunda rolü var
+    ibmapim+shavon@gmail.com kullanıcısının {{climbon}} kuruluşunda geliştirici rolü var
+
+  Bir tüketici kuruluşunun parçası olan üyeleri listele
+    $ {{apic members --scope consumer-org --consumer-org consumerorg -c qa -o climbon --server mgmnthost.com}}
+    ibmapim+andre@gmail.com kullanıcısının {{consumerorg}} kuruluşunda rolü var

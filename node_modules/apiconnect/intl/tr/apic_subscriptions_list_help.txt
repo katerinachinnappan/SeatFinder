@@ -1,0 +1,56 @@
+Kullanım: {{apic subscriptions}} [KATALOG_SEÇENEKLERİ | ALAN_SEÇENEKLERİ | TÜKETİCİ-KURULUŞ_SEÇENEKLERİ]
+
+ Bir ürün, uygulama, katalog ya da alandaki abonelikleri listele
+
+  Katalog kapsamı için seçenekler
+    --{{scope catalog}}                                 (varsayılan)
+    -{{p}}, --{{product}} ÜRÜN ADI[:SÜRÜM[:PLAN_ADI]]    plan adı
+    -{{c}}, --{{catalog}} KATALOG                        katalog adı (zorunludur)
+    -{{o}}, --{{organization}} KURULUŞ                   belirli bir sağlayıcı kuruluşu (zorunludur)
+    -{{s}}, --{{server}} SUNUCU                          yönetim sunucusu uç noktası (zorunludur)
+
+  Alan kapsamı için seçenekler
+    --{{scope space}}                                       (zorunludur)
+    --{{space}}                                             alan adı (zorunludur)
+    -{{p}}, --{{product}} ÜRÜN_ADI[:SÜRÜM[:PLAN_ADI]]       plan adı
+    -{{c}}, --{{catalog}} KATALOG                           katalog adı (zorunludur)
+    -{{o}}, --{{organization}} KURULUŞ                      belirli bir sağlayıcı kuruluşu (zorunludur)
+    -{{s}}, --{{server}} SUNUCU                                yönetim sunucusu uç noktası (zorunludur)
+
+  Tüketici kuruluşu kapsamı için seçenekler
+    --{{scope consumer-org}}                                (zorunludur)
+    -{{a}}, --{{application}} UYGULAMA                          geliştirici uygulaması(zorunludur)
+    -{{c}}, --{{catalog}} KATALOG                               katalog adı (zorunludur)
+    -{{o}}, --{{organization}} KURULUŞ                          belirli bir sağlayıcı kuruluşu (zorunludur)
+    -{{s}}, --{{server}} SUNUCU                                 yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  Bir katalogdaki abonelikleri listele
+    {{$ apic subscriptions --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} içinde {{climb-on:1.0.0:premimum}} için {{climbonapp}} içinde subscription1
+    {{climbonorg:production}} içinde {{climb-on:1.0.0:fremimum}} için {{climbonapp}} içinde subscription2
+    {{climbonorg:production}} içinde {{hike-on:1.0.0:premimum}} için {{hikeonapp}} içinde subscription3
+
+  Bir katalogdaki product:version:plan için abonelikleri listele
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} içinde {{climb-on:1.0.0:premimum}} için {{climbonapp}} içinde subscription1
+
+  Bir alandaki abonelikleri listele
+    {{$ apic subscriptions --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production:flights}} içinde {{climb-on:1.0.0:premimum}} için {{climbonapp}} içinde subscription1
+    {{climbonorg:production:flights}} içinde {{climb-on:1.0.0:fremimum}} için {{climbonapp}} içinde subscription2
+    {{climbonorg:production:flights}} içinde {{hike-on:1.0.0:premimum}} için {{hikeonapp}} içinde subscription3
+
+  Bir alandaki product:version:plan için abonelikleri listele
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production:flights}} içinde {{climb-on:1.0.0:premimum}} için {{climbonapp}} içinde subscription1
+
+  Bir uygulama için abonelikleri listele
+    {{$ apic subscriptions --application climbonapp --scope consumer-org --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} içinde {{climb-on:1.0.0:premimum}} için {{climbonapp}} içinde subscription1
+    {{climbonorg:production}} içinde {{climb-on:1.0.0:fremimum}} için {{climbonapp}} içinde subscription2
+
+  Aşağıdaki komutlar hakkında daha fazla bilgi için "apic KOMUT --help" yazın:
+
+    {{subscriptions:get}}        Bir abonelikle ilgili bilgi al

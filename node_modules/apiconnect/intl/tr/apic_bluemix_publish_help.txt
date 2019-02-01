@@ -1,0 +1,11 @@
+Kullanım: apic {{bluemix:publish}} SEÇENEKLER
+
+   Bir uygulamayı {{IBM Bluemix}} olanağında yayınlar.
+
+Seçenekler:
+    --{{type}} appserver                 Yayınlama tipini çalıştırma ortamı sunucusu olarak ayarla
+    -o, --{{org}} KURULUŞ                Kuruluşun adı
+    -s, --{{space}} ALAN ADI             Yürütme ortamının konuşlandırılacağı alanın adı
+    -a, --{{app}} UYG_ADI                Uygulamanın adı
+    -p, --{{providerOrg}} KURULUŞ        Kullanılacak sağlayıcı kuruluşunun adı
+    -c, --{{catalog}} KATALOG            Sağlayıcı kuruluş içinde kataloğun adı

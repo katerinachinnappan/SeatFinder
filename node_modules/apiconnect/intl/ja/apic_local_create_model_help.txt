@@ -1,0 +1,22 @@
+使用法: apic create --type model-swiftserver OPTIONS
+
+  Swift Server Generator アプリケーションでモデル定義を作成します
+
+  オプション
+  --name NAME                      モデルの名前
+
+  Stability: prototype
+
+  モデルを作成します
+  $ apic create --type model-swiftserver
+  ? モデル名 book を入力します
+  ? カスタム複数形 (REST URL の作成に使用します): books
+  ここで book プロパティーをいくつか追加しましょう。
+
+  完了したら、空のプロパティー名を入力してください。
+    ? プロパティー名 title を入力します
+  ? プロパティー・タイプ: ストリング
+    ? 必須ですか? いいえ
+? デフォルトにしますか? いいえ
+? プロパティー名を入力します:
+

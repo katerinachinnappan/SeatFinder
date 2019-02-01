@@ -1,0 +1,18 @@
+Syntaxe : apic {{apps:publish}} OPTIONS
+
+  Publier une application Node.js ou Swift Server (Bluemix uniquement) dans une application fournisseur.
+  La publication sur un contrôleur de collectivité est obsolète à partir de la version 5.0.7.0.
+
+  Options
+    -a, --{{app}} APP                    cible de l'application fournisseur pour la publication (obligatoire)
+    -o, --{{organization}} ORGANISATION  nom de l'organisation de type fournisseur (obligatoire)
+    -s, --{{server}} SERVEUR             noeud final du serveur de gestion (obligatoire)
+    --{{scale}} SCALE                    définit l'échelle du service déployé sur les collectivités
+                                         APIConnect. La valeur par défaut est le nombre d'hôtes (facultatif)
+
+  Publier l'application en cours vers l'application fournisseur routes dans l'organisation {{climbon}} sur le serveur {{mgmnthost.com}}
+    {{$ apic apps:publish --app routes --organization climbon --server mgmnthost.com}}
+
+  Publier l'application en cours à l'aide de la variable de configuration {{apps}}
+    {{$ apic config:set app=apic-app://mgmnthost.com/orgs/climbon/apps/sb-app}}
+    {{$ apic apps:publish}}

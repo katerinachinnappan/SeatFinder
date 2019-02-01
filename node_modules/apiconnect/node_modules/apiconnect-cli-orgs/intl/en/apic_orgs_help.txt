@@ -1,0 +1,11 @@
+Usage: apic {{orgs}} OPTIONS
+
+  List organizations the currently authenticated user is a member of
+
+  Options
+    --{{type provider|consumer}}          defaults to provider <Stability: prototype>
+    -s, --{{server}} SERVER               management server endpoint (required)
+  
+  Use the following commands to get help for each organization type:
+    {{orgs --type provider -h}}
+    {{orgs --type consumer -h}}

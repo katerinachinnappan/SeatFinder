@@ -1,0 +1,12 @@
+Syntaxis: apic {{loopback:middleware}} OPTIES
+
+  Nieuwe middleware maken in de toepassing {{LoopBack}}
+
+  Opties
+    -n, --{{name}} NAME                  naam van de middleware (optioneel)
+    --{{skip-cache}}                     promptantwoorden niet onthouden
+
+  Stabiliteit: prototype
+
+  Een item toevoegen aan {{/server/middleware.json}} defining the middleware {{"myMiddleware"}}
+    {{$ apic loopback:middleware --name'Middleware}}

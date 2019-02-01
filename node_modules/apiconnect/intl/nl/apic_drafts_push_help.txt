@@ -1,0 +1,27 @@
+Syntaxis: apic {{drafts:push}} OPTIES API_BESTANDSNAAM | PRODUCT_BESTANDSNAAM
+
+  Lokale API- of productdefinities pushen naar concepten
+
+  Opties
+    --{{product-only}}                   API's waarnaar wordt verwezen niet pushen
+    -{{r}}, --{{replace}} NAAM:VERSIE        andere naam/versie van definitie vervangen
+    -{{o}}, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    -{{s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Een API-definitie naar concepten pushen
+    {{$ apic drafts:push routes.yaml --organization climbonorg --server mgmnthost.com}}
+    API-definitie {{routes.yaml}} gepusht naar {{climbonorg:drafts [routes:1.0.0]}}
+
+  Een API-definitie naar concepten pushen en daarbij een eerdere versie vervangen
+    {{$ apic drafts:push routes.yaml -r routes:1.0.0 --organization climbonorg --server mgmnthost.com}}
+    API-definitie {{routes.yaml}} gepusht naar {{climbonorg:drafts [routes:2.0.0]}}
+
+  Een productdefinitie en de daarin gebruikte API-definities naar concepten pushen
+    {{$ apic drafts:push climbon.yaml --organization climbonorg --server mgmnthost.com}}
+    Productdefinitie {{climbon.yaml}} gepusht naar {{climbonorg:drafts [climbon:1.0.0]}}
+    API-definitie {{routes.yaml}} gepusht naar {{climbonorg:drafts [routes:1.0.0]}}
+    API-definitie {{ascents.yaml}} gepusht naar {{climbonorg:drafts [ascents:1.0.0]}}
+
+  Alleen de productdefinitie naar concepten pushen
+    {{$ apic drafts:push climbon.yaml --product-only --organization climbonorg --server mgmnthost.com}}
+    Productdefinitie {{climbon.yaml}} gepusht naar {{climbonorg:drafts [climbon:1.0.0]}}

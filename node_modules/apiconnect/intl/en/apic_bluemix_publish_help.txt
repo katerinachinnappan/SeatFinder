@@ -1,0 +1,11 @@
+Usage: apic {{bluemix:publish}} OPTIONS
+
+   Publish an app to {{IBM Bluemix}}.
+
+Options:
+    --{{type}} appserver                 Set publish type to runtime server
+    -o, --{{org}} ORGANIZATION           Name of the organization
+    -s, --{{space}} SPACE_NAME           Name of the space to which to deploy the runtime
+    -a, --{{app}} APP_NAME               Name of the app
+    -p, --{{providerOrg}} ORGANIZATION   Name of the provider organization to use
+    -c, --{{catalog}} CATALOG            Name of the catalog within the provider organization

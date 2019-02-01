@@ -1,0 +1,43 @@
+Uso: apic {{publish}} PRODUCT_FILENAME [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Publicar um produto e suas APIs de referência em um catálogo ou espaço
+
+  Opções para escopo de catálogo
+    --{{stage}}                              deixar o produto no status preparado
+    --{{secure-gateway}} GATEWAY_ID          ID do secure gateway
+    {{-c}}, --{{catalog}} CATALOG            nome do catálogo (necessário)
+    {{-o}}, --{{organization}} ORGANIZATION  nome da organização do provedor (necessário)
+    {{-s}}, --{{server}} SERVER              terminal do servidor de gerenciamento (necessário)
+
+  Opções para escopo de espaço
+    --{{scope space}}
+    --{{space}} SPACE                        nome de espaço (necessário)
+    --{{stage}}                              deixar o produto no status preparado
+    --{{secure-gateway}} GATEWAY_ID          ID do secure gateway
+    {{-c}}, --{{catalog}} CATALOG            nome do catálogo (necessário)
+    {{-o}}, --{{organization}} ORGANIZATION  nome da organização do provedor (necessário)
+    {{-s}}, --{{server}} SERVER              terminal do servidor de gerenciamento (necessário)
+
+  Publicar um produto em um catálogo
+    {{$ apic publish climbon.yaml --catalog production --organization climbonorg --server mgmnthost.com}}
+    Staged climbon.yaml to {{climbonorg:production [climbon:1.0.0]}}
+    Published climbon.yaml to {{climbonorg:production [climbon:1.0.0]}}
+
+  Publicar um produto em um catálogo com secure gateway
+    {{$ apic publish climbon.yaml --catalog production --secure-gateway ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com}}
+    climbon.yaml preparado para {{climbonorg:production [climbon:1.0.0]}}
+    climbon.yaml publicado para {{climbonorg:production [climbon:1.0.0]}}
+
+  Definir um produto como temporário em um catálogo
+    {{$ apic publish climbon.yaml --stage --catalog production --organization climbonorg --server mgmnthost.com}}
+    Staged climbon.yaml to {{climbonorg:production [climbon:1.0.0]}}
+
+  Publicar um produto em um espaço
+    {{$ apic publish --scope space climbon.yaml --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Staged climbon.yaml to {{climbonorg:production:flights [climbon:1.0.0]}}
+    Published climbon.yaml to {{climbonorg:production:flights [climbon:1.0.0]}}
+
+  Publicar um produto em um espaço com secure gateway
+    {{$ apic publish --scope space climbon.yaml --space flights --catalog production --secure-gateway ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com}}
+    climbon.yaml preparado para {{climbonorg:production:flights [climbon:1.0.0]}}
+    climbon.yaml publicado para {{climbonorg:production:flights [climbon:1.0.0]}}

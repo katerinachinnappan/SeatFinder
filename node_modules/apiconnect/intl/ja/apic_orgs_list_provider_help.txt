@@ -1,0 +1,20 @@
+使用法: apic {{orgs}} OPTIONS
+        apic {{orgs}} --{{type provider}} OPTIONS
+
+  現在認証されているユーザーがメンバーとして属しているプロバイダー組織をリストします
+
+  オプション
+    --{{type provider}}
+    -s, --{{server}} SERVER               管理サーバー・エンドポイント (必須)
+
+  現在認証されているユーザーがメンバーとして属している mgmnthost.com 上の組織 (プロバイダー組織) をリストします
+    {{$ apic orgs --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+    {{$ apic orgs --type provider --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+  「apic COMMAND -h」と入力すると、以下の関連コマンドのヘルプが表示されます
+    {{orgs:get}}          プロバイダー組織に関する情報を取得します

@@ -1,0 +1,56 @@
+Usage: {{apic subscriptions}} [CATALOG_OPTIONS | SPACE_OPTIONS | CONSUMER-ORG_OPTIONS]
+
+ List subscriptions in a product, application, catalog or a space
+
+  Options for catalog scope
+    --{{scope catalog}}                                     (default)
+    -{{p}}, --{{product}} PRODUCT_NAME[:VERSION[:PLAN_NAME]]    plan name
+    -{{c}}, --{{catalog}} CATALOG                               catalog name (required)
+    -{{o}}, --{{organization}} ORGANIZATION                     a specific provider organization (required)
+    -{{s}}, --{{server}} SERVER                                 management server endpoint (required)
+
+  Options for space scope
+    --{{scope space}}                                       (required)
+    --{{space}}                                             space name (required)
+    -{{p}}, --{{product}} PRODUCT_NAME[:VERSION[:PLAN_NAME]]    plan name
+    -{{c}}, --{{catalog}} CATALOG                               catalog name (required)
+    -{{o}}, --{{organization}} ORGANIZATION                     a specific provider organization (required)
+    -{{s}}, --{{server}} SERVER                                 management server endpoint (required)
+
+  Options for consumer-org scope
+    --{{scope consumer-org}}                                (required)
+    -{{a}}, --{{application}} APPLICATION                       developer application (required)
+    -{{c}}, --{{catalog}} CATALOG                               catalog name (required)
+    -{{o}}, --{{organization}} ORGANIZATION                     a specific provider organization (required)
+    -{{s}}, --{{server}} SERVER                                 management server endpoint (required)
+
+  Stability: prototype
+
+  List the subscriptions in a catalog
+    {{$ apic subscriptions --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production}}
+    subscription2 in {{climbonapp}} for {{climb-on:1.0.0:fremimum}} in {{climbonorg:production}}
+    subscription3 in {{hikeonapp}} for {{hike-on:1.0.0:premimum}} in {{climbonorg:production}}
+
+  List the subscriptions for a product:version:plan in a catalog
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production}}
+
+  List the subscriptions in a space
+    {{$ apic subscriptions --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production:flights}}
+    subscription2 in {{climbonapp}} for {{climb-on:1.0.0:fremimum}} in {{climbonorg:production:flights}}
+    subscription3 in {{hikeonapp}} for {{hike-on:1.0.0:premimum}} in {{climbonorg:production:flights}}
+
+  List the subscriptions for a product:version:plan in a space
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production:flights}}
+
+  List the subscriptions for an app
+    {{$ apic subscriptions --application climbonapp --scope consumer-org --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production}}
+    subscription2 in {{climbonapp}} for {{climb-on:1.0.0:fremimum}} in {{climbonorg:production}}
+
+  Type "apic COMMAND --help" for more information on the following commands:
+
+    {{subscriptions:get}}        Get information on a subscription

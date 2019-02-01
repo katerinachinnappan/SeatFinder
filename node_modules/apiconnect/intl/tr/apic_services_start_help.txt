@@ -1,0 +1,22 @@
+Kullanım: apic {{start}} SEÇENEKLER
+
+  Bir LoopBack uygulaması bağlamında, LoopBack uygulamasını ve {{Micro Gateway}}
+  ağ geçidini başlatır.  LoopBack dışı uygulamalarda {{Micro Gateway}} ağ geçidini başlatır.  Sonraki
+  yürütmelerde LoopBack uygulaması ve {{Micro Gateway}} yeniden başlatılır.  Belirlenen bir
+  --{{service}} seçeneği çalışmakta olan bir işlemle eşleştiğinde yeniden başlatılır. --{{service}}
+  çalışmakta olan bir işlemle eşleşmiyor, ancak geçerli dizindeki bir uygulamayla eşleşiyorsa,
+  o uygulama başlatılır.
+
+  Seçenekler
+    -S, --{{service}} HİZMET_ADI          başlatılacak hizmetin adı
+
+  Bir LoopBack uygulaması yaratmak ve uygulamayı ve {{Micro Gateway}} olanağını başlatmak için:
+  {{$ apic loopback --name climbon}}
+  {{$ cd climbon}}
+  {{$ apic start}}
+  {{climbon}} hizmeti 4001 kapısında başlatıldı
+  {{climbon-gw}} hizmeti 4002 kapısında başlatıldı
+
+  {{Micro Gateway}} olanağını LoopBack dışı bir uygulama dizininde başlatmak için:
+  {{$ apic start}}
+  {{climbon-gw}} hizmeti 4001 kapısında başlatıldı

@@ -1,0 +1,55 @@
+用法：apic {{products}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  列出产品
+
+  catalog 作用域的选项
+    --{{catalog}} CATALOG | --{{all-catalogs}} （必需）
+      {{-c}}, --{{catalog}} CATALOG            特定目录
+      {{-c}}, --{{all-catalogs}}               所有目录
+    --{{organization}} ORGANIZATION | --all-organizations （必需）
+      {{-o}}, --{{organization}} ORGANIZATION  特定提供者组织
+      {{-o}}, --{{all-organizations}}          所有提供者组织
+    {{-s}}, --{{server}} SERVER                管理服务器端点（必需）
+
+  space 作用域的选项
+    --{{scope space}}
+    --{{space}} SPACE                    空间名称（必需）
+    {{-c}}, --{{catalog}} CATALOG            目录名称（必需）
+    {{-o}}, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    {{-s}}, --{{server}} SERVER              管理服务器端点（必需）
+
+  列出 {{production}} 目录中的产品
+    {{$ apic products --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 in {{climbonorg:production}}
+    {{climbon}}:1.0.1 in {{climbonorg:production}}
+    {{yosar}}:2.0.0 in {{climbonorg:production}}
+
+  列出所有组织的所有目录中的产品
+    {{$ apic products --all-catalogs --all-organizations --server mgmnthost.com}}
+    {{climbon}}:1.0.0 in {{climbonorg:staging}}
+    {{climbon}}:1.0.0 in {{climbonorg:production}}
+    {{climbon}}:1.0.1 in {{climbonorg:sandbox}}
+    {{climbon}}:1.0.1 in {{climbonorg:qa}}
+    {{climbon}}:1.0.1 in {{climbonorg:production}}
+    {{yosar}}:2.0.0 in {{climbonorg:production}}
+    {{trails}}:1.0.0 in {{hikingorg:staging}}
+    {{trails}}:2.0.0 in {{hikingorg:production}}
+
+  列出 {{flights}} 空间中的产品
+    {{$ apic products --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 in {{climbonorg:production:flights}}
+    {{climbon}}:1.0.1 in {{climbonorg:production:flights}}
+    {{yosar}}:2.0.0 in {{climbonorg:production:flights}}
+
+输入“apic COMMAND -h”以获取有关以下命令的更多信息：
+
+  {{products:publish}}    将产品及其引用的 API 发布到目录
+  {{products:get}}        获取有关目录中产品的信息
+  {{products:set}}        更新目录中的产品
+  {{products:pull}}       从目录获取某个产品
+  {{products:clone}}      从目录获取所有产品
+  {{products:delete}}     删除目录中的某个产品
+  {{products:clear}}      清除目录中的所有产品
+  {{products:replace}}    将目录中的产品替换为另一个产品
+  {{products:supersede}}  用另一个产品取代目录中的产品
+  {{products:set-migration-target}}  通过另一个产品设置目录中产品的迁移目标

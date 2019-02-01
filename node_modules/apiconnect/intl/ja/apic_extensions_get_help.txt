@@ -1,0 +1,17 @@
+使用法: apic {{extensions:get}} OPTIONS EXTENSION_NAME[:VERSION]
+
+  カタログ内の拡張に関する情報を取得します
+
+  オプション
+    -c, --{{catalog}} CATALOG            カタログ名 (必須)
+    -o, --{{organization}} ORGANIZATION  プロバイダー組織名 (必須)
+    -s, --{{server}} SERVER              管理サーバー・エンドポイント (必須)
+
+  Stability: prototype
+
+  {{$ apic extensions:get climbextension:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  名前: {{climbextension}}
+  バージョン: 1.0.0
+  タイトル: Climb Extension
+  カタログ: {{production}}
+  組織: {{climbonorg}}

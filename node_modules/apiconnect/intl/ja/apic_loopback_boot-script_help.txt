@@ -1,0 +1,12 @@
+使用法: apic {{loopback:boot-script}} OPTIONS
+
+  {{LoopBack}} アプリケーションで新しいブート・スクリプトを作成します
+
+  オプション
+    -n, --{{name}} NAME                  ブート・スクリプト名 (オプション)
+    --{{skip-cache}}                     プロンプトに対する応答を記憶しない
+
+  Stability: prototype
+
+  {{$ apic loopback:boot-script --name some_boot_script.js}}
+  {{boot}} スクリプトが {{/server/boot.}} に生成されます

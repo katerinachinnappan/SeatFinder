@@ -1,0 +1,40 @@
+Syntax: {{apic apis:set}} API-NAME[:VERSION] [KATALOGOPTIONEN | BEREICHSOPTIONEN]
+
+  Eine API in einem Katalog oder Bereich aktualisieren
+
+  Optionen für Katalogbereich
+    --{{scope catalog}}                       (Standard)
+    --{{status}}                              API-Status (erforderlich)
+        {{online}}                            API online stellen
+        {{offline}}                           API offline schalten
+    -{{c}}, --{{catalog}} KATALOG             Katalogname (erforderlich)
+    -{{o}}, --{{organization}} ORGANISATION   Name der Provider-Organisation (erforderlich)
+    -{{s}}, --{{server}} SERVER               Management-Server-Endpunkt (erforderlich)
+
+  Optionen für Bereichsumfang
+    --{{scope space}}
+    --{{status}}                              API-Status (erforderlich)
+        {{online}}                            API online stellen
+        {{offline}}                           API offline schalten
+    --{{space}} BEREICH                       Bereichsname (erforderlich)
+    -{{c}}, --{{catalog}} KATALOG             Katalogname (erforderlich)
+    -{{o}}, --{{organization}} ORGANISATION   Name der Provider-Organisation (erforderlich)
+    -{{s}}, --{{server}} SERVER               Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  API in einem Katalog offline schalten
+    {{$ apic apis:set routes --status offline --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated {{routes:1.0.0}} in {{climbonorg:production}} (status: {{offline}})
+
+  API in einem Katalog online stellen
+    {{$ apic apis:set routes --status online --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated {{routes:1.0.0}} in {{climbonorg:production}} (status: {{online}})
+
+  API in einem Bereich offline schalten
+    {{$ apic apis:set --scope space --status offline --space sp1 --catalog production --organization climbonorg --server mgmnthost.com routes}}
+    Updated {{routes:1.0.0}} in {{climbonorg:production:sp1}} (status: {{offline}})
+
+  API in einem Bereich online stellen
+    {{$ apic apis:set --scope space --status online --space sp1 --catalog production --organization climbonorg --server mgmnthost.com routes}}
+    Updated {{routes:1.0.0}} in {{climbonorg:production:sp1}} (status: {{online}})

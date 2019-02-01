@@ -1,0 +1,21 @@
+사용법: apic {{apps:set}} OPTIONS
+
+  애플리케이션 업데이트
+
+  옵션
+    --{{status}}
+        {{online}}                       애플리케이션을 온라인으로 전환
+        {{offline}}                      애플리케이션을 오프라인으로 전환
+    -a, --{{app}} APP                    제공자 앱 대상(필수)
+    -o, --{{organization}} ORGANIZATION  제공자 조직 이름(필수)
+    -s, --{{server}} SERVER              관리 서버 엔드포인트(필수)
+
+  안정성: 프로토타입
+
+  애플리케이션을 오프라인으로 전환
+    {{$ apic apps:set --app climbon --organization climbonorg --server mgmnthost.com --status offline}}
+    Updated apic-app://mgmnthost.com/orgs/climbonorg/apps/climbon ({{status: offline}})
+
+  애플리케이션을 온라인으로 전환
+    {{$ apic apps:set --app climbon --organization climbonorg --server mgmnthost.com --status online}}
+    Updated apic-app://mgmnthost.com/orgs/climbonorg/apps/climbon ({{status: online}})

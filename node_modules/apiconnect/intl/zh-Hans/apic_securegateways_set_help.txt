@@ -1,0 +1,15 @@
+用法：apic {{securegateways:set}} GATEWAY_ID OPTIONS
+
+  设置或更新有关组织中的 Secure Gateway 的信息
+
+  选项
+    --{{name}} NAME                                Secure Gateway 名称
+    --{{status enabled | disabled}} STATUS         Secure Gateway 状态
+    -o, --{{organization}} ORGANIZATION            特定提供者组织（必需）
+    -s, --{{server}} SERVER                        管理服务器端点（必需）
+
+  稳定性：原型
+
+  更新 {{mgmnthost.com}} 服务器上 {{climbonorg}} 组织中的 Secure Gateway
+    {{$ apic securegateways:set ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com --status enabled}}
+    Updated secure gateway {{ctHEKS9ztEH_stage_ng}} in {{climbonorg}}

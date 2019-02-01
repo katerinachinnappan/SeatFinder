@@ -1,0 +1,25 @@
+Uso: apic {{components}}
+
+  Listar componentes
+
+  Opciones
+    --{{organization}} ORGANIZACIÓN | --all-organizations (obligatorio)
+      {{-o}}, --{{organization}} ORGANIZACIÓN  una organización de proveedores específica
+      {{-o}}, --{{all-organizations}}          todas las organizaciones de proveedores
+    {{-s}}, --{{server}} SERVIDOR              punto final de servidor de gestión (obligatorio)
+
+  Listar todos los componentes de todas las organizaciones
+    {{$ apic components --all-organizations --server mgmnthost.com}}
+    {{climbon}}:1.0.0 en {{climbonorg:staging}}
+    {{climbon}}:1.0.0 en {{climbonorg:production}}
+    {{climbon}}:1.0.1 en {{climbonorg:sandbox}}
+    {{climbon}}:1.0.1 en {{climbonorg:qa}}
+    {{climbon}}:1.0.1 en {{climbonorg:production}}
+    {{yosar}}:2.0.0 en {{climbonorg:production}}
+    {{trails}}:1.0.0 en {{hikingorg:staging}}
+    {{trails}}:2.0.0 en {{hikingorg:production}}
+
+Escriba "apic MANDATO -h" para obtener más información acerca de los mandatos siguientes:
+
+  {{components:get}}                      Obtener información sobre un componente de un catálogo
+

@@ -1,0 +1,27 @@
+Usage: apic {{drafts:get}} OPTIONS NAME[:VERSION]
+
+  Get information on an API or product definition in drafts
+
+  Options
+    --{{type api | product}}             subset the list by definition type
+    -{{o}}, --{{organization}} ORGANIZATION  provider organization name (required)
+    -{{s}}, --{{server}} SERVER              management server endpoint (required)
+
+  Get information on an API definition
+    {{$ apic drafts:get routes --organization climbonorg --server mgmnthost.com}}
+    type: {{API}}
+    name: {{routes}}
+    version: 1.0.0
+    title: Climbing Routes API
+    basepath: {{/routes}}
+    products: {{"climbon:1.0.0" "climbon:1.0.1"}}
+    organization: {{climbonorg}}
+
+  Get information on a product definition
+    {{$ apic drafts:get climbon}}
+    type: {{product}}
+    name: {{climbon}}
+    version: 1.0.0
+    title: Climbing product
+    apis: {{"routes:1.0.0" "ascents:2.0.0"}}
+    organization: {{climbonorg}}

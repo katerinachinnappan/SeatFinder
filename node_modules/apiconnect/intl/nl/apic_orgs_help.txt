@@ -1,0 +1,11 @@
+Syntaxis: apic {{orgs}} OPTIES
+
+  Lijst afbeelden van organisaties waarvan de momenteel geverifieerde gebruiker lid is
+
+  Opties
+    --{{type provider|consumer}}          standaard ingesteld op provider <Stabiliteit: prototype>
+    -s, --{{server}} SERVER               eindpunt van beheerserver (verplicht)
+
+  Gebruik de volgende opdrachten om Help-informatie voor elk organisatietype op te roepen:
+    {{orgs --type provider -h}}
+    {{orgs --type consumer -h}}

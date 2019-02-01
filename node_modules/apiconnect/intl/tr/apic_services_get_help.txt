@@ -1,0 +1,20 @@
+Kullanım: apic {{services:get}} SEÇENEKLER
+
+  Seçenekler
+    -S, --{{service}} HİZMET_ADI         hizmet adı
+
+  Yürütülmekte olan bir hizmetle ilgili bilgileri alır
+
+  Geçerli uygulamaya ilişkin Loopback hizmetini almak için:
+  {{$ apic services:get}}
+  ad: {{climbon}}
+  kapı: 4001
+  denetçi_pid: 4853
+  işçi_pid'leri: 4854
+
+  {{Micro Gateway}} hizmetini almak için:
+  {{$ apic services:get --service climbon-gw}}
+  ad: {{climbon-gw}}
+  kapı: 4002
+  denetçi_pid: 4855
+  işçi_pid'leri: 4856

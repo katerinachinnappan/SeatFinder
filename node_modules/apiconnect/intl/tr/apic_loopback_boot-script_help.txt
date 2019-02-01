@@ -1,0 +1,12 @@
+Kullanım: apic {{loopback:boot-script}} SEÇENEKLER
+
+  {{LoopBack}} uygulamasında yeni bir önyükleme komut dosyası yaratır
+
+  Seçenekler
+    -n, --{{name}} AD                    önyükleme komut dosyasının adı (isteğe bağlı)
+    --{{skip-cache}}                     bilgi istemi yanıtlarını kaydetme
+
+  Kararlılık durumu: prototip
+
+  {{$ apic loopback:boot-script --name some_boot_script.js}}
+  {{/server/boot}} içinde bir {{boot}} komut dosyası oluşturur.

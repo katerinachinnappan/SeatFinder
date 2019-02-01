@@ -1,0 +1,35 @@
+用法：{{apic subscriptions:get}} SUBSCRIPTION_NAME [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  取得訂閱的相關資訊
+
+  型錄範圍的選項
+    --{{scope catalog}}                     （預設值）
+    -{{c}}, --{{catalog}} CATALOG               型錄名稱（必要）
+    -{{o}}, --{{organization}} ORGANIZATION     特定的提供者組織（必要）
+    -{{s}}, --{{server}} SERVER                 管理伺服器端點（必要）
+
+  空間範圍的選項
+    --{{scope space}}                       （必要）
+    --{{space}}                             空間名稱（必要）
+    -{{c}}, --{{catalog}} CATALOG               型錄名稱（必要）
+    -{{o}}, --{{organization}} ORGANIZATION     特定的提供者組織（必要）
+    -{{s}}, --{{server}} SERVER                 管理伺服器端點（必要）
+
+  穩定性：原型
+
+  取得型錄中訂閱的相關資訊
+    {{$ apic subscriptions:get subscription1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    名稱：{{subscription1}}
+    應用程式：climbonapp
+    產品：{{climb-on:1.0.0:premimum}}
+    型錄：{{production}}
+    組織：{{climbonorg}}
+
+  取得空間中訂閱的相關資訊
+    {{$ apic subscriptions:get subscription1 --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    名稱：{{subscription1}}
+    應用程式：climbonapp
+    產品：{{climb-on:1.0.0:premimum}}
+    空間：{{flights}}
+    型錄：{{production}}
+    組織：{{climbonorg}}

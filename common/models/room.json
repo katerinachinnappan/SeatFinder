@@ -1,0 +1,43 @@
+{
+  "name": "Room",
+  "plural": "Rooms",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "buildingName": {
+      "type": "string",
+      "required": false
+    },
+    "floor": {
+      "type": "number",
+      "required": false
+    },
+    "id": {
+      "type": "number",
+      "id": false,
+      "required": false,
+      "isArray": false
+    },
+    "name": {
+      "type": "string",
+      "required": false
+    },
+    "availability": {
+      "type": "boolean",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "itemTypes": {
+      "type": "hasAndBelongsToMany",
+      "model": "ItemType",
+      "foreignKey": "itemIDList"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

@@ -1,0 +1,10 @@
+Usage: apic {{logout}} OPTIONS
+
+  Remove local authentication credentials for an {{API Connect}} cloud
+
+  Options
+    -s, --{{server}} SERVER              remove credentials for the server (required)
+
+  Clear the local authentication credentials for {{mgmnthost.com}}
+    {{$ apic logout --server mgmnthost.com}}
+    Logged {{tommy}} out of server {{mgmnthost.com}}

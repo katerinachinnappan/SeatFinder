@@ -1,0 +1,15 @@
+Syntaxis: apic {{policies:clone}} OPTIES
+
+  Alle beleidsdefinities uit een catalogus ophalen
+
+  Opties
+    -c, --{{catalog}} CATALOGUS            catalogusnaam (verplicht)
+    -o, --{{organization}} ORGANISATIE     naam van providerorganisatie (verplicht)
+    -s, --{{server}} SERVER                eindpunt van beheerserver (verplicht)
+
+  Stabiliteit: prototype
+
+  {{$ apic policies:clone --catalog production --organization climbonorg --server mgmnthost.com}}
+  Beleid {{invokepolicy}}:1.0.0 is opgehaald uit {{climbonorg:production [invokepolicy_1.0.0]}}
+  Beleid {{encryptpolicy}}:1.0.0 is opgehaald uit {{climbonorg:production [encryptpolicy_1.0.0]}}
+  Beleid {{decryptpolicy}}:1.0.0 is opgehaald uit {{climbonorg:production [decryptpolicy_1.0.0]}}

@@ -1,0 +1,22 @@
+Syntax: apic {{start}} OPTIONEN
+
+  Im Kontext einer LoopBack-Anwendung die LoopBack-Anwendung und das
+  {{Micro Gateway}} starten. Bei anderen Anwendungen das {{Micro Gateway}} starten. Nachfolgende
+  Ausführungen starten die LoopBack-Anwendung und das {{Micro Gateway}} erneut. Wenn eine angegebene
+  --{{service}}-Option einem ausgeführten Prozess entspricht, wird er erneut gestartet. Wenn --{{service}} keinem
+  ausgeführten Prozess, aber einer Anwendung im aktuellen Verzeichnis entspricht, wird diese Anwendung
+  erneut gestartet.
+
+  Optionen
+    -S, --{{sevice}} SERVICENAME        Name des zu startenden Service
+
+  Eine LoopBack-Anwendung erstellen und die Anwendung und das {{Micro Gateway}} starten
+  {{$ apic loopback --name climbon}}
+  {{$ cd climbon}}
+  {{$ apic start}}
+  Service {{climbon}} started on port 4001
+  Service {{climbon-gw}} started on port 4002
+
+  Das {{Micro Gateway}} in einem Nicht-LoopBack-Anwendungsverzeichnis starten
+  {{$ apic start}}
+  Service {{climbon-gw}} started on port 4001

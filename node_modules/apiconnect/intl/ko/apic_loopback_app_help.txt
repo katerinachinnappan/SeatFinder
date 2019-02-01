@@ -1,0 +1,30 @@
+사용법: apic {{loopback}} OPTIONS
+
+  {{LoopBack}} 애플리케이션 작성
+
+  옵션
+    -n, --{{name}} NAME                  애플리케이션 이름(선택사항)
+    --{{skip-install}}                   종속 항목을 자동으로 설치하지 않음
+    --{{skip-next-steps}}                "다음 단계" 정보를 인쇄하지 않음
+    --{{explorer}}                       프로젝트에 LoopBack Explorer 추가
+
+  {{climbon}}으로 이름 지정된 {{LoopBack}} 애플리케이션 작성
+    {{$ apic loopback --name climbon}}
+    ? What's the name of your application? {{climbon}}
+    ? Enter name of the directory to contain the project: {{climbon}}
+    ? What kind of application do you have in mind? hello-world (A project containing a basic working example, including a memory database)
+
+다음과 같은 관련 명령에 대한 도움말을 보려면 "apic COMMAND -h"를 입력하십시오.
+
+  {{create}}                           아티팩트 정의 작성
+  {{edit}}                             API Designer 실행
+  {{services}}                         서비스 관리
+  {{loopback:acl}}                     ACL 작성
+  {{loopback:boot-script}}             {{boot}} 스크립트 작성
+  {{loopback:export-api-def}}          모델로부터 {{OpenAPI (Swagger)}} 정의 생성
+  {{loopback:middleware}}              미들웨어 작성
+  {{loopback:property}}                새 모델 특성 작성
+  {{loopback:relation}}                모델 간의 새 관계 작성
+  {{loopback:remote-method}}           새 원격 메소드 작성
+  {{loopback:swagger}}                 {{OpenAPI (Swagger)}} 정의로부터 애플리케이션 생성
+  {{loopback:refresh}}                 제품 및 {{OpenAPI (Swagger)}} 정의 생성

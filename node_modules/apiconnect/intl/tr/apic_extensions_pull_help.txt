@@ -1,0 +1,14 @@
+Kullanım: apic {{extensions:pull}} SEÇENEKLER UZANTI ADI[:SÜRÜM]
+
+  Bir katalogdan bir uzantı çek
+
+  Seçenekler
+    -c, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    -o, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    -s, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  Bir katalogdan bir uzantı çek
+    {{$ apic extensions:pull climbextension:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production [climbextension_1.0.0.yaml]}} kataloğundan {{climbextension}}:1.0.0 uzantısı çekildi

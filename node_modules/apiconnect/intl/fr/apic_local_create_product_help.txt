@@ -1,0 +1,44 @@
+Syntaxe : apic {{create --type product}}           interactif
+       apic {{create --type product}} OPTIONS   non interactif
+
+  Créer une définition de produit
+
+  Options
+    --{{title}} TITRE                    valeur du titre (obligatoire)
+    --{{name}} NOM                       valeur du nom (par défaut, valeur dérivée du titre)
+    --{{apis}} NOM_FICHIER_API ...       liste des API à référencer
+    --{{filename}} NOM_FICHIER_PRODUIT   nom du fichier (par défaut, nom dérivé du nom)
+    --{{template}} MODELE                utiliser un modèle de fournisseur (s'il est vide, correspond au modèle apic)
+    -v, --{{version}} VERSION            valeur de la version (par défaut, 1.0.0)
+
+  Créer un produit
+    {{$ apic create --type product --title "Climb On"}}
+    Création de la définition de produit {{climb-on.yaml}} {{[climb-on:1.0.0]}}
+
+  Créer un produit de manière interactive
+    {{$ apic create --type product}}
+    ? Titre : {{Climb On}}
+    ? Nom : {{climb-on}}
+    ? Fichier : {{climb-on.yaml}}
+    ? Modèle :
+    ? Fichiers d'API :
+    Création de la définition de produit {{climb-on.yaml}} {{[climb-on:1.0.0]}}
+
+  Créer un produit qui référence des API existantes
+    {{$ apic create --type product --title "Climb On" --apis "routes.yaml ascents.yaml"}}
+    Création de la définition de produit {{climb-on.yaml}} {{[climb-on:1.0.0]}}
+
+  Créer un produit en utilisant l'un de vos modèles
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic create --type product --title "Proxy Product" --template proxy}}
+    Création de la définition de produit {{proxy-product.yaml}} {{[proxy-product:1.0.0]}}
+
+  Créer un produit à l'aide de votre modèle par défaut
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic config:set --global template-default-product=staging}}
+    {{$ apic create --type product --title "Staging Product"}}
+    Création de la définition de produit {{staging-product.yaml}} {{[staging-product:1.0.0]}}

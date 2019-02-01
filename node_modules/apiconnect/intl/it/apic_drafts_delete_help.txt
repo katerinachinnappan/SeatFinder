@@ -1,0 +1,23 @@
+Utilizzo: apic {{drafts:delete}} OPZIONI NOME[:VERSIONE]
+
+  Elimina una definizione API o prodotto dalle bozze
+
+  Opzioni
+    --{{type api | product}}                  sottoinsieme dell'elenco per tipo di definizione
+    --{{product-only}}                        elimina il prodotto ma non le API a cui fa riferimento
+    -{{o}}, --{{organization}} ORGANIZZAZIONE nome organizzazione provider (obbligatorio)
+    -{{s}}, --{{server}} SERVER               endpoint server di gestione (obbligatorio)
+
+  Eliminazione di una definizione API dalle bozze
+    {{$ apic drafts:delete routes --organization climbonorg --server mgmnthost.com}}
+    Eliminata definizione API {{routes}}:1.0.0 da {{climbonorg:drafts}}
+
+  Eliminazione di una definizione del prodotto e delle relative API a cui fa riferimento dalle bozze
+    {{$ apic drafts:delete climbon --organization climbonorg --server mgmnthost.com}}
+    Eliminata definizione prodotto {{climbon}}:1.0.0 da {{climbonorg:drafts}}
+    Eliminata definizione API {{routes}}:1.0.0 da {{climbonorg:drafts}}
+    Eliminata definizione API {{ascents}}:1.0.0 da {{climbonorg:drafts}}
+
+  Eliminazione di una definizione del prodotto dalle bozze
+    {{$ apic drafts:delete climbon --product-only --organization climbonorg --server mgmnthost.com}}
+    Eliminata definizione prodotto {{climbon}}:1.0.0 da {{climbonorg:drafts}}

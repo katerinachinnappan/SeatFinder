@@ -1,0 +1,50 @@
+{
+  "name": "Reservation",
+  "plural": "Reservations",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "buildingName": {
+      "type": "string",
+      "required": false
+    },
+    "floorNumber": {
+      "type": "number",
+      "required": false
+    },
+    "expirationTime": {
+      "type": "number",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "seats": {
+      "type": "hasAndBelongsToMany",
+      "model": "Seat",
+      "foreignKey": "seatIDList"
+    },
+    "rooms": {
+      "type": "hasAndBelongsToMany",
+      "model": "Room",
+      "foreignKey": "roomID"
+    },
+    "student": {
+      "type": "belongsTo",
+      "model": "Student",
+      "foreignKey": "studentID"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

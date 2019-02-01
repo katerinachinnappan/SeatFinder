@@ -1,0 +1,38 @@
+Syntax: apic {{props}} OPTIONEN
+
+  Die Eigenschaften der ausgeführten Services auflisten
+
+  Optionen
+    -r, --{{remote}}                     das ferne Anwendungsziel verwenden (Standardwert ist lokal)
+    -S, --{{service}} SERVICENAME        Servicename
+    -o, --{{organization}} ORGANISATION  Provider-Organisation
+    -s, --{{server}} SERVER              Server-Endpunkt-Host
+
+  Die Eigenschaften der ausgeführten Services auflisten, die der aktuellen LoopBack-Anwendung zugeordnet sind
+    {{$ apic props}}
+    [{{climbon}}] prop1: value1
+    [{{climbon}}] prop2: value2
+    [{{climbon-gw}}] prop3: value3
+    [{{climbon-gw}}] prop4: value4
+
+  Die Eigenschaften des LoopBack-Anwendungsservice auflisten
+    {{$ apic props --service climbon}}
+    prop1: value1
+    prop2: value2
+
+  Die Eigenschaften des {{Micro Gateway}}-Service auflisten
+    {{$ apic props --service climbon-gw}}
+    prop1: value1
+    prop2: value2
+
+  Die Eigenschaften einer fernen Anwendung auflisten
+    {{$ apic props --remote --service climbon --organization climbon --server mgmnthost.com}}
+    prop1: value1
+    prop2: value2
+
+Geben Sie "apic BEFEHL -h" für Hilfeinformationen zu den folgenden zugehörigen Befehlen ein:
+
+  {{props:get}}         Eine Serviceeigenschaft abrufen
+  {{props:set}}         Eine Serviceeigenschaft festlegen oder aktualisieren
+  {{props:delete}}      Eine Serviceeigenschaft löschen
+  {{props:clear}}       Alle Serviceeigenschaften löschen

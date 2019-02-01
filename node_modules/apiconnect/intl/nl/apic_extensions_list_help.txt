@@ -1,0 +1,27 @@
+Syntaxis: apic {{extensions}} OPTIES
+
+  Lijst afbeelden van extensies in een catalogus
+
+  Opties
+    --{{catalog}} CATALOGUS | --{{all-catalogs}} (verplicht)
+      -c, --{{catalog}} CATALOGUS          een specifieke catalogus
+      -C, --{{all-catalogs}}               alle catalogi
+    --{{organization}} ORGANISATIE | --{{all-organizations}} (verplicht)
+      -o, --{{organization}} ORGANISATIE   een specifieke providerorganisatie
+      -O, --{{all-organizations}}          alle providerorganisaties
+    -s, --{{server}} SERVER                eindpunt van beheerserver (verplicht)
+
+  Stabiliteit: prototype
+
+  Lijst afbeelden van extensies in de catalogus production
+    {{$ apic extensions --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbextension}}:1.0.0 in {{climbonorg:production}}
+    {{hikeextension}}:1.0.0 in {{climbonorg:productiong}}
+
+  Typ "apic COMMAND -h" voor meer informatie over de volgende opdrachten:
+
+    {{extensions:publish}}    Een extensie publiceren naar een catalogus
+    {{extensions:get}}        Informatie over een extensie in een catalogus ophalen
+    {{extensions:pull}}       Extensie ophalen uit een catalogus
+    {{extensions:clone}}      Alle extensies ophalen uit een catalogus
+    {{extensions:delete}}     Een extensie in een catalogus wissen

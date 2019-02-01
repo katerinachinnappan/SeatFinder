@@ -1,0 +1,56 @@
+用法：{{apic subscriptions}} [CATALOG_OPTIONS | SPACE_OPTIONS | CONSUMER-ORG_OPTIONS]
+
+ 列出產品、應用程式、型錄或空間中的訂閱
+
+  型錄範圍的選項
+    --{{scope catalog}}                                     （預設值）
+    -{{p}}, --{{product}} PRODUCT_NAME[:VERSION[:PLAN_NAME]]    計劃名稱
+    -{{c}}, --{{catalog}} CATALOG                               型錄名稱（必要）
+    -{{o}}, --{{organization}} ORGANIZATION                     特定的提供者組織（必要）
+    -{{s}}, --{{server}} SERVER                                 管理伺服器端點（必要）
+
+  空間範圍的選項
+    --{{scope space}}                                       （必要）
+    --{{space}}                                             空間名稱（必要）
+    -{{p}}, --{{product}} PRODUCT_NAME[:VERSION[:PLAN_NAME]]    計劃名稱
+    -{{c}}, --{{catalog}} CATALOG                               型錄名稱（必要）
+    -{{o}}, --{{organization}} ORGANIZATION                     特定的提供者組織（必要）
+    -{{s}}, --{{server}} SERVER                                 管理伺服器端點（必要）
+
+  消費者組織範圍的選項
+    --{{scope consumer-org}}                                （必要）
+    -{{a}}, --{{application}} APPLICATION                       開發者應用程式（必要）
+    -{{c}}, --{{catalog}} CATALOG                               型錄名稱（必要）
+    -{{o}}, --{{organization}} ORGANIZATION                     特定的提供者組織（必要）
+    -{{s}}, --{{server}} SERVER                                 管理伺服器端點（必要）
+
+  穩定性：原型
+
+  列出型錄中的訂閱
+    {{$ apic subscriptions --catalog production --organization climbonorg --server mgmnthost.com}}
+    在 {{climbonorg:production}} 中，{{climb-on:1.0.0:premimum}} 的 {{climbonapp}} 中的 subscription1
+    在 {{climbonorg:production}} 中，{{climb-on:1.0.0:fremimum}} 的 {{climbonapp}} 中的 subscription2
+    在 {{climbonorg:production}} 中，{{hike-on:1.0.0:premimum}} 的 {{hikeonapp}} 中的 subscription3
+
+  列出型錄中「產品：版本：計劃」的訂閱
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --catalog production --organization climbonorg --server mgmnthost.com}}
+    在 {{climbonorg:production}} 中，{{climb-on:1.0.0:premimum}} 的 {{climbonapp}} 中的 subscription1
+
+  列出空間中的訂閱
+    {{$ apic subscriptions --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    在 {{climbonorg:production:flights}} 中，{{climb-on:1.0.0:premimum}} 的 {{climbonapp}} 中的 subscription1
+    在 {{climbonorg:production:flights}} 中，{{climb-on:1.0.0:fremimum}} 的 {{climbonapp}} 中的 subscription2
+    在 {{climbonorg:production:flights}} 中，{{hike-on:1.0.0:premimum}} 的 {{hikeonapp}} 中的 subscription3
+
+  列出空間中「產品：版本：計劃」的訂閱
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    在 {{climbonorg:production:flights}} 中，{{climb-on:1.0.0:premimum}} 的 {{climbonapp}} 中的 subscription1
+
+  列出應用程式的訂閱
+    {{$ apic subscriptions --application climbonapp --scope consumer-org --catalog production --organization climbonorg --server mgmnthost.com}}
+    在 {{climbonorg:production}} 中，{{climb-on:1.0.0:premimum}} 的 {{climbonapp}} 中的 subscription1
+    在 {{climbonorg:production}} 中，{{climb-on:1.0.0:fremimum}} 的 {{climbonapp}} 中的 subscription2
+
+  如需下列指令的相關資訊，請鍵入 "apic COMMAND --help"：
+
+    {{subscriptions:get}}        取得訂閱的相關資訊

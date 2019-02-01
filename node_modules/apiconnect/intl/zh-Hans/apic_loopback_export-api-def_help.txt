@@ -1,0 +1,16 @@
+用法：apic {{loopback:export-api-def}} OPTIONS
+
+  从 {{LoopBack}} 应用程序模型生成 {{OpenAPI (Swagger)}} 定义
+
+  选项
+    -o, --{{output}} FILE                输出文件名
+    --{{json}}                           使用 JSON 表示（缺省值为 YAML）
+    --{{skip-cache}}                     不记住提示答案
+
+  稳定性：原型
+
+  以 YAML 格式将 {{OpenAPI (Swagger)}} 生成到标准输出
+    {{$ apic loopback:export-api-def}}
+
+  以 JSON 格式将 {{OpenAPI (Swagger)}} 生成到文件 {{swagger.json}}
+    {{$ apic loopback:export-api-def --json --output swagger}}

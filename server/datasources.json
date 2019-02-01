@@ -1,0 +1,116 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "Seat-Cloudant-DataSource": {
+    "url": "https://dae03b71-c993-44b3-a7f0-176978613a15-bluemix:c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148@dae03b71-c993-44b3-a7f0-176978613a15-bluemix.cloudantnosqldb.appdomain.cloud",
+    "database": "seat",
+    "username": "dae03b71-c993-44b3-a7f0-176978613a15-bluemix",
+    "password": "c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148",
+    "name": "Seat-Cloudant-DataSource",
+    "connector": "cloudant",
+    "plugin": "retry",
+    "retryAttempts": 5,
+    "retryTimeout": 1000
+  },
+  "Room-Cloudant-DataSource": {
+    "url": "https://dae03b71-c993-44b3-a7f0-176978613a15-bluemix:c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148@dae03b71-c993-44b3-a7f0-176978613a15-bluemix.cloudantnosqldb.appdomain.cloud",
+    "database": "room",
+    "username": "dae03b71-c993-44b3-a7f0-176978613a15-bluemix",
+    "password": "c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148",
+    "name": "Room-Cloudant-DataSource",
+    "connector": "cloudant",
+    "plugin": "retry",
+    "retryAttempts": 5,
+    "retryTimeout": 1000
+  },
+  "ItemType-Cloudant-DataSource": {
+    "url": "https://dae03b71-c993-44b3-a7f0-176978613a15-bluemix:c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148@dae03b71-c993-44b3-a7f0-176978613a15-bluemix.cloudantnosqldb.appdomain.cloud",
+    "database": "itemtypes",
+    "username": "dae03b71-c993-44b3-a7f0-176978613a15-bluemix",
+    "password": "c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148",
+    "name": "ItemType-Cloudant-DataSource",
+    "connector": "cloudant",
+    "plugin": "retry",
+    "retryAttempts": 5,
+    "retryTimeout": 1000
+  },
+  "Student-Cloudant-DataSource": {
+    "url": "https://dae03b71-c993-44b3-a7f0-176978613a15-bluemix:c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148@dae03b71-c993-44b3-a7f0-176978613a15-bluemix.cloudantnosqldb.appdomain.cloud",
+    "database": "student",
+    "username": "dae03b71-c993-44b3-a7f0-176978613a15-bluemix",
+    "password": "c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148",
+    "name": "Student-Cloudant-DataSource",
+    "connector": "cloudant",
+    "plugin": "retry",
+    "retryAttempts": 5,
+    "retryTimeout": 1000
+  },
+  "SchoolStaff-Cloudant-DataSource": {
+    "url": "https://dae03b71-c993-44b3-a7f0-176978613a15-bluemix:c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148@dae03b71-c993-44b3-a7f0-176978613a15-bluemix.cloudantnosqldb.appdomain.cloud",
+    "database": "schoolstaff",
+    "username": "dae03b71-c993-44b3-a7f0-176978613a15-bluemix",
+    "password": "c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148",
+    "name": "SchoolStaff-Cloudant-DataSource",
+    "connector": "cloudant",
+    "plugin": "retry",
+    "retryAttempts": 5,
+    "retryTimeout": 1000
+  },
+  "Reservation-Cloudant-DataSource": {
+    "url": "https://dae03b71-c993-44b3-a7f0-176978613a15-bluemix:c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148@dae03b71-c993-44b3-a7f0-176978613a15-bluemix.cloudantnosqldb.appdomain.cloud",
+    "database": "reservation",
+    "username": "dae03b71-c993-44b3-a7f0-176978613a15-bluemix",
+    "password": "c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148",
+    "name": "Reservation-Cloudant-DataSource",
+    "connector": "cloudant",
+    "plugin": "retry",
+    "retryAttempts": 5,
+    "retryTimeout": 1000
+  },
+  "AccessToken-Cloudant-DataSource": {
+    "url": "https://dae03b71-c993-44b3-a7f0-176978613a15-bluemix:c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148@dae03b71-c993-44b3-a7f0-176978613a15-bluemix.cloudantnosqldb.appdomain.cloud",
+    "database": "accesstoken",
+    "username": "dae03b71-c993-44b3-a7f0-176978613a15-bluemix",
+    "password": "c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148",
+    "name": "AccessToken-Cloudant-DataSource",
+    "connector": "cloudant",
+    "plugin": "retry",
+    "retryAttempts": 5,
+    "retryTimeout": 1000
+  },
+  "ACL-Cloudant-DataSource": {
+    "url": "https://dae03b71-c993-44b3-a7f0-176978613a15-bluemix:c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148@dae03b71-c993-44b3-a7f0-176978613a15-bluemix.cloudantnosqldb.appdomain.cloud",
+    "database": "acl",
+    "username": "dae03b71-c993-44b3-a7f0-176978613a15-bluemix",
+    "password": "c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148",
+    "name": "ACL-Cloudant-DataSource",
+    "connector": "cloudant",
+    "plugin": "retry",
+    "retryAttempts": 5,
+    "retryTimeout": 1000
+  },
+  "Role-Cloudant-DataSource": {
+    "url": "https://dae03b71-c993-44b3-a7f0-176978613a15-bluemix:c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148@dae03b71-c993-44b3-a7f0-176978613a15-bluemix.cloudantnosqldb.appdomain.cloud",
+    "database": "role",
+    "username": "dae03b71-c993-44b3-a7f0-176978613a15-bluemix",
+    "password": "c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148",
+    "name": "Role-Cloudant-DataSource",
+    "connector": "cloudant",
+    "plugin": "retry",
+    "retryAttempts": 5,
+    "retryTimeout": 1000
+  },
+  "RoleMapping-Cloudant-DataSource": {
+    "url": "https://dae03b71-c993-44b3-a7f0-176978613a15-bluemix:c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148@dae03b71-c993-44b3-a7f0-176978613a15-bluemix.cloudantnosqldb.appdomain.cloud",
+    "database": "rolemapping",
+    "username": "dae03b71-c993-44b3-a7f0-176978613a15-bluemix",
+    "password": "c56ef1c934227c371fd3dd31c61f022971a758298a8e7edf14e3c77b991b7148",
+    "name": "RoleMapping-Cloudant-DataSource",
+    "connector": "cloudant",
+    "plugin": "retry",
+    "retryAttempts": 5,
+    "retryTimeout": 1000
+  }
+}

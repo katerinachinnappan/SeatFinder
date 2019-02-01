@@ -1,0 +1,46 @@
+Uso: {{apic apis}} [OPCIONES_CATÁLOGO | OPCIONES_ESPACIO]
+
+  Listar las API de un catálogo o espacio
+
+  Opciones para ámbito de catálogo
+    --{{scope catalog}}                         (valor predeterminado)
+    --{{catalog}} CATÁLOGO | --{{all-catalogs}} (obligatorio)
+      -{{c}}, --{{catalog}} CATÁLOGO            un catálogo especificado
+      -{{C}}, --{{all-catalogs}}                todos los catálogos
+    --{{organization}} ORGANIZACIÓN | --{{all-organizations}} (obligatorio)
+      -{{o}}, --{{organization}} ORGANIZACIÓN   una organización de proveedores específica
+      -{{O}}, --{{all-organizations}}           todas las organizaciones de proveedores
+    -{{s}}, --{{server}} SERVIDOR               punto final de servidor de gestión (obligatorio)
+
+  Opciones para ámbito de espacio
+    --{{scope space}}
+    --{{space}} ESPACIO
+    -{{c}}, --{{catalog}} CATÁLOGO              un catálogo específico
+    -{{o}}, --{{organization}} ORGANIZACIÓN     una organización de proveedores específica
+    -{{s}}, --{{server}} SERVIDOR               punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  Listar las definiciones de API de un catálogo
+    {{$ apic apis --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{routes:2.0.0}} in {{climbonorg:production}}
+    {{trails:2.0.0}} in {{climbonorg:production}}
+
+  Listar las definiciones de API de todos los catálogos de todas las organizaciones
+    {{$ apic apis --all-catalogs --all-organizations --server mgmnthost.com}}
+    {{routes:1.0.0}} in {{climbonorg:staging}}
+    {{routes:2.0.0}} in {{climbonorg:production}}
+    {{trails:1.0.0}} in {{hikingorg:staging}}
+    {{trails:2.0.0}} in {{hikingorg:production}}
+
+  Listar las definiciones de API de un espacio
+    {{$ apic apis --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{routes:2.0.0}} in {{climbonorg:production:sp1}}
+    {{trails:2.0.0}} in {{climbonorg:production:sp1}}
+
+Especifique "{{apic MANDATO --help}}" para obtener más información acerca de los mandatos siguientes:
+
+  {{apis:get}}     Obtener información sobre una API de un catálogo o espacio
+  {{apis:set}}     Actualizar na API de un catálogo o espacio
+  {{apis:pull}}    Extraer una na API de un catálogo o espacio
+  {{apis:clone}}   Extraer todas las API de un catálogo o espacio

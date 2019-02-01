@@ -1,0 +1,18 @@
+Syntaxis: apic {{catalogs:create}} WEERGAVE_NAAM OPTIES
+
+  Een catalogus in een organisatie maken
+
+  Opties
+    --{{name}} NAAM                         naam van catalogus (standaard afgeleid van weergavenaam)
+    -o, --{{organization}} ORGANISATIE      een specifieke providerorganisatie (verplicht)
+    -s, --{{server}} SERVER                 eindpunt van beheerserver (verplicht)
+
+  Stabiliteit: prototype
+
+  Een catalogus met een unieke naam maken in de organisatie {{climbonorg}} op de server {{mgmnthost.com}}
+    {{$ apic catalogs:create Production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} is gemaakt.
+
+  Een catalogus maken in de organisatie {{climbonorg}} op de server {{mgmnthost.com}}
+    {{$ apic catalogs:create Production --name prod --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:prod}} is gemaakt

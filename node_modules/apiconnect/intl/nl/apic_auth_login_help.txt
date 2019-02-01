@@ -1,0 +1,24 @@
+Usage: apic {{login}}                  interactief
+       apic {{login}} OPTIES           niet-interactief
+
+  Verifiëren met een {{API Connect}}-cloud via de beheerserver
+
+  Opties
+    -u, --{{username}} GEBRUIKER         gebruikersnaam (verplicht)
+    -p, --{{password}} WACHTWOORD        wachtwoord (verplicht)
+    -s, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+    --{{sso}}                            aanmelden met behulp van federatief bedrijfs-ID
+    -c, --{{passcode}} TOEGANGSCODE      eenmalige toegangscode voor {{JWT}}
+    -k, --{{apikey}}  APIKEY             aanmelden met behulp van een Bluemix API-sleutel
+
+  Aanmelden bij een {{API Connect}}-cloud via bijbehorende beheerserver
+    {{$ apic login}}
+    Geef uw legitimatiegegevens voor {{API Connect}} op
+    ? Server: {{mgmnthost.com}}
+    ? Gebruikersnaam: {{tommy}}
+    ? Wachtwoord (getypte tekens zijn verborgen) **********
+    Aanmelding bij {{mgmnthost.com}} is voltooid
+
+  Niet-interactief aanmelden
+    {{$ apic login --username tommy --password password --server mgmnthost.com}}
+    Aanmelding bij {{mgmnthost.com}} is voltooid

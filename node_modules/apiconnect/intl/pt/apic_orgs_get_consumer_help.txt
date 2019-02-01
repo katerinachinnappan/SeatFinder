@@ -1,0 +1,21 @@
+Uso: apic {{orgs:get}} ORG_NAME --{{type consumer}} OPTIONS
+
+  Obter informações sobre uma organização do consumidor
+
+  Opções
+    --{{space}} SPACE                    nome do espaço (opcional)
+    -c, --{{catalog}} CATALOG            nome do catálogo (obrigatório)
+    -o, --{{organization}} ORGANIZATION  nome da organização do provedor (obrigatório)
+    -s, --{{server}} SERVER              terminal do servidor de gerenciamento (obrigatório)
+
+  Estabilidade: protótipo
+
+  Obter informações sobre uma organização do consumidor
+    {{$ apic orgs:get salesorg --catalog climbonorg.prod --server mgmnthost.com}}
+    name: {{salesorg}}
+    display name: {{Sales Organization}}
+    owner name: {{Shavon}}
+    owner email: {{shavon@ibm.com}}
+    owner username: {{shavon}}
+    status: active
+    communities: sales, partner

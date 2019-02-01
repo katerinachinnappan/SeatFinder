@@ -1,0 +1,27 @@
+使用法: apic {{extensions}} OPTIONS
+
+  カタログ内の拡張をリストします
+
+  オプション
+    --{{catalog}} CATALOG | --{{all-catalogs}} (必須)
+      -c, --{{catalog}} CATALOG            特定のカタログ
+      -C, --{{all-catalogs}}               すべてのカタログ
+    --{{organization}} ORGANIZATION | --{{all-organizations}} (必須)
+      -o, --{{organization}} ORGANIZATION  特定のプロバイダー組織
+      -O, --{{all-organizations}}          すべてのプロバイダー組織
+    -s, --{{server}} SERVER                管理サーバー・エンドポイント (必須)
+
+  Stability: prototype
+
+  実稼働カタログ内の拡張をリストします
+    {{$ apic extensions --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} の {{climbextension}}:1.0.0
+    {{climbonorg:productiong}} の {{hikeextension}}:1.0.0
+
+  「apic COMMAND -h」と入力すると、以下のコマンドの詳細が表示されます
+
+    {{extensions:publish}}    拡張をカタログに公開します
+    {{extensions:get}}        カタログ内の拡張に関する情報を取得します
+    {{extensions:pull}}       拡張をカタログからプルします
+    {{extensions:clone}}      すべての拡張をカタログからプルします
+    {{extensions:delete}}     カタログ内の拡張を削除します

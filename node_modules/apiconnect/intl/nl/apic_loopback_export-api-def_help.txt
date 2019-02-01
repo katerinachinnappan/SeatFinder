@@ -1,0 +1,16 @@
+Syntaxis: apic {{loopback:export-api-def}} OPTIES
+
+  {{OpenAPI (Swagger)}}-definities genereren op basis van {{LoopBack}}-toepassingsmodellen
+
+  Opties
+    -o, --{{output}} BESTAND             naam van uitvoerbestand
+    --{{json}}                           JSON-weergave gebruiken (standaardwaarde is YAML)
+    --{{skip-cache}}                     promptantwoorden niet onthouden
+
+  Stabiliteit: prototype
+
+  {{OpenAPI (Swagger)}} in YAML-indeling genereren naar standaarduitvoer
+    {{$ apic loopback:export-api-def}}
+
+  {{OpenAPI (Swagger)}} in JSON-indeling genereren naar het bestand {{swagger.json}}
+    {{$ apic loopback:export-api-def --json --output swagger}}

@@ -1,0 +1,36 @@
+Kullanım: apic {{products:get}} ÜRÜN_ADI[:SÜRÜM] [KATALOG_SEÇENEKLERİ | ALAN_SEÇENEKLERİ]
+
+  Bir katalog ya da alandaki ürünle ilgili bilgi al
+
+  Katalog kapsamı için seçenekler
+    {{-c}}, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    {{-o}}, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    {{-s}}, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Alan kapsamı için seçenekler
+    --{{scope space}}
+    --{{space}} ALAN                     alan adı (zorunludur)
+    {{-c}}, --{{catalog}} KATALOG        katalog adı (zorunludur)
+    {{-o}}, --{{organization}} KURULUŞ   sağlayıcı kuruluşu adı (zorunludur)
+    {{-s}}, --{{server}} SUNUCU          yönetim sunucusu uç noktası (zorunludur)
+
+  Bir katalogdan ürün al
+    {{$ apic products:get climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    ad: {{climbon}}
+    sürüm: 1.0.0
+    başlık: Climbing product
+    durum: {{staged}}
+    api'ler: "{{routes}}:1.0.0" "{{ascents}}:2.0.0"
+    katalog: {{production}}
+    kuruluş: {{climbonorg}}
+
+  Bir alandan ürün al
+    {{$ apic products:get --scope space climbon --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    ad: {{climbon}}
+    sürüm: 1.0.0
+    başlık: Climbing product
+    durum: {{staged}}
+    api'ler: "{{routes}}:1.0.0" "{{ascents}}:2.0.0"
+    katalog: {{production}}
+    kuruluş: {{climbonorg}}
+    alan: {{flights}}

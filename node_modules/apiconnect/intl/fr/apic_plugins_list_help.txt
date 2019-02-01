@@ -1,0 +1,15 @@
+Syntaxe : apic {{plugins}}
+
+  Répertorier tous les plug-in installés
+
+  {{$ apic plugins}}
+  apiconnect-cli-config 1.0.0
+  apiconnect-cli-create 1.0.0
+  apiconnect-cli-edit 1.0.0
+  ...
+  ...
+
+  Pour accéder à l'aide sur les commandes liées suivantes, entrez "apic COMMANDE --{{help}}" :
+
+  {{plugins:install}}      Installer un plug-in
+  {{plugins:uninstall}}    Désinstaller un plug-in

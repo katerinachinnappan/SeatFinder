@@ -1,0 +1,20 @@
+Syntaxe : apic {{policies:publish}} OPTIONS
+
+  Publier une stratégie dans un catalogue
+
+  Options
+    -c, --{{catalog}} CATALOGUE          nom du catalogue (obligatoire)
+    -o, --{{organization}} ORGANISATION  nom de l'organisation de type fournisseur (obligatoire)
+    -s, --{{server}} SERVEUR             noeud final du serveur de gestion (obligatoire)
+    --{{directory}} REPERTOIRE           répertoire de la stratégie (répertoire en cours par défaut)
+
+  Stabilité : prototype
+
+  Publier une stratégie dans le répertoire jwe dans un catalogue
+    {{$ apic policies:publish --directory jwe --catalog production --organization climbonorg --server mgmnthost.com}}
+    Publication de {{jwe}} vers {{climbonorg:production [jwe-encrypt:1.0.0]}}
+
+  Publication d'une stratégie dans le répertoire en cours vers un catalogue
+    {{$ cd jwe}}
+    {{$ apic policies:publish --catalog production --organization climbonorg --server mgmnthost.com}}
+    Publication de {{jwe climbonorg:production [jwe-encrypt:1.0.0]}}

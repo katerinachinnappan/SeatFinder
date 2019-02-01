@@ -1,0 +1,13 @@
+Uso: apic {{extensions:delete}} OPTIONS EXTENSION_NAME[:VERSION]
+
+  Excluir uma extensão de um catálogo
+
+  Opções
+    -c, --{{catalog}} CATALOG            nome do catálogo (obrigatório)
+    -o, --{{organization}} ORGANIZATION  nome da organização do provedor (obrigatório)
+    -s, --{{server}} SERVER              terminal do servidor de gerenciamento (obrigatório)
+
+  Estabilidade: protótipo
+
+  {{$ apic extensions:delete climbextension:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  Extensão {{climbextension}}:1.0.0 excluída de {{climbonorg:production}}

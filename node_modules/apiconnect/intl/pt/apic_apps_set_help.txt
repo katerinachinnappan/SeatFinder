@@ -1,0 +1,21 @@
+Uso: apic {{apps:set}} OPTIONS
+
+  Atualizar um aplicativo
+
+  Opções
+    --{{status}}
+        {{online}}                       deixar o aplicativo on-line
+        {{offline}}                      deixar o aplicativo off-line
+    -a, --{{app}} APP                    destino de aplicativo do provedor (obrigatório)
+    -o, --{{organization}} ORGANIZATION  nome da organização do provedor (obrigatório)
+    -s, --{{server}} SERVER              terminal do servidor de gerenciamento (obrigatório)
+
+  Estabilidade: protótipo
+
+  Deixar um aplicativo off-line
+    {{$ apic apps:set --app climbon --organization climbonorg --server mgmnthost.com --status offline}}
+    Updated apic-app://mgmnthost.com/orgs/climbonorg/apps/climbon ({{status: offline}})
+
+  Deixar um aplicativo on-line
+    {{$ apic apps:set --app climbon --organization climbonorg --server mgmnthost.com --status online}}
+    Updated apic-app://mgmnthost.com/orgs/climbonorg/apps/climbon ({{status: online}})

@@ -1,0 +1,44 @@
+Usage: apic {{create --type product}}           interactive
+       apic {{create --type product}} OPTIONS   non-interactive
+
+  Create a product definition
+
+  Options
+    --{{title}} TITLE                    title value (required)
+    --{{name}} NAME                      name value (default derived from title)
+    --{{apis}} API_FILENAME ...          list of APIs to reference
+    --{{filename}} PRODUCT_FILENAME      filename (default derived from name)
+    --{{template}} TEMPLATE              use a provider template (if empty defaults to apic template)
+    -v, --{{version}} VERSION            version value (defaults to 1.0.0)
+
+  Create a product
+    {{$ apic create --type product --title "Climb On"}}
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  Create a product interactively
+    {{$ apic create --type product}}
+    ? Title: {{Climb On}}
+    ? Name: {{climb-on}}
+    ? File: {{climb-on.yaml}}
+    ? Template:
+    ? API Files:
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  Create a product referencing existing APIs
+    {{$ apic create --type product --title "Climb On" --apis "routes.yaml ascents.yaml"}}
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  Create an product using one of your templates
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic create --type product --title "Proxy Product" --template proxy}}
+    Created {{proxy-product.yaml}} product definition {{[proxy-product:1.0.0]}}
+
+  Create a product using your default template
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic config:set --global template-default-product=staging}}
+    {{$ apic create --type product --title "Staging Product"}}
+    Created {{staging-product.yaml}} product definition {{[staging-product:1.0.0]}}

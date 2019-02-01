@@ -1,0 +1,10 @@
+Kullanım: apic {{explore}} [api...] SEÇENEKLER
+
+  {{API Explorer}} açar
+
+  Seçenekler
+    -e, --{{external}}                   varsayılan 127.0.0.1 yerine gezgini 0.0.0.0 konumunda açar. Bu sunucuyu makinedeki tüm IP'lere bağlar ve daha geniş ağda sunucuya erişilebilir.
+
+  API'ler sağlanırsa gezginde kullanılır.
+
+  API'ler sağlanmazsa mevcut projedeki tüm API'ler kullanılır.

@@ -1,0 +1,30 @@
+用法：apic {{props:clear}} OPTIONS
+
+  删除所有服务属性
+
+  选项
+    -r, --{{remote}}                     使用远程应用程序目标（缺省为本地）
+    -S, --{{service}} SERVICE_NAME       服务名称
+    -o, --{{organization}} ORGANIZATION  提供者组织
+    -s, --{{server}} SERVER              服务器端点主机
+
+  清除 LoopBack 应用程序服务的属性
+    {{$ apic props:clear}}
+    [{{climbon}}] Deleted prop1: value1
+    [{{climbon}}] Deleted prop2: value2
+    [{{climbon}}] Deleted prop3: value3
+
+  显式清除 LoopBack 应用程序服务的属性
+    {{$ apic props:clear --service climbon}}
+    Deleted prop1: value1
+    Deleted prop2: value2
+    Deleted prop3: value3
+
+  清除 {{Micro Gateway}} 服务的属性
+    {{$ apic props:clear --service climbon-gw}}
+    Deleted prop1: value1
+    Deleted prop2: value2
+    Deleted prop3: value3
+
+  清除远程应用程序的属性
+    {{$ apic props:clear --remote --service climbon --organization climbon --server mgmnthost.com}}

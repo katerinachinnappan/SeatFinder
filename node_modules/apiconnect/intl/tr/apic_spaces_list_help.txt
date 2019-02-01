@@ -1,0 +1,20 @@
+Kullanım: {{apic spaces}} SEÇENEKLER
+
+  Bir katalogda bulunan alanları listele
+
+  Seçenekler
+    -c, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    -o, --{{organization}} KURULUŞ       belirli bir sağlayıcı kuruluşu (zorunludur)
+    -s, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  {{mgmnthost.com}} sunucusunda {{climbonorg}} kuruluşunda {{production}} kataloğunda alanları listele
+$ {{apic spaces --catalog production --organization climbonorg --server mgmnthost.com}}
+{{apic-space://mgmnthost.com/orgs/climbonorg/catalogs/production/spaces/flights}}
+    {{apic-space://mgmnthost.com/orgs/climbonorg/catalogs/production/spaces/hotels}}
+    {{apic-space://mgmnthost.com/orgs/climbonorg/catalogs/production/spaces/banks}}
+
+  Şu ilgili komutlara ilişkin yardım için "apic COMMAND -h" yazın:
+    {{spaces:create}}   Bir katalogda alan yarat
+    {{spaces:get}}      Bir katalogdaki alanla ilgili bilgi al
+    {{spaces:set}}      Bir katalogdaki alanla ilgili bilgileri ayarla
+    {{spaces:delete}}   Bir katalogdaki alanı sil

@@ -1,0 +1,21 @@
+Uso: apic {{securegateways}} OPTIONS
+
+  Listar os Secure Gateways contidos em organizações das quais o usuário atualmente autenticado é membro
+
+  Opções
+    -o, --{{organization}} ORGANIZATION     uma organização do provedor específica (obrigatório)
+    -s, --{{server}} SERVER                 terminal do servidor de gerenciamento (obrigatório)
+
+  Listar os Secure Gateways (id - name) na organização {{climbonorg}} no servidor {{mgmnthost.com}}
+    {{$ apic securegateways --organization climbonorg --server mgmnthost.com}}
+    {{ctHEKS9ztEH_stage_ng - sandbox}}
+    {{TamqfesDaTP_stage_ng - qa}}
+    {{gIEbdFSyUPx_stage_ng - staging}}
+    {{Y6NyVfESVxo_stage_ng - production}}
+
+  Digite "apic COMMAND -h" para obter ajuda sobre os comandos relacionados a seguir:
+
+    {{securegateways:create}}   Criar um Secure Gateway em uma organização
+    {{securegateways:get}}      Obter informações sobre um Secure Gateway em uma organização
+    {{securegateways:set}}      Configurar ou atualize informações em um Secure Gateway em uma organização
+    {{securegateways:delete}}   Excluir um Secure Gateway em uma organização

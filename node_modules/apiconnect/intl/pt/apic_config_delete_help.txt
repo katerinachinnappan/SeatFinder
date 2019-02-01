@@ -1,0 +1,65 @@
+Uso: apic {{config:delete}} OPTIONS NAME
+
+  Excluir uma variável de configuração
+
+  Opções
+    -l, --{{local}}       excluir a variável de configuração de aplicativo local (somente projeto {{loopback}})
+    -g, --{{global}}      excluir a variável de configuração global
+
+  Variáveis de configuração:
+
+    {{catalog}}
+      A variável de configuração do catálogo deve ser configurada de acordo com o URI de um
+      catálogo do API Connect.  O valor do catálogo fornece a identidade padrão de um
+      catálogo para todos os comandos que são usados para gerenciar aspectos de um
+      catálogo.  Os valores padrão definidos pelo URI do catálogo podem ser
+      substituídos utilizando as opções de linha de comandos --{{server}}, --{{organization}}
+      e --{{catalog}}.  O URI do catálogo possui o formato:
+      apic-catalog://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/catalogs/CATALOG_NAME
+
+    {{app}}
+      A variável de configuração do aplicativo deve ser configurada de acordo com o URI
+      do aplicativo do API Connect.  O valor do aplicativo fornece a identidade padrão de
+      um aplicativo para todos os comandos que são usados para gerenciar aspectos de
+      um aplicativo.  Os valores padrão definidos pelo URI do aplicativo podem ser substituídos
+      utilizando as opções de linha de comandos --{{server}}, --{{organization}} e --{{app}}.
+      O URI do aplicativo possui o formato:
+      apic-app://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/apps/APP_NAME
+
+    {{org}}
+      O valor padrão da organização definida pelo URI do aplicativo ou do catálogo pode ser
+      configurado utilizando o URI da organização.  O URI da organização possui o formato:
+      apic-org://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME
+
+    {{space}}
+      A variável de configuração de espaço deve ser configurada para o URI de um
+      espaço do API Connect.  O valor do espaço fornece a identidade padrão de um
+      espaço para todos os comandos usados para gerenciar aspectos de um
+      espaço.  Os valores padrão definidos pelo URI do espaço podem ser
+      substituídos usando as opções da linha de comandos --{{server}}, --{{organization}},
+      --{{catalog}} e --{{space}}.  O URI do espaço tem o formato:
+apic-space://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/catalogs/CATALOG_NAME/spaces/SPACE_NAME
+
+    {{accessibility-mode}}
+      Ativa recursos de acessibilidade. O valor deve ser configurado como '{{enabled}}' ou '{{disabled}}'.
+      Caso não seja configurado, {{accessibility-mode}} será desativado.
+
+    {{oauth-redirect-uri}} Para testar o OAuth, é necessário configurar o URI OAuth Redirect, o que geralmente é feito usando o Portal de Desenvolvimento. Use esta variável para alcançar o mesmo usando apenas o kit de ferramentas.
+
+    {{template-path}}
+      Listar os locais nos quais procurar modelos de barra de direção
+
+    {{template-default-api}}
+      Define o modelo de {{api}} padrão
+
+    {{template-default-product}}
+      Define o modelo de produto padrão
+
+  {{$ apic config:delete catalog}}
+  Deleted {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+
+  {{$ apic config:delete org}}
+  Deleted {{org: apic-org://mgmnthost.com/orgs/climbon}}
+
+  {{$ apic config:delete template-path}}
+  Deleted {{template-path: /etc/templates}}

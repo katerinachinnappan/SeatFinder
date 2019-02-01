@@ -1,0 +1,14 @@
+使用法: apic {{services}}
+
+  実行中のサービスをリストします
+
+  {{$ apic services}}
+  サービス {{climbon}} がポート 4001 で実行されています
+  サービス {{climbon-gw}} がポート 4002 で実行されています
+
+「apic COMMAND -h」と入力すると、以下の関連コマンドのヘルプが表示されます
+
+  {{services:start}}    サービスを開始します
+  {{services:stop}}     サービスを停止します
+  {{services:logs}}     ログを取得します
+  {{services:get}}      サービスを取得します

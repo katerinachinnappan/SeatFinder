@@ -1,0 +1,13 @@
+Kullanım: apic {{catalogs:delete}} KATALOG_ADI SEÇENEKLERİ
+
+  Bir kuruluştan katalog siler
+
+  Seçenekler
+    -o, --{{organization}} KURULUŞ          belirli bir sağlayıcı kuruluşu (zorunludur)
+    -s, --{{server}} SUNUCU                 yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  {{mgmnthost.com}} sunucusu üzerindeki {{climbonorg}} kuruluşundaki bulunan bir kataloğu silmek  için:
+    {{$ apic catalogs:delete staging --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:staging}} silindi

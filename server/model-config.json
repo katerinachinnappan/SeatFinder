@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "db"
+  },
+  "AccessToken": {
+    "dataSource": "AccessToken-Cloudant-DataSource",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "ACL-Cloudant-DataSource",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "RoleMapping-Cloudant-DataSource",
+    "public": true,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "Role-Cloudant-DataSource",
+    "public": false
+  },
+  "Seat": {
+    "dataSource": "Seat-Cloudant-DataSource",
+    "public": true
+  },
+  "Room": {
+    "dataSource": "Room-Cloudant-DataSource",
+    "public": true
+  },
+  "ItemType": {
+    "dataSource": "ItemType-Cloudant-DataSource",
+    "public": true
+  },
+  "Student": {
+    "dataSource": "Student-Cloudant-DataSource",
+    "public": true
+  },
+  "SchoolStaff": {
+    "dataSource": "SchoolStaff-Cloudant-DataSource",
+    "public": true
+  },
+  "Reservation": {
+    "dataSource": "Reservation-Cloudant-DataSource",
+    "public": true
+  }
+}

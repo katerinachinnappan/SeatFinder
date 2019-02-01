@@ -1,0 +1,12 @@
+用法：apic {{loopback:boot-script}} OPTIONS
+
+  在 {{LoopBack}} 应用程序中创建新的引导脚本
+
+  选项
+    -n, --{{name}} NAME                  引导脚本的名称（可选）
+    --{{skip-cache}}                     不记住提示答案
+
+  稳定性：原型
+
+  {{$ apic loopback:boot-script --name some_boot_script.js}}
+  这将在 {{/server/boot.}} 中生成 {{boot}} 脚本

@@ -1,0 +1,17 @@
+Syntaxe : apic {{catalogs:get}} NOM_CATALOGUE OPTIONS
+
+  Obtenir des informations sur un catalogue dans une organisation
+
+  Options
+    -o, --{{organization}} ORGANISATION     organisation de type fournisseur spécifique (obligatoire)
+    -s, --{{server}} SERVEUR                noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  Obtenir un catalogue dans l'organisation {{climbonorg}} sur le serveur {{mgmnthost.com}}
+    {{$ apic catalogs:get qa --organization climbonorg --server mgmnthost.com}}
+    nom : {{qa}}
+    nom d'affichage : Quality Assurance
+    organisation : {{climbonorg}}
+    type : production
+    espaces : désactivés

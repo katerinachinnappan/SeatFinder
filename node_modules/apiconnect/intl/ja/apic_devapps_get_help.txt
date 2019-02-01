@@ -1,0 +1,34 @@
+使用法: apic {{devapps:get}} [CATALOG_OPTIONS | SPACE_OPTIONS] DEVAPP_NAME
+
+組織内、およびカタログまたはスペース内のコンシューマー・アプリケーションに関する情報を取得します
+
+  カタログ・スコープ用のオプション
+    --{{scope catalog}}                       (デフォルト)
+    -{{c}}, --{{catalog}} CATALOG             カタログ名 (必須)
+    -{{o}}, --{{organization}} ORGANIZATION   プロバイダー組織名 (必須)
+    -{{s}}, --{{server}} SERVER               管理サーバー・エンドポイント (必須)
+
+  スペース・スコープ用のオプション
+    --{{scope space}}                      (必須)
+    --{{space}} SPACE                      スペース名 (必須)
+    -{{c}}, --{{catalog}} CATALOG              カタログ名 (必須)
+    -{{o}}, --{{organization}} ORGANIZATION    プロバイダー組織名 (必須)
+    -{{s}}, --{{server}} SERVER                管理サーバー・エンドポイント (必須)
+
+  Stability: prototype
+
+  climbonorg 組織内のコンシューマー・アプリケーションと、mgmnthost.com サーバーの実稼働カタログを取得します
+    {{$ apic devapps:get flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    名前: {{flights}}
+    表示名: {{flights application}}
+    説明: {{flights application}}
+    クライアント ID: {{xxxx}}
+    コンシューマー組織名: {{flightsOrg}}
+
+  climbonorg 組織内のコンシューマー・アプリケーションと、mgmnthost.com サーバーの s1 スペースの実動カタログを取得します
+    {{$ apic devapps:get flights --scope space --space s1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    名前: {{flights}}
+    表示名: {{flights application}}
+    説明: {{flights application}}
+    クライアント ID: {{xxxx}}
+    コンシューマー組織名: {{flightsOrg}}

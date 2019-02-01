@@ -1,0 +1,20 @@
+Uso: apic {{services:get}} OPTIONS
+
+  Opções
+    -S, --{{service}} SERVICE_NAME       nome do serviço
+
+  Obter informações sobre um serviço atualmente em execução
+
+  Obter o serviço Loopback para o aplicativo atual
+  {{$ apic services:get}}
+  name: {{climbon}}
+  port: 4001
+  supervisor_pid: 4853
+  worker_pids: 4854
+
+  Obter o serviço {{Micro Gateway}}
+  {{$ apic services:get --service climbon-gw}}
+  name: {{climbon-gw}}
+  port: 4002
+  supervisor_pid: 4855
+  worker_pids: 4856

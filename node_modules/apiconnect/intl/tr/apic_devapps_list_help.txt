@@ -1,0 +1,29 @@
+Kullanım: apic {{devapps}} [KATALOG_SEÇENEKLERİ | ALAN_SEÇENEKLERİ]
+
+  Bir kuruluşta ve katalogda veya alanda bulunan tüketici uygulamalarını listele
+
+  Katalog kapsamı için seçenekler
+    --{{scope catalog}}                       (varsayılan)
+    -{{c}}, --{{catalog}} KATALOG             katalog adı (zorunludur)
+    -{{o}}, --{{organization}} KURULUŞ        sağlayıcı kuruluşu adı (zorunludur)
+    -{{s}}, --{{server}} SUNUCU               yönetim sunucusu uç noktası (zorunludur)
+
+  Alan kapsamı için seçenekler
+    --{{scope space}}                      (zorunludur)
+    --{{space}} SPACE                      alan adı (zorunludur)
+    -{{c}}, --{{catalog}} KATALOG              katalog adı (zorunludur)
+    -{{o}}, --{{organization}} KURULUŞ         sağlayıcı kuruluşu adı (zorunludur)
+    -{{s}}, --{{server}} SUNUCU                yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  mgmnthost.com sunucusundaki climbonorg kuruluşunda ve üretim kataloğunda bulunan tüketici uygulamalarını listelemek için:
+    {{$ apic devapps --catalog production --organization climbonorg --server mgmnthost.com}}
+    flights in flightsOrg
+
+  mgmnthost.com sunucusundaki s1 alanında climbonorg kuruluşunda ve üretim kataloğunda bulunan tüketici uygulamalarını listele
+    {{$ apic devapps --scope space --space s1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    flights in flightsOrg
+
+  Aşağıdaki komutlar hakkında daha fazla bilgi için "apic KOMUT -h" yazın:
+  devapps:get        Bir uygulama hakkında bilgi al

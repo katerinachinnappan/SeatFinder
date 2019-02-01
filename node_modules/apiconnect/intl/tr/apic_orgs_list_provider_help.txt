@@ -1,0 +1,20 @@
+Kullanım: apic {{orgs}} SEÇENEKLER
+          apic {{orgs}} --{{type provider}} SEÇENEKLER
+
+  Kimliği doğrulanmış kullanıcının bir üyesi olduğu sağlayıcı kuruluşlarını listeler
+
+  Seçenekler
+    --{{type provider}}
+    -s, --{{server}} SUNUCU               yönetim sunucusu uç noktası (zorunludur)
+
+  mgmnthost.com üzerinde kimliği doğrulanmış kullanıcının bir üyesi olduğu kuruluşları (sağlayıcı kuruluşları) listelemek için:
+    {{$ apic orgs --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+    {{$ apic orgs --type provider --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+  Aşağıdaki ilgili komutlara ilişkin yardım için "apic COMMAND -h" yazın:
+    {{orgs:get}}          Bir sağlayıcı kuruluşuyla ilgili bilgi al

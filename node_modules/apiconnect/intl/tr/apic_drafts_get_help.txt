@@ -1,0 +1,27 @@
+Kullanım: apic {{drafts:get}} SEÇENEKLER AD[:SÜRÜM]
+
+  Taslaklardaki bir API ya da ürün tanımıyla ilgili bilgileri alır
+
+  Seçenekler
+    --{{type api | product}}             tanım tipine göre listenin alt kümesini oluştur
+    -{{o}}, --{{organization}} KURULUŞ   sağlayıcı kuruluşu adı (zorunludur)
+    -{{s}}, --{{server}} SUNUCU          yönetim sunucusu uç noktası (zorunludur)
+
+  Bir API tanımıyla ilgili bilgileri almak için:
+    {{$ apic drafts:get routes --organization climbonorg --server mgmnthost.com}}
+    tip: {{API}}
+    ad: {{routes}}
+    sürüm: 1.0.0
+    başlık: Climbing Routes API
+    temel yol: {{/routes}}
+    ürünler: {{"climbon:1.0.0" "climbon:1.0.1"}}
+    kuruluş: {{climbonorg}}
+
+  Bir ürün tanımıyla ilgili bilgileri almak için:
+    {{$ apic drafts:get climbon}}
+    tip: {{product}}
+    ad: {{climbon}}
+    sürüm: 1.0.0
+    başlık: Climbing product
+    api'ler: {{"routes:1.0.0" "ascents:2.0.0"}}
+    kuruluş: {{climbonorg}}

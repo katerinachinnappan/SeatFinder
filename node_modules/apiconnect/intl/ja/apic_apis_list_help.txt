@@ -1,0 +1,46 @@
+使用法: {{apic apis}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  カタログまたはスペース内の API をリストします
+
+  カタログ・スコープ用のオプション
+    --{{scope catalog}}                         (デフォルト)
+    --{{catalog}} CATALOG | --{{all-catalogs}}  (必須)
+      -{{c}}, --{{catalog}} CATALOG             特定のカタログ
+      -{{C}}, --{{all-catalogs}}                すべてのカタログ
+    --{{organization}} ORGANIZATION | --{{all-organizations}} (必須)
+      -{{o}}, --{{organization}} ORGANIZATION   特定のプロバイダー組織
+      -{{O}}, --{{all-organizations}}           すべてのプロバイダー組織
+    -{{s}}, --{{server}} SERVER                 管理サーバー・エンドポイント (必須)
+
+  スペース・スコープ用のオプション
+    --{{scope space}}
+    --{{space}} SPACE
+    -{{c}}, --{{catalog}} CATALOG               特定のカタログ
+    -{{o}}, --{{organization}} ORGANIZATION     特定のプロバイダー組織
+    -{{s}}, --{{server}} SERVER                 管理サーバー・エンドポイント (必須)
+
+  Stability: prototype
+
+  カタログ内の API 定義をリストします
+    {{$ apic apis --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} の {{routes:2.0.0}}
+    {{climbonorg:production}} の {{trails:2.0.0}}
+
+  すべての組織のすべてのカタログ内の API 定義をリストします
+    {{$ apic apis --all-catalogs --all-organizations --server mgmnthost.com}}
+    {{climbonorg:staging}} の {{routes:1.0.0}}
+    {{climbonorg:production}} の {{routes:2.0.0}}
+    {{hikingorg:staging}} の {{trails:1.0.0}}
+    {{hikingorg:production}} の {{trails:2.0.0}}
+
+  スペース内の API 定義をリストします
+    {{$ apic apis --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production:sp1}} の {{routes:2.0.0}}
+    {{climbonorg:production:sp1}} の {{trails:2.0.0}}
+
+「{{apic COMMAND --help}}」と入力すると、次のコマンドの詳細が表示されます
+
+  {{apis:get}}     カタログまたはスペース内の API に関する情報を取得します
+  {{apis:set}}     カタログまたはスペース内の API を更新します
+  {{apis:pull}}    カタログまたはスペースから API をプルします
+  {{apis:clone}}   カタログまたはスペースからすべての API をプルします

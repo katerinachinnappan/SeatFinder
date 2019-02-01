@@ -1,0 +1,23 @@
+Syntaxe : apic {{drafts:delete}} OPTIONS NOM[:VERSION]
+
+  Supprimer une définition d'API ou de produit des brouillons
+
+  Options
+    --{{type api | product}}                 classer la liste par type de définition
+    --{{product-only}}                       supprimer le produit mais pas ses api référencées
+    -{{o}}, --{{organization}} ORGANISATION  nom de l'organisation de type fournisseur (obligatoire)
+    -{{s}}, --{{server}} SERVEUR             noeud final du serveur de gestion (obligatoire)
+
+  Supprimer une définition d'API des brouillons
+    {{$ apic drafts:delete routes --organization climbonorg --server mgmnthost.com}}
+    Suppression de la définition d'API {{routes}}:1.0.0 de {{climbonorg:drafts}}
+
+  Supprimer une définition de produit et ses API référencées des brouillons
+    {{$ apic drafts:delete climbon --organization climbonorg --server mgmnthost.com}}
+    Suppression de la définition de produit {{climbon}}:1.0.0 de {{climbonorg:drafts}}
+    Suppression de la définition d'API {{routes}}:1.0.0 de {{climbonorg:drafts}}
+    Suppression de la définition d'API {{ascents}}:1.0.0 de {{climbonorg:drafts}}
+
+  Supprimer une définition de produit des brouillons
+    {{$ apic drafts:delete climbon --product-only --organization climbonorg --server mgmnthost.com}}
+    Suppression de la définition de produit {{climbon}}:1.0.0 de {{climbonorg:drafts}}

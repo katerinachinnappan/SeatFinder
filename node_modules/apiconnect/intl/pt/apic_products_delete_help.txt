@@ -1,0 +1,27 @@
+Uso: apic {{products:delete}} PRODUCT_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Excluir um produto em um catálogo ou espaço
+
+  Opções para escopo de catálogo
+    {{-c}}, --{{catalog}} CATALOG            nome do catálogo (obrigatório)
+    {{-o}}, --{{organization}} ORGANIZATION  nome da organização do provedor (obrigatório)
+    {{-s}}, --{{server}} SERVER              terminal do servidor de gerenciamento (obrigatório)
+
+  Opções para escopo de espaço
+    --{{scope space}}
+    --{{space}} SPACE                    nome do espaço (obrigatório)
+    {{-c}}, --{{catalog}} CATALOG            nome do catálogo (obrigatório)
+    {{-o}}, --{{organization}} ORGANIZATION  nome da organização do provedor (obrigatório)
+    {{-s}}, --{{server}} SERVER              terminal do servidor de gerenciamento (obrigatório)
+
+  Excluir um produto de um catálogo
+    {{$ apic products:delete climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    Deleted {{climbon}}:1.0.0 product definition from {{climbonorg}}:production
+    Deleted {{routes}}:1.0.0 API definition from {{climbonorg}}:production
+    Deleted {{ascents}}:1.0.0 API definition from {{climbonorg}}:production
+
+  Excluir um produto de um espaço
+    {{$ apic products:delete --scope space climbon --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Deleted {{climbon}}:1.0.0 product definition from {{climbonorg}}:production:flights
+    Deleted {{routes}}:1.0.0 API definition from {{climbonorg}}:production:flights
+    Deleted {{ascents}}:1.0.0 API definition from {{climbonorg}}:production:flights

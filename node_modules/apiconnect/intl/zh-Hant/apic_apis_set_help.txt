@@ -1,0 +1,40 @@
+用法：{{apic apis:set}} API_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  更新型錄或空間中的 API
+
+  型錄範圍的選項
+    --{{scope catalog}}                       （預設值）
+    --{{status}}                              API 狀態（必要）
+        {{online}}                            讓 API 上線
+        {{offline}}                           讓 API 離線
+    -{{c}}, --{{catalog}} CATALOG             型錄名稱（必要）
+    -{{o}}, --{{organization}} ORGANIZATION   提供者組織名稱（必要）
+    -{{s}}, --{{server}} SERVER               管理伺服器端點（必要）
+
+  空間範圍的選項
+    --{{scope space}}
+    --{{status}}                              API 狀態（必要）
+        {{online}}                            讓 API 上線
+        {{offline}}                           讓 API 離線
+    --{{space}} SPACE                         空間名稱（必要）
+    -{{c}}, --{{catalog}} CATALOG             型錄名稱（必要）
+    -{{o}}, --{{organization}} ORGANIZATION   提供者組織名稱（必要）
+    -{{s}}, --{{server}} SERVER               管理伺服器端點（必要）
+
+  穩定性：原型
+
+  讓型錄中的 API 離線
+    {{$ apic apis:set routes --status offline --catalog production --organization climbonorg --server mgmnthost.com}}
+    已更新 {{climbonorg:production}} 中的 {{routes:1.0.0}}（狀態：{{offline}}）
+
+  讓型錄中的 API 上線
+    {{$ apic apis:set routes --status online --catalog production --organization climbonorg --server mgmnthost.com}}
+    已更新 {{climbonorg:production}} 中的 {{routes:1.0.0}}（狀態：{{online}}）
+
+  讓空間中的 API 離線
+    {{$ apic apis:set --scope space --status offline --space sp1 --catalog production --organization climbonorg --server mgmnthost.com routes}}
+    已更新 {{climbonorg:production:sp1}} 中的 {{routes:1.0.0}}（狀態：{{offline}}）
+
+  讓空間中的 API 上線
+    {{$ apic apis:set --scope space --status online --space sp1 --catalog production --organization climbonorg --server mgmnthost.com routes}}
+    已更新 {{climbonorg:production:sp1}} 中的 {{routes:1.0.0}}（狀態：{{online}}）

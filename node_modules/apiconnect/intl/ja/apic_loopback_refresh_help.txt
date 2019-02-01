@@ -1,0 +1,7 @@
+使用法: apic {{loopback:refresh}}
+
+  製品および API 定義を {{LoopBack}} アプリケーションのモデルから生成します
+
+  Stability: prototype
+
+  {{$ apic loopback:refresh}}

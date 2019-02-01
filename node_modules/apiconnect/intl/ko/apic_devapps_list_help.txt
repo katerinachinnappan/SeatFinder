@@ -1,0 +1,29 @@
+사용법: apic {{devapps}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  조직 및 카탈로그 또는 공간에 포함되어 있는 이용자 앱 나열
+
+  카탈로그 범위 옵션
+    --{{scope catalog}}                       (기본값)
+    -{{c}}, --{{catalog}} CATALOG             카탈로그 이름(필수)
+    -{{o}}, --{{organization}} ORGANIZATION   제공자 조직 이름(필수)
+    -{{s}}, --{{server}} SERVER               관리 서버 엔드포인트(필수)
+
+  공간 범위 옵션
+    --{{scope space}}                      (필수)
+    --{{space}} SPACE                      공간 이름(필수)
+    -{{c}}, --{{catalog}} CATALOG              카탈로그 이름(필수)
+    -{{o}}, --{{organization}} ORGANIZATION    제공자 조직 이름(필수)
+    -{{s}}, --{{server}} SERVER                관리 서버 엔드포인트(필수)
+
+  안정성: 프로토타입
+
+  mgmnthost.com 서버의 climbonorg 조직 및 프로덕션 카탈로그에 있는 이용자 앱 나열
+    {{$ apic devapps --catalog production --organization climbonorg --server mgmnthost.com}}
+    flights in flightsOrg
+
+  mgmnthost.com 서버 s1 공간에 있는 climbonorg 조직 및 프로덕션 카탈로그에 있는 이용자 앱 나열
+    {{$ apic devapps --scope space --space s1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    flights in flightsOrg
+
+  다음 명령에 대한 자세한 정보를 보려면 "apic COMMAND -h"를 입력하십시오.
+    devapps:get        애플리케이션에 대한 정보 가져오기

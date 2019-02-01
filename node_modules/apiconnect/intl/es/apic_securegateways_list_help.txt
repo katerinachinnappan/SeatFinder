@@ -1,0 +1,21 @@
+Uso: apic {{securegateways}} OPCIONES
+
+  Listar las pasarelas seguras contenidas en organizaciones de las que es miembro el usuario actualmente autenticado
+
+  Opciones
+    -o, --{{organization}} ORGANIZACIÓN     una organización de proveedores específica (obligatorio)
+    -s, --{{server}} SERVIDOR               punto final de servidor de gestión (obligatorio)
+
+  Listar las pasarelas seguras (id - nombre) de la organización {{climbonorg}} del servidor {{mgmnthost.com}}
+    {{$ apic securegateways --organization climbonorg --server mgmnthost.com}}
+    {{ctHEKS9ztEH_stage_ng - sandbox}}
+    {{TamqfesDaTP_stage_ng - qa}}
+    {{gIEbdFSyUPx_stage_ng - staging}}
+    {{Y6NyVfESVxo_stage_ng - production}}
+
+  Especifique "apic MANDATO -h" para obtener ayuda acerca de los siguientes mandatos relacionados:
+
+    {{securegateways:create}}   Crear una pasarela segura en una organización
+    {{securegateways:get}}      Obtener información sobre una pasarela segura de una organización
+    {{securegateways:set}}      Establecer o actualizar información sobre una pasarela segura de una organización
+    {{securegateways:delete}}   Suprimir una pasarela segura de una organización

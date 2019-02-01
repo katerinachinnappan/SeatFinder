@@ -1,0 +1,41 @@
+Utilizzo: apic {{drafts}} OPZIONI
+
+  Elenca le API e i prodotti nelle bozze
+
+  Opzioni
+    --{{type api | product}}                     imposta l'elenco in base al tipo di definizione
+    --{{organization}} ORGANIZZAZIONE | --{{all-organizations}} (obbligatorio)
+      -{{o}}, --{{organization}} ORGANIZZAZIONE  un'organizzazione provider specifica
+      -{{O}}, --{{all-organizations}}            tutte le organizzazioni provider
+    -{{s}}, --{{server}} SERVER                  endpoint server di gestione (obbligatorio)
+
+  Elenco delle  definizioni delle API e dei prodotti nelle bozze
+    {{$ apic drafts --organization climbonorg --server mgmnthost.com}}
+    Definizione prodotto {{climbon}}:1.0.0 in {{climbonorg:drafts}}
+    Definizione prodotto {{climbon}}:1.0.1 in {{climbonorg:drafts}}
+    Definizione API {{routes}}:1.0.0 in {{climbonorg:drafts}}
+    Definizione API {{ascents}}:1.0.0 in {{climbonorg:drafts}}
+
+  elenca le definizioni API nelle bozze
+    {{$ apic drafts --type api --organization climbonorg --server mgmnthost.com}}
+    Definizione API {{routes}}:1.0.0 in {{climbonorg:drafts}}
+    Definizione API {{ascents}}:1.0.0 in {{climbonorg:drafts}}
+
+  Elenca le definizioni nelle bozze di tutte le organizzazioni
+    {{$ apic drafts --all-organizations --server mgmnthost.com}}
+    Definizione prodotto {{climbon}}:1.0.0 in {{climbonorg:drafts}}
+    Definizione prodotto {{climbon}}:1.0.1 in {{climbonorg:drafts}}
+    Definizione API {{routes}}:1.0.0 in {{climbonorg:drafts}}
+    Definizione API {{ascents}}:1.0.0 in {{climbonorg:drafts}}
+    Definizione prodotto {{hiking}}:1.0.0 in {{hikingorg:drafts}}
+    Definizione API {{trails}}:1.0.0 in {{hikingorg:drafts}}
+
+Immettere "apic COMANDO -h" per ulteriori informazioni sul seguente comando:
+
+  {{drafts:push}}     Inserisce le definizioni delle API locali o dei prodotti nelle bozze
+  {{drafts:pull}}     Estrae le definizioni delle API o dei prodotti dalle bozze
+  {{drafts:clone}}    Estrae tutte le definizioni delle API o dei prodotti dalle bozze
+  {{drafts:get}}      Richiama le informazioni su una definizione dell'API o del prodotto nelle bozze
+  {{drafts:publish}}  Pubblica un prodotto e le relative API a cui si fa riferimento nelle bozze in un catalogo o uno spazio
+  {{drafts:delete}}   Elimina una definizione dell'API o del prodotto dalle bozze
+  {{drafts:clear}}    Elimina tutte le definizioni delle API e dei prodotto nelle bozze

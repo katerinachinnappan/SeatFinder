@@ -1,0 +1,12 @@
+Syntaxis: apic {{orgs:get}} ORG_NAAM OPTIES
+
+  Informatie over een providerorganisatie ophalen
+
+  Opties
+    --{{type}} provider
+    -s, --{{server}} SERVER               eindpunt van beheerserver (verplicht)
+
+  Informatie over een providerorganisatie ophalen
+    {{$ apic orgs:get climbonorg --server mgmnthost.com}}
+    naam: climbonorg
+    weergavenaam: Climbon Organization

@@ -1,0 +1,9 @@
+Kullanım: apic swiftserver:refresh
+
+  Swift Server'dan bir ürün ve API tanımı oluştur
+  Oluşturucu uygulama modelleri
+
+  Kararlılık durumu: prototip
+
+  $ apic swiftserver:refresh
+

@@ -1,0 +1,29 @@
+Syntax: apic {{devapps}} [KATALOGOPTIONEN | BEREICHSOPTIONEN]
+
+  Konsumenten-Apps, die in einer Organisation und in einem Katalog oder Bereich enthalten sind, auflisten
+
+  Optionen für Katalogbereich
+    --{{scope catalog}}                       (Standard)
+    -{{c}}, --{{catalog}} KATALOG             Katalogname (erforderlich)
+    -{{o}}, --{{organization}} ORGANISATION   Name der Provider-Organisation (erforderlich)
+    -{{s}}, --{{server}} SERVER               Management-Server-Endpunkt (erforderlich)
+
+  Optionen für Bereichsumfang
+    --{{scope space}}                      (erforderlich)
+    --{{space}} BEREICH                       Bereichsname (erforderlich)
+    -{{c}}, --{{catalog}} KATALOG             Katalogname (erforderlich)
+    -{{o}}, --{{organization}} ORGANISATION   Name der Provider-Organisation (erforderlich)
+    -{{s}}, --{{server}} SERVER               Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  Konsumenten-Apps in der climbonorg-Organisation und im Produktionskatalog auf dem mgmnthost.com-Server auflisten
+    {{$ apic devapps --catalog production --organization climbonorg --server mgmnthost.com}}
+    flights in flightsOrg
+
+  Konsumenten-Apps in der climbonorg-Organisation und im Produktionskatalog im s1-Bereich auf dem mgmnthost.com-Server auflisten
+    {{$ apic devapps --scope space --space s1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    flights in flightsOrg
+
+  Geben Sie "apic COMMAND -h" für weitere Informationen zu den folgenden Befehlen ein:
+    devapps:get        Informationen zu einer Anwendung abrufen

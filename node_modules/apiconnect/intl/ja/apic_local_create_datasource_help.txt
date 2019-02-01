@@ -1,0 +1,18 @@
+使用法: apic {{create --type datasource}} OPTIONS
+
+  {{LoopBack}} アプリケーションで {{LoopBack}} データ・ソース定義を作成します
+
+  オプション
+    --{{name}} NAME                      データ・ソース名
+    --{{skip-cache}}                     プロンプトに対する応答を記憶しない
+
+  {{LoopBack}} アプリケーションのデータ・ソースを作成します
+    {{$ apic create --type datasource}}
+    ? データ・ソース名を入力: {{MemoryDB}}
+    ? {{MemoryDB}} のコネクターを選択: メモリー内 DB ({{StrongLoop}} でサポート)
+    コネクター固有の構成:
+    ? パーシスタンスで使用する {{window.localStorage}} キー (ブラウザーのみ): {{MemoryDB}}
+    ? パーシスタンス用ファイルの完全パス (サーバーのみ): {{~/.memorydb}}
+    ループバック・ジェネレーターの実行が完了しました
+    {{swagger}} と製品定義を更新しています
+    {{/Users/shane/mesh/examples/climbon/definitions/climbon.yaml}} {{swagger}} の記述が作成されました

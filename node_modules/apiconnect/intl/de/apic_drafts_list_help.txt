@@ -1,0 +1,41 @@
+Syntax: apic {{drafts}} OPTIONEN
+
+  APIs und Produkte in den Entwürfen auflisten
+
+  Optionen
+    --{{type api | product}}                              Untergruppe der Liste nach Definitionstyp
+    --{{organization}} ORGANISATION | --{{all-organizations}} (erforderlich)
+      -{{o}}, --{{organization}} ORGANISATION                 eine bestimmte Provider-Organisation
+      -{{O}}, --{{all-organizations}}                         alle Provider-Organisationen
+    -{{s}}, --{{server}} SERVER                               Management-Server-Endpunkt (erforderlich)
+
+  API- und Produktdefinitionen in Entwürfen auflisten
+    {{$ apic drafts --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 product definition in {{climbonorg:drafts}}
+    {{climbon}}:1.0.1 product definition in {{climbonorg:drafts}}
+    {{routes}}:1.0.0 API definition in {{climbonorg:drafts}}
+    {{ascents}}:1.0.0 API definition in {{climbonorg:drafts}}
+
+  API-Definitionen in Entwürfen auflisten
+    {{$ apic drafts --type api --organization climbonorg --server mgmnthost.com}}
+    {{routes}}:1.0.0 API definition in {{climbonorg:drafts}}
+    {{ascents}}:1.0.0 API definition in {{climbonorg:drafts}}
+
+  Definitionen in Entwürfen über alle Organisationen hinweg auflisten
+    {{$ apic drafts --all-organizations --server mgmnthost.com}}
+    {{climbon}}:1.0.0 product definition in {{climbonorg:drafts}}
+    {{climbon}}:1.0.1 product definition in {{climbonorg:drafts}}
+    {{routes}}:1.0.0 API definition in {{climbonorg:drafts}}
+    {{ascents}}:1.0.0 API definition in {{climbonorg:drafts}}
+    {{hiking}}:1.0.0 product definition in {{hikingorg:drafts}}
+    {{trails}}:1.0.0 API definition in {{hikingorg:drafts}}
+
+Geben Sie "apic BEFEHL -h" für weitere Informationen zu den folgenden Befehlen ein:
+
+  {{drafts:push}}     Lokale API- oder Produktdefinitionen mit Push-Operation an Entwürfe übertragen
+  {{drafts:pull}}     API- oder Produktdefinitionen aus Entwürfen extrahieren
+  {{drafts:clone}}    Alle API- und Produktdefinitionen aus Entwürfen extrahieren
+  {{drafts:get}}      Informationen zu einer API- oder Produktdefinition in Entwürfen abrufen
+  {{drafts:publish}}  Ein Produkt und die referenzierten APIs in Entwürfen in einem Katalog oder Bereich veröffentlichen
+  {{drafts:delete}}   Eine API- oder Produktdefinition aus Entwürfen löschen
+  {{drafts:clear}}    Alle APIs und Produktdefinitionen in Entwürfen löschen

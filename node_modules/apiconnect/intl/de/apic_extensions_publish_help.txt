@@ -1,0 +1,14 @@
+Syntax: apic {{extensions:publish}} OPTIONENEXTENSION_FILENAME
+
+  Eine Erweiterung in einem Katalog veröffentlichen
+
+  Optionen
+    -c, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    -o, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+    -s, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  Eine Erweiterung in einem Katalog veröffentlichen
+    {{$ apic extensions:publish extension.yaml --catalog production --organization climbonorg --server mgmnthost.com}}
+    Published {{extension.yaml}} extension to {{climbonorg:production [climbextension:1.0.0]}}

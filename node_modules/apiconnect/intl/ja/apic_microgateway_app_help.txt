@@ -1,0 +1,24 @@
+使用法: apic {{microgateway}} OPTIONS
+
+  {{Micro Gateway}} アプリケーションを作成します
+
+  オプション
+    -n, --{{name}} NAME                  アプリケーションの名前
+    -s, --{{server}} SERVER              管理サーバー・エンドポイント
+
+  Stability: prototype
+
+  {{Micro Gateway}} アプリケーションを {{my-personal-microgateway}} という名前で作成します
+    {{$ apic microgateway --server mgmnthost.com --name my-personal-microgateway}}
+    Micro Gateway アプリケーションを /Users/user/{{my-personal-microgateway}} に作成しています
+    {{Micro Gateway}} アプリケーションをインストールしています
+    {{Micro Gateway}} が正常に作成されました。
+
+  {{Micro Gateway}} アプリケーションを現行ディレクトリー内に作成します (このディレクトリーは空になっている必要があります)
+    {{$ mkdir my-second-microgateway}}
+    {{$ cd my-second-microgateway}}
+    {{$ apic microgateway --server mgmnthost.com}}
+    ? アプリケーションの名前は何ですか ({{my-second-microgateway}})
+    Micro Gateway アプリケーションを /Users/user/{{my-second-microgateway}} に作成しています
+    {{Micro Gateway}} アプリケーションをインストールしています
+    {{Micro Gateway}} が正常に作成されました。

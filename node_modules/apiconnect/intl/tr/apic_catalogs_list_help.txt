@@ -1,0 +1,35 @@
+Kullanım: apic {{catalogs}} SEÇENEKLER
+
+  Kimliği doğrulanmış kullanıcının üyesi olduğu kuruluşlarda bulunan katalogları
+  listeler
+
+  Seçenekler
+    --{{organization}} KURULUŞ      | --{{all-organizations}} (zorunludur)
+      -o, --{{organization}} KURULUŞ       belirli bir sağlayıcı kuruluşu
+      -O, --{{all-organizations}}          tüm sağlayıcı kuruluşları
+    -s, --{{server}} SUNUCU                yönetim sunucusu uç noktası (zorunludur)
+
+  {{mgmnthost.com}} sunucusu üzerindeki {{climbonorg}} kuruluşunda bulunan katalogları listelemek için:
+    {{$ apic catalogs --organization climbonorg --server mgmnthost.com}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/sandbox}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/qa}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/staging}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/production}}
+
+  Tüm kuruluşlardaki katalogları listelemek için:
+    {{$ apic catalogs --all-organizations --server mgmnthost.com}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/sandbox}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/qa}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/staging}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/production}}
+    {{apic-catalog://mgmnthost.com/orgs/hikingorg/catalogs/sandbox}}
+    {{apic-catalog://mgmnthost.com/orgs/hikingorg/catalogs/qa}}
+    {{apic-catalog://mgmnthost.com/orgs/hikingorg/catalogs/staging}}
+    {{apic-catalog://mgmnthost.com/orgs/hikingorg/catalogs/production}}
+
+  Aşağıdaki ilgili komutlara ilişkin yardım için "apic KOMUT -h" yazın:
+
+    {{catalogs:create}}  Bir kuruluşta katalog yarat
+    {{catalogs:get}}      Bir kuruluştaki bir katalogla ilgili bilgileri al
+    {{catalogs:set}}      Bir kuruluştaki katalog ile ilgili bilgileri ayarla ya da güncelle
+    {{catalogs:delete}}   Bir kuruluştaki kataloğu sil

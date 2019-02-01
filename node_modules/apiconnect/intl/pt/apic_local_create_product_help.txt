@@ -1,0 +1,44 @@
+Uso:   apic {{create --type product}}           interativo
+       apic {{create --type product}} OPTIONS   não interativo
+
+  Criar uma definição de produto
+
+  Opções
+    --{{title}} TITLE                    valor do título (obrigatório)
+    --{{name}} NAME                      valor do nome (padrão derivado do título)
+    --{{apis}} API_FILENAME ...          lista de APIs para referência
+    --{{filename}} PRODUCT_FILENAME      nome do arquivo (padrão derivado do nome)
+    --{{template}} TEMPLATE              usar um modelo de provedor (se vazio, padronizado como modelo apic)
+    -v, --{{version}} VERSION            valor da versão (padronizado como 1.0.0)
+
+  Criar um produto
+    {{$ apic create --type product --title "Climb On"}}
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  Criar um produto interativamente
+    {{$ apic create --type product}}
+    ? Título: {{Climb On}}
+    ? Nome: {{climb-on}}
+    ? Arquivo: {{climb-on.yaml}}
+    ? Modelo:
+    ? Arquivos de API:
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  Criar um produto fazendo referência a APIs existentes
+    {{$ apic create --type product --title "Climb On" --apis "routes.yaml ascents.yaml"}}
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  Criar um produto utilizando um de seus modelos
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic create --type product --title "Proxy Product" --template proxy}}
+    Created {{proxy-product.yaml}} product definition {{[proxy-product:1.0.0]}}
+
+  Criar um produto utilizando o modelo padrão
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic config:set --global template-default-product=staging}}
+    {{$ apic create --type product --title "Staging Product"}}
+    Created {{staging-product.yaml}} product definition {{[staging-product:1.0.0]}}

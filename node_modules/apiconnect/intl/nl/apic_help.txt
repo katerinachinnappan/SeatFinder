@@ -1,0 +1,43 @@
+Syntaxis: {{%APPNAME%}} OPDRACHTOPTIES
+
+  Opties
+    -h, --{{help}}        opdrachtsyntaxis
+    -v, --{{version}}     productversie
+    --{{ext-version}}     gedetailleerde toolkitversie
+
+Opdrachten (typ apic COMMAND -h voor aanvullende Help):
+
+  Artefacten maken en valideren
+    {{config}}          configuratievariabelen beheren
+    {{create}}          ontwikkelingsartefacten maken
+    {{edit}}            API Designer uitvoeren
+    {{explore}}         API Explorer uitvoeren
+    {{validate}}        ontwikkelingsartefacten valideren
+
+  Toepassingen maken en testen
+    {{logs}}            servicelogboeken afbeelden
+    {{loopback}}        LoopBack-toepassingen maken en beheren
+    {{swiftserver}}     create and manage Swift Server Generator applications
+    {{microgateway}}    Micro Gateway-toepassingen maken
+    {{props}}           service-eigenschappen
+    {{services}}        servicebeheer
+    {{start}}           services starten
+    {{stop}}            services stoppen
+
+  Publiceren naar de cloud
+    {{apis}}            API's in een catalogus beheren
+    {{apps}}            providertoepassingen beheren
+    {{catalogs}}        catalogi in een organisatie beheren
+    {{devapps}}         consumententoepassingen beheren
+    {{drafts}}          API's en producten in concepten beheren
+    {{extensions}}      leveranciersextensies in een catalogus beheren
+    {{login}}           aanmelden bij IBM API Connect-cloud
+    {{logout}}          afmelden van IBM API Connect-cloud
+    {{orgs}}            organisaties beheren
+    {{members}}         leden beheren
+    {{policies}}        beleidsdefinities in een catalogus beheren
+    {{products}}        producten in een catalogus beheren
+    {{publish}}         producten en API's publiceren naar catalogus
+    {{securegateways}}  secure gateways beheren
+    {{spaces}}          ruimten in een catalogus beheren
+    {{subscriptions}}   abonnementen beheren

@@ -1,0 +1,21 @@
+Uso: apic swiftserver OPTIONS
+
+  Criar um aplicativo Swift Server Generator
+
+  Opções
+  -n, --name NAME                  nome do aplicativo (opcional)
+
+  Estabilidade: protótipo
+
+  Criar um aplicativo chamado livraria
+  $ apic swiftserver
+  ? Qual o nome de seu aplicativo? livraria
+  ? Insira o nome do diretório para conter o projeto: livraria
+  ? Selecione o armazenamento de dados: memória
+
+Digite "apic COMMAND -h" para obter ajuda sobre os comandos relacionados a seguir:
+
+  create                           Criar definições de artefato
+  swiftserver:property             Criar uma nova propriedade de modelo
+  swiftserver:refresh              Gerar um produto e uma definição do OpenAPI (Swagger)
+

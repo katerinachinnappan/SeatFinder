@@ -1,0 +1,39 @@
+Usage: apic {{products:pull}} PRODUCT_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Pull a product from a catalog or space
+
+  Options for catalog scope
+    {{--product-only}}                   pull the product but not its reference apis
+    {{-c}}, --{{catalog}} CATALOG            catalog name (required)
+    {{-o}}, --{{organization}} ORGANIZATION  provider organization name (required)
+    {{-s}}, --{{server}} SERVER              management server endpoint (required)
+
+  Options for space scope
+    --{{scope space}}
+    --{{space}} SPACE                    space name (required)
+    {{--product-only}}                   pull the product but not its reference apis
+    {{-c}}, --{{catalog}} CATALOG            catalog name (required)
+    {{-o}}, --{{organization}} ORGANIZATION  provider organization name (required)
+    {{-s}}, --{{server}} SERVER              management server endpoint (required)
+
+  Pull the product definition and its referenced APIs
+    {{$ apic products:pull climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon}}:1.0.0 product definition from {{climbonorg:production [climbon_1.0.0.yaml]}}
+    Pulled {{routes}}:1.0.0 API definition from {{climbonorg:production [routes_1.0.0.yaml]}}
+    Pulled {{ascents}}:1.0.0 API definition from {{climbonorg:production [ascents_1.0.0.yaml]}}
+
+  Pull the product definition with none of its referenced APIs
+    {{$ apic products:pull climbon --product-only --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon:1.0.0}} product definition from {{climbonorg:production [climbon_1.0.0.yaml]}}
+
+  Pull the product definition and its referenced APIs created from a WSDL document
+    {{$ apic products:pull globalweather-product --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{globalweather-product:1.0.0}} product definition from {{climbonorg:production [globalweather-product_1.0.0.yaml]}}
+    Pulled {{globalweather:1.0.0}} API definition from {{climbonorg:production [globalweather_1.0.0.yaml]}}
+    Pulled {{globalweather:1.0.0}} API WSDL definition from {{climbonorg:production [globalweather_1.0.0.wsdl]}}
+
+  Pull the product definition and its referenced APIs from a space
+    {{$ apic products:pull --scope space climbon --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon}}:1.0.0 product definition from {{climbonorg:production [climbon_1.0.0.yaml]}}
+    Pulled {{routes}}:1.0.0 API definition from {{climbonorg:production [routes_1.0.0.yaml]}}
+    Pulled {{ascents}}:1.0.0 API definition from {{climbonorg:production [ascents_1.0.0.yaml]}}

@@ -1,0 +1,55 @@
+Syntax: apic {{products}} [KATALOGOPTIONEN | BEREICHSOPTIONEN]
+
+  Produkte auflisten
+
+  Optionen für Katalogbereich
+    --{{catalog}} KATALOG | --{{all-catalogs}} (erforderlich)
+      {{-c}}, --{{catalog}} KATALOG            ein bestimmter Katalog
+      {{-c}}, --{{all-catalogs}}               alle Kataloge
+    --{{organization}} ORGANISATION | --all-organizations (erforderlich)
+      {{-o}}, --{{organization}} ORGANISATION  eine bestimmte Provider-Organisation
+      {{-o}}, --{{all-organizations}}          alle Provider-Organisationen
+    {{-s}}, --{{server}} SERVER                Management-Server-Endpunkt (erforderlich)
+
+  Optionen für Bereichsumfang
+    --{{scope space}}
+    --{{space}} BEREICH                      Bereichsname (erforderlich)
+    {{-c}}, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    {{-o}}, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+    {{-s}}, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Die Produkte im {{production}}-Katalog auflisten
+    {{$ apic products --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 in {{climbonorg:production}}
+    {{climbon}}:1.0.1 in {{climbonorg:production}}
+    {{yosar}}:2.0.0 in {{climbonorg:production}}
+
+  Die Produkte in allen Katalogen aller Organisationen auflisten
+    {{$ apic products --all-catalogs --all-organizations --server mgmnthost.com}}
+    {{climbon}}:1.0.0 in {{climbonorg:staging}}
+    {{climbon}}:1.0.0 in {{climbonorg:production}}
+    {{climbon}}:1.0.1 in {{climbonorg:sandbox}}
+    {{climbon}}:1.0.1 in {{climbonorg:qa}}
+    {{climbon}}:1.0.1 in {{climbonorg:production}}
+    {{yosar}}:2.0.0 in {{climbonorg:production}}
+    {{trails}}:1.0.0 in {{hikingorg:staging}}
+    {{trails}}:2.0.0 in {{hikingorg:production}}
+
+  Die Produkte im Bereich {{flights}} auflisten
+    {{$ apic products --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 in {{climbonorg:production:flights}}
+    {{climbon}}:1.0.1 in {{climbonorg:production:flights}}
+    {{yosar}}:2.0.0 in {{climbonorg:production:flights}}
+
+Geben Sie "apic BEFEHL --h" für weitere Informationen zu den folgenden Befehlen ein:
+
+  {{products:publish}}    Ein Produkt und seine referenzierten APIs in einem Katalog veröffentlichen
+  {{products:get}}        Informationen zu einem Produkt in einem Katalog abrufen
+  {{products:set}}        Ein Produkt in einem Katalog aktualisieren
+  {{products:pull}}       Ein Produkt mit Pull-Operation aus einem Katalog extrahieren
+  {{products:clone}}      Alle Produkte mit Pull-Operation aus einem Katalog extrahieren
+  {{products:delete}}     Ein Produkt in einem Katalog löschen
+  {{products:clear}}      Alle Produkte in einem Katalog löschen
+  {{products:replace}}    Ein Produkt in einem Katalog durch ein anderes Produkt ersetzen
+  {{products:supersede}}  Ein Produkt in einem Katalog durch ein anderes Produkt außer Kraft setzen
+  {{products:set-migration-target}}  Migrationsziel eines Produkts in einem Katalog durch ein anderes Produkt ersetzen und festlegen

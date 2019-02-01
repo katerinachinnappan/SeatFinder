@@ -1,0 +1,35 @@
+Syntax: apic {{catalogs}} OPTIONEN
+
+  Kataloge auflisten, die in Organisationen enthalten sind, denen der zurzeit authentifizierte
+  Benutzer angehört
+
+  Optionen
+    --{{organization}} ORGANISATION | --{{all-organizations}} (erforderlich)
+      -o, --{{organization}} ORGANISATION  eine bestimmte Provider-Organisation
+      -O, --{{all-organizations}}          alle Provider-Organisationen
+    -s, --{{server}} SERVER                Management-Server-Endpunkt (erforderlich)
+
+  Kataloge in der {{climbonorg}}-Organisation auf dem {{mgmnthost.com}}-Server auflisten
+    {{$ apic catalogs --organization climbonorg --server mgmnthost.com}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/sandbox}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/qa}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/staging}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/production}}
+
+  Kataloge in allen Organisationen auflisten
+    {{$ apic catalogs --all-organizations --server mgmnthost.com}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/sandbox}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/qa}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/staging}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/production}}
+    {{apic-catalog://mgmnthost.com/orgs/hikingorg/catalogs/sandbox}}
+    {{apic-catalog://mgmnthost.com/orgs/hikingorg/catalogs/qa}}
+    {{apic-catalog://mgmnthost.com/orgs/hikingorg/catalogs/staging}}
+    {{apic-catalog://mgmnthost.com/orgs/hikingorg/catalogs/production}}
+
+  Geben Sie "apic BEFEHL -h" für Hilfeinformationen zu den folgenden zugehörigen Befehlen ein:
+
+    {{catalogs:create}}   Katalog in einer Organisation erstellen
+    {{catalogs:get}}      Informationen zu einem Katalog in einer Organisation abrufen
+    {{catalogs:set}}      Informationen zu einem Katalog in einer Organisation festlegen oder aktualisieren
+    {{catalogs:delete}}   Katalog in einer Organisation löschen

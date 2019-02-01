@@ -1,0 +1,27 @@
+Syntaxe : apic {{products:delete}} NOM_PRODUIT[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Supprimer un produit dans un catalogue ou un espace
+
+  Options de la portée catalogue
+    {{-c}}, --{{catalog}} CATALOGUE          nom du catalogue (obligatoire)
+    {{-o}}, --{{organization}} ORGANISATION  nom de l'organisation de type fournisseur (obligatoire)
+    {{-s}}, --{{server}} SERVEUR             noeud final du serveur de gestion (obligatoire)
+
+  Options de la portée espace
+    --{{scope space}}
+    --{{space}} ESPACE                         nom de l'espace (obligatoire)
+    {{-c}}, --{{catalog}} CATALOGUE            nom du catalogue (obligatoire)
+    {{-o}}, --{{organization}} ORGANISATION    nom de l'organisation de type fournisseur (obligatoire)
+    {{-s}}, --{{server}} SERVEUR               noeud final du serveur de gestion (obligatoire)
+
+  Supprimer un produit d'un catalogue
+    {{$ apic products:delete climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    Suppression de la définition de produit {{climbon}}:1.0.0 de {{climbonorg}}:production
+  Suppression de la définition d'API {{routes}}:1.0.0 de {{climbonorg}}:production
+  Suppression de la définition d'API {{ascents}}:1.0.0 de {{climbonorg}}:production
+
+  Supprimer un produit d'un espace
+    {{$ apic products:delete --scope space climbon --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Suppression de la définition de produit {{climbon}}:1.0.0 de {{climbonorg}}:production:flights
+    Suppression de la définition d'API {{routes}}:1.0.0 de {{climbonorg}}:production:flights
+    Suppression de la définition d'API {{ascents}}:1.0.0 de {{climbonorg}}:production:flights

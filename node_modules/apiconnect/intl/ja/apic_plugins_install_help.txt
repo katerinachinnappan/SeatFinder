@@ -1,0 +1,20 @@
+使用法: apic {{plugins:install}} PLUGIN
+
+APIC コマンド・ライン・ユーティリティーにプラグインをインストールします。
+以下のいずれかの方法でプラグインをインストールすることができます。
+
+tarball アーカイブ経由でのインストール -- 内容が {{npm}} パッケージの {{.tgz}} ファイル:
+{{$ apic plugins:install my-plugin-v1.0.0.tgz}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +-- my-plugin@1.0.0
+
+ディレクトリー・パス経由でのインストール -- {{npm}} パッケージが格納されているフォルダーのディスク上のパス:
+{{$ apic plugins:install path/to/my-plugin}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +-- my-plugin@1.0.0
+
+npm レジストリー経由でのインストール (デフォルト) -- デフォルトの {{npm}} レジストリーから取得されるパッケージ名 ({{npm config get registry}}): {{$ apic plugins:install my-plugin}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +-- my-plugin@1.0.0
+
+処理が完了したら、apic {{plugins:list}} を実行して、プラグインがインストールされているかどうかを確認してください。

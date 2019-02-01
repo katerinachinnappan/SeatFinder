@@ -1,0 +1,13 @@
+Syntaxe : apic {{policies:delete}} OPTIONS NOM_STRATEGIE[:VERSION]
+
+  Supprimer une stratégie d'un catalogue
+
+  Options
+    -c, --{{catalog}} CATALOGUE          nom du catalogue (obligatoire)
+    -o, --{{organization}} ORGANISATION  nom de l'organisation de type fournisseur (obligatoire)
+    -s, --{{server}} SERVEUR             noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  {{$ apic policies:delete invokepolicy:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  Suppression de la stratégie {{invokepolicy}}:1.0.0 de {{climbonorg:production}}

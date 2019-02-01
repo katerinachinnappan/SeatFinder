@@ -1,0 +1,37 @@
+Syntaxis: apic {{products:supersede}} OUDE_PRODUCTNAAM[:VERSIE] NIEUWE_PRODUCTNAAM[:VERSIE] [CATALOGUSOPTIES | RUIMTEOPTIES]
+
+  Een gepubliceerd of gedeprecieerd product in een catalogus of ruimte substitueren door een ander product
+
+  Opties voor catalogusbereik
+    --{{plans}} NAAM_BRONPLAN:NAAM_DOELPLAN ...   toewijzingen van oud naar nieuw productplan (verplicht)
+    {{-c}}, --{{catalog}} CATALOGUS          naam van catalogus (verplicht)
+    {{-0}}, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    {{-s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Opties voor ruimtebereik
+    --{{scope space}}
+    --{{space}} RUIMTE                   naam van ruimte (verplicht)
+    --{{plans}} NAAM_BRONPLAN:NAAM_DOELPLAN ...   toewijzingen van oud naar nieuw productplan (verplicht)
+    {{-c}}, --{{catalog}} CATALOGUS          naam van catalogus (verplicht)
+    {{-0}}, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    {{-s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Stabiliteit: prototype
+
+  Een product substitueren door meer recente versie met behulp van variabele voor catalogusconfiguratie
+    {{$ config:set catalog=apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+    {{$ apic products:supersede climbon:1.0.0 climbon:2.0.0}}
+    {{climbon}}:1.0.0 gesubstitueerd door {{climbon}}:2.0.0 in {{climbon}}:sb
+
+  Een product substitueren door een ander product
+    {{$ apic products:supersede climbon adventure-sports -c production -o climbonorg -s mgmnthost.com}}
+    {{climbon}}:2.0.1 is gesubstitueerd door {{adventure-sports}}:1.0.0 in {{climbonorg:production}}
+
+  Een product substitueren door een nieuwe versie en alle oude plannen toewijzen aan nieuwe plannen
+    {{$ apic products:supersede climbon:1.0.1 climbon:1.1.0 --plans "basic:silver premium:gold" -c production -o climbonorg -s mgmnthost.com}}
+    {{climbon}}:1.0.1 is gesubstitueerd door {{climbon}}:1.1.0 in {{climbonorg:production}}
+
+
+  Een product substitueren door een ander product in een ruimte
+    {{$ apic products:supersede --scope space climbon adventure-sports --space flights -c production -o climbonorg -s mgmnthost.com}}
+    {{climbon}}:2.0.1 is gesubstitueerd door {{adventure-sports}}:1.0.0 in {{climbonorg:production:flights}}

@@ -1,0 +1,7 @@
+Syntax: apic {{loopback:refresh}}
+
+  Ein Produkt und eine API-Definition aus den {{LoopBack}}-Anwendungsmodellen generieren
+
+  Stabilität: Prototyp
+
+  {{$ apic loopback:refresh}}

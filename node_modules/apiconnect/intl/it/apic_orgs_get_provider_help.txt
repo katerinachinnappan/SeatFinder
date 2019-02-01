@@ -1,0 +1,12 @@
+Utilizzo: apic {{orgs:get}} OPZIONI NOME_CATALOGO
+
+  Richiama le informazioni su un'organizzazione provider
+
+  Opzioni
+    --{{type}} provider
+    -s, --{{server}} SERVER    endpoint server di gestione (obbligatorio)
+
+  Richiamo delle informazioni su un'organizzazione provider
+    {{$ apic orgs:get climbonorg --server mgmnthost.com}}
+    nome: climbonorg
+    nome di visualizzazione: Climbon Organization

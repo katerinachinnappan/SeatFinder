@@ -1,0 +1,19 @@
+Kullanım: apic {{policies:get}} SEÇENEKLER İLKE_ADI[:SÜRÜM]
+
+  Bir katalogdaki bir ilkeyle ilgili bilgileri alır
+
+  Seçenekler
+    -c, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    -o, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    -s, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  {{$ apic policies:get invokepolicy:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  ad: {{invokepolicy}}
+  sürüm: 1.0.0
+  başlık: Invoke policy
+  ek: {{rest, soap}}
+  ağ geçitleri: {{datapower-gateway}}
+  katalog: {{production}}
+  kuruluş: {{climbonorg}}

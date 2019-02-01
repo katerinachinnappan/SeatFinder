@@ -1,0 +1,7 @@
+Syntaxe : apic {{loopback:refresh}}
+
+  Générer une définition de produit et d'API à partir des modèles d'application {{LoopBack}}
+
+  Stabilité : prototype
+
+  {{$ apic loopback:refresh}}

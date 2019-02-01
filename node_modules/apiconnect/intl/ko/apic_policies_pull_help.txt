@@ -1,0 +1,14 @@
+사용법: apic {{policies:pull}} OPTIONS POLICY_NAME[:VERSION]
+
+  카탈로그에서 정책 가져오기
+
+  옵션
+    -c, --{{catalog}} CATALOG              카탈로그 이름(필수)
+    -o, --{{organization}} ORGANIZATION    제공자 조직 이름(필수)
+    -s, --{{server}} SERVER                관리 서버 엔드포인트(필수)
+
+  안정성: 프로토타입
+
+  정책 가져오기
+    {{$ apic policies:pull invokepolicy:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{invokepolicy}}:1.0.0 policy from {{climbonorg:production [invokepolicy_1.0.0]}}

@@ -1,0 +1,72 @@
+Kullanım: apic {{config:set}} SEÇENEKLER AD=DEĞER ...
+
+  Bir ya da daha fazla yapılandırma değişkenini ayarlar ya da günceller
+
+  Seçenekler
+    -l, --{{local}}                      yerel uygulama yapılandırma değişkenini ayarla (yalnızca {{loopback}} projesi)
+    -g, --{{global}}                     genel yapılandırma değişkenini ayarla
+
+  Yapılandırma değişkenleri:
+
+    {{catalog}}
+      Katalog yapılandırma değişkeni, bir API Connect kataloğunun
+      URI'sine ayarlanmalıdır.  Kataloğun değeri, bir kataloğun farklı yönlerini
+      yönetmek için kullanılan tüm komutlar için, kataloğun varsayılan kimliğini
+      sağlar.  Kataloğun URI'siyle tanımlanan varsayılan değerler --{{server}},
+      --{{organization}} ve --{{catalog}} komut satırı seçenekleri kullanılarak
+      geçersiz kılınabilir.  Katalog URI'sinin biçimi şöyledir:
+      apic-catalog://YÖNETİM_SUNUCUSU/orgs/KURULUŞ_ADI//catalogs/KATALOG_ADI
+
+    {{app}}
+      Uygulama (app) yapılandırma değişkeni, API Connect uygulamasının URI'sine
+      ayarlanmalıdır.  Uygulamanın değeri, bir uygulamanın farklı yönlerini yönetmek
+      için kullanılan tüm komutlar için, uygulamanın varsayılan kimliğini sağlar.  Uygulamanın URI'siyle tanımlanan varsayılan değerler --{{server}}, --{{organization}}
+      ve --{{app}} komut satırı seçenekleri kullanılarak geçersiz kılınabilir.
+      Uygulama URI'sinin biçimi şöyledir:
+      apic-app://YÖNETİM_SUNUCUSU/orgs/KURULUŞ_ADI/apps/UYGULAMA_ADI
+
+    {{org}}
+      Uygulamanın ya da kataloğun URI'siyle tanımlanan kuruluşun varsayılan değeri
+      kuruluş URI'si kullanılarak ayarlanabilir.  Kuruluş URI'sinin biçimi şöyledir:
+      apic-org://YÖNETİM_SUNUCUSU/orgs/KURULUŞ_ADI
+
+    {{space}}
+      Alan yapılandırma değişkeni, bir API Connect alanının
+      URI'sine ayarlanmalıdır.  Alanın değeri, bir alanın farklı yönlerini
+      yönetmek için kullanılan tüm komutlar için alanın varsayılan kimliğini
+      sağlar.  Alanın URI'siyle tanımlanan varsayılan değerler, --{{server}}, --{{organization}},
+      --{{catalog}} ve --{{space}} komut satırı seçenekleri kullanılarak geçersiz kılınabilir.  Alan URI'sinin biçimi şöyledir:
+      apic-space://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/catalogs/CATALOG_NAME/spaces/SPACE_NAME
+
+    {{accessibility-mode}}
+      Erişilirlik özelliklerini etkinleştirir. Değer '{{enabled}}' ya da '{{disabled}}' olarak ayarlanmalıdır.
+      Ayarlanmazsa, {{accessibility-mode}} devre dışı bırakılır.
+
+    {{oauth-redirect-uri}}
+      OAuth testi için OAuth Redirect URI'sinin ayarlanması gerekir, bu genellikle Geliştirici Portalı kullanılarak
+      yapılır. Araç takımını kullanarak aynısını yapmak için bu değişkeni kullanın.
+
+    {{template-path}}
+      Handlebar şablonları için bakılacak yerlerin listesi
+
+    {{template-default-api}}
+      Varsayılan api şablonunu tanımlar
+
+    {{template-default-product}}
+      Varsayılan ürün şablonunu tanımlar
+
+  {{$ apic config:set catalog=apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+  {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+  {{org: apic-org://mgmnthost.com/orgs/climbon}}
+
+  {{$ apic config:set --global app=apic-app://mgmnthost.com/orgs/climbon/apps/sb}}
+  {{app: apic-app://mgmnthost.com/orgs/climbon/apps/sb}}
+  {{org: apic-org://mgmnthost.com/orgs/climbon}}
+
+  {{$ apic config:set org=apic-org://mgmnthost2.com/orgs/hikeon}}
+  {{app: apic-app://mgmnthost2.com/orgs/hikeon/apps/sb}}
+  {{catalog: apic-catalog://mgmnthost2.com/orgs/hikeon/catalogs/sb}}
+  {{org: apic-org://mgmnthost2.com/orgs/hikeon}}
+
+  {{$ apic config:set --global template-path="/etc/templates"}}
+  {{template-path: /etc/templates}}

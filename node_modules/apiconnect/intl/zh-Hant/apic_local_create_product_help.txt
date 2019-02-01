@@ -1,0 +1,44 @@
+用法： apic {{create --type product}}             互動式
+       apic {{create --type product}} OPTIONS   非互動式
+
+  建立產品定義
+
+  選項
+    --{{title}} TITLE                    標題值（必要）
+    --{{name}} NAME                      名稱值（預設值衍生自標題）
+    --{{apis}} API_FILENAME ...          要參照的 API 清單
+    --{{filename}} PRODUCT_FILENAME      檔名（預設值衍生自名稱）
+    --{{template}} TEMPLATE              使用提供者範本（如果空白，則預設為 apic 範本）
+    -v, --{{version}} VERSION            版本值（預設為 1.0.0）
+
+  建立產品
+    {{$ apic create --type product --title "Climb On"}}
+    已建立 {{climb-on.yaml}} 產品定義 {{[climb-on:1.0.0]}}
+
+  以互動方式建立產品
+    {{$ apic create --type product}}
+    ? 標題：{{Climb On}}
+    ? 名稱：{{climb-on}}
+    ? 檔案：{{climb-on.yaml}}
+    ? 範本：
+    ? API 檔案：
+    已建立 {{climb-on.yaml}} 產品定義 {{[climb-on:1.0.0]}}
+
+  建立一個參照現有 API 的產品
+    {{$ apic create --type product --title "Climb On" --apis "routes.yaml ascents.yaml"}}
+    已建立 {{climb-on.yaml}} 產品定義 {{[climb-on:1.0.0]}}
+
+  使用您的其中一個範本建立產品
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic create --type product --title "Proxy Product" --template proxy}}
+    已建立 {{proxy-product.yaml}} 產品定義 {{[proxy-product:1.0.0]}}
+
+  使用您的預設範本建立產品
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic config:set --global template-default-product=staging}}
+    {{$ apic create --type product --title "Staging Product"}}
+    已建立 {{staging-product.yaml}} 產品定義 {{[staging-product:1.0.0]}}

@@ -1,0 +1,29 @@
+Syntaxe : apic {{devapps}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Répertorier les applications de type consommateur dans une organisation et un catalogue ou un espace
+
+  Options de la portée catalogue
+    --{{scope catalog}}                        (par défaut)
+    -{{c}}, --{{catalog}} CATALOGUE            nom du catalogue (obligatoire)
+    -{{o}}, --{{organization}} ORGANISATION    nom de l'organisation de type fournisseur (obligatoire)
+    -{{s}}, --{{server}} SERVEUR               noeud final du serveur de gestion (obligatoire)
+
+  Options de la portée espace
+    --{{scope space}}                         (obligatoire)
+    --{{space}} ESPACE                        nom de l'espace (obligatoire)
+    -{{c}}, --{{catalog}} CATALOGUE           nom du catalogue (obligatoire)
+    -{{o}}, --{{organization}} ORGANISATION   nom de l'organisation de type fournisseur (obligatoire)
+    -{{s}}, --{{server}} SERVEUR              noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  Répertorier les applications de type consommateur dans l'organisation climbonorg et le catalogue production sur le serveur mgmnthost.com
+    {{$ apic devapps --catalog production --organization climbonorg --server mgmnthost.com}}
+    vols dans flightsOrg
+
+  Répertorier les applications de type consommateur de l'organisation climbonorg et du catalogue production dans l'espace s1 sur le serveur mgmnthost.com
+    {{$ apic devapps --scope space --space s1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    vols dans flightsOrg
+
+  Entrez "apic COMMAND -h" pour plus d'informations sur les commandes suivantes :
+    devapps:get        Obtenir des informations sur une application

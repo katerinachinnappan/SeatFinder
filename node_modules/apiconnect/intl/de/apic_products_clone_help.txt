@@ -1,0 +1,36 @@
+Syntax: apic {{products:clone}} [KATALOGOPTIONEN | BEREICHSOPTIONEN]
+
+  Alle Produktdefinitionen mit Pull-Operation extrahieren
+
+  Optionen für Katalogbereich
+    --{{scope catalog}}                         (Standard)
+    --{{catalog}} KATALOG | --{{all-catalogs}}  (erforderlich)
+      -{{c}}, --{{catalog}} KATALOG             ein bestimmter Katalog
+      -{{C}}, --{{all-catalogs}}                alle Kataloge
+    --{{organization}} ORGANISATION | --{{all-organizations}} (erforderlich)
+      -{{o}}, --{{organization}} ORGANISATION   eine bestimmte Provider-Organisation
+      -{{O}}, --{{all-organizations}}           alle Provider-Organisationen
+    -{{s}}, --{{server}} SERVER                 Management-Server-Endpunkt (erforderlich)
+
+  Optionen für Bereichsumfang
+    --{{scope space}}
+    --{{space}} BEREICH                      Bereichsname (erforderlich)
+    {{-c}}, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    {{-o}}, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+    {{-s}}, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Alle Produkte mit Pull-Operation aus einem Katalog extrahieren
+    {{$ apic products:clone --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon}}:1.0.0 product definition from {{climbonorg}}:production {{[climbon.yaml]}}
+    Pulled {{globalweather-product}}:1.0.0 product definition from {{climbonorg}}:production {{[globalweather-product_1.0.0.yaml]}}
+    Pulled {{hiking}}:3.0.0 product definition from {{climbonorg}}:production {{[hiking.yaml]}}
+    Pulled {{hiking}}:3.0.1 product definition from {{climbonorg}}:production {{[hiking-1.yaml]}}
+    Pulled {{ascents}}:1.0.0 API definition from {{climbonorg}}:production {{[ascents.yaml]}}
+
+  Alle Produkte mit Pull-Operation aus einem Bereich extrahieren
+    {{$ apic products:clone --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon}}:1.0.0 product definition from {{climbonorg}}:production:flights {{[climbon.yaml]}}
+    Pulled {{climbon}}:1.0.1 product definition from {{climbonorg}}:production:flights {{[climbon-2.yaml]}}
+    Pulled {{globalweather-product}}:1.0.0 product definition from {{climbonorg}}:production:flights {{[globalweather-product_1.0.0.yaml]}}
+    Pulled {{hiking}}:3.0.0 product definition from {{climbonorg}}:production:flights {{[hiking.yaml]}}
+    Pulled {{ascents}}:1.0.0 API definition from {{climbonorg}}:production:flights {{[ascents.yaml]}}

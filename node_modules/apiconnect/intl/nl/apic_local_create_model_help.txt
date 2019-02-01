@@ -1,0 +1,22 @@
+Syntaxis: apic create --type model-swiftserver OPTIES
+
+  Een modeldefinitie in een Swift Server Generator-toepassing maken
+
+  Opties
+  --name NAAM                      naam van het model
+
+  Stabiliteit: prototype
+
+  Een model maken
+  $ apic create --type model-swiftserver
+  ? Geef de modelnaam op: book
+  ? Aangepaste meervoudsvorm (gebruikt om REST URL samen te stellen): books
+  We gaan nu enkele book-eigenschappen toevoegen.
+
+  Geef een lege eigenschapnaam op als u klaar bent.
+    ? Geef de eigenschapnaam op: title
+  ? Type eigenschap: string
+  ? Verplicht? Nee
+  ? Standaard? Nee
+  ? Geef de eigenschapnaam op:
+

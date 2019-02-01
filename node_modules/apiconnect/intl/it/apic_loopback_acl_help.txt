@@ -1,0 +1,12 @@
+Utilizzo: apic {{loopback:acl}} OPZIONI
+
+  Aggiunge una nuova voce ACL all'applicazione {{LoopBack}} corrente
+
+  Opzioni
+    --skip-cache                     non ricorda le risposte
+
+  Stabilità: prototipo
+
+  {{$ apic loopback:acl}}
+  In questo modo verranno richieste diverse domande per determinare le opzioni ACL
+  e quindi per aggiungere una voce al JSON del modello corrispondente.

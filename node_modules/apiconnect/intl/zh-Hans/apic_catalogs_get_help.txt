@@ -1,0 +1,17 @@
+用法：apic {{catalogs:get}} CATALOG_NAME OPTIONS
+
+  获取有关组织中目录的信息
+
+  选项
+    -o, --{{organization}} ORGANIZATION     特定提供者组织（必需）
+    -s, --{{server}} SERVER                 管理服务器端点（必需）
+
+  稳定性：原型
+
+  获取 {{mgmnthost.com}} 服务器上 {{climbonorg}} 组织中的目录
+    {{$ apic catalogs:get qa --organization climbonorg --server mgmnthost.com}}
+    name: {{qa}}
+    display name: Quality Assurance
+    organization: {{climbonorg}}
+    type: production
+    spaces: disabled

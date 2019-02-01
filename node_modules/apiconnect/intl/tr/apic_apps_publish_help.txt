@@ -1,0 +1,18 @@
+Kullanım: apic {{apps:publish}} SEÇENEKLER
+
+  Bir Node.js ya da Swift Server (Bluemix only) uygulamasını bir sağlayıcı uygulamasına yayınlayın.
+  Collective Controller'a yayınlama 5.0.7.0 itibariyle kullanımdan kaldırıldı.
+
+  Seçenekler
+    -a, --{{app}} UYGULAMA               yayınlama için sağlayıcı uygulaması hedefi (zorunludur)
+    -o, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    -s, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+    --{{scale}} ÖLÇEK                    APIConnect topluluklarında konuşlandırılan hizmetin ölçeğini ayarlar. Varsayılan olarak ana makine sayısını alır (isteğe bağlı)
+
+  Geçerli uygulamayı {{mgmnthost.com}} sunucusu üzerindeki {{climbon}} kuruluşunda
+  bulunan routes adlı sağlayıcı uygulamasında yayınlamak için:
+    {{$ apic apps:publish --app routes --organization climbon --server mgmnthost.com}}
+
+  Geçerli uygulamayı {{apps}} yapılandırma değişkenini kullanarak yayınlamak için:
+    {{$ apic config:set app=apic-app://mgmnthost.com/orgs/climbon/apps/sb-app}}
+    {{$ apic apps:publish}}

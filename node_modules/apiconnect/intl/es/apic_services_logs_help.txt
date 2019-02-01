@@ -1,0 +1,33 @@
+Uso: apic {{logs}} OPCIONES
+
+  Colocar en cola los registros de servicio
+
+  Opciones
+    -n, --{{no-tail}}                    visualizar el registro, pero no colocarlo en cola
+    -S, --{{service}} NOMBRE_SERVICIO    nombre del servicio a registrar
+
+  Colocar en cola los registros de la aplicación LoopBack
+  {{$ apic logs}}
+  Colocando en cola registros para `{{climbon}}`
+  2016-03-16T04:25:59.891Z pid:89271 worker:0 INFO strong-agent v2.0.56 perfilando aplicación 'climbon' pid '89271'
+  2016-03-16T04:25:59.897Z pid:89271 worker:0 INFO strong-agent[89271] iniciado agente de perfilado
+  2016-03-16T04:25:59.899Z pid:89271 worker:0 INFO iniciando supervisor (pid 89271)
+  2016-03-16T04:25:59.900Z pid:89271 worker:0 INFO strong-agent strong-agent utilizando strong-cluster-control v2.2.10
+  2016-03-16T04:25:59.904Z pid:89271 worker:0 INFO supervisor notificando métricas a `internal:`
+
+  Visualizar pero no colocar en cola los registros de aplicación LoopBack
+  {{$ apic logs -n --service climbon}}
+  2016-03-16T04:31:19.128Z pid:89306 worker:0 INFO strong-agent v2.0.56 perfilando aplicación 'climbon' pid '89306'
+  2016-03-16T04:31:19.132Z pid:89306 worker:0 INFO strong-agent[89306] iniciado agente de perfilado
+  2016-03-16T04:31:19.133Z pid:89306 worker:0 INFO iniciando supervisor (pid 89306)
+  2016-03-16T04:31:19.135Z pid:89306 worker:0 INFO strong-agent strong-agent utilizando strong-cluster-control v2.2.10
+  2016-03-16T04:31:19.137Z pid:89306 worker:0 INFO supervisor notificando métricas a `internal:`
+
+  Colocar en cola los registros de {{Micro Gateway}}
+  {{$ apic logs --service climbon-gw}}
+  Colocando en cola registros para `{{climbon-gw}}`
+  2016-03-16T04:31:21.378Z pid:89308 worker:0 INFO strong-agent v2.0.56 perfilando aplicación 'apiconnect-microgateway' pid '89308'
+  2016-03-16T04:31:21.383Z pid:89308 worker:0 INFO strong-agent[89308] iniciado agente de perfilado
+  2016-03-16T04:31:21.384Z pid:89308 worker:0 INFO iniciando supervisor (pid 89308)
+  2016-03-16T04:31:21.385Z pid:89308 worker:0 INFO strong-agent strong-agent utilizando strong-cluster-control v2.2.10
+  2016-03-16T04:31:21.388Z pid:89308 worker:0 INFO supervisor notificando métricas a `internal:`

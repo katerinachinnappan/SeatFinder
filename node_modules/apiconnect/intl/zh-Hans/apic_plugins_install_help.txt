@@ -1,0 +1,21 @@
+用法：apic {{plugins:install}} PLUGIN
+
+将插件安装到 apic 命令行实用程序。
+插件可以为以下之一：
+
+通过 tarball 归档进行安装 - 一个 {{.tgz}} 文件，其内容是 {{npm}} 软件包：
+{{$ apic plugins:install my-plugin-v1.0.0.tgz}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +-- my-plugin@1.0.0
+
+通过目录路径进行安装 - 到含 {{npm}} 软件包的文件夹的磁盘路径：
+{{$ apic plugins:install path/to/my-plugin}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +-- my-plugin@1.0.0
+
+通过 npm 注册表进行安装（缺省值）- 将从缺省 {{npm}} 注册表检索的软件包名称 ({{npm config get registry}})：
+{{$ apic plugins:install my-plugin}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +-- my-plugin@1.0.0
+
+在完成此操作后，您可以运行“apic {{plugins:list}}”以查看是否已安装插件。

@@ -1,0 +1,12 @@
+Syntax: apic {{loopback:middleware}} OPTIONEN
+
+  Erstellt eine neue Middleware in der {{LoopBack}}-Anwendung
+
+  Optionen
+    -n, --{{name}} NAME                  Name der Middleware (optional)
+    --{{skip-cache}}                     Eingabeaufforderungsantworten nicht speichern
+
+  Stabilität: Prototyp
+
+  Einen Eintrag zu {{/server/middleware.json}} hinzufügen, der die Middleware {{"myMiddleware"}} definiert
+    {{$ apic loopback:middleware --name myMiddleware}}

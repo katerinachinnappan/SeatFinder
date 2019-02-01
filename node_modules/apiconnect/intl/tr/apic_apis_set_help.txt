@@ -1,0 +1,40 @@
+Kullanım: {{apic apis:set}} API_ADI[:SÜRÜM] [KATALOG_SEÇENEKLERİ | ALAN_SEÇENEKLERİ]
+
+  Bir katalogdaki ya da alandaki API'yi güncelle
+
+  Katalog kapsamı için seçenekler
+    --{{scope catalog}}                       (varsayılan)
+    --{{status}}                              API durumu (zorunludur)
+        {{online}}                            API'yi çevrimiçine al
+        {{offline}}                           API'yi çevrimdışına al
+    -{{c}}, --{{catalog}} KATALOG             katalog adı (zorunludur)
+    -{{o}}, --{{organization}} KURULUŞ        sağlayıcı kuruluşu adı (zorunludur)
+    -{{s}}, --{{server}} SUNUCU               yönetim sunucusu uç noktası (zorunludur)
+
+  Alan kapsamı için seçenekler
+    --{{scope space}}
+    --{{status}}                              API durumu (zorunludur)
+        {{online}}                            API'yi çevrimiçine al
+        {{offline}}                           API'yi çevrimdışına al
+    --{{space}} ALAN                          alan adı (zorunludur)
+    -{{c}}, --{{catalog}} KATALOG             katalog adı (zorunludur)
+    -{{o}}, --{{organization}} KURULUŞ        sağlayıcı kuruluşu adı (zorunludur)
+    -{{s}}, --{{server}} SUNUCU               yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  Bir katalogda API'yi çevrimdışına al
+    {{$ apic apis:set routes --status offline --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} içinde {{routes:1.0.0}} güncellendi (durum: {{offline}})
+
+  Bir katalogda API'yi çevrimiçine al
+    {{$ apic apis:set routes --status online --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} içinde {{routes:1.0.0}} güncellendi (durum: {{online}})
+
+  Bir alanda API'yi çevrimdışına al
+    {{$ apic apis:set --scope space --status offline --space sp1 --catalog production --organization climbonorg --server mgmnthost.com routes}}
+    {{climbonorg:production:sp1}} içinde {{routes:1.0.0}} güncellendi (durum: {{offline}})
+
+  Bir alanda API'yi çevrimiçine al
+    {{$ apic apis:set --scope space --status online --space sp1 --catalog production --organization climbonorg --server mgmnthost.com routes}}
+    {{climbonorg:production:sp1}} içinde {{routes:1.0.0}} güncellendi (durum: {{online}})

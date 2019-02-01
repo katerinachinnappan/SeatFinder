@@ -1,0 +1,12 @@
+Syntaxe : apic {{loopback:boot-script}} OPTIONS
+
+  Créer un script d'amorçage dans l'application {{LoopBack}}
+
+  Options
+    -n, --{{name}} NOM                   nom du script d'amorçage (facultatif)
+    --{{skip-cache}}                     ne pas mémoriser les réponses aux invites
+
+  Stabilité : prototype
+
+  {{$ apic loopback:boot-script --name some_boot_script.js}}
+  Cela génère un script {{boot}} dans {{/server/boot.}}

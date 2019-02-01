@@ -1,0 +1,48 @@
+用法：apic {{config:delete}} OPTIONS NAME
+
+  删除配置变量
+
+  选项
+    -l, --{{local}}       删除本地应用程序配置变量 (仅适用于 {{loopback}} 项目）
+    -g, --{{global}}      删除全局配置变量
+
+  配置变量：
+
+    {{catalog}}
+      目录配置变量应设置为 API Connect 目录的 URI。目录值针对用于管理目录各方面的所有命令提供目录的缺省身份。可使用 --{{server}}、--{{organization}} 和 --{{catalog}} 命令行选项覆盖目录的 URI 定义的缺省值。目录 URI 采用以下格式：apic-catalog://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/catalogs/CATALOG_NAME
+
+    {{app}}
+      应用程序配置变量应设置为 API Connect 应用程序的 URI。应用程序的值针对用于管理应用程序各方面的所有命令提供应用程序的缺省身份。可使用 --{{server}}、--{{organization}} 和 --{{app}} 命令行选项覆盖应用程序的 URI 定义的缺省值。应用程序 URI 采用以下格式：apic-app://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/apps/APP_NAME
+
+    {{org}}
+      可使用组织 URI 来设置应用程序或目录 URI 所定义的组织的缺省值。组织 URI 采用以下格式：apic-org://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME
+
+    {{space}}
+      空间配置变量应设置为 API Connect 空间的 URI。空间的值为用于管理空间各方面的所有命令提供空间的缺省身份。
+可使用 --{{server}}、--{{organization}}、--{{catalog}} 和 --{{space}} 命令行选项覆盖空间的 URI 定义的缺省值。
+空间 URI 采用以下格式：
+      apic-space://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/catalogs/CATALOG_NAME/spaces/SPACE_NAME
+
+    {{accessibility-mode}}
+      启用辅助功能。值应该设置为“{{enabled}}”或“{{disabled}}”。如果未设置，那么将禁用 {{accessibility-mode}}。
+
+    {{oauth-redirect-uri}}
+      要测试 OAuth，必须设置 OAuth 重定向 URI，这通常使用开发门户网站完成。使用此变量，可仅用工具箱实现相同目的。
+
+    {{template-path}}
+      用于查找处理程序模板的位置列表
+
+    {{template-default-api}}
+      定义缺省 {{api}} 模板
+
+    {{template-default-product}}
+      定义缺省产品模板
+
+  {{$ apic config:delete catalog}}
+  Deleted {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+
+  {{$ apic config:delete org}}
+  Deleted {{org: apic-org://mgmnthost.com/orgs/climbon}}
+
+  {{$ apic config:delete template-path}}
+  Deleted {{template-path: /etc/templates}}

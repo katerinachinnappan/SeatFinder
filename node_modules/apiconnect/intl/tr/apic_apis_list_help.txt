@@ -1,0 +1,46 @@
+Kullanım: {{apic apis}} [KATALOG_SEÇENEKLERİ | ALAN_SEÇENEKLERİ]
+
+  Bir katalogdaki ya da alandaki API'leri listele
+
+  Katalog kapsamı için seçenekler
+    --{{scope catalog}}                         (varsayılan)
+    --{{catalog}} KATALOG | --{{all-catalogs}}  (zorunludur)
+      -{{c}}, --{{catalog}} KATALOG             belirli bir katalog
+      -{{C}}, --{{all-catalogs}}                tüm kataloglar
+    --{{organization}} KURULUŞ | --{{all-organizations}} (zorunludur)
+      -{{o}}, --{{organization}} KURULUŞ        belirli bir sağlayıcı kuruluşu
+      -{{O}}, --{{all-organizations}}           tüm sağlayıcı kuruluşları
+    -{{s}}, --{{server}} SUNUCU                 yönetim sunucusu uç noktası (zorunludur)
+
+  Alan kapsamı için seçenekler
+    --{{scope space}}
+    --{{space}} ALAN
+    -{{c}}, --{{catalog}} KATALOG               belirli bir katalog
+    -{{o}}, --{{organization}} KURULUŞ          belirli bir sağlayıcı kuruluşu
+    -{{s}}, --{{server}} SUNUCU                 yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  Bir katalogdaki API tanımlarını listelemek için:
+    {{$ apic apis --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} içinde {{routes:2.0.0}}
+    {{climbonorg:production}} içinde {{trails:2.0.0}}
+
+  Tüm kuruluşların tüm kataloglarındaki API tanımlarını listelemek için:
+    {{$ apic apis --all-catalogs --all-organizations --server mgmnthost.com}}
+    {{climbonorg:staging}} içinde {{routes:1.0.0}}
+    {{climbonorg:production}} içinde {{routes:2.0.0}}
+    {{hikingorg:staging}} içinde {{trails:1.0.0}}
+    {{hikingorg:production}} içinde {{trails:2.0.0}}
+
+  Bir alandaki API tanımlarını listele
+    {{$ apic apis --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production:sp1}} içinde {{routes:2.0.0}}
+    {{climbonorg:production:sp1}} içinde {{trails:2.0.0}}
+
+Aşağıdaki komutlar hakkında daha fazla bilgi için "{{apic COMMAND --help}}" yazın:
+
+  {{apis:get}}     Bir katalogdaki ya da alandaki bir API ile ilgili bilgileri al
+  {{apis:set}}     Bir katalogdaki ya da alandaki bir API'yi güncelle
+  {{apis:pull}}    Bir katalogdan ya da alandan API çek
+  {{apis:clone}}   Bir katalogdan ya da alandan tüm API'leri çek

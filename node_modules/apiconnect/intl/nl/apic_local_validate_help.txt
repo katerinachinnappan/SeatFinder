@@ -1,0 +1,29 @@
+Syntaxis: apic {{validate}} OPTIES API_BESTANDSNAAM | PRODUCT_BESTANDSNAAM
+
+  De geldigheid controleren van een API of productdefinitie
+
+  Opties
+    -p, --{{product-only}}               voor productdefinities: geen API's valideren waarnaar wordt verwezen
+    --{{no-extensions}}                  voor API-definities: niet valideren op basis van {{IBM Swagger}}-extensies
+
+  Een API-definitie valideren
+    {{$ apic validate routes.yaml}}
+    API-definitie {{routes.yaml}} gevalideerd op basis van {{Swagger 2.0}}-schema {{[routes:1.0.0]}}
+    API-definitie {{routes.yaml}} gevalideerd op basis van {{IBM Swagger 2.0}}-schema {{[routes:1.0.0]}}
+    API-definitie {{routes.yaml}} gevalideerd op basis van {{IBM Swagger 2.0}}-extensieschema {{[routes:1.0.0]}}
+
+  Een API-definitie zonder IBM-extensies valideren
+    {{$ apic validate --no-extensions routes.yaml}}
+    API-definitie {{routes.yaml}} valideren op basis van {{Swagger 2.0}}-schema {{[routes:1.0.0]}}
+    API-definitie {{routes.yaml}} gevalideerd op basis van {{IBM Swagger 2.0}}-schema {{[routes:1.0.0]}}
+
+  Een productdefinitie en de daarin gebruikte API's valideren
+    {{$ apic validate climb-on.yaml}}
+    API-definitie {{climb-on.yaml}} gevalideerd {{[climb-on:1.0.0]}}
+    API-definitie {{routes.yaml}} gevalideerd op basis van {{Swagger 2.0}}-schema {{[routes:1.0.0]}}
+    API-definitie {{routes.yaml}} gevalideerd op basis van {{IBM Swagger 2.0}}-schema {{[routes:1.0.0]}}
+    API-definitie {{routes.yaml}} gevalideerd op basis van {{IBM Swagger 2.0}}-extensieschema {{[routes:1.0.0]}}
+
+  Een productdefinitie valideren zonder validatie van de daarin gebruikte API's
+    {{$ apic validate --product-only climb-on.yaml}}
+    Productdefinitie {{climb-on.yaml}} gevalideerd {{[climb-on:1.0.0]}}

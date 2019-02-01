@@ -1,0 +1,9 @@
+用法：apic swiftserver:property
+
+  在当前应用程序中新建 Swift Server Generator 模型属性
+
+  稳定性：原型
+
+  将属性添加到现有模型
+  $ apic swiftserver:property
+

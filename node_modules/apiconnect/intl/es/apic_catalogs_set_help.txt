@@ -1,0 +1,16 @@
+Uso: apic {{catalogs:set}} NOMBRE_CATÁLOGO OPCIONES
+
+  Establecer u obtener información sobre un catálogo de una organización
+
+  Opciones
+    --{{name}}
+    --{{display-name}}
+    --{{spaces enabled | disabled}}
+    -o, --{{organization}} ORGANIZACIÓN     una organización de proveedores específica (obligatorio)
+    -s, --{{server}} SERVIDOR               punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  Actualizar un catálogo de la organización climbonorg en el servidor mgmnthost.com
+    {{$ apic catalogs:set qa --organization climbonorg --server mgmnthost.com --spaces enabled}}
+    Se ha actualizado el catálogo {{qa}} en {{climbonorg}}

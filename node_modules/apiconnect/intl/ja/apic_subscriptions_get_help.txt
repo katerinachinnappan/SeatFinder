@@ -1,0 +1,35 @@
+使用法: {{apic subscriptions:get}} SUBSCRIPTION_NAME [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  サブスクリプションに関する情報を取得します
+
+  カタログ・スコープ用のオプション
+    --{{scope catalog}}                       (デフォルト)
+    -{{c}}, --{{catalog}} CATALOG             カタログ名 (必須)
+    -{{o}}, --{{organization}} ORGANIZATION   特定のプロバイダー組織 (必須)
+    -{{s}}, --{{server}} SERVER               管理サーバー・エンドポイント (必須)
+
+  スペース・スコープ用のオプション
+    --{{scope space}}                       (必須)
+    --{{space}}                             スペース名 (必須)
+    -{{c}}, --{{catalog}} CATALOG               カタログ名 (必須)
+    -{{o}}, --{{organization}} ORGANIZATION     特定のプロバイダー組織 (必須)
+    -{{s}}, --{{server}} SERVER                 管理サーバー・エンドポイント (必須)
+
+  Stability: prototype
+
+  カタログ内のサブスクリプションに関する情報を取得します
+    {{$ apic subscriptions:get subscription1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    名前: {{subscription1}}
+    アプリケーション: climbonapp
+    製品: {{climb-on:1.0.0:premimum}}
+    カタログ: {{production}}
+    組織: {{climbonorg}}
+
+  スペース内のサブスクリプションに関する情報を取得します
+    {{$ apic subscriptions:get subscription1 --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    名前: {{subscription1}}
+    アプリケーション: climbonapp
+    製品: {{climb-on:1.0.0:premimum}}
+    スペース: {{flights}}
+    カタログ: {{production}}
+    組織: {{climbonorg}}

@@ -1,0 +1,45 @@
+使用法: apic {{publish}} PRODUCT_FILENAME [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  製品とその参照先 API をカタログまたはスペースに発行します
+
+  カタログ・スコープ用のオプション
+    --{{stage}}                              製品をステージング済み状況のままにする
+    --{{secure-gateway}} GATEWAY_ID          セキュア・ゲートウェイ ID
+    {{-c}}, --{{catalog}} CATALOG            カタログ名 (必須)
+    {{-o}}, --{{organization}} ORGANIZATION  プロバイダー組織名 (必須)
+    {{-s}}, --{{server}} SERVER              管理サーバー・エンドポイント (必須)
+
+  スペース・スコープ用のオプション
+    --{{scope space}}
+    --{{space}} SPACE                        スペース名 (必須)
+    --{{stage}}                              製品をステージング済み状況のままにする
+    --{{secure-gateway}} GATEWAY_ID          セキュア・ゲートウェイ ID
+    {{-c}}, --{{catalog}} CATALOG            カタログ名 (必須)
+    {{-o}}, --{{organization}} ORGANIZATION  プロバイダー組織名 (必須)
+    {{-s}}, --{{server}} SERVER              管理サーバー・エンドポイント (必須)
+
+  製品をカタログに公開します
+    {{$ apic publish climbon.yaml --catalog production --organization climbonorg --server mgmnthost.com}}
+    climbon.yaml が {{climbonorg:production [climbon:1.0.0]}} にステージングされました
+    climbon.yaml が {{climbonorg:production [climbon:1.0.0]}} に公開されました
+
+  セキュア・ゲートウェイを使用して製品をカタログに公開します
+    {{$ apic publish climbon.yaml --catalog production --secure-gateway ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com}}
+    climbon.yaml が {{climbonorg:production [climbon:1.0.0]}} にステージングされました
+    climbon.yaml が {{climbonorg:production [climbon:1.0.0]}} に公開されました
+
+  製品をカタログにステージングします
+    {{$ apic publish climbon.yaml --stage --catalog production --organization climbonorg --server mgmnthost.com}}
+    climbon.yaml が {{climbonorg:production [climbon:1.0.0]}} にステージングされました
+
+
+  製品をスペースに公開します
+    {{$ apic publish --scope space climbon.yaml --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    climbon.yaml が {{climbonorg:production:flights [climbon:1.0.0]}} にステージングされました
+    climbon.yaml が {{climbonorg:production:flights [climbon:1.0.0]}} に公開されました
+
+
+  セキュア・ゲートウェイを使用して製品をスペースに公開します
+    {{$ apic publish --scope space climbon.yaml --space flights --catalog production --secure-gateway ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com}}
+    climbon.yaml が {{climbonorg:production:flights [climbon:1.0.0]}} にステージングされました
+    climbon.yaml が {{climbonorg:production:flights [climbon:1.0.0]}} に公開されました

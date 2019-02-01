@@ -1,0 +1,10 @@
+Kullanım: apic {{create --type api | product | model | datasource}} SEÇENEKLER
+
+  Bir API, ürün, model ya da veri kaynağı tanımı yaratır
+
+Her tanım tipiyle ilgili olarak yardım almak için aşağıdaki komutları kullanın:
+
+  apic {{create --type api}} -h
+  apic {{create --type product}} -h
+  apic {{create --type model}} -h
+  apic {{create --type datasource}} -h

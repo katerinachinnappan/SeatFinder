@@ -1,0 +1,10 @@
+Utilizzo: apic {{create --type api | product | model | datasource}} OPZIONI
+
+  Crea un API, un prodotto, un modello o una definizione dell'origine dati
+
+Utilizzare i seguenti comandi per aprire la guida per ciascun tipo di definizione:
+
+  apic {{create --type api}} -h
+  apic {{create --type product}} -h
+  apic {{create --type model}} -h
+  apic {{create --type datasource}} -h

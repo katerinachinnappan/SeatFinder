@@ -1,0 +1,45 @@
+Syntaxis: {{apic apis:get}} API_NAAM[:VERSIE] [CATALOGUSOPTIES | RUIMTEOPTIES]
+
+  Informatie over een API in een catalogus of ruimte ophalen
+
+  Opties voor catalogusbereik
+    --{{scope catalog}}                     (standaard)
+    -{{c}}, --{{catalog}} CATALOGUS          naam van catalogus (verplicht)
+    -{{o}}, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    -{{s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht) 
+
+  Opties voor ruimtebereik
+    --{{scope space}}
+    --{{space}} RUIMTE                       naam van ruimte (verplicht)
+    -{{c}}, --{{catalog}} CATALOGUS          naam van catalogus (verplicht)
+    -{{o}}, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    -{{s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Stabiliteit: prototype
+
+  API ophalen uit een catalogus
+    {{$ apic apis:get routes --catalog production --organization climbonorg --server mgmnthost.com}}
+    name: {{routes}}
+    version: {{1.0.0}}
+    title: Climbing routes
+    basepath: {{/routes}}
+    status: Online
+    production endpoints: {{https://gatewayhost.com/climbonorg/production/v1/routes}}
+    development endpoints: {{https://gatewayhost.com/climbonorg/production/v1/routes}}
+    products: {{"climbon:1.0.0" "climbon:2.0.0"}}
+    catalog: {{production}}
+    organization: {{climbonorg}}
+
+  API ophalen uit een ruimte
+    {{$ apic apis:get routes --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    name: {{routes}}
+    version: {{1.0.0}}
+    title: Climbing routes
+    basepath: {{/routes}}
+    status: Online
+    production endpoints: {{https://gatewayhost.com/climbonorg/production/v1/routes}}
+    development endpoints: {{https://gatewayhost.com/climbonorg/production/v1/routes}}
+    products: {{"climbon:1.0.0" "climbon:2.0.0"}}
+    spaces: {{sp1}}
+    catalog: {{production}}
+    organization: {{climbonorg}}

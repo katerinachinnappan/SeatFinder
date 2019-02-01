@@ -1,0 +1,25 @@
+Syntax: apic {{components}}
+
+  Komponenten auflisten
+
+  Optionen
+    --{{organization}} ORGANISATION | --all-organizations (erforderlich)
+      {{-o}}, --{{organization}} ORGANISATION  eine bestimmte Provider-Organisation
+      {{-o}}, --{{all-organizations}}          alle Provider-Organisationen
+    {{-s}}, --{{server}} SERVER                Management-Server-Endpunkt (erforderlich)
+
+  Alle Komponenten in allen Organisationen auflisten
+    {{$ apic components --all-organizations --server mgmnthost.com}}
+    {{climbon}}:1.0.0 in {{climbonorg:staging}}
+    {{climbon}}:1.0.0 in {{climbonorg:production}}
+    {{climbon}}:1.0.1 in {{climbonorg:sandbox}}
+    {{climbon}}:1.0.1 in {{climbonorg:qa}}
+    {{climbon}}:1.0.1 in {{climbonorg:production}}
+    {{yosar}}:2.0.0 in {{climbonorg:production}}
+    {{trails}}:1.0.0 in {{hikingorg:staging}}
+    {{trails}}:2.0.0 in {{hikingorg:production}}
+
+Geben Sie "apic BEFEHL -h" für weitere Informationen zu den folgenden Befehlen ein:
+
+  {{components:get}}                      Informationen zu einer Komponente in einem Katalog abrufen
+

@@ -1,0 +1,23 @@
+Kullanım: apic {{drafts:delete}} SEÇENEKLER AD[:SÜRÜM]
+
+  Taslaklardan bir API'yi ya da ürün tanımını siler
+
+  Seçenekler
+    --{{type api | product}}             tanım tipine göre listenin alt kümesini oluştur
+    --{{product-only}}                   ürünü sil, ancak başvurulan api'lerini silme
+    -{{o}}, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    -{{s}}, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Bir API tanımını taslaklardan silmek için:
+    {{$ apic drafts:delete routes --organization climbonorg --server mgmnthost.com}}
+    {{routes}}:1.0.0 API tanımı {{climbonorg:drafts}} içinden silindi
+
+  Bir ürün tanımını ve başvurulan API'lerini taslaklardan silmek için:
+    {{$ apic drafts:delete climbon --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 ürün tanımı {{climbonorg:drafts}} içinden silindi
+    {{routes}}:1.0.0 API tanımı {{climbonorg:drafts}} içinden silindi
+    {{ascents}}:1.0.0 API tanımı {{climbonorg:drafts}} içinden silindi
+
+  Bir ürün tanımını taslaklardan silmek için:
+    {{$ apic drafts:delete climbon --product-only --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 ürün tanımı {{climbonorg:drafts}} içinden silindi

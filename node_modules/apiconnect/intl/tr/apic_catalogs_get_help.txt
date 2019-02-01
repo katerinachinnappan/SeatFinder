@@ -1,0 +1,17 @@
+Kullanım: apic {{catalogs:get}} KATALOG_ADI SEÇENEKLERİ
+
+  Bir kuruluştaki bir katalogla ilgili bilgileri alır
+
+  Seçenekler
+    -o, --{{organization}} KURULUŞ          belirli bir sağlayıcı kuruluşu (zorunludur)
+    -s, --{{server}} SUNUCU                 yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  {{mgmnthost.com}} sunucusundaki {{climbonorg}} kuruluşunda bir katalog al
+    {{$ apic catalogs:get qa --organization climbonorg --server mgmnthost.com}}
+    ad: {{qa}}
+    görünen ad: Kalite Güvencesi
+    kuruluş: {{climbonorg}}
+    tip: üretim
+    alanlar: devre dışı

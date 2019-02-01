@@ -1,0 +1,13 @@
+使用法: apic {{edit}} DIRECTORY
+
+  {{API Designer}} を開きます
+
+  オプション
+    DIRECTORY                        API Designer を開くディレクトリー (オプション)
+
+  {{API Designer}} を開きます
+    {{$ apic edit}}
+
+  LoopBack アプリケーションのディレクトリーで {{API Designer}} を開きます
+    {{$ apic loopback --name climbon_application}}
+    {{$ apic edit climbon_application}}

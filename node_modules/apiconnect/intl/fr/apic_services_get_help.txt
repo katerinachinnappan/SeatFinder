@@ -1,0 +1,20 @@
+Syntaxe : apic {{services:get}} OPTIONS
+
+  Options
+    -S, --{{service}} NOM_SERVICE       nom du service
+
+  Obtenir des informations sur un système en cours d'exécution
+
+  Obtenir le service Loopback pour l'application en cours d'exécution
+  {{$ apic services:get}}
+  name: {{climbon}}
+  port: 4001
+  supervisor_pid: 4853
+  worker_pids: 4854
+
+  Obtenir le service {{Micro Gateway}}
+  {{$ apic services:get --service climbon-gw}}
+  name: {{climbon-gw}}
+  port: 4002
+  supervisor_pid: 4855
+  worker_pids: 4856

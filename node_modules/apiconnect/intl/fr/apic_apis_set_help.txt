@@ -1,0 +1,40 @@
+Syntaxe : {{apic apis:set}} NOM_API [:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Mettre à jour une API dans un catalogue ou un espace
+
+  Options de la portée catalogue
+    --{{scope catalog}}                       (par défaut)
+    --{{status}}                              Statut de l'API (obligatoire)
+        {{online}}                            mettre l'API en ligne
+        {{offline}}                           mettre l'API hors ligne
+    -{{c}}, --{{catalog}} CATALOGUE           nom du catalogue (obligatoire)
+    -{{o}}, --{{organization}} ORGANISATION   nom de l'organisation de type fournisseur (obligatoire)
+    -{{s}}, --{{server}} SERVEUR              noeud final du serveur de gestion (obligatoire)
+
+  Options de la portée espace
+    --{{scope space}}
+    --{{status}}                              Statut de l'API (obligatoire)
+        {{online}}                            mettre l'API en ligne
+        {{offline}}                           mettre l'API hors ligne
+    --{{space}} ESPACE                        nom de l'espace (obligatoire)
+    -{{c}}, --{{catalog}} CATALOGUE           nom du catalogue (obligatoire)
+    -{{o}}, --{{organization}} ORGANISATION   nom de l'organisation de type fournisseur (obligatoire)
+    -{{s}}, --{{server}} SERVEUR              noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  Mettre une API hors ligne dans un catalogue
+    {{$ apic apis:set routes --status offline --catalog production --organization climbonorg --server mgmnthost.com}}
+    Mise à jour de {{routes:1.0.0}} dans {{climbonorg:production}} (status: {{offline}})
+
+  Mettre une API en ligne dans un catalogue
+    {{$ apic apis:set routes --status online --catalog production --organization climbonorg --server mgmnthost.com}}
+    Mise à jour de {{routes:1.0.0}} dans {{climbonorg:production}} (status: {{online}})
+
+  Mettre une API hors ligne dans un espace
+    {{$ apic apis:set --scope space --status offline --space sp1 --catalog production --organization climbonorg --server mgmnthost.com routes}}
+    Mise à jour de {{routes:1.0.0}} dans {{climbonorg:production:sp1}} (status: {{offline}})
+
+  Mettre une API en ligne dans un espace
+    {{$ apic apis:set --scope space --status online --space sp1 --catalog production --organization climbonorg --server mgmnthost.com routes}}
+    Mise à jour de {{routes:1.0.0}} dans {{climbonorg:production:sp1}} (status: {{online}})

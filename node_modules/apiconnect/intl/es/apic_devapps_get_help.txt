@@ -1,0 +1,34 @@
+Uso: apic {{devapps:get}} [OPCIONES_CATÁLOGO | OPCIONES_ESPACIO] NOMBRE_DEVAPP
+
+Obtener información sobre una aplicación de consumidor de una organización y un catálogo o espacio
+
+  Opciones para ámbito de catálogo
+    --{{scope catalog}}                       (valor predeterminado)
+    -{{c}}, --{{catalog}} CATÁLOGO            nombre de catálogo (obligatorio)
+    -{{o}}, --{{organization}} ORGANIZACIÓN   nombre de organización de proveedores (obligatorio)
+    -{{s}}, --{{server}} SERVIDOR             punto final de servidor de gestión (obligatorio)
+
+  Opciones para ámbito de espacio
+    --{{scope space}}                          (obligatorio)
+    --{{space}} ESPACIO                        nombre de espacio (obligatorio)
+    -{{c}}, --{{catalog}} CATÁLOGO             nombre de catálogo (obligatorio)
+    -{{o}}, --{{organization}} ORGANIZACIÓN    nombre de organización de proveedores (obligatorio)
+    -{{s}}, --{{server}} SERVIDOR              punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  Obtener una aplicación de consumidor de la organización climbonorg y el catálogo production del servidor mgmnthost.com
+    {{$ apic devapps:get flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    nombre: {{flights}}
+    nombre de visualización: {{flights application}}
+    descripción: {{flights application}}
+    id de cliente: {{xxxx}}
+    nombre de organización de consumidor: {{flightsOrg}}
+
+  Obtener una aplicación de consumidor de la organización climbonorg y el catálogo production en el espacio s1 del servidor mgmnthost.com
+    {{$ apic devapps:get flights --scope space --space s1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    nombre: {{flights}}
+    nombre de visualización: {{flights application}}
+    descripción: {{flights application}}
+    id de cliente: {{xxxx}}
+    nombre de organización de consumidor: {{flightsOrg}}

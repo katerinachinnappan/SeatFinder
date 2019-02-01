@@ -1,0 +1,44 @@
+Uso: apic {{publish}} NOMBRE_ARCHIVO_PRODUCTO [OPCIONES_CATÁLOGO | OPCIONES_ESPACIO]
+
+  Publicar un producto y sus API referenciadas en un catálogo o espacio
+
+  Opciones para ámbito de catálogo
+    --{{stage}}                              dejar el producto en el estado "desplegado"
+    --{{secure-gateway}} ID_PASARELA         ID de pasarela segura
+    {{-c}}, --{{catalog}} CATÁLOGO           nombre de catálogo (obligatorio)
+    {{-o}}, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    {{-s}}, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Opciones para ámbito de espacio
+    --{{scope space}}
+    --{{space}} ESPACIO                      nombre de espacio (obligatorio)
+    --{{stage}}                              dejar el producto en estado "desplegado"
+    --{{secure-gateway}} ID_PASARELA         ID de pasarela segura
+    {{-c}}, --{{catalog}} CATÁLOGO           nombre de catálogo (obligatorio)
+    {{-o}}, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    {{-s}}, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Publicar un producto en un catálogo
+    {{$ apic publish climbon.yaml --catalog production --organization climbonorg --server mgmnthost.com}}
+    Se ha desplegado climbon.yaml en {{climbonorg:production [climbon:1.0.0]}}
+    Se ha publicado climbon.yaml en {{climbonorg:production [climbon:1.0.0]}}
+
+  Publicar un producto en un catálogo con pasarela segura
+    {{$ apic publish climbon.yaml --catalog production --secure-gateway ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com}}
+    Se ha desplegado climbon.yaml en {{climbonorg:production [climbon:1.0.0]}}
+    Se ha publicado climbon.yaml en {{climbonorg:production [climbon:1.0.0]}}
+
+  Desplegar un producto en un catálogo
+    {{$ apic publish climbon.yaml --stage --catalog production --organization climbonorg --server mgmnthost.com}}
+    Se ha desplegado climbon.yaml en {{climbonorg:production [climbon:1.0.0]}}
+
+  Publicar un producto en un espacio
+    {{$ apic publish --scope space climbon.yaml --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Se ha desplegado climbon.yaml en {{climbonorg:production:flights [climbon:1.0.0]}}
+    Se ha publicado climbon.yaml en {{climbonorg:production:flights [climbon:1.0.0]}}
+
+
+  Publicar un producto en un espacio con pasarela segura
+    {{$ apic publish --scope space climbon.yaml --space flights --catalog production --secure-gateway ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com}}
+    Se ha desplegado climbon.yaml en {{climbonorg:production:flights [climbon:1.0.0]}}
+    Se ha publicado climbon.yaml en {{climbonorg:production:flights [climbon:1.0.0]}}

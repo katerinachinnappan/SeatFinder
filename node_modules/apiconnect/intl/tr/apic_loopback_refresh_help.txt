@@ -1,0 +1,7 @@
+,ullanım: apic {{loopback:refresh}}
+
+  {{LoopBack}} uygulaması modellerinden bir ürün ve API tanımı oluşturur
+
+  Kararlılık durumu: prototip
+
+  {{$ apic loopback:refresh}}

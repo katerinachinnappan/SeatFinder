@@ -1,0 +1,16 @@
+Syntax: {{apic spaces:set}} BEREICHSNAME OPTIONEN
+
+  Informationen zu einem Bereich in einem Katalog festlegen oder aktualisieren
+
+  Optionen
+    --name
+    --display-name
+    -c, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    -o, --{{organization}} ORGANISATION  eine bestimmte Provider-Organisation (erforderlich)
+    -s, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  Bereich im {{production}}-Katalog in der {{climbonorg}}-Organisation auf dem {{mgmnthost.com}}-Server aktualisieren
+    $ {{apic spaces:set flights --display-name "Flights Space" --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated space {{flights}} in catalog {{production}} in {{climbonorg}} organization

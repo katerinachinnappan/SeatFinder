@@ -1,0 +1,46 @@
+Usage: {{apic apis}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  List the APIs in a catalog or space
+
+  Options for catalog scope
+    --{{scope catalog}}                         (default)
+    --{{catalog}} CATALOG | --{{all-catalogs}}  (required)
+      -{{c}}, --{{catalog}} CATALOG             a specific catalog
+      -{{C}}, --{{all-catalogs}}                all catalogs
+    --{{organization}} ORGANIZATION | --{{all-organizations}} (required)
+      -{{o}}, --{{organization}} ORGANIZATION   a specific provider organization
+      -{{O}}, --{{all-organizations}}           all provider organizations
+    -{{s}}, --{{server}} SERVER                 management server endpoint (required)
+
+  Options for space scope
+    --{{scope space}}
+    --{{space}} SPACE
+    -{{c}}, --{{catalog}} CATALOG               a specific catalog
+    -{{o}}, --{{organization}} ORGANIZATION     a specific provider organization
+    -{{s}}, --{{server}} SERVER                 management server endpoint (required)
+
+  Stability: prototype
+
+  List API definitions in a catalog
+    {{$ apic apis --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{routes:2.0.0}} in {{climbonorg:production}}
+    {{trails:2.0.0}} in {{climbonorg:production}}
+
+  List API definitions in all catalogs of all organizations
+    {{$ apic apis --all-catalogs --all-organizations --server mgmnthost.com}}
+    {{routes:1.0.0}} in {{climbonorg:staging}}
+    {{routes:2.0.0}} in {{climbonorg:production}}
+    {{trails:1.0.0}} in {{hikingorg:staging}}
+    {{trails:2.0.0}} in {{hikingorg:production}}
+
+  List API definitions in a space
+    {{$ apic apis --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{routes:2.0.0}} in {{climbonorg:production:sp1}}
+    {{trails:2.0.0}} in {{climbonorg:production:sp1}}
+
+Type "{{apic COMMAND --help}}" for more information on the following commands:
+
+  {{apis:get}}     Get information on an API in a catalog or space
+  {{apis:set}}     Update an API in a catalog or space
+  {{apis:pull}}    Pull an API from a catalog or space
+  {{apis:clone}}   Pull all APIs from a catalog or space

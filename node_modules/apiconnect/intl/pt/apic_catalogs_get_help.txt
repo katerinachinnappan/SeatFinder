@@ -1,0 +1,17 @@
+Uso: apic {{catalogs:get}} CATALOG_NAME OPTIONS
+
+  Obter informações sobre um catálogo em uma organização
+
+  Opções
+    -o, --{{organization}} ORGANIZATION     uma organização do provedor específica (obrigatório)
+    -s, --{{server}} SERVER                 terminal do servidor de gerenciamento (obrigatório)
+
+  Estabilidade: protótipo
+
+  Obtenha um catálogo na organização {{climbonorg}} no servidor {{mgmnthost.com}}
+    {{$ apic catalogs:get qa --organization climbonorg --server mgmnthost.com}}
+    name: {{qa}}
+    display name: Quality Assurance
+    organization: {{climbonorg}}
+    type: production
+    spaces: disabled

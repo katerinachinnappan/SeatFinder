@@ -1,0 +1,14 @@
+用法：apic {{extensions:clone}} OPTIONS
+
+  从目录获取所有扩展
+
+  选项
+    -c, --{{catalog}} CATALOG            目录名称（必需）
+    -o, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    -s, --{{server}} SERVER              管理服务器端点（必需）
+
+  稳定性：原型
+
+  {{$ apic extensions:clone --catalog production --organization climbonorg --server mgmnthost.com}}
+  Pulled {{climbextension}}:1.0.0 extension from {{climbonorg:production [climbextension_1.0.0.yaml]}}
+  Pulled {{hikeextension}}:1.0.0 extension from {{climbonorg:production [hikeextension_1.0.0.yaml]}}

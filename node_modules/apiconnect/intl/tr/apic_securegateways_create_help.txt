@@ -1,0 +1,15 @@
+
+Kullanım: apic {{securegateways:create}} SEÇENEKLER
+
+  Bir kuruluşta güvenli bir ağ geçidi yarat
+
+  Seçenekler
+    --{{name}} AD                           güvenli ağ geçidi adı (zorunludur)
+    -o, --{{organization}} KURULUŞ          belirli bir sağlayıcı kuruluşu (zorunludur)
+    -s, --{{server}} SUNUCU                 yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  {{mgmnthost.com}} sunucusu üzerindeki {{climbonorg}} kuruluşunda benzersiz bir adla güvenli ağ geçidi yarat
+    {{$ apic securegateways:create --name production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg}} içinde {{ctHEKS9ztEH_stage_ng}} güvenli ağ geçidi yaratıldı

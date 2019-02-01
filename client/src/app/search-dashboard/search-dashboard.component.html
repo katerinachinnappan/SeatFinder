@@ -1,0 +1,56 @@
+<mat-card class="seatfinder-card-margin">
+  <mat-card-header>
+    <div mat-card-avatar>
+      <mat-icon>filter_list</mat-icon>
+    </div>
+    <mat-card-title>Filter list</mat-card-title>
+    <mat-card-subtitle>Select the parameters of your research</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-tab-group (selectedTabChange)="setTabActive($event)">
+      <mat-tab label="{{tabList[0]}}">
+        <mat-form-field class="margin">
+          <mat-select placeholder="Building" (selectionChange)="onBuildingSelectionChangedSeat($event)">
+            <mat-option *ngFor="let building of buildingList" [value]="building">
+              {{building ? building.name : "No Filter"}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="margin">
+          <mat-select placeholder="Floor" #floor disabled="{{getFloorFileldAvailabilitySeat()}}" (selectionChange)="onFloorSelectionChangedSeat($event, floor)">
+            <mat-option *ngFor="let number of displayedFloorsSeat" [value]="number">
+              {{number ? number : "No Filter"}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-tab>
+      <mat-tab label="{{tabList[1]}}">
+
+        <mat-form-field class="margin">
+          <mat-select placeholder="Building" (selectionChange)="onBuildingSelectionChangedRoom($event)">
+            <mat-option *ngFor="let building of buildingList" [value]="building">
+              {{building ? building.name : "No Filter"}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="margin">
+          <mat-select placeholder="Floor" disabled="{{getFloorFileldAvailabilityRoom()}}" (selectionChange)="onFloorSelectionChangedRoom($event)">
+            <mat-option *ngFor="let number of displayedFloorsRoom" [value]="number">
+              {{number ? number : "No Filter"}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <br>
+        <section class="checkbox-container"> 
+          Items:  <mat-checkbox class="margin" *ngFor="let item of itemList"
+          (change)="updateItemSelection($event, item)">{{item.name}}</mat-checkbox>
+        </section>        
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+  <mat-card-actions class="button-container">
+    <button mat-button (click)="search()" mat-raised-button color="primary">SEARCH</button>
+  </mat-card-actions>
+</mat-card>
+<app-result-display></app-result-display>

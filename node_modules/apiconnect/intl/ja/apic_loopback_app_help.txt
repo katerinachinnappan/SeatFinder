@@ -1,0 +1,30 @@
+使用法: apic {{loopback}} OPTIONS
+
+  {{LoopBack}} アプリケーションを作成します
+
+  オプション
+    -n, --{{name}} NAME                  アプリケーション名 (オプション)
+    --{{skip-install}}                   依存関係を自動的にインストールしない
+    --{{skip-next-steps}}                「次のステップ」情報を印刷しない
+    --{{explorer}}                       LoopBack Explorer をプロジェクトに追加する
+
+  {{LoopBack}} アプリケーションを {{climbon}} という名前で作成します
+    {{$ apic loopback --name climbon}}
+    ? アプリケーションの名前は何ですか? {{climbon}}
+    ? プロジェクトを保存するディレクトリーの名前を入力: {{climbon}}
+    ? どのようなタイプのアプリケーションにしますか? hello-world (メモリー・データベースなど、基本的な作業例を持つプロジェクト)
+
+「apic COMMAND -h」と入力すると、以下の関連コマンドのヘルプが表示されます
+
+  {{create}}                           成果物の定義を作成します
+  {{edit}}                             API Designer を実行します
+  {{services}}                         サービスを管理します
+  {{loopback:acl}}                     ACL を作成します
+  {{loopback:boot-script}}             {{boot}} スクリプトを作成します
+  {{loopback:export-api-def}}          モデルから {{OpenAPI (Swagger)}} 定義を生成します
+  {{loopback:middleware}}              ミドルウェアを作成します
+  {{loopback:property}}                新しいモデル・プロパティーを作成します
+  {{loopback:relation}}                モデル間に新しい関係を作成します
+  {{loopback:remote-method}}           新しいリモート・メソッドを作成します
+  {{loopback:swagger}}                 {{OpenAPI (Swagger)}} 定義からアプリケーションを生成します
+  {{loopback:refresh}}                 製品と {{OpenAPI (Swagger)}} の定義を生成します

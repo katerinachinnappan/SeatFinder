@@ -1,0 +1,17 @@
+Uso: apic {{apps:get}} OPCIONES
+
+Obtener información sobre una aplicación
+
+  Opciones
+    -a, --{{app}} APP                    destino de app de proveedor (obligatorio)
+    -o, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    -s, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  {{$ apic apps:get --app climbon --organization climbonorg --server mgmnthost.com}}
+  nombre: {{climbon}}
+  título: {{climbon}}
+  url: apic-app://mgmnthost.com/orgs/climbonorg/apps/climbon
+  estado: {{online}}
+  organización: {{climbonorg}}

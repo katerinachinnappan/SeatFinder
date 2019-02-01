@@ -1,0 +1,36 @@
+用法：apic {{products:clone}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  获取所有产品定义
+
+  catalog 作用域的选项
+    --{{scope catalog}}                         （缺省值）
+    --{{catalog}} CATALOG | --{{all-catalogs}}  （必需）
+      -{{c}}, --{{catalog}} CATALOG             特定目录
+      -{{C}}, --{{all-catalogs}}                所有目录
+    --{{organization}} ORGANIZATION | --{{all-organizations}} （必需）
+      -{{o}}, --{{organization}} ORGANIZATION   特定提供者组织
+      -{{O}}, --{{all-organizations}}           所有提供者组织
+    -{{s}}, --{{server}} SERVER                 管理服务器端点（必需）
+
+  space 作用域的选项
+    --{{scope space}}
+    --{{space}} SPACE                    空间名称（必需）
+    {{-c}}, --{{catalog}} CATALOG            目录名称（必需）
+    {{-o}}, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    {{-s}}, --{{server}} SERVER              管理服务器端点（必需）
+
+  从目录获取所有产品
+    {{$ apic products:clone --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon}}:1.0.0 product definition from {{climbonorg}}:production {{[climbon.yaml]}}
+    Pulled {{globalweather-product}}:1.0.0 product definition from {{climbonorg}}:production {{[globalweather-product_1.0.0.yaml]}}
+    Pulled {{hiking}}:3.0.0 product definition from {{climbonorg}}:production {{[hiking.yaml]}}
+    Pulled {{hiking}}:3.0.1 product definition from {{climbonorg}}:production {{[hiking-1.yaml]}}
+    Pulled {{ascents}}:1.0.0 API definition from {{climbonorg}}:production {{[ascents.yaml]}}
+
+  从空间获取所有产品
+    {{$ apic products:clone --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon}}:1.0.0 product definition from {{climbonorg}}:production:flights {{[climbon.yaml]}}
+    Pulled {{climbon}}:1.0.1 product definition from {{climbonorg}}:production:flights {{[climbon-2.yaml]}}
+    Pulled {{globalweather-product}}:1.0.0 product definition from {{climbonorg}}:production:flights {{[globalweather-product_1.0.0.yaml]}}
+    Pulled {{hiking}}:3.0.0 product definition from {{climbonorg}}:production:flights {{[hiking.yaml]}}
+    Pulled {{ascents}}:1.0.0 API definition from {{climbonorg}}:production:flights {{[ascents.yaml]}}

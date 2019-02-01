@@ -1,0 +1,29 @@
+Uso: apic {{validate}} OPCIONES NOMBRE_ARCHIVO_API | NOMBRE_ARCHIVO_PRODUCTO
+
+  Validar una definición de API o del producto
+
+  Opciones
+    -p, --{{product-only}}               para definiciones de producto, no validar las API referenciadas
+    --{{no-extensions}}                  para definiciones de API, no validar contra extensiones {{IBM Swagger}}
+
+  Validar una definición de API
+    {{$ apic validate routes.yaml}}
+    Se ha validado la definición de API {{routes.yaml}} contra el esquema de {{Swagger 2.0}} {{[routes:1.0.0]}}
+    Se ha validado la definición de API {{routes.yaml}} contra el esquema de {{IBM Swagger 2.0}} {{[routes:1.0.0]}}
+    Se ha validado la definición de API {{routes.yaml}} contra el esquema de extensiones {{IBM Swagger 2.0}} {{[routes:1.0.0]}}
+
+  Validar una definición de API son extensiones IBM
+    {{$ apic validate --no-extensions routes.yaml}}
+    Se ha validado la definición de API {{routes.yaml}} contra el esquema de {{Swagger 2.0}} {{[routes:1.0.0]}}
+    Se ha validado la definición de API {{routes.yaml}} contra el esquema de {{IBM Swagger 2.0}} {{[routes:1.0.0]}}
+
+  Validar una definición de producto y sus API referenciadas
+    {{$ apic validate climb-on.yaml}}
+    Se ha validado la definición de producto {{climb-on.yaml}} {{[climb-on:1.0.0]}}
+    Se ha validado la definición de API {{routes.yaml}} contra el esquema de {{Swagger 2.0}} {{[routes:1.0.0]}}
+    Se ha validado la definición de API {{routes.yaml}} contra el esquema de {{IBM Swagger 2.0}} {{[routes:1.0.0]}}
+    Se ha validado la definición de API {{routes.yaml}} contra el esquema de extensiones de {{IBM Swagger 2.0}} {{[routes:1.0.0]}}
+
+  Validar una definición de producto sin validar sus API referenciadas
+    {{$ apic validate --product-only climb-on.yaml}}
+    Se ha validado la definición de producto {{climb-on.yaml}} {{[climb-on:1.0.0]}}

@@ -1,0 +1,17 @@
+用法：apic {{catalogs:get}} CATALOG_NAME OPTIONS
+
+  取得組織中型錄的相關資訊
+
+  選項
+    -o, --{{organization}} ORGANIZATION     特定的提供者組織（必要）
+    -s, --{{server}} SERVER                 管理伺服器端點（必要）
+
+  穩定性：原型
+
+  在 {{mgmnthost.com}} 伺服器上，取得 {{climbonorg}} 組織中的型錄
+    {{$ apic catalogs:get qa --organization climbonorg --server mgmnthost.com}}
+    名稱：{{qa}}
+    顯示名稱：Quality Assurance
+    組織：{{climbonorg}}
+    類型：production
+    空間：已停用

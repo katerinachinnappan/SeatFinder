@@ -1,0 +1,58 @@
+Uso: apic {{products:set}} NOMBRE_PRODUCTO[:VERSIÓN] [OPCIONES_CATÁLOGO | OPCIONES_ESPACIO]
+
+  Actualizar un producto de un catálogo o espacio
+
+  Opciones para ámbito de catálogo
+    --{{status}}
+        {{staged}}                       actualizar el estado a desplegado
+        {{published}}                    actualizar el estado a publicado
+        {{deprecated}}                   actualizar el estado a en desuso
+        {{retired}}                      actualizar el estado a retirado
+        {{archived}}                     actualizar el estado a archivado
+    --{{visibility}}
+        {{public}}                       usuarios autenticados o no autenticados
+        {{authenticated}}                usuarios autenticados
+        ORG | TAG ...                usuarios de la ORG o de cualquier ORG codificada con TAG
+    --{{subscribability}}
+        {{authenticated}}                usuarios autenticados
+        ORG | TAG ...                usuarios de la ORG o de cualquier ORG codificada con TAG
+    {{-c}}, --{{catalog}} CATÁLOGO           nombre de catálogo (obligatorio)
+    {{-o}}, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    {{-s}}, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Opciones para ámbito de espacio
+    --{{scope space}}
+    --{{space}} ESPACIO                  nombre de espacio (obligatorio)
+    --{{status}}
+        {{staged}}                       actualizar el estado a desplegado
+        {{published}}                    actualizar el estado a publicado
+        {{deprecated}}                   actualizar el estado a en desuso
+        {{retired}}                      actualizar el estado a retirado
+        {{archived}}                     actualizar el estado a archivado
+    --{{visibility}}
+        {{public}}                       usuarios autenticados o no autenticados
+        {{authenticated}}                usuarios autenticados
+        ORG | TAG ...                usuarios de la ORG o de cualquier ORG codificada con TAG
+    --{{subscribability}}
+        {{authenticated}}                usuarios autenticados
+        ORG | TAG ...                usuarios de la ORG o de cualquier ORG codificada con TAG
+    {{-c}}, --{{catalog}} CATÁLOGO           nombre de catálogo (obligatorio)
+    {{-o}}, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    {{-s}}, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Publicar un producto en un catálogo
+    {{$ apic products:set climbon --status published --catalog production --organization climbonorg --server mgmnthost.com}}
+    Se ha actualizado {{climbon}}:1.0.0 en {{climbonorg:production (status: published)}}
+
+  Actualizar la visibilidad y suscribilidad de un producto en un catálogo
+    {{$ apic products:set climbon --visibility public --subscribability authenticated --catalog production --organization climbonorg --server mgmnthost.com}}
+    Se ha actualizado {{climbon}}:1.0.0 en {{climbonorg:production}} (visibility: {{public}}, subscribability: {{authenticated}})
+
+  Publicar un producto en un espacio
+    {{$ apic products:set --scope space climbon --status published --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Se ha actualizado {{climbon}}:1.0.0 en {{climbonorg:production:flights (status: published)}}
+
+  Actualizar la visibilidad y suscribilidad de un producto en un espacio
+    {{$ apic products:set --scope space climbon --visibility public --subscribability authenticated --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Se ha actualizado {{climbon}}:1.0.0 en {{climbonorg:production:flights}} (visibility: {{public}}, subscribability: {{authenticated}})
+    

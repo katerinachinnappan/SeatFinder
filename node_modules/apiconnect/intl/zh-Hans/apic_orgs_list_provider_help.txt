@@ -1,0 +1,20 @@
+用法： apic {{orgs}} OPTIONS
+       apic {{orgs}} --{{type provider}} OPTIONS
+
+  列出当前已认证的用户所属的提供者组织
+
+  选项
+    --{{type provider}}
+    -s, --{{server}} SERVER               管理服务器端点（必需）
+
+  列出 mgmnthost.com 上当前已认证的用户所属的组织（提供者组织）
+    {{$ apic orgs --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+    {{$ apic orgs --type provider --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+  输入“apic COMMAND -h”获取以下相关命令的帮助：
+    {{orgs:get}}          获取有关提供者组织的信息

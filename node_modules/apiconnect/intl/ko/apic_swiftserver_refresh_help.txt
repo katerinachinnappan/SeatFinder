@@ -1,0 +1,9 @@
+사용법: apic swiftserver:refresh
+
+  Swift 서버 생성자 애플리케이션 모델에서 제품 및
+  API 정의 생성
+
+  안정성: 프로토타입
+
+  $ apic swiftserver:refresh
+

@@ -1,0 +1,33 @@
+用法：apic {{logs}} OPTIONS
+
+  追蹤服務日誌
+
+  選項
+    -n, --{{no-tail}}                    顯示但不追蹤日誌
+    -S, --{{service}} SERVICE_NAME       要記載的服務名稱
+
+  追蹤 LoopBack 應用程式日誌
+  {{$ apic logs}}
+  追蹤 `{{climbon}}` 的日誌
+  2016-03-16T04:25:59.891Z pid:89271 worker:0 INFO strong-agent 2.0.56 版正在側寫應用程式 'climbon' pid '89271'
+  2016-03-16T04:25:59.897Z pid:89271 worker:0 INFO strong-agent[89271] 已啟動側寫代理程式
+  2016-03-16T04:25:59.899Z pid:89271 worker:0 INFO 監督程式啟動中 (pid 89271)
+  2016-03-16T04:25:59.900Z pid:89271 worker:0 INFO strong-agent strong-agent 正在使用 strong-cluster-control 2.2.10 版
+  2016-03-16T04:25:59.904Z pid:89271 worker:0 INFO 監督程式正在將度量值回報給 `internal:`
+
+  顯示但不追蹤 LoopBack 應用程式日誌
+  {{$ apic logs -n --service climbon}}
+  2016-03-16T04:31:19.128Z pid:89306 worker:0 INFO strong-agent 2.0.56 版正在側寫應用程式 'climbon' pid '89306'
+  2016-03-16T04:31:19.132Z pid:89306 worker:0 INFO strong-agent[89306] 已啟動側寫代理程式
+  2016-03-16T04:31:19.133Z pid:89306 worker:0 INFO 監督程式啟動中 (pid 89306)
+  2016-03-16T04:31:19.135Z pid:89306 worker:0 INFO strong-agent strong-agent 正在使用 strong-cluster-control 2.2.10 版
+  2016-03-16T04:31:19.137Z pid:89306 worker:0 INFO 監督程式正在將度量值回報給 `internal:`
+
+  追蹤 {{Micro Gateway}} 日誌
+  {{$ apic logs --service climbon-gw}}
+  追蹤 `{{climbon-gw}}` 的日誌
+  2016-03-16T04:31:21.378Z pid:89308 worker:0 INFO strong-agent 2.0.56 版正在側寫應用程式 'apiconnect-microgateway' pid '89308'
+  2016-03-16T04:31:21.383Z pid:89308 worker:0 INFO strong-agent[89308] 已啟動側寫代理程式
+  2016-03-16T04:31:21.384Z pid:89308 worker:0 INFO 監督程式啟動中 (pid 89308)
+  2016-03-16T04:31:21.385Z pid:89308 worker:0 INFO strong-agent strong-agent 正在使用 strong-cluster-control 2.2.10 版
+  2016-03-16T04:31:21.388Z pid:89308 worker:0 INFO 監督程式正在將度量值回報給 `internal:`

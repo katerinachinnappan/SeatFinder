@@ -1,0 +1,16 @@
+Kullanım: apic {{loopback:remote-method}} SEÇENEKLER
+
+  {{LoopBack}} uygulamasında yeni bir uzak yöntem yaratır
+
+  Seçenekler
+    -m, --{{model}} MODEL_ADI            {{LoopBack}} modelinin adı (isteğe bağlı)
+    -r, --{{remote-method}} YÖNTEM_ADI   uzak yöntemin adı (isteğe bağlı)
+    --{{skip-cache}}                     bilgi istemi yanıtlarını kaydetme
+
+  Kararlılık durumu: prototip
+
+  Bir {{LoopBack}} modeline yeni bir uzak yöntem eklemek için:
+    {{$ apic loopback:remote-method}}
+
+  {{getCreationDate}} adlı not modeli için yeni bir uzak yöntem eklemek için:
+    {{$ apic loopback:remote-method --model note --remote-method getCreationDate}}

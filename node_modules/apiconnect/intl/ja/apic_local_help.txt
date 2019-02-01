@@ -1,0 +1,10 @@
+使用法: apic {{create --type api | product | model | datasource}} OPTIONS
+
+  API 定義、製品定義、モデル定義、またはデータ・ソース定義を作成します
+
+それぞれの定義タイプに関するヘルプを表示するには、以下のコマンドを使用します
+
+  apic {{create --type api}} -h
+  apic {{create --type product}} -h
+  apic {{create --type model}} -h
+  apic {{create --type datasource}} -h

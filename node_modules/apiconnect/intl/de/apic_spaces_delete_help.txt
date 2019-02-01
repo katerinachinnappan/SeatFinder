@@ -1,0 +1,14 @@
+Syntax: {{apic spaces:delete}} BEREICHSNAME OPTIONEN
+
+  Bereich in einem Katalog in einer Organisation löschen
+
+  Optionen
+    -c, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    -o, --{{organization}} ORGANISATION  eine bestimmte Provider-Organisation (erforderlich)
+    -s, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  Bereich im {{production}}-Katalog in der {{climbonorg}}-Organisation auf dem {{mgmnthost.com}}-Server löschen
+    $ {{apic spaces:delete flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Deleted {{climbonorg:production:flights}}

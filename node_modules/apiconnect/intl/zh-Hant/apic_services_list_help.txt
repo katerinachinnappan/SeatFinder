@@ -1,0 +1,14 @@
+用法：apic {{services}}
+
+  列出目前執行中的服務
+
+  {{$ apic services}}
+  服務 {{climbon}} 正在埠 4001 上執行
+  服務 {{climbon-gw}} 正在埠 4002 上執行
+
+如需下列相關指令的說明，請鍵入 "apic COMMAND -h"：
+
+  {{services:start}}    啟動服務
+  {{services:stop}}     停止服務
+  {{services:logs}}     取得日誌
+  {{services:get}}      取得服務

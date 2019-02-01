@@ -1,0 +1,27 @@
+用法：apic {{drafts:push}} OPTIONS API_FILENAME | PRODUCT_FILENAME
+
+  將本端 API 或產品定義推送至草稿
+
+  選項
+    --{{product-only}}                   不要推送參照的 API
+    -{{r}}, --{{replace}} NAME:VERSION       取代不同名稱/版本的定義
+    -{{o}}, --{{organization}} ORGANIZATION  提供者組織名稱（必要）
+    -{{s}}, --{{server}} SERVER              管理伺服器端點（必要）
+
+  將 API 定義推送至草稿
+    {{$ apic drafts:push routes.yaml --organization climbonorg --server mgmnthost.com}}
+    已將 {{routes.yaml}} API 定義推送至 {{climbonorg:drafts [routes:1.0.0]}}
+
+  將 API 定義推送至草稿並取代舊版本
+    {{$ apic drafts:push routes.yaml -r routes:1.0.0 --organization climbonorg --server mgmnthost.com}}
+    已將 {{routes.yaml}} API 定義推送至 {{climbonorg:drafts [routes:2.0.0]}}
+
+  將產品定義及其參照的 API 定義推送至草稿
+    {{$ apic drafts:push climbon.yaml --organization climbonorg --server mgmnthost.com}}
+    已將 {{climbon.yaml}} 產品定義推送至 {{climbonorg:drafts [climbon:1.0.0]}}
+    已將 {{routes.yaml}} API 定義推送至 {{climbonorg:drafts [routes:1.0.0]}}
+    已將 {{ascents.yaml}} API 定義推送至 {{climbonorg:drafts [ascents:1.0.0]}}
+
+  只將產品定義推送至草稿
+    {{$ apic drafts:push climbon.yaml --product-only --organization climbonorg --server mgmnthost.com}}
+    已將 {{climbon.yaml}} 產品定義推送至 {{climbonorg:drafts [climbon:1.0.0]}}

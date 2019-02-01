@@ -1,0 +1,21 @@
+用法：apic swiftserver OPTIONS
+
+  创建 Swift Server Generator 应用程序
+
+  选项
+  -n, --name NAME                  应用程序的名称（可选）
+
+  稳定性：原型
+
+  创建名为 bookshop 的应用程序
+  $ apic swiftserver
+  ? 您的应用程序的名称是什么？bookshop
+  ? 输入要包含该项目的目录的名称：bookshop
+  ? 选择数据存储器：存储器
+
+输入“apic COMMAND -h”以获取有关以下相关命令的帮助：
+
+  create                           创建工件定义
+  swiftserver:property             创建新模型属性
+  swiftserver:refresh              生成产品或 OpenAPI (Swagger) 定义
+

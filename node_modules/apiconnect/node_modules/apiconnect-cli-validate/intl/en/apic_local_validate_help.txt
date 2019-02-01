@@ -1,0 +1,29 @@
+Usage: apic {{validate}} OPTIONS API_FILENAME | PRODUCT_FILENAME
+
+  Validate an API or product definition
+
+  Options
+    -p, --{{product-only}}               for products definitions, do not validate referenced APIs
+    --{{no-extensions}}                  for API definitions, do not validate against {{IBM Swagger}} extensions
+
+  Validate an API definition
+    {{$ apic validate routes.yaml}}
+    Validated {{routes.yaml}} API definition against the {{Swagger 2.0}} schema {{[routes:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{IBM Swagger 2.0}} schema {{[routes:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{IBM Swagger 2.0}} extensions schema {{[routes:1.0.0]}}
+
+  Validate an API definition without IBM extensions
+    {{$ apic validate --no-extensions routes.yaml}}
+    Validated {{routes.yaml}} API definition against the {{Swagger 2.0}} schema {{[routes:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{IBM Swagger 2.0}} schema {{[routes:1.0.0]}}
+
+  Validate a product definition and its referenced APIs
+    {{$ apic validate climb-on.yaml}}
+    Validated {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{Swagger 2.0}} schema {{[routes:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{IBM Swagger 2.0}} schema {{[routes:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{IBM Swagger 2.0}} extensions schema {{[routes:1.0.0]}}
+
+  Validate a product definition without validating its referenced APIs
+    {{$ apic validate --product-only climb-on.yaml}}
+    Validated {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}

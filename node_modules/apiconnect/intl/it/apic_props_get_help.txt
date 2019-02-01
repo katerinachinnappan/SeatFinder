@@ -1,0 +1,25 @@
+Utilizzo: apic {{props:get}} OPZIONI NOME
+
+  Richiama una proprietà del servizio
+
+  Opzioni
+    -r, --{{remote}}                       utilizzare l'app di destinazione remota (impostazione predefinita local)
+    -S, --{{service}} NOME_SERVIZIO        nome servizio
+    -o, --{{organization}} ORGANIZZAZIONE  organizzazione provider
+    -s, --{{server}} SERVER                host endpoint server
+
+  Richiamo delle proprietà del servizio dell'applicazione LoopBack
+    {{$ apic props:get prop1}}
+    [{{climbon}}] prop1: value1
+
+  Richiamo esplicito delle proprietà del servizio dell'applicazione LoopBack
+    {{$ apic props:get --service climbon prop1}}
+    prop1: value1
+
+  Richiamo delle proprietà del servizio {{Micro Gateway}}
+    {{$ apic props:get --service climbon-gw prop1}}
+    prop1: value1
+
+  Richiamo delle proprietà dell'applicazione remota
+    {{$ apic props:get --remote --service climbon --organization climbon --server mgmnthost.com prop1}}
+    prop1: value1

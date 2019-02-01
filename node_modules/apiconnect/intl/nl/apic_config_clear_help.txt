@@ -1,0 +1,16 @@
+Syntaxis: apic {{config:clear}} OPTIES
+
+  Alle configuratievariabelen wissen
+
+  Opties
+    -l, --{{local}}                      alle lokale toepassingsconfiguratievariabelen wissen (alleen {{loopback}}-project)
+    -g, --{{global}}                     alle globale configuratievariabelen wissen
+
+  {{$ apic config:clear}}
+  {{app: apic-app://mgmnthost.com/orgs/climbon/apps/sb}} gewist
+  {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}} gewist
+  {{org: apic-org://mgmnthost.com/orgs/climbon}} gewist
+  {{space: apic-space://mgmnthost.com/orgs/climbon/catalogs/sb/spaces/flights}} gewist
+
+  {{$ apic config:clear --global}}
+  {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}} gewist

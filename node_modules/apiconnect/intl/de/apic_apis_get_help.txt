@@ -1,0 +1,45 @@
+Syntax: {{apic apis:get}} API-NAME[:VERSION] [KATALOGOPTIONEN | BEREICHSOPTIONEN]
+
+  Informationen zu einer API in einem Katalog oder Bereich abrufen
+
+  Optionen für Katalogbereich
+    --{{scope catalog}}                       (Standard)
+    -{{c}}, --{{catalog}} KATALOG             Katalogname (erforderlich)
+    -{{o}}, --{{organization}} ORGANISATION   Name der Provider-Organisation (erforderlich)
+    -{{s}}, --{{server}} SERVER               Management-Server-Endpunkt (erforderlich)
+
+  Optionen für Bereichsumfang
+    --{{scope space}}
+    --{{space}} BEREICH                       Bereichsname (erforderlich)
+    -{{c}}, --{{catalog}} KATALOG             Katalogname (erforderlich)
+    -{{o}}, --{{organization}} ORGANISATION   Name der Provider-Organisation (erforderlich)
+    -{{s}}, --{{server}} SERVER               Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  API aus einem Katalog abrufen
+    {{$ apic apis:get routes --catalog production --organization climbonorg --server mgmnthost.com}}
+    name: {{routes}}
+    version: {{1.0.0}}
+    title: Climbing routes
+    basepath: {{/routes}}
+    status: Online
+    production endpoints: {{https://gatewayhost.com/climbonorg/production/v1/routes}}
+    development endpoints: {{https://gatewayhost.com/climbonorg/production/v1/routes}}
+    products: {{"climbon:1.0.0" "climbon:2.0.0"}}
+    catalog: {{production}}
+    organization: {{climbonorg}}
+
+  API aus einem Bereich abrufen
+    {{$ apic apis:get routes --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    name: {{routes}}
+    version: {{1.0.0}}
+    title: Climbing routes
+    basepath: {{/routes}}
+    status: Online
+    production endpoints: {{https://gatewayhost.com/climbonorg/production/v1/routes}}
+    development endpoints: {{https://gatewayhost.com/climbonorg/production/v1/routes}}
+    products: {{"climbon:1.0.0" "climbon:2.0.0"}}
+    spaces: {{sp1}}
+    catalog: {{production}}
+    organization: {{climbonorg}}

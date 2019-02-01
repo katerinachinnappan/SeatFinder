@@ -1,0 +1,85 @@
+<div [ngSwitch]="status">
+  <p *ngSwitchCase="'IDLE'">a
+  </p>
+
+  <div *ngSwitchCase="'LOADING'">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <div *ngSwitchCase="'SHOW_RESERVATIONS'">
+    <mat-accordion>
+      <mat-expansion-panel *ngFor=" let reservation of reservations;">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="reservation-header">
+            <strong class="id-header"><span class="res-title">Reservation </span> Date: </strong> {{reservation.date}}
+            <mat-chip-list class="chip-container">
+              <mat-chip color="accent" *ngIf="isReservationActive(reservation) else expired" class="mat-chip-category">Active</mat-chip>
+              <ng-template #expired>
+                <mat-chip>Expired</mat-chip>
+              </ng-template>
+            </mat-chip-list>
+          </mat-panel-title>
+          <mat-panel-description>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Building</th>
+              <th scope="col">Floor</th>
+              <th scope="col">Expiring Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{reservation.buildingName}}</td>
+              <td>{{reservation.floorNumber}}</td>
+              <td>{{reservation.time}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <mat-divider></mat-divider>
+        <strong *ngIf="reservation.rooms.length > 0">Room</strong>
+        <table class="table subtable" *ngIf="reservation.rooms.length > 0">
+          <thead>
+              <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Building</th>
+                  <th scope="col">Floor</th>
+                </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{reservation.rooms[0].name}}</td>
+              <td>{{reservation.rooms[0].buildingName}}</td>
+              <td>{{reservation.rooms[0].floor}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <strong *ngIf="reservation.seats.length > 0">Seats</strong>
+        <table class="table subtable" *ngIf="reservation.seats.length > 0">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Building</th>
+              <th scope="col">Floor</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let seat of reservation.seats">
+            <tr>
+                <td>{{seat.id}}</td>
+                <td>{{seat.buildingName}}</td>
+                <td>{{seat.floor}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="button-container">
+          <button class="update-button" [disabled]="!isReservationActive(reservation)" mat-raised-button color="primary" (click)="updateReservation(reservation)"> UPDATE </button> 
+           <button [disabled]="!isReservationActive(reservation)" mat-raised-button color="accent" (click)="deleteReservation(reservation)"> DELETE </button>
+        </div>
+      </mat-expansion-panel>
+
+    </mat-accordion>
+  </div>
+</div>

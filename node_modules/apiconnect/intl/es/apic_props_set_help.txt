@@ -1,0 +1,32 @@
+Uso: apic {{props:set}} OPCIONES NOMBRE=VALOR ...
+
+  Establecer o actualizar una o más propiedades de servicio
+
+  Opciones
+    -r, --{{remote}}                     utilizar el destino de aplicación remota (el valor predeterminado es local)
+    -S, --{{sevice}} NOMBRE_SERVICIO    nombre del servicio
+    -o, --{{organization}} ORGANIZACIÓN  organización de proveedores
+    -s, --{{server}} SERVIDOR            host de punto final de servidor
+
+  Establecer una propiedad del servicio de aplicaciones LoopBack
+  {{$ apic props:set prop1=valor1}}
+  [{{climbon}}] prop1: valor1
+
+  Establecer un par de propiedades del servicio de aplicaciones LoopBack
+  {{$ apic props:set prop1=valor1 prop2=valor2 prop3=valor3}}
+  [{{climbon}}] prop1: valor1
+  [{{climbon}}] prop2: valor2
+  [{{climbon}}] prop3: valor3
+
+  Establecer una propiedad del servicio de aplicaciones LoopBack explícitamente
+  {{$ apic props:set --service climbon prop1=valor1}}
+  {{prop1: valor1}}
+
+  Establecer una propiedad del servicio {{Micro Gateway}}
+  {{$ apic props:set --service climbon-gw prop1=valor1}}
+  {{prop1: valor1}}
+
+  Establecer las propiedades de la aplicación remota
+  {{$ apic props:set --remote --service climbon --organization climbon --server mgmnthost.com prop1=valor1 prop2=valor2}}
+  {{prop1: valor1}}
+  {{prop2: valor2}}

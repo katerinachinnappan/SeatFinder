@@ -1,0 +1,15 @@
+使用法: apic {{plugins}}
+
+  インストールされているすべてのプラグインをリストします
+
+  {{$ apic plugins}}
+  apiconnect-cli-config 1.0.0
+  apiconnect-cli-create 1.0.0
+  apiconnect-cli-edit 1.0.0
+  ...
+  ...
+
+  「apic COMMAND --{{help}}」と入力すると、以下の関連コマンドのヘルプが表示されます
+
+  {{plugins:install}}      プラグインをインストールします
+  {{plugins:uninstall}}    プラグインをアンインストールします

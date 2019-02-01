@@ -1,0 +1,20 @@
+Uso: {{apic spaces}} OPTIONS
+
+  Listar os espaços contidos em um catálogo
+
+  Opções
+    -c, --{{catalog}} CATALOG               nome do catálogo (obrigatório)
+    -o, --{{organization}} ORGANIZATION     uma organização do provedor específica (obrigatório)
+    -s, --{{server}} SERVER                 terminal do servidor de gerenciamento (obrigatório)
+
+  Listar os espaços no catálogo {{production}} na organização {{climbonorg}} o servidor {{mgmnthost.com}}
+    $ {{apic spaces --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{apic-space://mgmnthost.com/orgs/climbonorg/catalogs/production/spaces/flights}}
+    {{apic-space://mgmnthost.com/orgs/climbonorg/catalogs/production/spaces/hotels}}
+    {{apic-space://mgmnthost.com/orgs/climbonorg/catalogs/production/spaces/banks}}
+
+  Digite "apic COMMAND -h" para obter ajuda nos seguintes comandos relacionados:
+    {{spaces:create}}   Criar um espaço em um catálogo
+    {{spaces:get}}      Obter informações sobre um espaço em um catálogo
+    {{spaces:set}}      Configurar informações sobre um espaço em um catálogo
+    {{spaces:delete}}   Excluir um espaço em um catálogo

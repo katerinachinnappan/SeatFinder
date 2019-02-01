@@ -1,0 +1,14 @@
+Uso: apic {{extensions:publish}} OPTIONS EXTENSION_FILENAME
+
+  Publicar uma extensão em um catálogo
+
+  Opções
+    -c, --{{catalog}} CATALOG            nome do catálogo (obrigatório)
+    -o, --{{organization}} ORGANIZATION  nome da organização do provedor (obrigatório)
+    -s, --{{server}} SERVER              terminal do servidor de gerenciamento (obrigatório)
+
+  Estabilidade: protótipo
+
+  Publicar uma extensão em um catálogo
+    {{$ apic extensions:publish extension.yaml --catalog production --organization climbonorg --server mgmnthost.com}}
+    Extensão {{extension.yaml}} publicada em {{climbonorg:production [climbextension:1.0.0]}}

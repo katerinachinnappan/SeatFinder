@@ -1,0 +1,39 @@
+Kullanım: apic {{drafts}} SEÇENEKLER
+
+  Taslaklardaki API'leri ve ürünleri listeler
+
+  Seçenekler
+    --{{type api | product}}                              tanım tipine göre listenin alt kümesini oluştur --{{organization}} KURULUŞ | --{{all-organizations}}  (zorunludur)
+      -{{o}}, --{{organization}} KURULUŞ                  belirli bir sağlayıcı kuruluşu
+      -{{O}}, --{{all-organizations}}                     tüm sağlayıcı kuruluşları
+    -{{s}}, --{{server}} SUNUCU                           yönetim sunucusu uç noktası (zorunludur)
+
+  Taslaklardaki API ve ürün tanımlarını listelemek için:
+    {{$ apic drafts --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:drafts}} içinde {{climbon}}:1.0.0 ürün tanımı
+    {{climbonorg:drafts}} içinde {{climbon}}:1.0.1 ürün tanımı
+    {{climbonorg:drafts}} içinde {{routes}}:1.0.0 API tanımı
+    {{climbonorg:drafts}} içinde {{ascents}}:1.0.0 API tanımı
+
+  Taslaklardaki API tanımlarını listelemek için:
+    {{$ apic drafts --type api --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:drafts}} içinde {{routes}}:1.0.0 API tanımı
+    {{climbonorg:drafts}} içinde {{ascents}}:1.0.0 API tanımı
+
+  Tüm kuruluşların içerdiği taslaklardaki tanımları listelemek için:
+    {{$ apic drafts --all-organizations --server mgmnthost.com}}
+    {{climbonorg:drafts}} içinde {{climbon}}:1.0.0 ürün tanımı
+    {{climbonorg:drafts}} içinde {{climbon}}:1.0.1 ürün tanımı
+    {{climbonorg:drafts}} içinde {{routes}}:1.0.0 API tanımı
+    {{climbonorg:drafts}} içinde {{ascents}}:1.0.0 API tanımı
+    {{hikingorg:drafts}} içinde {{hiking}}:1.0.0 ürün tanımı
+    {{hikingorg:drafts}} içinde {{trails}}:1.0.0 API tanımı
+
+Aşağıdaki komutlar hakkında daha fazla bilgi için "apic KOMUT -h" yazın:
+
+  {{drafts:push}}     Yerel API ya da ürün tanımlarını taslaklara gönder
+  {{drafts:pull}}     API ya da ürün tanımlarını taslaklardan çek
+  {{drafts:clone}}    Tüm API ve ürün tanımlarını taslaklardan çek
+  {{drafts:get}}      Taslaklardaki bir API ya da ürün tanımıyla ilgili bilgileri al
+  {{drafts:publish}}  Taslaklardaki bir ürünü ve başvurulan API'lerini bir kataloğa ya da alana yayınla {{drafts:delete}}   Bir API ya da ürün tanımını taslaklardan sil
+  {{drafts:clear}}    Taslaklardaki tüm API ve ürün tanımlarını sil

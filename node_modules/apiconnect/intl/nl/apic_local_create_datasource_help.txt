@@ -1,0 +1,18 @@
+Syntaxis: apic {{create --type datasource}} OPTIES
+
+  Een {{LoopBack}}-gegevensbrondefinitie maken in een {{LoopBack}}-toepassing
+
+  Opties
+    --{{name}} NAAM                      naam van de gegevensbron
+    --{{skip-cache}}                     promptantwoorden niet onthouden
+
+  Een gegevensbron voor een {{LoopBack}}-toepassing maken
+    {{$ apic create --type datasource}}
+    ? Geef de naam van de gegevensbron op: {{MemoryDB}}
+    ? Selecteer de connector voor {{MemoryDB}}: In-memory db (ondersteund door {{StrongLoop}})
+    Connector-specifieke configuratie:
+    ? {{window.localStorage}}-sleutel voor persistentie (alleen browser): {{MemoryDB}}
+    ? Volledig pad naar bestand voor persistentie (alleen server): {{~/.memorydb}}
+    Uitvoering van loopbackgenerator is voltooid
+    {{swagger}}- en productdefinities worden bijgewerkt
+    Beschrijving van {{/Users/shane/mesh/examples/climbon/definitions/climbon.yaml}} {{swagger}} gemaakt

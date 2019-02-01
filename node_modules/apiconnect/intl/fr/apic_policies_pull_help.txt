@@ -1,0 +1,14 @@
+Syntaxe : apic {{policies:pull}} OPTIONS NOM_STRATEGIE[:VERSION]
+
+  Extraire une stratégie d'un catalogue
+
+  Options
+    -c, --{{catalog}} CATALOGUE          nom du catalogue (obligatoire)
+    -o, --{{organization}} ORGANISATION  nom de l'organisation de type fournisseur (obligatoire)
+    -s, --{{server}} SERVEUR             noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  Extraire la stratégie
+    {{$ apic policies:pull invokepolicy:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+    Extraction de la stratégie {{invokepolicy}}:1.0.0 de {{climbonorg:production [invokepolicy_1.0.0]}}

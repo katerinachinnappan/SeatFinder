@@ -1,0 +1,14 @@
+Syntax: apic {{services}}
+
+  Die aktuell ausgeführten Services auflisten
+
+  {{$ apic services}}
+  Service {{climbon}} running on port 4001
+  Service {{climbon-gw}} running on port 4002
+
+Geben Sie "apic BEFEHL -h" für Hilfeinformationen zu den folgenden zugehörigen Befehlen ein:
+
+  {{services:start}}    Einen Service starten
+  {{services:stop}}     Einen Service stoppen
+  {{services:logs}}     Die Protokolle abrufen
+  {{services:get}}      Einen Service abrufen

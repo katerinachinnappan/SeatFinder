@@ -1,0 +1,11 @@
+Syntaxis: apic {{loopback:relation}} OPTIES
+
+  Nieuwe relatie tussen twee modellen in de toepassing {{LoopBack}} maken
+
+  Opties
+    --{{skip-cache}}                     promptantwoorden niet onthouden
+
+  Stabiliteit: prototype
+
+  Een relatie toevoegen
+    {{$ apic loopback:relation}}

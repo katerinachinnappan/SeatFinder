@@ -1,0 +1,9 @@
+Syntax: apic swiftserver:property
+
+  Eine neue Swift Server Generator-Modelleigenschaft in der aktuellen Anwendung erstellen
+
+  Stabilität: Prototyp
+
+  Eine Eigenschaft zu einem bereits vorhandenen Modell hinzufügen
+    $ apic swiftserver:property
+

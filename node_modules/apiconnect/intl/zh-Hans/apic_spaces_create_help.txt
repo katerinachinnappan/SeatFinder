@@ -1,0 +1,15 @@
+用法：{{apic spaces:create}} DISPLAY_NAME OPTIONS
+
+  在目录中创建空间
+
+  选项
+    --name NAME                         空间名称（从显示名称派生的缺省值）
+    -c, --{{catalog}} CATALOG               目录名称（必需）
+    -o, --{{organization}} ORGANIZATION     特定提供者组织（必需）
+    -s, --{{server}} SERVER                 管理服务器端点（必需）
+
+  稳定性：原型
+
+  在 {{mgmnthost.com}} 服务器上 {{climbonorg}} 组织中的 {{production}} 目录中创建空间
+    $ {{apic spaces:create flights --catalog production --organization climbonorg --server mgmnthost.com}}
+     Created {{climbonorg:production:flights}}

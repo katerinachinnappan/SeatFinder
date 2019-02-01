@@ -1,0 +1,34 @@
+Syntaxe : apic {{catalogs}} OPTIONS
+
+  Répertorier les catalogues contenus dans les organisations dont est membre l'utilisateur authentifié
+
+  Options
+    --{{organization}} ORGANISATION | --{{all-organizations}} (obligatoire)
+      -o, --{{organization}} ORGANISATION  organisation de type fournisseur spécifique
+      -O, --{{all-organizations}}          toutes les organisations de type fournisseur
+    -s, --{{server}} SERVEUR               noeud final du serveur de gestion (obligatoire)
+
+  Répertorier les catalogues dans l'organisation {{climbonorg}} sur le serveur  {{mgmnthost.com}}
+    {{$ apic catalogs --organization climbonorg --server mgmnthost.com}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/sandbox}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/qa}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/staging}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/production}}
+
+  Répertorier les catalogues dans toutes les organisations
+    {{$ apic catalogs --all-organizations --server mgmnthost.com}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/sandbox}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/qa}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/staging}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/production}}
+    {{apic-catalog://mgmnthost.com/orgs/hikingorg/catalogs/sandbox}}
+    {{apic-catalog://mgmnthost.com/orgs/hikingorg/catalogs/qa}}
+    {{apic-catalog://mgmnthost.com/orgs/hikingorg/catalogs/staging}}
+    {{apic-catalog://mgmnthost.com/orgs/hikingorg/catalogs/production}}
+
+  Pour accéder à l'aide sur les commandes liées suivantes, entrez "apic COMMANDE -h" :
+
+    {{catalogs:create}}   Créer un catalogue dans une organisation
+    {{catalogs:get}}      Obtenir des informations sur un catalogue dans une organisation
+    {{catalogs:set}}      Définir ou mettre à jour des informations sur un catalogue dans une organisation
+    {{catalogs:delete}}   Supprimer un catalogue dans une organisation

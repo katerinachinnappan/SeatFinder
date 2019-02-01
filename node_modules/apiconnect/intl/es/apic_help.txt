@@ -1,0 +1,43 @@
+Uso: {{%APPNAME%}} OPCIONES DE MANDATO
+
+  Opciones
+    -h, --{{help}}        uso del mandato
+    -v, --{{version}}     versión del producto
+    --{{ext-version}}     versión detallada del kit de herramientas
+
+Mandatos (especifique apic MANDATO -h para obtener ayuda adicional):
+
+  Crear y validar artefactos
+    {{config}}          gestionar variables de configuración
+    {{create}}          crear artefactos de desarrollo
+    {{edit}}            ejecutar el Diseñador de API
+    {{explore}}         ejecutar el Explorador de API
+    {{validate}}        validar artefactos de desarrollo
+
+  Crear y probar aplicaciones
+    {{logs}}            visualizar registros de servicio
+    {{loopback}}        crear y gestionar aplicaciones LoopBack
+    {{swiftserver}}     crear y gestionar aplicaciones Swift Server Generator
+    {{microgateway}}    crear aplicaciones Micro Gateway
+    {{props}}           propiedades de servicio
+    {{services}}        gestión de servicios
+    {{start}}           iniciar servicios
+    {{stop}}            detener servicios
+
+  Publicar en la nube
+    {{apis}}            gestionar APIs de un catálogo
+    {{apps}}            gestionar aplicaciones de proveedor
+    {{catalogs}}        gestionar catálogos de una organización
+    {{devapps}}         gestionar aplicaciones de consumidor
+    {{drafts}}          gestionar APIs y productos en borradores
+    {{extensions}}      gestionar ampliaciones de proveedor en un catálogo
+    {{login}}           iniciar sesión en una nube de IBM API Connect
+    {{logout}}          finalizar la sesión en una nube de IBM API Connect
+    {{members}}         gestionar miembros
+    {{orgs}}            gestionar organizaciones
+    {{policies}}        gestionar políticas de un catálogo
+    {{products}}        gestionar productos de un catálogo
+    {{publish}}         publicar productos y APIs en un catálogo
+    {{securegateways}}  gestionar pasarelas seguras
+    {{spaces}}          gestionar espacios de un catálogo
+    {{subscriptions}}   gestionar suscripciones

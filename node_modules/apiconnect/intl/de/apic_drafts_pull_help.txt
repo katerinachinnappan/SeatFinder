@@ -1,0 +1,23 @@
+Syntax: apic {{drafts:pull}} OPTIONEN NAME[:VERSION]
+
+  API- oder Produktdefinitionen mit Pull-Operation aus Entwürfen extrahieren
+
+  Optionen
+    --{{type api | product}}             Untergruppe der Liste nach Definitionstyp
+    --{{product-only}}                   Produkt mit Pull-Operation extrahieren, jedoch nicht die referenzierten APIs
+    -{{o}}, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+    -{{s}}, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  API-Definition mit Pull-Operation extrahieren
+    {{$ apic drafts:pull routes --organization climbonorg --server mgmnthost.com}}
+    Pulled {{routes.yaml}} API definition from {{climbonorg:drafts [routes:1.0.0]}}
+
+  Eine Produktdefinition und die referenzierten APIs mit Pull-Operation extrahieren
+    {{$ apic drafts:pull climbon --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon}}:1.0.0 product definition from {{climbonorg:drafts [climbon.yaml]}}
+    Pulled {{routes}}:1.0.0 API definition from {{climbonorg:drafts [routes.yaml]}}
+    Pulled {{ascents}}:1.0.0 API definition from {{climbonorg:drafts [ascent.yaml]}}
+
+  Eine Produktdefinition ohne die referenzierten APIs mit Pull-Operation extrahieren
+    {{$ apic drafts:pull climbon --product-only --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon}}:1.0.0 product definition from {{climbonorg:drafts [climbon.yaml]}}

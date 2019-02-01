@@ -1,0 +1,16 @@
+Syntaxe : apic {{loopback:remote-method}} OPTIONS
+
+  Créer une méthode dans l'application {{LoopBack}}
+
+  Options
+    -m, --{{model}} NOM_MODELE           nom du modèle {{LoopBack}} (facultatif)
+    -r, --{{remote-method}} NOM_METHODE  nom de la méthode distante (facultatif)
+    --{{skip-cache}}                     ne pas mémoriser les réponses aux invites
+
+  Stabilité : prototype
+
+  Ajouter une nouvelle méthode à un modèle {{LoopBack}}
+    {{$ apic loopback:remote-method}}
+
+  Ajouter une nouvelle méthode distante pour le modèle note nommé {{getCreationDate}}
+    {{$ apic loopback:remote-method --model note --remote-method getCreationDate}}

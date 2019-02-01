@@ -1,0 +1,25 @@
+Syntaxe : apic {{components}}
+
+  List components
+
+  Options
+    --{{organization}} ORGANISATION | --all-organizations (obligatoire)
+      {{-o}}, --{{organization}} ORGANISATION  une organisation de type fournisseur spécifique
+      {{-o}}, --{{all-organizations}}          toutes les organisations de type fournisseur
+    {{-s}}, --{{server}} SERVEUR               noeud final de serveur de gestion (obligatoire)
+
+  Répertorier tous les composants dans toutes les organisations
+    {{$ apic components --all-organizations --server mgmnthost.com}}
+    {{climbon}}:1.0.0 dans {{climbonorg:staging}}
+    {{climbon}}:1.0.0 dans {{climbonorg:production}}
+    {{climbon}}:1.0.1 dans {{climbonorg:sandbox}}
+    {{climbon}}:1.0.1 dans {{climbonorg:qa}}
+    {{climbon}}:1.0.1 dans {{climbonorg:production}}
+    {{yosar}}:2.0.0 dans {{climbonorg:production}}
+    {{trails}}:1.0.0 dans {{hikingorg:staging}}
+    {{trails}}:2.0.0 dans {{hikingorg:production}}
+
+Pour plus d'informations sur les commandes suivantes, entrez "apic COMMANDE -h" :
+
+  {{components:get}}                      Obtenir des informations sur un composant dans un catalogue
+

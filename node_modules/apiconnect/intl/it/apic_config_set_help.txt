@@ -1,0 +1,76 @@
+Utilizzo: apic {{config:set}} OPZIONI NOME=VALORE ...
+
+  Imposta o aggiorna una o più variabili della configurazione
+
+  Opzioni
+    -l, --{{local}}       imposta la variabile della configurazione dell'applicazione locale (solo progetto {{loopback}})
+    -g, --{{global}}      imposta la variabile della configurazione globale
+
+  Variabili di configurazione:
+
+    {{catalog}}
+      È necessario impostare la variabile della configurazione del catalogo
+      con l'URI di un catalogo API Connect.  Il valore del catalogo fornisce
+      l'identità predefinita di un catalogo per tutti i comandi che vengono
+      utilizzati per gestire aspetti di un catalogo.  I valori predefiniti definiti
+      dall'URI del catalogo possono essere sovrascritti utilizzando le opzioni
+      di riga comandi --{{server}}, --{{organization}} e --{{catalog}}.  L'URI
+      del catalogo ha il seguente formato:
+      apic-catalog://SERVER_GESTIONE/orgs/NOME_ORGANIZZAZIONE/catalogs/NOME_CATALOGO
+
+    {{app}}
+      È necessario impostare la variabile della configurazione dell'app
+      con l'URI di un app API Connect.  Il valore dell'app fornisce
+      l'identità predefinita di un'app per tutti i comandi che vengono
+      utilizzati per gestire aspetti di un'app.  I valori predefiniti
+      definiti dall'URI dell'app possono essere sovrascritti utilizzando
+      le opzioni di riga comandi --{{server}}, --{{organization}} e
+      --{{app}}.
+      L'URI dell'app ha il seguente formato:
+      apic-app://SERVER_GESTIONE/orgs/NOME_ORGANIZZAZIONE/apps/NOME_APP
+
+    {{org}}
+      Il valore predefinito dell'org definita dall'URI o dell'app o del catalogo
+      può essere impostato utilizzando l'URI org.  L'URI org ha il seguente formato:
+      apic-org://SERVER_GESTIONE/orgs/NOME_ORGANIZZAZIONE
+
+    {{space}}
+      È necessario impostare la variabile della configurazione dello spazio
+      con l'URI di uno spazio API Connect.  Il valore dello spazio fornisce
+      l'identità predefinita di uno spazio per tutti i comandi che vengono
+      utilizzati per gestire aspetti di uno spazio.  I valori predefiniti definiti
+      dall'URI dello spazio possono essere sovrascritti utilizzando le opzioni
+      da riga comandi --{{server}}, --{{organization}}, --{{catalog}}, e --{{space}}.  L'URI dello spazio ha il formato:
+      apic-space://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/catalogs/CATALOG_NAME/spaces/SPACE_NAME
+
+    {{accessibility-mode}}
+      Abilita le funzioni di accessibilità. Il valore deve essere impostato su '{{enabled}}' o '{{disabled}}'.
+      Se non è impostato, {{accessibility-mode}} è disabilitata.
+
+    {{oauth-redirect-uri}}
+      Per effettuare il test di OAuth è necessario impostare l'URI di reindirizzamento OAuth, ciò viene solitamente effettuato       utilizzando Development Portal. Utilizzare questa variabile per raggiungere lo stesso risultato utilizzando solo il toolkit.
+
+    {{template-path}}
+      Elenca i posti in cui cercare i template della barra di controllo
+
+    {{template-default-api}}
+      Definisce i template dell'api predefinita
+
+    {{template-default-product}}
+      Definisce i template del prodotto predefinito
+
+  {{$ apic config:set catalog=apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+  {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+  {{org: apic-org://mgmnthost.com/orgs/climbon}}
+
+  {{$ apic config:set --global app=apic-app://mgmnthost.com/orgs/climbon/apps/sb}}
+  {{app: apic-app://mgmnthost.com/orgs/climbon/apps/sb}}
+  {{org: apic-org://mgmnthost.com/orgs/climbon}}
+
+  {{$ apic config:set org=apic-org://mgmnthost2.com/orgs/hikeon}}
+  {{app: apic-app://mgmnthost2.com/orgs/hikeon/apps/sb}}
+  {{catalog: apic-catalog://mgmnthost2.com/orgs/hikeon/catalogs/sb}}
+  {{org: apic-org://mgmnthost2.com/orgs/hikeon}}
+
+  {{$ apic config:set --global template-path="/etc/templates"}}
+  {{template-path: /etc/templates}}

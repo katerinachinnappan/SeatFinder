@@ -1,0 +1,24 @@
+Syntaxe : apic {{stop}} OPTIONS
+
+  Dans le contexte d'une application LoopBack, arrêter cette dernière et {{Micro Gateway}}.  Dans
+des applications non LoopBack, arrêter l'application Micro Gateway.
+
+  Options
+    --{{all}}                            arrêter toutes les applications LoopBack et {{Micro Gateways}}
+    -S, --{{service}} NOM_SERVICE        nom du service à arrêter
+
+  Arrêter tous les services pour l'application en cours
+  {{$ apic stop}}
+  Arrêt de {{climbon}}
+  Arrêt de {{climbon-gw}}
+
+  Arrêter un service spécifique exécuté dans l'application en cours
+  {{$ apic stop --service climbon-gw}}
+  Arrêt de {{climbon-gw}}
+
+  Arrêter tous les services exécutés dans toutes les applications
+  {{$ apic stop --all}}
+  Arrêt de {{climbon}}
+  Arrêt de {{climbon-gw}}
+  Arrêt de {{hikeon}}
+  Arrêt de {{hikeon-gw}}

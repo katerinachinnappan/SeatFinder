@@ -1,0 +1,36 @@
+Usage: apic {{products:supersede}} OLD_PRODUCT_NAME[:VERSION] NEW_PRODUCT_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Supersede a published or deprecated product in a catalog or space with another product
+
+  Options for catalog scope
+    --{{plans}} SOURCE_PLAN_NAME:TARGET_PLAN_NAME ...   old to new product plan mappings (required)
+    {{-c}}, --{{catalog}} CATALOG            catalog name (required)
+    {{-o}}, --{{organization}} ORGANIZATION  provider organization name (required)
+    {{-s}}, --{{server}} SERVER              management server endpoint (required)
+
+  Options for space scope
+    --{{scope space}}
+    --{{space}} SPACE                    space name (required)
+    --{{plans}} SOURCE_PLAN_NAME:TARGET_PLAN_NAME ...   old to new product plan mappings (required)
+    {{-c}}, --{{catalog}} CATALOG            catalog name (required)
+    {{-o}}, --{{organization}} ORGANIZATION  provider organization name (required)
+    {{-s}}, --{{server}} SERVER              management server endpoint (required)
+
+  Stability: prototype
+
+  Supersede a product with a more recent version using the catalog configuration variable
+    {{$ config:set catalog=apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+    {{$ apic products:supersede climbon:1.0.0 climbon:2.0.0}}
+    Superseded {{climbon}}:1.0.0 with {{climbon}}:2.0.0 in {{climbon}}:sb
+
+  Supersede a product with a different product
+    {{$ apic products:supersede climbon adventure-sports -c production -o climbonorg -s mgmnthost.com}}
+    Superseded {{climbon}}:2.0.1 with {{adventure-sports}}:1.0.0 in {{climbonorg:production}}
+
+  Supersede a product with a new version and map all the old plans to new plans
+    {{$ apic products:supersede climbon:1.0.1 climbon:1.1.0 --plans "basic:silver premium:gold" -c production -o climbonorg -s mgmnthost.com}}
+    Superseded {{climbon}}:1.0.1 with {{climbon}}:1.1.0 in {{climbonorg:production}}
+
+  Supersede a product with a different product in a space
+    {{$ apic products:supersede --scope space climbon adventure-sports --space flights -c production -o climbonorg -s mgmnthost.com}}
+    Superseded {{climbon}}:2.0.1 with {{adventure-sports}}:1.0.0 in {{climbonorg:production:flights}}

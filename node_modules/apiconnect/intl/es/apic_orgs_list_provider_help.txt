@@ -1,0 +1,20 @@
+Uso:   apic {{orgs}} OPCIONES
+       apic {{orgs}} --{{type provider}} OPCIONES
+
+  Listar las organizaciones de proveedores de las que forma parte el usuario actualmente autenticado
+
+  Opciones
+    --{{type provider}}
+    -s, --{{server}} SERVIDOR             punto final del servidor de gestión (obligatorio)
+
+  Listar las organizaciones (organizaciones de proveedores) de las que forma parte el usuario actualmente autenticado en mgmnthost.com
+    {{$ apic orgs --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+    {{$ apic orgs --type provider --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+  Especifique "apic MANDATO -h" para obtener ayuda sobre los siguientes mandatos relacionados:
+    {{orgs:get}}          Obtener información acerca de una organización de proveedores

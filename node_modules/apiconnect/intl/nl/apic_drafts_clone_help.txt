@@ -1,0 +1,18 @@
+Syntaxis: apic {{drafts:clone}} OPTIES
+
+  Alle API- en productdefinities ophalen uit concepten
+
+  Opties
+    -{{o}}, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    -{{s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  $ apic drafts:clone --organization climbonorg --server mgmnthost.com
+  Productdefinitie {{climbon}}:1.0.0 is opgehaald uit {{climbonorg:drafts [climbon_1.0.0.yaml]}}
+  Productdefinitie {{climbon}}:1.0.1 is opgehaald uit {{climbonorg:drafts [climbon_1.0.1.yaml]}}
+  Productdefinitie {{climbon}}:2.0.0 is opgehaald uit {{climbonorg:drafts [climbon_2.0.0.yaml]}}
+  Productdefinitie {{hiking}}:3.0.0 is opgehaald uit {{climbonorg:drafts [hiking_3.0.0.yaml]}}
+  Productdefinitie {{hiking}}:3.0.1 is opgehaald uit {{climbonorg:drafts [hiking_3.0.1.yaml]}}
+  API-definitie {{ascents}}:1.0.0 is opgehaald uit {{climbonorg:drafts [ascents_1.0.0.yaml]}}
+  API-definitie {{routes}}:1.0.0 is opgehaald uit {{climbonorg:drafts [routes_1.0.0.yaml]}}
+  API-definitie {{routes}}:1.0.0 is opgehaald uit {{climbonorg:drafts [routes_1.0.0.yaml]}}
+  API-definitie {{trails}}.4.0.0 is opgehaald uit {{climbonorg:drafts [trails_4.0.0.yaml]}}

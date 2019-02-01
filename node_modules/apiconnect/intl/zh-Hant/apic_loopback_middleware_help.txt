@@ -1,0 +1,12 @@
+用法：apic {{loopback:middleware}} OPTIONS
+
+  在 {{LoopBack}} 應用程式中建立新的中介軟體
+
+  選項
+    -n, --{{name}} NAME                  中介軟體的名稱（選用）
+    --{{skip-cache}}                     不要記住提示回答
+
+  穩定性：原型
+
+  將項目新增至 {{/server/middleware.json}} 來定義中介軟體 {{"myMiddleware"}}
+    {{$ apic loopback:middleware --name myMiddleware}}

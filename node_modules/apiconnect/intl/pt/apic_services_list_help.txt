@@ -1,0 +1,14 @@
+Uso: apic {{services}}
+
+  Listar os serviços atualmente em execução
+
+  {{$ apic services}}
+  Service {{climbon}} running on port 4001
+  Service {{climbon-gw}} running on port 4002
+
+Digite "apic COMMAND -h" para obter ajuda sobre os comandos relacionados a seguir:
+
+  {{services:start}}    Iniciar um serviço
+  {{services:stop}}     Parar um serviço
+  {{services:logs}}     Obter os logs
+  {{services:get}}      Obter um serviço

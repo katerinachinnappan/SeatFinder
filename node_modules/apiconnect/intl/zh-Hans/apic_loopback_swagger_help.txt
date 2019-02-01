@@ -1,0 +1,12 @@
+用法：apic {{loopback:swagger}} OPTIONS
+
+  从 {{OpenAPI (Swagger)}} 定义生成 {{LoopBack}} 项目
+
+  选项
+    -f, --{{filename}} API_FILENAME      {{OpenAPI (Swagger)}} 文件的名称（可选）
+    --{{skip-cache}}                     不记住提示答案
+
+  稳定性：原型
+
+  从 {{OpenAPI (Swagger)}} 定义生成 {{LoopBack}} 项目
+    {{$ apic loopback:swagger --filename climbon.yaml}}

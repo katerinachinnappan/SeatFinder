@@ -1,0 +1,17 @@
+Kullanım: {{apic spaces:get}} ALAN_ADI_SEÇENEKLERİ
+
+  Bir katalogdaki alanla ilgili bilgi al
+
+  Seçenekler
+    -c, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    -o, --{{organization}} KURULUŞ       belirli bir sağlayıcı kuruluşu (zorunludur)
+    -s, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  {{mgmnthost.com}} sunucusunda {{climbonorg}} kuruluşunda {{production}} kataloğunda bir alan al
+    $ {{apic spaces:get flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    ad: {{flights}}
+    görünen adı: {{Flights Space}}
+    katalog: {{production}}
+    kuruluş: {{climbonorg}}

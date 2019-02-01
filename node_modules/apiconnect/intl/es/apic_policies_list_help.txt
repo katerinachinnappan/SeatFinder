@@ -1,0 +1,27 @@
+Uso: apic {{policies}} OPCIONES
+
+  Listar las políticas de un catálogo
+
+  Opciones
+    --{{catalog}} CATÁLOGO | --{{all-catalogs}} (obligatorio)
+      -c, --{{catalog}} CATÁLOGO           un catálogo específico
+      -C, --{{all-catalogs}}               todos los catálogos
+    --{{organization}} ORGANIZACIÓN | --{{all-organizations}} (obligatorio)
+      -o, --{{organization}} ORGANIZACIÓN  un proveedor específico
+      -O, --{{all-organizations}}          todas las organizaciones de proveedores
+    -s, --{{server}} SERVIDOR              punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  Listar las políticas del catálogo production
+    {{$ apic policies --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{invokepolicy}}:1.0.0 en {{climbonorg:production}}
+    {{jwepolicy}}:1.0.0 en {{climbonorg:productiong}}
+
+  Escriba "apic MANDATO -h" para obtener más información acerca de los mandatos siguientes:
+
+    {{policies:publish}} Publicar una política en un catálogo
+    {{policies:get}}     Obtener información de una política de un catálogo
+    {{policies:pull}}    Extraer una política de un catálogo
+    {{policies:clone}}   Extraer todas las políticas de un catálogo
+    {{policies:delete}}  Suprimir una política de un catálogo

@@ -1,0 +1,24 @@
+使用法: apic {{login}}                  対話式
+        apic {{login}} OPTIONS          非対話式
+
+  管理サーバー経由で {{API Connect}} クラウドを認証します
+
+  オプション
+    -u, --{{username}} USER              ユーザー名 (必須)
+    -p, --{{password}} PASSWORD          パスワード (必須)
+    -s, --{{server}} SERVER              管理サーバー・エンドポイント (必須)
+    --{{sso}}                            統合企業 ID を使用してログインする
+    -c, --{{passcode}} PASSCODE          {{JWT}} のワンタイム・パスコード
+    —k, --{{apikey}}  APIKEY             Bluemix API キーを使用してログインする
+
+  管理サーバー経由で {{API Connect}} クラウドにログインします
+    {{$ apic login}}
+    {{API Connect}} の資格情報を入力します
+    ? サーバー: {{mgmnthost.com}}
+    ? ユーザー名: {{tommy}}
+    ? パスワード (入力内容は非表示) **********
+    {{mgmnthost.com}} に正常にログインしました
+
+  非対話式ログイン
+    {{$ apic login --username tommy --password password --server mgmnthost.com}}
+    {{mgmnthost.com}} に正常にログインしました

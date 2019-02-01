@@ -1,0 +1,23 @@
+Uso: apic {{drafts:pull}} OPCIONES NOMBRE[:VERSIÓN]
+
+  Extraer definiciones de API o de producto de borradores
+
+  Opciones
+    --{{type api | product}}                 crear subconjuntos de la lista por tipo de definición
+    --{{product-only}}                       extraer el producto pero no sus apis referenciadas
+    -{{o}}, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    -{{s}}, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Extraer una definición de API
+    {{$ apic drafts:pull routes --organization climbonorg --server mgmnthost.com}}
+    Se ha extraído la definición de API {{routes.yaml}} de {{climbonorg:drafts [routes:1.0.0]}}
+
+  Extraer una definición de producto y sus API referenciadas
+    {{$ apic drafts:pull climbon --organization climbonorg --server mgmnthost.com}}
+    Se ha extraído la definición de producto {{climbon}}:1.0.0 de {{climbonorg:drafts [climbon.yaml]}}
+    Se ha extraído la definición de API {{routes}}:1.0.0 de {{climbonorg:drafts [routes.yaml]}}
+    Se ha extraído la definición de API {{ascents}}:1.0.0 de {{climbonorg:drafts [ascent.yaml]}}
+
+  Extraer una definición de producto sin sus API referenciadas
+    {{$ apic drafts:pull climbon --product-only --organization climbonorg --server mgmnthost.com}}
+    Se ha extraído la definición de producto {{climbon}}:1.0.0 de {{climbonorg:drafts [climbon.yaml]}}

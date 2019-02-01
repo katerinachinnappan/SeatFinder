@@ -1,0 +1,46 @@
+Syntaxis: {{apic apis}} [CATALOGUSOPTIES | RUIMTEOPTIES]
+
+  Lijst van de API's in een catalogus of ruimte afbeelden
+
+  Opties voor catalogusbereik
+    --{{scope catalog}}                           (standaard)
+    --{{catalog}} CATALOGUS | --{{all-catalogs}}  (verplicht)
+      -{{c}}, --{{catalog}} CATALOG               een specifieke catalogus
+      -{{C}}, --{{all-catalogs}}                  alle catalogi
+    --{{organization}} ORGANISATIE | --{{all-organizations}} (verplicht)
+      -{{o}}, --{{organization}} ORGANIZATION     een specifieke providerorganisatie
+      -{{O}}, --{{all-organizations}}             alle providerorganisaties
+    -{{s}}, --{{server}} SERVER                   eindpunt van beheerserver (verplicht)
+
+  Opties voor ruimtebereik
+    --{{scope space}}
+    --{{space}} RUIMTE
+    -{{c}}, --{{catalog}} CATALOGUS             een specifieke catalogus
+    -{{o}}, --{{organization}} ORGANISATIE      een specifieke providerorganisatie
+    -{{s}}, --{{server}} SERVER                 eindpunt van beheerserver (verplicht)
+
+  Stabiliteit: prototype
+
+  Lijst afbeelden van API-definities in een catalogus
+    {{$ apic apis --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{routes:2.0.0}} in {{climbonorg:production}}
+    {{trails:2.0.0}} in {{climbonorg:production}}
+
+  Lijst afbeelden van API-definities in alle catalogi van alle organisaties
+    {{$ apic apis --all-catalogs --all-organizations --server mgmnthost.com}}
+    {{routes:1.0.0}} in {{climbonorg:staging}}
+    {{routes:2.0.0}} in {{climbonorg:production}}
+    {{trails:1.0.0}} in {{hikingorg:staging}}
+    {{trails:2.0.0}} in {{hikingorg:production}}
+
+  Lijst afbeelden van API-definities in een ruimte
+    {{$ apic apis --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{routes:2.0.0}} in {{climbonorg:production:sp1}}
+    {{trails:2.0.0}} in {{climbonorg:production:sp1}}
+
+Typ "{{apic OPDRACHT --help}}" voor meer informatie over de volgende opdrachten:
+
+  {{apis:get}}     Informatie over een API in een catalogus of ruimte ophalen
+  {{apis:set}}     Een API in een catalogus of ruimte bijwerken
+  {{apis:pull}}    Een API ophalen uit een catalogus of ruimte
+  {{apis:clone}}   Alle API's ophalen uit een catalogus of ruimte

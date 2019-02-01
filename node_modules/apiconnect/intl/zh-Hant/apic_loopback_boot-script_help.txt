@@ -1,0 +1,12 @@
+用法：apic {{loopback:boot-script}} OPTIONS
+
+  在 {{LoopBack}} 應用程式中建立新的啟動 Script
+
+  選項
+    -n, --{{name}} NAME                  啟動 Script 的名稱（選用）
+    --{{skip-cache}}                     不要記住提示回答
+
+  穩定性：原型
+
+  {{$ apic loopback:boot-script --name some_boot_script.js}}
+  這會在 {{/server/boot}} 中產生 {{boot}} Script。

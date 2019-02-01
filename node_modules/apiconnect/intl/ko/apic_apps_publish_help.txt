@@ -1,0 +1,19 @@
+사용법: apic {{apps:publish}} OPTIONS
+
+  Node.js 또는 Swift 서버(Bluemix 전용) 애플리케이션을 제공자 앱에 공개합니다.
+  Collective Controller에 공개는 5.0.7.0부터 더 이상 사용되지 않습니다. 
+
+  옵션
+    -a, --{{app}} APP                    공개할 제공자 앱 대상(필수)
+    -o, --{{organization}} ORGANIZATION  제공자 조직 이름(필수)
+    -s, --{{server}} SERVER              관리 서버 엔드포인트(필수)
+    --{{scale}} SCALE                    APIConnect Collective에 배치된 서비스의
+                                         스케일 설정. 기본값은 호스트 수임(선택사항)
+
+  현재 애플리케이션을 {{mgmnthost.com}} 서버의 {{climbon}} 조직에 있는
+  라우트 제공자 앱에 공개
+    {{$ apic apps:publish --app routes --organization climbon --server mgmnthost.com}}
+
+  {{apps}} 구성 변수를 사용하여 현재 애플리케이션 공개
+    {{$ apic config:set app=apic-app://mgmnthost.com/orgs/climbon/apps/sb-app}}
+    {{$ apic apps:publish}}

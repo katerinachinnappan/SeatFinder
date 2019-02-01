@@ -1,0 +1,12 @@
+Kullanım: apic {{loopback:middleware}} SEÇENEKLER
+
+  {{LoopBack}} uygulamasında yeni bir ara katman yazılımını yaratır
+
+  Seçenekler
+    -n, --{{name}} AD                    ara katman yazılımının adı (isteğe bağlı)
+    --{{skip-cache}}                     bilgi istemi yanıtlarını kaydetme
+
+  Kararlılık durumu: prototip
+
+  {{"myMiddleware"}} ara katman yazılımını tanımlayan {{/server/middleware.json}} dosyasına giriş ekle
+    {{$ apic loopback:middleware --name myMiddleware}}

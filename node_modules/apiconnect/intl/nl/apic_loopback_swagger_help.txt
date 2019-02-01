@@ -1,0 +1,12 @@
+Syntaxis: apic {{loopback:swagger}} OPTIES
+
+  Een {{LoopBack}}-project genereren op basis van een {{OpenAPI (Swagger)}}-definitie
+
+  Opties
+    -f, --{{filename}} BESTANDSNAAM_API  naam van het {{OpenAPI (Swagger)}}-bestand (optioneel)
+    --{{skip-cache}}                     promptantwoorden niet onthouden
+
+  Stabiliteit: prototype
+
+  Een {{LoopBack}}-project genereren op basis van een {{OpenAPI (Swagger)}}-definitie
+    {{$ apic loopback:swagger --filename climbon.yaml}}

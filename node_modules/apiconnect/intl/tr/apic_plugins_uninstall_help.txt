@@ -1,0 +1,6 @@
+Kullanım: apic {{plugins:uninstall}} EKLENTİ
+
+  Bir eklentiyi kaldırır. Kurulu olan eklentilerin listesini almak için `apic {{plugins:list}}`
+  komutunu kullanabilirsiniz.
+
+  {{$ apic plugins:uninstall my-plugin}}

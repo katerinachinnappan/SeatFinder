@@ -1,0 +1,35 @@
+Kullanım: {{apic subscriptions:get}} ABONELİK_ADI [KATALOG_SEÇENEKLERİ | ALAN_SEÇENEKLERİ]
+
+  Bir abonelikle ilgili bilgi al
+
+  Katalog kapsamı için seçenekler
+    --{{scope catalog}}                     (varsayılan)
+    -{{c}}, --{{catalog}} KATALOG               katalog adı (zorunludur)
+    -{{o}}, --{{organization}} KURULUŞ          belirli bir sağlayıcı kuruluşu (zorunludur)
+    -{{s}}, --{{server}} SUNUCU                 yönetim sunucusu uç noktası (zorunludur)
+
+  Alan kapsamı için seçenekler
+    --{{scope space}}                       (zorunludur)
+    --{{space}}                             alan adı (zorunludur)
+    -{{c}}, --{{catalog}} KATALOG               katalog adı (zorunludur)
+    -{{o}}, --{{organization}} KURULUŞ          belirli bir sağlayıcı kuruluşu (zorunludur)
+    -{{s}}, --{{server}} SUNUCU                 yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  Bir katalogdaki abonelikle ilgili bilgi al
+    {{$ apic subscriptions:get subscription1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    ad: {{subscription1}}
+    uygulama: climbonapp
+    ürün: {{climb-on:1.0.0:premimum}}
+    katalog: {{production}}
+    kuruluş: {{climbonorg}}
+
+  Bir alandaki abonelikle ilgili bilgi al
+    {{$ apic subscriptions:get subscription1 --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    ad: {{subscription1}}
+    uygulama: climbonapp
+    ürün: {{climb-on:1.0.0:premimum}}
+    alan: {{flights}}
+    katalog: {{production}}
+    kuruluş: {{climbonorg}}

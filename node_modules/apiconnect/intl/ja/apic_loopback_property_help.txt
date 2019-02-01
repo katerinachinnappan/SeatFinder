@@ -1,0 +1,11 @@
+使用法: apic {{loopback:property}} OPTIONS
+
+  現在の {{LoopBack}} アプリケーションで、新しい {{LoopBack}} モデル・プロパティーを作成します
+
+  オプション
+    --{{skip-cache}}                     プロンプトに対する応答を記憶しない
+
+  Stability: prototype
+
+  既存の {{LoopBack}} モデルにプロパティーを追加します
+    {{$ apic loopback:property}}

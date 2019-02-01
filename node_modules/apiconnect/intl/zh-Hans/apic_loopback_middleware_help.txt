@@ -1,0 +1,12 @@
+用法：apic {{loopback:middleware}} OPTIONS
+
+  在 {{LoopBack}} 应用程序中创建新的中间件
+
+  选项
+    -n, --{{name}} NAME                  中间件的名称（可选）
+    --{{skip-cache}}                     不记住提示答案
+
+  稳定性：原型
+
+  将条目添加到 {{/server/middleware.json}} 以定义中间件 {{"myMiddleware"}}
+    {{$ apic loopback:middleware --name myMiddleware}}

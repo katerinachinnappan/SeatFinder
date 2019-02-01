@@ -1,0 +1,21 @@
+Syntaixe: apic swiftserver OPTIES
+
+  Een Swift Server Generator-toepassing maken
+
+  Opties
+  -n, --name NAAM                  naam van de toepassing (optioneel)
+
+  Stabiliteit: prototype
+
+  Een toepassing met de naam bookshop maken
+  $ apic swiftserver
+  ? Wat is de naam van uw toepassing? bookshop
+  ? Geef de naam op van de directory voor het project: bookshop
+  ? Selecteer de datastore: memory
+
+Typ "apic COMMAND -h" voor Help over de volgende aanverwante opdrachten:
+
+  create                           Artefactdefinities opstellen
+  swiftserver:property             Een nieuwe modeleigenschap maken
+  swiftserver:refresh              Een product en een OpenAPI (Swagger) definitie genereren
+

@@ -1,0 +1,6 @@
+用法：apic {{plugins:uninstall}} PLUGIN
+
+  解除安裝外掛程式。您可以使用 `apic {{plugins:list}}` 來取得
+  目前已安裝的外掛程式清單。
+
+  {{$ apic plugins:uninstall my-plugin}}

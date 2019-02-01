@@ -1,0 +1,33 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name"> Seatfinder</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56">
+      <mat-nav-list>
+        <a *ngIf="isUserLoggedIn() else login" mat-list-item routerLink="." (click)="toggleSideNav(snav)" (click)="logout()">Logout</a>
+        <ng-template #login>
+          <a mat-list-item routerLink="login" (click)="toggleSideNav(snav)">Login</a>
+        </ng-template>
+
+        <div *ngIf="getUserLoggedInType() === 'STUDENT'">
+          <a mat-list-item routerLink="search" (click)="toggleSideNav(snav)">Search</a>
+          <a mat-list-item routerLink="history" (click)="toggleSideNav(snav)">History</a>
+        </div>
+        <div *ngIf="getUserLoggedInType() === 'SCHOOL_STAFF'">
+          <a mat-list-item routerLink="add" (click)="toggleSideNav(snav)">Add Room or Seat</a>
+          <a mat-list-item routerLink="search" (click)="toggleSideNav(snav)">Delete Room or Seat</a>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="frame-content">
+      <ng-content></ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

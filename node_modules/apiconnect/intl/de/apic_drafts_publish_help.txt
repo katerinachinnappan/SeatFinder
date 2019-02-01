@@ -1,0 +1,33 @@
+Syntax: apic {{drafts:publish}} [KATALOGOPTIONEN | BEREICHSOPTIONEN] NAME[:VERSION]
+
+  Ein Produkt und die referenzierten APIs in Entwürfen in einem Katalog oder Bereich veröffentlichen
+
+  Optionen für Katalogbereich
+    --{{scope catalog}}                  (Standard)
+    --{{stage}}                          Veröffentlichung auf Bereitstellung beschränken
+    -{{c}}, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    -{{o}}, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+    -{{s}}, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Optionen für Bereichsumfang
+    --{{scope space}}                      (erforderlich)
+    --{{space}} BEREICH                       Bereichsname (erforderlich)
+    --{{stage}}                            Veröffentlichung auf Bereitstellung beschränken
+    -{{c}}, --{{catalog}} KATALOG             Katalogname (erforderlich)
+    -{{o}}, --{{organization}} ORGANISATION   Name der Provider-Organisation (erforderlich)
+    -{{s}}, --{{server}} SERVER               Management-Server-Endpunkt (erforderlich)
+
+  Ein Produkt in Entwürfen in einem Katalog veröffentlichen
+    {{$ apic drafts:publish climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    Staged {{climbon}}:1.0.0 to {{climbonorg:production}}
+    Published {{climbon}}:1.0.0 to {{climbonorg:production}}
+
+  Ein Produkt in Entwürfen in einem Katalog bereitstellen
+    {{$ apic drafts:publish --stage climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    Staged {{climbon}}:1.0.0 to {{climbonorg:production}}
+
+  Ein Produkt in Entwürfen in einem Bereich veröffentlichen
+    {{$ apic drafts:publish climbon --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Staged {{climbon:1.0.0}} to {{climbonorg:production:flights}}
+    Published {{climbon:1.0.0}} to {{climbonorg:production:flights}}
+

@@ -1,0 +1,41 @@
+Syntaxis: apic {{drafts}} OPTIES
+
+  Lijst afbeelden van API's en producten in concepten
+
+  Opties
+    --{{type api | product}}               subset van lijst op basis van definitietype
+    --{{organization}} ORGANISATIE | --{{all-organizations}} (verplicht)
+      -{{o}}, --{{organization}} ORGANISATIE   een specifieke providerorganisatie
+      -{{O}}, --{{all-organizations}}          alle providerorganisaties
+    -{{s}}, --{{server}} SERVER                eindpunt van beheerserver (verplicht)
+
+  Lijst afbeelden van de API- en productdefinities in concepten
+    {{$ apic drafts --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 productdefinitie in {{climbonorg:drafts}}
+    {{climbon}}:1.0.1 productdefinitie in {{climbonorg:drafts}}
+    {{routes}}:1.0.0 API-definitie in {{climbonorg:drafts}}
+    {{ascents}}:1.0.0 API-definitie in {{climbonorg:drafts}}
+
+  Lijst afbeelden van de API-definities in concepten
+    {{$ apic drafts --type api --organization climbonorg --server mgmnthost.com}}
+    {{routes}}:1.0.0 API-definitie in {{climbonorg:drafts}}
+    {{ascents}}:1.0.0 API-definitie in {{climbonorg:drafts}}
+
+  Lijst afbeelden van de definities in concepten binnen alle organisaties
+    {{$ apic drafts --all-organizations --server mgmnthost.com}}
+    {{climbon}}:1.0.0 productdefinitie in {{climbonorg:drafts}}
+    {{climbon}}:1.0.1 productdefinitie in {{climbonorg:drafts}}
+    {{routes}}:1.0.0 API-definitie in {{climbonorg:drafts}}
+    {{ascents}}:1.0.0 API-definitie in {{climbonorg:drafts}}
+    {{hiking}}:1.0.0 productdefinitie in {{hikingorg:drafts}}
+    {{trails}}:1.0.0 API-definitie in {{hikingorg:drafts}}
+
+Typ "apic COMMAND -h" voor meer informatie over de volgende opdrachten:
+
+  {{drafts:push}}     Lokale API- of productdefinities pushen naar concepten
+  {{drafts:pull}}     API- of productdefinities ophalen uit concepten
+  {{drafts:clone}}    Alle API- en productdefinities ophalen uit concepten
+  {{drafts:get}}      Informatie over een API- of productdfinitie in concepten ophalen
+  {{drafts:publish}}  Een product plus daarin gebruikte API's in concepten, publiceren naar catalogus of ruimte
+  {{drafts:delete}}   Een API- of productdefinitie wissen uit concepten
+  {{drafts:clear}}    Alle API- en productdefinities wissen uit concepten

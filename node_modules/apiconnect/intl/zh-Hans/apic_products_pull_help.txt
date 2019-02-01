@@ -1,0 +1,40 @@
+用法：apic {{products:pull}} PRODUCT_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  从目录或空间获取某个产品
+
+  catalog 作用域的选项
+    {{--product-only}}                   获取产品但不获取其引用的 API
+    {{-c}}, --{{catalog}} CATALOG            目录名称（必需）
+    {{-o}}, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    {{-s}}, --{{server}} SERVER              管理服务器端点（必需）
+
+  space 作用域的选项
+    --{{scope space}}
+    --{{space}} SPACE                    空间名称（必需）
+    {{--product-only}}                   获取产品但不获取其引用的 API
+    {{-c}}, --{{catalog}} CATALOG            目录名称（必需）
+    {{-o}}, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    {{-s}}, --{{server}} SERVER              管理服务器端点（必需）
+
+  获取产品定义及其引用的 API
+    {{$ apic products:pull climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon}}:1.0.0 product definition from {{climbonorg:production [climbon_1.0.0.yaml]}}
+    Pulled {{routes}}:1.0.0 API definition from {{climbonorg:production [routes_1.0.0.yaml]}}
+    Pulled {{ascents}}:1.0.0 API definition from {{climbonorg:production [ascents_1.0.0.yaml]}}
+
+  获取产品定义但不获取其引用的 API
+    {{$ apic products:pull climbon --product-only --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon:1.0.0}} product definition from {{climbonorg:production [climbon_1.0.0.yaml]}}
+
+  获取从 WSDL 文档创建的产品定义及其引用的 API
+    {{$ apic products:pull globalweather-product --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{globalweather-product:1.0.0}} product definition from {{climbonorg:production [globalweather-product_1.0.0.yaml]}}
+    Pulled {{globalweather:1.0.0}} API definition from {{climbonorg:production [globalweather_1.0.0.yaml]}}
+    Pulled {{globalweather:1.0.0}} API WSDL definition from {{climbonorg:production [globalweather_1.0.0.wsdl]}}
+
+
+  从空间中获取产品定义及其引用的 API
+    {{$ apic products:pull --scope space climbon --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon}}:1.0.0 product definition from {{climbonorg:production [climbon_1.0.0.yaml]}}
+    Pulled {{routes}}:1.0.0 API definition from {{climbonorg:production [routes_1.0.0.yaml]}}
+    Pulled {{ascents}}:1.0.0 API definition from {{climbonorg:production [ascents_1.0.0.yaml]}}

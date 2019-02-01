@@ -1,0 +1,10 @@
+用法：apic {{logout}} OPTIONS
+
+  移除用於 {{API Connect}} 雲端的本端鑑別認證
+
+  選項
+    -s, --{{server}} SERVER              移除用於伺服器的認證（必要）
+
+  清除用於 {{mgmnthost.com}} 的本端鑑別認證
+    {{$ apic logout --server mgmnthost.com}}
+    已將 {{tommy}} 登出伺服器 {{mgmnthost.com}}

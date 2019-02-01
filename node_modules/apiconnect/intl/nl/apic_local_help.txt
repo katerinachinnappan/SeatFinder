@@ -1,0 +1,10 @@
+Syntaxis: apic {{create --type api | product | model | datasource}} OPTIES
+
+  Een API-, product-, model- of gegevensbrondefinitie maken
+
+Gebruik de volgende opdrachten om Help-informatie voor elk definitietype op te roepen:
+
+  apic {{create --type api}} -h
+  apic {{create --type product}} -h
+  apic {{create --type model}} -h
+  apic {{create --type datasource}} -h

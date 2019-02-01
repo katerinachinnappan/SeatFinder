@@ -1,0 +1,10 @@
+사용법: apic {{logout}} OPTIONS
+
+  {{API Connect}} 클라우드의 로컬 인증 신임 정보 제거
+
+  옵션
+    -s, --{{server}} SERVER              해당 서버의 신임 정보 제거(필수)
+
+  {{mgmnthost.com}}의 로컬 인증 신임 정보 지우기
+    {{$ apic logout --server mgmnthost.com}}
+    Logged {{tommy}} out of server {{mgmnthost.com}}

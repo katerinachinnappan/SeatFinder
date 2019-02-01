@@ -1,0 +1,29 @@
+Kullanım: apic {{validate}} SEÇENEKLER API_DOSYASIADI | ÜRÜN_DOSYASIADI
+
+  Bir API ya da ürün tanımını doğrular
+
+  Seçenekler
+    -p, --{{product-only}}               ürün tanımları için, başvurularn API'leri doğrulama
+    --{{no-extensions}}                  API tanımları için, {{IBM Swagger}} uzantılarıyla karşılaştırarak doğrulama
+
+  Bir API tanımını doğrulamak için:
+    {{$ apic validate routes.yaml}}
+    {{routes.yaml}} API tanımı {{Swagger 2.0}} şeması {{[routes:1.0.0]}} ile karşılaştırılarak doğrulandı
+    {{routes.yaml}} API tanımı {{IBM Swagger 2.0}} şeması {{[routes:1.0.0]}} ile karşılaştırılarak doğrulandı
+    {{routes.yaml}} API tanımı {{IBM Swagger 2.0}} uzantıları şeması {{[routes:1.0.0]}} ile karşılaştırılarak doğrulandı
+
+  API tanımını IBM uzantıları olmaksızın doğrulamak için:
+    {{$ apic validate --no-extensions routes.yaml}}
+    {{routes.yaml}} API tanımı {{Swagger 2.0}} şeması {{[routes:1.0.0]}} ile karşılaştırılarak doğrulandı
+    {{routes.yaml}} API tanımı {{IBM Swagger 2.0}} şeması {{[routes:1.0.0]}} ile karşılaştırılarak doğrulandı
+
+  Bir ürün tanımını ve başvurulan API'lerini doğrulamak için:
+    {{$ apic validate climb-on.yaml}}
+    {{climb-on.yaml}} ürün tanımı {{[climb-on:1.0.0]}} doğrulandı
+    {{routes.yaml}} API tanımı {{Swagger 2.0}} şeması {{[routes:1.0.0]}} ile karşılaştırılarak doğrulandı
+    {{routes.yaml}} API tanımı {{IBM Swagger 2.0}} şeması {{[routes:1.0.0]}} ile karşılaştırılarak doğrulandı
+    {{routes.yaml}} API tanımı {{IBM Swagger 2.0}} uzantıları şeması {{[routes:1.0.0]}} ile karşılaştırılarak doğrulandı
+
+  Ürün tanımını başvurulan API'leri olmaksızın doğrulamak için:
+    {{$ apic validate --product-only climb-on.yaml}}
+    {{climb-on.yaml}} ürün tanımı {{[climb-on:1.0.0]}} doğrulandı

@@ -1,0 +1,12 @@
+Usage: apic {{loopback:middleware}} OPTIONS
+
+  Creates a new middleware in the {{LoopBack}} application
+
+  Options
+    -n, --{{name}} NAME                  name of the middleware (optional)
+    --{{skip-cache}}                     do not remember prompt answers
+
+  Stability: prototype
+
+  Add an entry to {{/server/middleware.json}} defining the middleware {{"myMiddleware"}}
+    {{$ apic loopback:middleware --name myMiddleware}}

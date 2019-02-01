@@ -1,0 +1,34 @@
+{
+  "name": "Student",
+  "plural": "Students",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "password": {
+      "type": "string",
+      "required": true
+    },
+    "username": {
+      "type": "string",
+      "required": true
+    },
+    "userRole": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

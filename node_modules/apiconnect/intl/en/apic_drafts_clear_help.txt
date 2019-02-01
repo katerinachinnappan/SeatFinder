@@ -1,0 +1,19 @@
+Usage: apic {{drafts:clear}} OPTIONS
+
+  Delete all API and product definitions in drafts
+
+  Options
+    --{{confirm drafts}}                 confirmation (required)
+    -{{o}}, --{{organization}} ORGANIZATION  provider organization name (required)
+    -{{s}}, --{{server}} SERVER              management server endpoint (required)
+
+  {{$ apic drafts:clear --confirm drafts --organization climbonorg --server mgmnthost.com}}
+  Deleted {{climbon}}:1.0.0 product definition from {{climbonorg:drafts}}
+  Deleted {{climbon}}:1.0.1 product definition from {{climbonorg:drafts}}
+  Deleted {{climbon}}:2.0.0 product definition from {{climbonorg:drafts}}
+  Deleted {{hiking}}:3.0.0 product definition from {{climbonorg:drafts}}
+  Deleted {{hiking}}:3.0.1 product definition from {{climbonorg:drafts}}
+  Deleted {{routes}}:1.0.0 API definition from {{climbonorg:drafts}}
+  Deleted {{routes}}:1.0.1 API definition from {{climbonorg:drafts}}
+  Deleted {{ascents}}:1.0.0 API definition from {{climbonorg:drafts}}
+  Deleted {{trails}}:4.0.0 API definition from {{climbonorg:drafts}}

@@ -1,0 +1,41 @@
+Usage: apic {{drafts}} OPTIONS
+
+  List the APIs and products in drafts
+
+  Options
+    --{{type api | product}}                               subset the list by definition type
+    --{{organization}} ORGANIZATION | --{{all-organizations}}  (required)
+      -{{o}}, --{{organization}} ORGANIZATION                  a specific provider organization
+      -{{O}}, --{{all-organizations}}                          all provider organizations
+    -{{s}}, --{{server}} SERVER                                management server endpoint (required)
+
+  List the API and product definitions in drafts
+    {{$ apic drafts --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 product definition in {{climbonorg:drafts}}
+    {{climbon}}:1.0.1 product definition in {{climbonorg:drafts}}
+    {{routes}}:1.0.0 API definition in {{climbonorg:drafts}}
+    {{ascents}}:1.0.0 API definition in {{climbonorg:drafts}}
+
+  List the API definitions in drafts
+    {{$ apic drafts --type api --organization climbonorg --server mgmnthost.com}}
+    {{routes}}:1.0.0 API definition in {{climbonorg:drafts}}
+    {{ascents}}:1.0.0 API definition in {{climbonorg:drafts}}
+
+  List the definitions in drafts across all organizations
+    {{$ apic drafts --all-organizations --server mgmnthost.com}}
+    {{climbon}}:1.0.0 product definition in {{climbonorg:drafts}}
+    {{climbon}}:1.0.1 product definition in {{climbonorg:drafts}}
+    {{routes}}:1.0.0 API definition in {{climbonorg:drafts}}
+    {{ascents}}:1.0.0 API definition in {{climbonorg:drafts}}
+    {{hiking}}:1.0.0 product definition in {{hikingorg:drafts}}
+    {{trails}}:1.0.0 API definition in {{hikingorg:drafts}}
+
+Type "apic COMMAND -h" for more information on the following commands:
+
+  {{drafts:push}}     Push local API or product definitions to drafts
+  {{drafts:pull}}     Pull API or product definitions from drafts
+  {{drafts:clone}}    Pull all API and product definitions from drafts
+  {{drafts:get}}      Get information on an API or product definition in drafts
+  {{drafts:publish}}  Publish a product and its referenced APIs in drafts to a catalog or space
+  {{drafts:delete}}   Delete an API or product definition from drafts
+  {{drafts:clear}}    Delete all API and product definitions in drafts

@@ -1,0 +1,22 @@
+Kullanım: apic {{plugins:install}} EKLENTİ
+
+Apic komutu satırı yardımcı programına bir eklenti kurar.
+EKLENTİ aşağıdakilerden biri olabilir:
+
+tarball arşivinden (içeriği {{npm}} paketi olan bir {{.tgz}} dosyası) kur:
+{{$ apic plugins:install my-plugin-v1.0.0.tgz}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +-- my-plugin@1.0.0
+
+Dizin yolundan (diskte kayıtlı bir yol) {{npm}} paketi içeren bir klasöre kur:
+{{$ apic plugins:install path/to/my-plugin}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +-- my-plugin@1.0.0
+
+npm kaydından kur (varsayılan) -- (varsayılan {{npm}} kaydından alınacak paket adı ({{npm config get registry}}):
+{{$ apic plugins:install my-plugin}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +-- my-plugin@1.0.0
+
+Daha sona, eklentinin kurulup kurulmadığını görmek için `apic {{plugins:list}}`
+komutunu çalıştırabilirsiniz.

@@ -1,0 +1,11 @@
+用法：apic {{orgs}} OPTIONS
+
+  列出目前已鑑別使用者所屬的組織
+
+  選項
+    --{{type provider|consumer}}          預設為提供者 <穩定性：原型>
+    -s, --{{server}} SERVER               管理伺服器端點（必要）
+
+  使用下列指令來取得每一個組織類型的說明：
+    {{orgs --type provider -h}}
+    {{orgs --type consumer -h}}

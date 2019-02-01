@@ -1,0 +1,27 @@
+사용법: apic {{extensions}} OPTIONS
+
+  카탈로그의 확장 나열
+
+  옵션
+    --{{catalog}} CATALOG | --{{all-catalogs}}(필수)
+      -c, --{{catalog}} CATALOG            특정 카탈로그
+      -C, --{{all-catalogs}}               모든 카탈로그
+    --{{organization}} ORGANIZATION | --{{all-organizations}}(필수)
+      -o, --{{organization}} ORGANIZATION  특정 제공자 조직
+      -O, --{{all-organizations}}          모든 제공자 조직
+    -s, --{{server}} SERVER                관리 서버 엔드포인트(필수)
+
+  안정성: 프로토타입
+
+  프로덕션 카탈로그의 확장 나열
+    {{$ apic extensions --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}}의 {{climbextension}}:1.0.0
+    {{climbonorg:productiong}}의 {{hikeextension}}:1.0.0
+
+  다음 명령에 대한 자세한 정보를 보려면 "apic COMMAND -h"를 입력하십시오.
+
+    {{extensions:publish}}    카탈로그에 확장 공개
+    {{extensions:get}}        카탈로그의 확장에 대한 정보 가져오기
+    {{extensions:pull}}       카탈로그에서 확장 가져오기
+    {{extensions:clone}}      카탈로그에서 모든 확장 가져오기
+    {{extensions:delete}}     카탈로그의 확장 삭제

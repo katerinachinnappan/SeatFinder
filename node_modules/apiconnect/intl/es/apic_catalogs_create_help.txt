@@ -1,0 +1,18 @@
+Uso: apic {{catalogs:create}} NOMBRE_VISUALIZACIÓN OPCIONES
+
+  Crear un catálogo en una organización
+
+  Opciones
+    --{{name}} NOMBRE                       nombre de catálogo (valores predeterminados derivados del nombre de visualización)
+    -o, --{{organization}} ORGANIZACIÓN     una organización de proveedores específica (obligatorio)
+    -s, --{{server}} SERVIDOR               punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  Crear un catálogo con un nombre exclusivo en la organización {{climbonorg}} del servidor {{mgmnthost.com}}
+    {{$ apic catalogs:create Production --organization climbonorg --server mgmnthost.com}}
+    Se ha creado {{climbonorg:production}}
+
+  Crear un catálogo en la organización {{climbonorg}} del servidor {{mgmnthost.com}}
+    {{$ apic catalogs:create Production --name prod --organization climbonorg --server mgmnthost.com}}
+    Se ha creado {{climbonorg:prod}}

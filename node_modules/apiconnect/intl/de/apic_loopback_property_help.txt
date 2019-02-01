@@ -1,0 +1,11 @@
+Syntax: apic {{loopback:property}} OPTIONEN
+
+  Eine neue {{LoopBack}}-Modelleigenschaft in der aktuellen {{LoopBack}}-Anwendung erstellen
+
+  Optionen
+    --{{skip-cache}}                     Eingabeaufforderungsantworten nicht speichern
+
+  Stabilität: Prototyp
+
+  Eine Eigenschaft zu einem bereits vorhandenen {{LoopBack}}-Modell hinzufügen
+    {{$ apic loopback:property}}

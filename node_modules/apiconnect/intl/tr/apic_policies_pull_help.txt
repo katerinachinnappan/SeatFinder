@@ -1,0 +1,14 @@
+Kullanım: apic {{policies:pull}} SEÇENEKLER İLKE_ADI[:SÜRÜM]
+
+  Bir ilkeyi katalogdan çeker
+
+  Seçenekler
+    -c, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    -o, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    -s, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  İlkeyi çekmek için:
+    {{$ apic policies:pull invokepolicy:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{invokepolicy}}:1.0.0 ilkesi {{climbonorg:production [invokepolicy_1.0.0]}} içinden çekildi

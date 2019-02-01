@@ -1,0 +1,12 @@
+Syntaxe : apic {{loopback:middleware}} OPTIONS
+
+  Créer un middleware dans l'application {{LoopBack}}
+
+  Options
+    -n, --{{name}} NOM                 nom du middleware (facultatif)
+    --{{skip-cache}}                   ne pas mémoriser les réponses aux invites
+
+  Stabilité : prototype
+
+  Ajouter une entrée à {{/server/middleware.json}} définissant le middleware {{"myMiddleware"}}
+    {{$ apic loopback:middleware --name myMiddleware}}

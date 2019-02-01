@@ -1,0 +1,20 @@
+Utilizzo: apic {{orgs}} OPZIONI
+          apic {{orgs}} --{{type provider}} OPZIONI
+
+  Elenca le organizzazioni provider di cui è membro l'utente attualmente autenticato
+
+  Opzioni
+    --{{type provider}}
+    -s, --{{server}} SERVER    endpoint server di gestione (obbligatorio)
+
+  Elenco delle organizzazioni (organizzazioni provider) di cui l'utente attualmente autenticato è membro su mgmnthost.com
+{{$ apic orgs --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+    {{$ apic orgs --type provider --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+  Immettere "apic COMANDO --help" per la guida ai seguenti comandi correlati:
+    {{orgs:get}}          Richiama le informazioni su un'organizzazione provider

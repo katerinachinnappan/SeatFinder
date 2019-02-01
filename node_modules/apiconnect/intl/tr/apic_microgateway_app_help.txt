@@ -1,0 +1,24 @@
+Kullanım: apic {{microgateway}} SEÇENEKLER
+
+  Bir {{Micro Gateway}} uygulaması yaratır
+
+  Seçenekler
+    -n, --{{name}} AD                     uygulamanın adı
+    -s, --{{server}} SUNUCU               yönetim sunucusu uç noktası
+
+  Kararlılık durumu: prototip
+
+  {{my-personal-microgateway}} adlı bir {{Micro Gateway}} uygulaması yaratmak için:
+    {{$ apic microgateway --server mgmnthost.com --name my-personal-microgateway}}
+    Microgateway uygulaması /Users/user/{{my-personal-microgateway}} yolunda yaratılıyor
+    {{Micro Gateway}} uygulaması kuruluyor
+    {{Micro Gateway}} yaratma başarılı oldu.
+
+  Geçerli dizinde bir {{Micro Gateway}} uygulaması yaratmak için (dizin boş olmalıdır):
+    {{$ mkdir my-second-microgateway}}
+    {{$ cd my-second-microgateway}}
+    {{$ apic microgateway --server mgmnthost.com}}
+    ? Uygulamanızın adı ne ({{my-second-microgateway}})
+    Microgateway uygulaması /Users/user/{{my-second-microgateway}} yolunda yaratılıyor
+    {{Micro Gateway}} uygulaması kuruluyor
+    {{Micro Gateway}} yaratma başarılı oldu.

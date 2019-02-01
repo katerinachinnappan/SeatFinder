@@ -1,0 +1,78 @@
+使用法: apic {{config}}
+
+  アプリケーションとグローバル構成変数をリストします
+
+  オプション
+    -l, --{{local}}      アプリケーションのローカル構成変数をリストする ({{loopback}} プロジェクトのみ)
+    -g, --{{global}}     グローバル構成変数をリストする
+
+  構成変数:
+
+    {{catalog}}
+      カタログ構成変数は、API Connect カタログの URI に設定する必要が
+      あります。カタログの値により、カタログの要素を管理するための
+      すべてのコマンドについて、カタログのデフォルト ID が指定されます。
+      カタログの URI によって定義されたデフォルト値は、
+      コマンド・ライン・オプションの --{{server}}、--{{organization}}、および
+      --{{catalog}} を使用してオーバーライドすることができます。
+      カタログの URI の形式は次のとおりです。
+      apic-catalog://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/catalogs/CATALOG_NAME
+
+    {{app}}
+      アプリケーション構成変数は、API Connect アプリケーションの URI に設定する
+      必要があります。アプリケーションの値により、アプリケーションの要素を
+      管理するためのすべてのコマンドについてアプリケーションのデフォルトの ID が
+      指定されます。アプリケーションの URI によって定義されたデフォルト値は、
+      コマンド・ライン・オプションの --{{server}}、--{{organization}}、および --{{app}} を
+      使用してオーバーライドすることができます。
+      アプリケーションの URI の形式は次のとおりです。
+      apic-app://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/apps/APP_NAME
+
+    {{org}}
+      アプリケーションまたはカタログの URI によって定義される組織の
+      デフォルト値は、組織の URI を使用して設定することができます。
+      組織の URI の形式は次のとおりです。
+      apic-org://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME
+
+    {{space}}
+      space 構成変数は、API Connect アプリケーションの URI に設定する
+      必要があります。space の値により、スペースの要素を管理するための
+      すべてのコマンドについて、スペースのデフォルト ID が指定されます。
+      スペースの URI によって定義されたデフォルト値は、--{{server}}、
+      --{{organization}}、--{{catalog}}、および --{{space}} の
+      各コマンド・ライン・オプションを使用してオーバーライドできます。
+      スペースの URI の形式は次のとおりです。
+      apic-space://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/catalogs/CATALOG_NAME/spaces/SPACE_NAME
+
+    {{accessibility-mode}}
+      アクセシビリティー機能を有効にします。「{{enabled}}」または「{{disabled}}」の
+      いずれかの値を設定する必要があります。
+      値を設定しなかった場合、{{accessibility-mode}} が無効になります。
+
+    {{oauth-redirect-uri}}
+      OAuth をテストするには、OAuth リダイレクト URI を設定する必要があります。これは通常、開発ポータルを
+      使用して実行します。この変数を使用すると、ツールキットのみを使用して同じ設定を実行できます。
+
+    {{template-path}}
+      Handlebar テンプレートの検索場所のリスト
+
+    {{template-default-api}}
+      デフォルトの API テンプレートを定義します
+
+    {{template-default-product}}
+      デフォルトの製品テンプレートを定義します
+
+  {{$ apic config}}
+  {{app: apic-app://mgmnthost.com/orgs/climbon/apps/sb}}
+  {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+  {{org: apic-org://mgmnthost.com/orgs/climbon}}
+
+  {{$ apic config --global}}
+  {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+
+{{"apic COMMAND -h"}} と入力すると、以下の関連コマンドのヘルプが表示されます
+
+  {{config:get}}        特定の構成変数を取得します
+  {{config:set}}        特定の構成変数を設定または更新します
+  {{config:delete}}     特定の構成変数を削除します
+  {{config:clear}}      すべての構成変数を削除します

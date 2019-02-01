@@ -1,0 +1,46 @@
+用法：{{apic apis}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  列出目录或空间中的 API
+
+  catalog 作用域的选项
+    --{{scope catalog}}                         （缺省值）
+    --{{catalog}} CATALOG | --{{all-catalogs}}  （必需）
+      -{{c}}, --{{catalog}} CATALOG             特定目录
+      -{{C}}, --{{all-catalogs}}                所有目录
+    --{{organization}} ORGANIZATION | --{{all-organizations}} （必需）
+      -{{o}}, --{{organization}} ORGANIZATION   特定提供者组织
+      -{{O}}, --{{all-organizations}}           所有提供者组织
+    -{{s}}, --{{server}} SERVER                 管理服务器端点（必需）
+
+  space 作用域的选项
+    --{{scope space}}
+    --{{space}} SPACE
+    -{{c}}, --{{catalog}} CATALOG               特定目录
+    -{{o}}, --{{organization}} ORGANIZATION     特定提供者组织
+    -{{s}}, --{{server}} SERVER                 管理服务器端点（必需）
+
+  稳定性：原型
+
+  列出目录中的 API 定义
+    {{$ apic apis --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{routes:2.0.0}} in {{climbonorg:production}}
+    {{trails:2.0.0}} in {{climbonorg:production}}
+
+  列出所有组织的所有目录中的 API 定义
+    {{$ apic apis --all-catalogs --all-organizations --server mgmnthost.com}}
+    {{routes:1.0.0}} in {{climbonorg:staging}}
+    {{routes:2.0.0}} in {{climbonorg:production}}
+    {{trails:1.0.0}} in {{hikingorg:staging}}
+    {{trails:2.0.0}} in {{hikingorg:production}}
+
+  列出空间中的 API 定义
+    {{$ apic apis --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{routes:2.0.0}} in {{climbonorg:production:sp1}}
+    {{trails:2.0.0}} in {{climbonorg:production:sp1}}
+
+输入“{{apic COMMAND --help}}”以获取有关以下命令的更多信息：
+
+  {{apis:get}}     获取有关目录或空间中的 API 的信息
+  {{apis:set}}     更新目录或空间中的 API
+  {{apis:pull}}    从目录或空间获取某个 API
+  {{apis:clone}}   从目录或空间获取所有 API

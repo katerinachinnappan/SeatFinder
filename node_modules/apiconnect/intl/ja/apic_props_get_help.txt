@@ -1,0 +1,25 @@
+使用法: apic {{props:get}} OPTIONS NAME
+
+  サービス・プロパティーを取得します
+
+  オプション
+    -r, --{{remote}}                     リモートのアプリケーション・ターゲットを使用する (デフォルトはローカル)
+    -S, --{{service}} SERVICE_NAME       サービス名
+    -o, --{{organization}} ORGANIZATION  プロバイダー組織
+    -s, --{{server}} SERVER              サーバー・エンドポイント・ホスト
+
+  LoopBack アプリケーション・サービスのプロパティーを取得します
+    {{$ apic props:get prop1}}
+    [{{climbon}}] prop1: value1
+
+  LoopBack アプリケーション・サービスのプロパティーを明示的に取得します
+    {{$ apic props:get --service climbon prop1}}
+    prop1: value1
+
+  {{Micro Gateway}} サービスのプロパティーを取得します
+    {{$ apic props:get --service climbon-gw prop1}}
+    prop1: value1
+
+  リモート・アプリケーションのプロパティーを取得します
+    {{$ apic props:get --remote --service climbon --organization climbon --server mgmnthost.com prop1}}
+    prop1: value1

@@ -1,0 +1,17 @@
+Usage: apic {{extensions:get}} OPTIONS EXTENSION_NAME[:VERSION]
+
+  Get information on an extension in a catalog
+
+  Options
+    -c, --{{catalog}} CATALOG            catalog name (required)
+    -o, --{{organization}} ORGANIZATION  provider organization name (required)
+    -s, --{{server}} SERVER              management server endpoint (required)
+
+  Stability: prototype
+
+  {{$ apic extensions:get climbextension:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  name: {{climbextension}}
+  version: 1.0.0
+  title: Climb Extension
+  catalog: {{production}}
+  organization: {{climbonorg}}

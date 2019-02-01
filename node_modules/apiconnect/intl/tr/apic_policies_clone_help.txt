@@ -1,0 +1,15 @@
+Kullanım: apic {{policies:clone}} SEÇENEKLER
+
+  Bir katalogdan tüm ilkeleri çeker
+
+  Seçenekler
+    -c, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    -o, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    -s, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  {{$ apic policies:clone --catalog production --organization climbonorg --server mgmnthost.com}}
+  {{invokepolicy}}:1.0.0 ilkesi {{climbonorg:production [invokepolicy_1.0.0]}} içinden çekildi
+  {{encryptpolicy}}:1.0.0 ilkesi {{climbonorg:production [encryptpolicy_1.0.0]}} içinden çekildi
+  {{decryptpolicy}}:1.0.0 ilkesi {{climbonorg:production [decryptpolicy_1.0.0]}} içinden çekildi

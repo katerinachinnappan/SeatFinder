@@ -1,0 +1,44 @@
+使用法: apic {{create --type product}}           対話式
+        apic {{create --type product}} OPTIONS   非対話式
+
+  製品定義を作成します
+
+  オプション
+    --{{title}} TITLE                    タイトルの値 (必須)
+    --{{name}} NAME                      名前の値 (デフォルト値はタイトルから派生)
+    --{{apis}} API_FILENAME ...          参照先 API のリスト
+    --{{filename}} PRODUCT_FILENAME      ファイル名 (デフォルト値は名前から派生)
+    --{{template}} TEMPLATE              プロバイダー・テンプレートを使用する (これを指定しない場合、APIC テンプレートがデフォルトで使用される)
+    -v, --{{version}} VERSION            バージョンの値 (デフォルト値: 1.0.0)
+
+  製品を作成します
+    {{$ apic create --type product --title "Climb On"}}
+    {{climb-on.yaml}} 製品定義 {{[climb-on:1.0.0]}} が作成されました
+
+  製品を対話式で作成します
+    {{$ apic create --type product}}
+    ? タイトル: {{Climb On}}
+    ? 名前: {{climb-on}}
+    ? ファイル: {{climb-on.yaml}}
+    ? テンプレート:
+    ? API ファイル:
+    {{climb-on.yaml}} 製品定義 {{[climb-on:1.0.0]}} が作成されました
+
+  既存の API を参照する製品を作成します
+    {{$ apic create --type product --title "Climb On" --apis "routes.yaml ascents.yaml"}}
+    {{climb-on.yaml}} 製品定義 {{[climb-on:1.0.0]}} が作成されました
+
+  いずれかのテンプレートを使用して製品を作成します
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic create --type product --title "Proxy Product" --template proxy}}
+    {{proxy-product.yaml}} 製品定義 {{[proxy-product:1.0.0]}} が作成されました
+
+  デフォルトのテンプレートを使用して製品を作成します
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic config:set --global template-default-product=staging}}
+    {{$ apic create --type product --title "Staging Product"}}
+    {{staging-product.yaml}} 製品定義 {{[staging-product:1.0.0]}} が作成されました

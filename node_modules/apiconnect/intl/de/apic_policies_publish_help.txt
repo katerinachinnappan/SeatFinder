@@ -1,0 +1,20 @@
+Syntax: apic {{policies:publish}} OPTIONEN
+
+  Eine Richtlinie in einem Katalog veröffentlichen
+
+  Optionen
+    -c, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    -o, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+    -s, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+    --{{directory}} VERZEICHNIS          Verzeichnis der Richtlinie (standardmäßig das aktuelle Verzeichnis)
+
+  Stabilität: Prototyp
+
+  Eine Richtlinie im Verzeichnis "jwe" in einem Katalog veröffentlichen
+    {{$ apic policies:publish --directory jwe --catalog production --organization climbonorg --server mgmnthost.com}}
+    Published {{jwe}} to {{climbonorg:production [jwe-encrypt:1.0.0]}}
+
+  Eine Richtlinie im aktuellen Verzeichnis in einem Katalog veröffentlichen
+    {{$ cd jwe}}
+    {{$ apic policies:publish --catalog production --organization climbonorg --server mgmnthost.com}}
+    Published {{jwe climbonorg:production [jwe-encrypt:1.0.0]}}

@@ -1,0 +1,16 @@
+Kullanım: apic {{config:clear}} SEÇENEKLER
+
+  Tüm yapılandırma değişkenlerini siler
+
+  Seçenekler
+    -l, --{{local}}                      tüm yerel uygulama yapılandırma değişkenlerini sil (yalnızca {{loopback}} projesi)
+    -g, --{{global}}                     tüm genel yapılandırma değişkenlerini sil
+
+  {{$ apic config:clear}}
+  {{app: apic-app://mgmnthost.com/orgs/climbon/apps/sb}} silindi
+  {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}} silindi
+  {{org: apic-org://mgmnthost.com/orgs/climbon}} silindi
+  {{space: apic-space://mgmnthost.com/orgs/climbon/catalogs/sb/spaces/flights}} silindi
+
+  {{$ apic config:clear --global}}
+  {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}} silindi

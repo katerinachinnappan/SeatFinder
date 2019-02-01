@@ -1,0 +1,6 @@
+Syntaxis: apic {{plugins:uninstall}} PLUGIN
+
+  Een plugin verwijderen. U kunt de opdracht 'apic {{plugins:list}}' gebruiken om
+  een lijst van momenteel geïnstalleerde plugins op te halen.
+
+  {{$ apic plugins:uninstall'-plugin}}

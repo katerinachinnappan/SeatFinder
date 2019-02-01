@@ -1,0 +1,43 @@
+Syntaxe : OPTIONS DE COMMANDE {{%APPNAME%}}
+
+  Options
+    -h, --{{help}}        syntaxe de la commande
+    -v, --{{version}}     version du produit
+    --{{ext-version}}     version détaillée du toolkit
+
+Commandes (entrez apic COMMAND -h pour accéder à une aide supplémentaire) :
+
+  Création et validation d'artefacts
+    {{config}}          gestion des variables de configuration
+    {{create}}          création d'artefacts de développement
+    {{edit}}            exécution d'API Designer
+    {{explore}}         exécution d'API Explorer
+    {{validate}}        validation des artefacts de développement
+
+  Création et test d'applications
+    {{logs}}            affichage des journaux de maintenance
+    {{loopback}}        création et gestion d'applications LoopBack
+    {{swiftserver}}     création et gestion d'applications Swift Server Generator
+    {{microgateway}}    création d'applications Micro Gateway
+    {{props}}           propriétés des services
+    {{services}}        gestion des services
+    {{start}}           démarrage des services
+    {{stop}}            arrêt des services
+
+  Publication dans le cloud
+    {{apis}}            gestion des API dans un catalogue
+    {{apps}}            gestion des applications fournisseur
+    {{catalogs}}        gestion des catalogues dans une organisation
+    {{devapps}}         gestion des applications client
+    {{drafts}}          gestion des API et des produits dans des brouillons
+    {{extensions}}      gestion des extensions de fournisseur dans un catalogue
+    {{login}}           connexion à un cloud IBM API Connect
+    {{logout}}          déconnexion d'un cloud IBM API Connect
+    {{members}}         gestion des membres
+    {{orgs}}            gestion des organisations
+    {{policies}}        gestion des stratégies dans un catalogue
+    {{products}}        gestion des produits dans un catalogue
+    {{publish}}         publication des produits et des API dans un catalogue
+    {{securegateways}}  gestion des passerelles sécurisées
+    {{spaces}}          gestion des espaces dans un catalogue
+    {{subscriptions}}   gestion des abonnements

@@ -1,0 +1,13 @@
+사용법: apic {{extensions:delete}} OPTIONS EXTENSION_NAME[:VERSION]
+
+  카탈로그에서 확장 삭제
+
+  옵션
+    -c, --{{catalog}} CATALOG              카탈로그 이름(필수)
+    -o, --{{organization}} ORGANIZATION    제공자 조직 이름(필수)
+    -s, --{{server}} SERVER                관리 서버 엔드포인트(필수)
+
+  안정성: 프로토타입
+
+  {{$ apic extensions:delete climbextension:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  {{climbonorg:production}}에서 {{climbextension}}:1.0.0 확장을 삭제함

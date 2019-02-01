@@ -1,0 +1,12 @@
+사용법: apic {{loopback:swagger}} OPTIONS
+
+  {{OpenAPI (Swagger)}} 정의로부터 {{LoopBack}} 프로젝트 생성
+
+  옵션
+    -f, --{{filename}} API_FILENAME      {{OpenAPI (Swagger)}} 파일 이름(선택사항)
+    --{{skip-cache}}                     프롬프트 응답을 기억하지 않음
+
+  안정성: 프로토타입
+
+  {{OpenAPI (Swagger)}} 정의로부터 {{LoopBack}} 프로젝트 생성
+    {{$ apic loopback:swagger --filename climbon.yaml}}

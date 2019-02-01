@@ -1,0 +1,10 @@
+Syntaxe : apic {{logout}} OPTIONS
+
+  Supprimer les données d'identification pour l'authentification locale pour un cloud {{API Connect}}
+
+  Options
+    -s, --{{server}} SERVEUR             supprimer les données d'identification pour le serveur (obligatoire)
+
+  Effacer les données d'identification pour l'authentification locale pour {{mgmnthost.com}}
+    {{$ apic logout --server mgmnthost.com}}
+    Déconnexion de {{tommy}} du serveur {{mgmnthost.com}}

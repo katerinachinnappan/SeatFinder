@@ -1,0 +1,39 @@
+Syntax: apic {{products:pull}} PRODUKTNAME[:VERSION] [KATALOGOPTIONEN | BEREICHSOPTIONEN]
+
+  Ein Produkt mit Pull-Operation aus einem Katalog oder Bereich extrahieren
+
+  Optionen für Katalogbereich
+    {{--product-only}}                   das Produkt ohne die referenzierten APIs mit Pull-Operation extrahieren
+    {{-c}}, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    {{-o}}, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+    {{-s}}, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Optionen für Bereichsumfang
+    --{{scope space}}
+    --{{space}} BEREICH                  Bereichsname (erforderlich)
+    {{--product-only}}                   das Produkt ohne die referenzierten APIs mit Pull-Operation extrahieren
+    {{-c}}, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    {{-o}}, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+    {{-s}}, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Die Produktdefinition und die referenzierten APIs mit Pull-Operation extrahieren
+    {{$ apic products:pull climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon}}:1.0.0 product definition from {{climbonorg:production [climbon_1.0.0.yaml]}}
+    Pulled {{routes}}:1.0.0 API definition from {{climbonorg:production [routes_1.0.0.yaml]}}
+    Pulled {{ascents}}:1.0.0 API definition from {{climbonorg:production [ascents_1.0.0.yaml]}}
+
+  Die Produktdefinition ohne die referenzierten APIs mit Pull-Operation extrahieren
+    {{$ apic products:pull climbon --product-only --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon:1.0.0}} product definition from {{climbonorg:production [climbon_1.0.0.yaml]}}
+
+  Die Produktdefinition und die referenzierten APIs, die aus einem WSDL-Dokument erstellt wurden, mit Pull-Operation extrahieren
+    {{$ apic products:pull globalweather-product --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{globalweather-product:1.0.0}} product definition from {{climbonorg:production [globalweather-product_1.0.0.yaml]}}
+    Pulled {{globalweather:1.0.0}} API definition from {{climbonorg:production [globalweather_1.0.0.yaml]}}
+    Pulled {{globalweather:1.0.0}} API WSDL definition from {{climbonorg:production [globalweather_1.0.0.wsdl]}}
+
+  Die Produktdefinition und die referenzierten APIs mit Pull-Operation aus einem Bereich extrahieren
+    {{$ apic products:pull --scope space climbon --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon}}:1.0.0 product definition from {{climbonorg:production [climbon_1.0.0.yaml]}}
+    Pulled {{routes}}:1.0.0 API definition from {{climbonorg:production [routes_1.0.0.yaml]}}
+    Pulled {{ascents}}:1.0.0 API definition from {{climbonorg:production [ascents_1.0.0.yaml]}}

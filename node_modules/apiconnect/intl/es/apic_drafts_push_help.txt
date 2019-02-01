@@ -1,0 +1,27 @@
+Uso: apic {{drafts:push}} OPCIONES NOMBRE_ARCHIVO_API | NOMBRE_ARCHIVO_PRODUCTO
+
+  Enviar definiciones de API local o del producto a borradores
+
+  Opciones
+    --{{product-only}}                       no enviar las API referenciadas
+    -{{r}}, --{{replace}} NOMBRE:VERSIÓN     sustituir una definición con nombre/versión diferentes
+    -{{o}}, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    -{{s}}, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Enviar una definición de API a borradores
+    {{$ apic drafts:push routes.yaml --organization climbonorg --server mgmnthost.com}}
+    Se ha enviado la definición de API {{routes.yaml}} a {{climbonorg:drafts [routes:1.0.0]}}
+
+  Enviar una definición de API a borradores sustituyendo una versión anterior
+    {{$ apic drafts:push routes.yaml -r routes:1.0.0 --organization climbonorg --server mgmnthost.com}}
+    Se ha enviado la definición de API {{routes.yaml}} a {{climbonorg:drafts [routes:2.0.0]}}
+
+  Enviar una definición de producto y sus definiciones de API referenciadas API a borradores
+    {{$ apic drafts:push climbon.yaml --organization climbonorg --server mgmnthost.com}}
+    Se ha enviado la definición de producto {{climbon.yaml}} a {{climbonorg:drafts [climbon:1.0.0]}}
+    Se ha enviado la definición de API {{routes.yaml}} a {{climbonorg:drafts [routes:1.0.0]}}
+    Se ha enviado la definición de API {{ascents.yaml}} a {{climbonorg:drafts [ascents:1.0.0]}}
+
+  Enviar sólo la definición de producto a borradores
+    {{$ apic drafts:push climbon.yaml --product-only --organization climbonorg --server mgmnthost.com}}
+    Se ha enviado la definición de producto {{climbon.yaml}} a {{climbonorg:drafts [climbon:1.0.0]}}

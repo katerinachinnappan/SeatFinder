@@ -1,0 +1,55 @@
+Uso: apic {{products}} [OPCIONES_CATÁLOGO | OPCIONES_ESPACIO]
+
+  Listar productos
+
+  Opciones para ámbito de catálogo
+    --{{catalog}} CATÁLOGO| --{{all-catalogs}} (obligatorio)
+      {{-c}}, --{{catalog}} CATÁLOGO           un catálogo específico
+      {{-c}}, --{{all-catalogs}}               todos los catálogos
+    --{{organization}} ORGANIZACIÓN | --all-organizations (obligatorio)
+      {{-o}}, --{{organization}} ORGANIZACIÓN  una organización de proveedores específica
+      {{-o}}, --{{all-organizations}}          todas las organizaciones de proveedores
+    {{-s}}, --{{server}} SERVIDOR              punto final de servidor de gestión (obligatorio)
+
+  Opciones para ámbito de espacio
+    --{{scope space}}
+    --{{space}} ESPACIO                      nombre de espacio (obligatorio)
+    {{-c}}, --{{catalog}} CATÁLOGO           nombre de catálogo (obligatorio)
+    {{-o}}, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    {{-s}}, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Listar los productos del catálogo {{production}}
+    {{$ apic products --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 en {{climbonorg:production}}
+    {{climbon}}:1.0.1 en {{climbonorg:production}}
+    {{yosar}}:2.0.0 en {{climbonorg:production}}
+
+  Listar los productos de todos los catálogos de todas las organizaciones
+    {{$ apic products --all-catalogs --all-organizations --server mgmnthost.com}}
+    {{climbon}}:1.0.0 en {{climbonorg:staging}}
+    {{climbon}}:1.0.0 en {{climbonorg:production}}
+    {{climbon}}:1.0.1 en {{climbonorg:sandbox}}
+    {{climbon}}:1.0.1 en {{climbonorg:qa}}
+    {{climbon}}:1.0.1 en {{climbonorg:production}}
+    {{yosar}}:2.0.0 en {{climbonorg:production}}
+    {{trails}}:1.0.0 en {{hikingorg:staging}}
+    {{trails}}:2.0.0 en {{hikingorg:production}}
+
+  Listar los productos del espacio {{flights}}
+    {{$ apic products --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 en {{climbonorg:production:flights}}
+    {{climbon}}:1.0.1 en {{climbonorg:production:flights}}
+    {{yosar}}:2.0.0 en {{climbonorg:production:flights}}
+
+Escriba "apic MANDATO -h" para obtener más información acerca de los mandatos siguientes:
+
+  {{products:publish}}    Publicar un productos y sus API referenciadas en un catálogo
+  {{products:get}}        Obtener información acerca de un producto del catálogo
+  {{products:set}}        Actualizar un producto de un catálogo
+  {{products:pull}}       Extraer un producto de un catálogo
+  {{products:clone}}      Extraer todos los productos de un catálogo
+  {{products:delete}}     Suprimir todos los productos de un catálogo
+  {{products:clear}}      Borrar todos los productos de un catálogo
+  {{products:replace}}    Sustituir un producto de un catálogo por otro producto
+  {{products:supersede}}  Reemplazar un producto de un catálogo por otro producto
+  {{products:set-migration-target}}  Establecer el destino de migración de un producto de un catálogo con otro producto

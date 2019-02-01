@@ -1,0 +1,13 @@
+사용법: apic {{policies:delete}} OPTIONS POLICY_NAME[:VERSION]
+
+  카탈로그의 정책 삭제
+
+  옵션
+    -c, --{{catalog}} CATALOG              카탈로그 이름(필수)
+    -o, --{{organization}} ORGANIZATION    제공자 조직 이름(필수)
+    -s, --{{server}} SERVER                관리 서버 엔드포인트(필수)
+
+  안정성: 프로토타입
+
+  {{$ apic policies:delete invokepolicy:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  Deleted {{invokepolicy}}:1.0.0 policy from {{climbonorg:production}}

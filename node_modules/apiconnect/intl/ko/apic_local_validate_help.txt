@@ -1,0 +1,29 @@
+사용법: apic {{validate}} OPTIONS API_FILENAME | PRODUCT_FILENAME
+
+  API 또는 제품 정의 유효성 검증
+
+  옵션
+    -p, --{{product-only}}               제품 정의에 해당, 참조되는 API를 유효성 검증하지 않음
+    --{{no-extensions}}                  API 정의에 해당, {{IBM Swagger}} 확장기능에 대해 유효성 검증하지 않음
+
+  API 정의 유효성 검증
+    {{$ apic validate routes.yaml}}
+    Validated {{routes.yaml}} API definition against the {{Swagger 2.0}} schema {{[routes:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{IBM Swagger 2.0}} schema {{[routes:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{IBM Swagger 2.0}} extensions schema {{[routes:1.0.0]}}
+
+  IBM 확장기능을 제외하고 API 정의 유효성 검증
+    {{$ apic validate --no-extensions routes.yaml}}
+    Validated {{routes.yaml}} API definition against the {{Swagger 2.0}} schema {{[routes:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{IBM Swagger 2.0}} schema {{[routes:1.0.0]}}
+
+  제품 정의 및 참조되는 API를 유효성 검증
+    {{$ apic validate climb-on.yaml}}
+    Validated {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{Swagger 2.0}} schema {{[routes:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{IBM Swagger 2.0}} schema {{[routes:1.0.0]}}
+    Validated {{routes.yaml}} API definition against the {{IBM Swagger 2.0}} extensions schema {{[routes:1.0.0]}}
+
+  참조되는 API를 제외하고 제품 정의 유효성 검증
+    {{$ apic validate --product-only climb-on.yaml}}
+    Validated {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}

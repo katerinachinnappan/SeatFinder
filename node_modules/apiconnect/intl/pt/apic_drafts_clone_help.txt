@@ -1,0 +1,18 @@
+Uso: apic {{drafts:clone}} OPTIONS
+
+  Obter todas as definições de API e do produto de rascunhos
+
+  Opções
+    -{{o}}, --{{organization}} ORGANIZATION  nome da organização do provedor (obrigatório)
+    -{{s}}, --{{server}} SERVER              terminal do servidor de gerenciamento (obrigatório)
+
+  $ apic drafts:clone --organization climbonorg --server mgmnthost.com
+  Pulled {{climbon}}:1.0.0 product definition from {{climbonorg:drafts [climbon_1.0.0.yaml]}}
+  Pulled {{climbon}}:1.0.1 product definition from {{climbonorg:drafts [climbon_1.0.1.yaml]}}
+  Pulled {{climbon}}:2.0.0 product definition from {{climbonorg:drafts [climbon_2.0.0.yaml]}}
+  Pulled {{hiking}}:3.0.0 product definition from {{climbonorg:drafts [hiking_3.0.0.yaml]}}
+  Pulled {{hiking}}:3.0.1 product definition from {{climbonorg:drafts [hiking_3.0.1.yaml]}}
+  Pulled {{ascents}}:1.0.0 API definition from {{climbonorg:drafts [ascents_1.0.0.yaml]}}
+  Pulled {{routes}}:1.0.0 API definition from {{climbonorg:drafts [routes_1.0.0.yaml]}}
+  Pulled {{routes}}:1.0.0 API definition from {{climbonorg:drafts [routes_1.0.0.yaml]}}
+  Pulled {{trails}}.4.0.0 API definition from {{climbonorg:drafts [trails_4.0.0.yaml]}}

@@ -1,0 +1,25 @@
+Kullanım: apic {{components}}
+
+  Bileşenleri listele
+
+  Seçenekler
+    --{{organization}} KURULUŞ | --all-organizations (zorunlu)
+      {{-o}}, --{{organization}} KURULUŞ       belirli bir sağlayıcı kuruluşu
+      {{-o}}, --{{all-organizations}}          tüm sağlayıcı kuruluşları
+    {{-s}}, --{{server}} SUNUCU                yönetim sunucusu uç noktası (zorunlu)
+
+  Tüm kuruluşlardaki tüm bileşenleri listele
+    {{$ apic components --all-organizations --server mgmnthost.com}}
+    {{climbonorg:staging}} içinde {{climbon}}:1.0.0
+    {{climbonorg:production}} içinde {{climbon}}:1.0.0
+    {{climbonorg:sandbox}} içinde {{climbon}}:1.0.1
+    {{climbonorg:qa}} içinde {{climbon}}:1.0.1
+    {{climbonorg:production}} içinde {{climbon}}:1.0.1
+    {{climbonorg:production}} içinde {{yosar}}:2.0.0
+    {{hikingorg:staging}} içinde {{trails}}:1.0.0
+    {{hikingorg:production}} içinde {{trails}}:2.0.0
+
+Aşağıdaki komutlar hakkında daha fazla bilgi için "apic KOMUT -h" yazın:
+
+  {{components:get}}                      Bir katalogda bir bileşenle ilgili bilgi al
+

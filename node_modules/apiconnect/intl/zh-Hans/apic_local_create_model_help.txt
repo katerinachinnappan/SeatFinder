@@ -1,0 +1,22 @@
+用法：apic create --type model-swiftserver OPTIONS
+
+  在 Swift Server Generator 应用程序中创建模型定义
+
+  选项
+  --name NAME                     模型名称
+
+  稳定性：原型
+
+  创建模型
+  $ apic create --type model-swiftserver
+  ? 输入模型名称：book
+  ? 定制复数形式（用于构建 REST URL）：books
+  现在添加一些 book 属性。
+
+  在完成时输入空的属性名称。
+    ? 输入属性名称：标题? 属性类型；字符串
+    ? 是否为必需？否
+? 缺省值？
+否
+? 请输入属性名称：
+

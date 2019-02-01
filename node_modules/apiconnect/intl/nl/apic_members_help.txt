@@ -1,0 +1,28 @@
+Syntaxis: {{apic members}} [ORG_OPTIES | CONSUMENTENORG_OPTIES]
+
+  Lijst van leden in een bereik
+
+  Opties voor organisatiebereik
+    --{{scope org}}                               (standaard)
+    --{{organization}} ORGANISATIE | --{{all-organizations}} (verplicht)
+      -{{o}}, --{{organization}} ORGANISATIE          een specifieke providerorganisatie
+    -{{s}}, --{{server}} SERVER                       eindpunt van beheerserver (verplicht)
+
+  Opties voor bereik van consumentenorganisatie
+    --{{scope consumer-org}}                        (verplicht)
+    --{{consumer-org}} | --{{all-organizations}}    (verplicht))
+      --{{consumer-org}} ORGANISATIE                een specifieke consumentenorganisatie
+    -{{c}}, --{{catalog}} CATALOGUS                 naam van catalogus (verplicht)
+    -{{o}}, --{{organization}} ORGANISATIE          naam van providerorganisatie (verplicht)
+    -{{s}}, --{{server}} SERVER                     eindpunt van beheerserver (verplicht)
+
+  Stabiliteit: prototype
+
+  Lijst afbeelden van de leden die deel uitmaken van een providerorganisatie
+    $ {{apic members --scope org -o climbon --server mgmnthost.com}}
+    Gebruiker ibmapim+steve@gmail.com heeft de rol van eigenaar in de organisatie {{climbon}}
+    Gebruiker ibmapim+shavon@gmail.com heeft de rol van ontwikkelaar in de organisatie {{climbon}}
+
+  Lijst afbeelden van de leden die deel uitmaken van een consumentenorganisatie
+    $ {{apic members --scope consumer-org --consumer-org consumerorg -c qa -o climbon --server mgmnthost.com}}
+    Gebruiker ibmapim+andre@gmail.com heeft de rol van eigenaar in de organisatie {{consumerorg}}

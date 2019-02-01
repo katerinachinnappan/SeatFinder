@@ -1,0 +1,35 @@
+Utilizzo: apic {{products:clear}} [OPZIONI_CATALOGO | OPZIONI_SPAZIO]
+
+  Elimina tutti i prodotti in un catalogo uno spazio
+
+  Opzioni per l'ambito del catalogo
+    --{{confirm}} CATALOGO                     conferma (obbligatorio)
+    {{-c}}, --{{catalog}} CATALOGO             nome catalogo (obbligatorio)
+    {{-o}}, --{{organization}} ORGANIZZAZIONE  nome organizzazione provider (obbligatorio)
+    {{-s}}, --{{server}} SERVER                endpoint server di gestione (obbligatorio)
+
+  Opzioni per l'ambito dello spazio
+    --{{scope space}}
+    --{{confirm}} CATALOGO                     conferma (obbligatorio)
+    --{{space}} SPAZIO                         nome spazio (obbligatorio)
+    {{-c}}, --{{catalog}} CATALOGO             nome catalogo (obbligatorio)
+    {{-o}}, --{{organization}} ORGANIZZAZIONE  nome organizzazione provider (obbligatorio)
+    {{-s}}, --{{server}} SERVER                endpoint server di gestione (obbligatorio)
+
+  Stabilità: prototipo
+
+  Eliminazione di tutti i prodotti di un catalogo
+    {{$ apic products:clear --confirm production --catalog production --organization climbonorg --server mgmnthost.com}}
+    Eliminata definizione del prodotto {{climbon}}:1.0.0 da {{climbonorg}}:production
+    Eliminata definizione del prodotto {{climbon}}:1.0.1 da {{climbonorg}}:production
+    Eliminata definizione del prodotto {{climbon}}:2.0.0 da {{climbonorg}}:production
+    Eliminata definizione del prodotto {{hiking}}:3.0.0 da {{climbonorg}}:production
+    Eliminata definizione del prodotto {{hiking}}:3.0.1 da {{climbonorg}}:production
+  
+  Eliminazione di tutti i prodotti di un ambito
+    {{$ apic products:clear --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com --confirm production}}
+    Eliminata definizione del prodotto {{climbon}}:1.0.0 da {{climbonorg}}:production:flights
+    Eliminata definizione del prodotto {{climbon}}:1.0.1 da {{climbonorg}}:production:flights
+    Eliminata definizione del prodotto {{climbon}}:2.0.0 da {{climbonorg}}:production:flights
+    Eliminata definizione del prodotto {{hiking}}:3.0.0 da {{climbonorg}}:production:flights
+    Eliminata definizione del prodotto {{hiking}}:3.0.1 da {{climbonorg}}:production:flights

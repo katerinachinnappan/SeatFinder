@@ -1,0 +1,13 @@
+Utilizzo: apic {{securegateways:delete}} ID_GATEWAY OPZIONI
+
+  Elimina un secure gateway in un'organizzazione
+
+  Opzioni
+    -o, --{{organization}} ORGANIZZAZIONE una specifica organizzazione provider (obbligatorio)
+    -s, --{{server}} SERVER               endpoint server di gestione (obbligatorio)
+
+  Stabilità: prototipo
+
+  Elimina un secure gateway nell'organizzazione {{climbonorg}} sul server {{mgmnthost.com}}
+    {{$ apic securegateways:delete ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com}}
+    Eliminato secure gateway {{ctHEKS9ztEH_stage_ng}} in {{climbonorg}}

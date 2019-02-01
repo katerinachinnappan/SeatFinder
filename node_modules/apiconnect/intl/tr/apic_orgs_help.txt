@@ -1,0 +1,11 @@
+Kullanım: apic {{orgs}} SEÇENEKLER
+
+  Kimliği doğrulanmış olan kullanıcının üyesi olduğu kuruluşları listeler
+
+  Seçenekler
+    --{{type provider|consumer}}          varsayılan değer: provider <Kararlılık durumu: prototip>
+    -s, --{{server}} SUNUCU               yönetim sunucusu uç noktası (zorunludur)
+  
+  Her kuruluş tipiyle ilgili olarak yardım almak için aşağıdaki komutları kullanın:
+    {{orgs --type provider -h}}
+    {{orgs --type consumer -h}}

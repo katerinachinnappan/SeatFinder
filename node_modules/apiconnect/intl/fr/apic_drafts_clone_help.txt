@@ -1,0 +1,18 @@
+Syntaxe : apic {{drafts:clone}} OPTIONS
+
+  Extraire toutes les définitions d'API et de produit des brouillons
+
+  Options
+    -{{o}}, --{{organization}} ORGANISATION  nom de l'organisation de type fournisseur (obligatoire)
+    -{{s}}, --{{server}} SERVEUR             noeud final du serveur de gestion (obligatoire)
+
+  $ apic drafts:clone --organization climbonorg --server mgmnthost.com
+  Extraction de la définition de produit {{climbon}}:1.0.0 de {{climbonorg:drafts [climbon_1.0.0.yaml]}}
+  Extraction de la définition de produit {{climbon}}:1.0.1 de {{climbonorg:drafts [climbon_1.0.1.yaml]}}
+  Extraction de la définition de produit {{climbon}}:2.0.0 de {{climbonorg:drafts [climbon_2.0.0.yaml]}}
+  Extraction de la définition de produit {{hiking}}:3.0.0 de {{climbonorg:drafts [hiking_3.0.0.yaml]}}
+  Extraction de la définition de produit {{hiking}}:3.0.1 de {{climbonorg:drafts [hiking_3.0.1.yaml]}}
+  Extraction de la définition d'API {{ascents}}:1.0.0 de {{climbonorg:drafts [ascents_1.0.0.yaml]}}
+  Extraction de la définition d'API {{routes}}:1.0.0 de {{climbonorg:drafts [routes_1.0.0.yaml]}}
+  Extraction de la définition d'API {{routes}}:1.0.0 de {{climbonorg:drafts [routes_1.0.0.yaml]}}
+  Extraction de la définition d'API {{trails}}.4.0.0 de {{climbonorg:drafts [trails_4.0.0.yaml]}}

@@ -1,0 +1,15 @@
+用法：apic {{plugins}}
+
+  列出所有已安装的插件
+
+  {{$ apic plugins}}
+  apiconnect-cli-config 1.0.0
+  apiconnect-cli-create 1.0.0
+  apiconnect-cli-edit 1.0.0
+  ...
+  ...
+
+  输入“apic COMMAND --{{help}}”以获取有关以下相关命令的帮助：
+
+  {{plugins:install}}      安装插件
+  {{plugins:uninstall}}    卸载插件

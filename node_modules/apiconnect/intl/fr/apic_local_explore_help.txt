@@ -1,0 +1,10 @@
+Syntaxe : apic {{explore}} [api...] OPTIONS
+
+  Ouvre {{API Explorer}}
+
+  Options
+    -e, --{{external}}                   ouvre l'explorateur sur 0.0.0.0 au lieu du défaut 127.0.0.1. Cela lie le serveur à toutes les IP sur la machine et sera accessible sur le réseau plus large.
+
+  Si des api sont fournies, elle seront rendues dans l'explorateur.
+
+  Si aucune api n'est fournie, toutes les api du projet en cours seront rendues.

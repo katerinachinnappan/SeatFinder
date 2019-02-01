@@ -1,0 +1,17 @@
+Syntaxis: apic {{apps:get}} OPTIES
+
+Informatie over een toepassing ophalen
+
+  Opties
+    -a, --{{app}} APP                    doel van providerapp (verplicht)
+    -o, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    -s, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Stabiliteit: prototype
+
+  {{$ apic apps:get --app climbon --organization climbonorg --server mgmnthost.com}}
+  naam: {{climbon}}
+  titel: {{climbon}}
+  url: apic-app://mgmnthost.com/orgs/climbonorg/apps/climbon
+  status: {{online}}
+  organisatie: {{climbonorg}}

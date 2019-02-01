@@ -1,0 +1,11 @@
+Uso: apic {{bluemix:publish}} OPTIONS
+
+   Publicar um aplicativo para {{IBM Bluemix}}.
+
+Opções:
+    --{{type}} appserver                 Configurar tipo de publicação para o servidor de tempo de execução
+    -o, --{{org}} ORGANIZATION           Nome da organização
+    -s, --{{space}} SPACE_NAME           Nome do espaço no qual o tempo de execução será implementado
+    -a, --{{app}} APP_NAME               Nome do aplicativo
+    -p, --{{providerOrg}} ORGANIZATION   Nome da organização do provedor a ser usada
+    -c, --{{catalog}} CATALOG            Nome do catálogo na organização do provedor

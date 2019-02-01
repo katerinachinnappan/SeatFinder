@@ -1,0 +1,16 @@
+用法：apic {{loopback:remote-method}} OPTIONS
+
+  在 {{LoopBack}} 應用程式中建立新的遠端方法
+
+  選項
+    -m, --{{model}} MODEL_NAME           {{LoopBack}} 模型的名稱（選用）
+    -r, --{{remote-method}} METHOD_NAME  遠端方法的名稱（選用）
+    --{{skip-cache}}                     不要記住提示回答
+
+  穩定性：原型
+
+  將新的遠端方法新增至 {{LoopBack}} 模型
+    {{$ apic loopback:remote-method}}
+
+  將名為 {{getCreationDate}} 的遠端方法新增給 note 模型
+    {{$ apic loopback:remote-method --model note --remote-method getCreationDate}}

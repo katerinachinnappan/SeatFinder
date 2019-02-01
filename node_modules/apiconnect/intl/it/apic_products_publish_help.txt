@@ -1,0 +1,43 @@
+Utilizzo: apic {{publish}} NOMEFILE_PRODOTTO [OPZIONI_CATALOGO | OPZIONI_SPAZIO]
+
+  Pubblica un prodotto e le relative API di riferimento in un catalogo o in uno spazio
+
+  Opzioni per l'ambito del catalogo
+    --{{stage}}                                mantiene il prodotto nello stato in staging
+    --{{secure-gateway}} ID_GATEWAY            ID secure gateway
+    {{-c}}, --{{catalog}} CATALOGO             nome catalogo (obbligatorio)
+    {{-o}}, --{{organization}} ORGANIZZAZIONE  nome organizzazione provider (obbligatorio)
+    {{-s}}, --{{server}} SERVER                endpoint server di gestione (obbligatorio)
+
+  Opzioni per l'ambito dello spazio
+    --{{scope space}}
+    --{{space}} SPAZIO                         nome spazio (obbligatorio)
+    --{{stage}}                                mantiene il prodotto nello stato in staging
+    --{{secure-gateway}} ID_GATEWAY            ID secure gateway
+    {{-c}}, --{{catalog}} CATALOGO             nome catalogo (obbligatorio)
+    {{-o}}, --{{organization}} ORGANIZZAZIONE  nome organizzazione provider (obbligatorio)
+    {{-s}}, --{{server}} SERVER                endpoint server di gestione (obbligatorio)
+
+  Pubblicazione di un prodotto in un catalogo
+    {{$ apic publish climbon.yaml --catalog production --organization climbonorg --server mgmnthost.com}}
+    Stage di climbon.yaml in {{climbonorg:production [climbon:1.0.0]}}
+    Pubblicato climbon.yaml in {{climbonorg:production [climbon:1.0.0]}}
+
+  Pubblicazione di un prodotto in un catalogo con secure gateway
+    {{$ apic publish climbon.yaml --catalog production --secure-gateway ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com}}
+    Stage climbon.yaml in {{climbonorg:production [climbon:1.0.0]}}
+    Pubblicato climbon.yaml in {{climbonorg:production [climbon:1.0.0]}}
+
+  Stage di un prodotto in un catalog
+    {{$ apic publish climbon.yaml --stage --catalog production --organization climbonorg --server mgmnthost.com}}
+    Stage di climbon.yaml in {{climbonorg:production [climbon:1.0.0]}}
+
+  Pubblicazione di un prodotto in un spazio
+    {{$ apic publish --scope space climbon.yaml --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Stage di climbon.yaml in {{climbonorg:production:flights [climbon:1.0.0]}}
+    Pubblicato climbon.yaml in {{climbonorg:production:flights [climbon:1.0.0]}}
+
+  Pubblicazione di un prodotto in un spazio con secure gateway
+    {{$ apic publish --scope space climbon.yaml --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Stage di climbon.yaml in {{climbonorg:production:flights [climbon:1.0.0]}}
+    Pubblicato climbon.yaml in {{climbonorg:production:flights [climbon:1.0.0]}}

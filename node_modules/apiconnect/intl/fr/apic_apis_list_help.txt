@@ -1,0 +1,46 @@
+Syntaxe : {{apic apis}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Répertorier les API dans un catalogue ou un espace
+
+  Options de la portée catalogue
+    --{{scope catalog}}                           (par défaut)
+    --{{catalog}} CATALOG | --{{all-catalogs}}    (obligatoire)
+      -{{c}}, --{{catalog}} CATALOGUE             un catalogue spécifique
+      -{{C}}, --{{all-catalogs}}                  tous les catalogues
+    --{{organization}} ORGANISATION | --{{all-organizations}} (obligatoire)
+      -{{o}}, --{{organization}} ORGANISATION     une organisation de type fournisseur spécifique
+      -{{O}}, --{{all-organizations}}             toutes les organisations de type fournisseur
+    -{{s}}, --{{server}} SERVEUR                  noeud final du serveur de gestion (obligatoire)
+
+  Options de la portée espace
+    --{{scope space}}
+    --{{space}} ESPACE
+    -{{c}}, --{{catalog}} CATALOGUE              un catalogue spécifique
+    -{{o}}, --{{organization}} ORGANISATION      une organisation de type fournisseur
+    -{{s}}, --{{server}} SERVEUR                 noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  Répertorier les définitions d'API dans un catalogue
+    {{$ apic apis --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{routes:2.0.0}} dans {{climbonorg:production}}
+    {{trails:2.0.0}} dans {{climbonorg:production}}
+
+  Répertorier les définitions d'API dans tous les catalogues de toutes les organisations
+    {{$ apic apis --all-catalogs --all-organizations --server mgmnthost.com}}
+    {{routes:1.0.0}} dans {{climbonorg:staging}}
+    {{routes:2.0.0}} dans {{climbonorg:production}}
+    {{trails:1.0.0}} dans {{hikingorg:staging}}
+    {{trails:2.0.0}} dans {{hikingorg:production}}
+
+  Répertorier les définitions d'API dans un espace
+    {{$ apic apis --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{routes:2.0.0}} dans {{climbonorg:production:sp1}}
+    {{trails:2.0.0}} dans {{climbonorg:production:sp1}}
+
+Pour plus d'informations sur les commandes suivantes, entrez "{{apic COMMAND --help}}" :
+
+  {{apis:get}}     Obtenir des informations sur une API dans un catalogue ou un espace
+  {{apis:set}}     Mettre à jour une API dans un catalogue ou un espace
+  {{apis:pull}}    Extraire une API d'un catalogue ou un espace
+  {{apis:clone}}   Extraire toutes les API d'un catalogue ou un espace

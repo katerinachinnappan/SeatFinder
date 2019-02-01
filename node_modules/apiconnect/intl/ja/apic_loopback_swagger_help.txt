@@ -1,0 +1,12 @@
+使用法: apic {{loopback:swagger}} OPTIONS
+
+  {{LoopBack}} プロジェクトを {{OpenAPI (Swagger)}} 定義から生成します
+
+  オプション
+    -f, --{{filename}} API_FILENAME      {{OpenAPI (Swagger)}} ファイルの名前 (オプション)
+    --{{skip-cache}}                     プロンプトに対する応答を記憶しない
+
+  Stability: prototype
+
+  {{LoopBack}} プロジェクトを {{OpenAPI (Swagger)}} 定義から生成します
+    {{$ apic loopback:swagger --filename climbon.yaml}}

@@ -1,0 +1,66 @@
+사용법: apic {{create --type api}}           대화식
+       apic {{create --type api}} OPTIONS   비대화식
+
+  {{OpenAPI (Swagger)}} 정의 작성
+
+  옵션
+    --{{title}} TITLE                    제목 값(필수)
+    --{{name}} NAME                      {{x-ibm-name}} 값(기본값은 제목에서 파생됨)
+    --{{basepath}} BASEPATH              기본 경로 값(기본값은 이름에서 파생됨)
+    --{{template}} Template              제공자 템플리트 사용(비어 있는 경우 기본값은 apic 템플리트)
+    --{{filename}} API_FILENAME          파일 이름(기본값은 이름에서 파생됨)
+    --{{product}} PRODUCT_TITLE          API를 참조하여 제품 정의 생성
+    --{{hostname}} HOSTNAME              호스트 값(기본값은 {{$(catalog.host)}})
+    --{{schemes}} SCHEMES                스키마 목록(올바른 옵션은 http, https, ws 및 wss)
+    --{{target-url}} TARGET_URL          대상 URL
+    -v, --{{version}} VERSION            버전 값(기본값은 1.0.0)
+    --{{wsdl}} FILENAME                  소스로 사용할 wsdl 파일({{apic login}}을 통한 인증 필수)
+
+  API 작성
+    {{$ apic create --type api --title Routes}}
+    Created {{routes.yaml}} API definition {{[routes:1.0.0]}}
+
+  API를 작성하고 해당 API를 참조하여 제품 생성
+    {{$ apic create --type api --title Routes --product "Climb On"}}
+    Created {{routes.yaml}} API definition {{[routes:1.0.0]}}
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  대화식으로 API 작성
+    {{$ apic create --type api}}
+    Title: Routes
+    Name ({{routes}}): {{routes}}
+    File ({{routes.yaml}}): {{routes.yaml}}
+    Template: ()
+    Basepath ({{/routes}}): {{/routes}}
+    Hostname ({{$(catalog.host)}}): {{$(catalog.host)}}
+    Schemes:
+    Target url: ()
+    Create product [true]: true
+    Product title (Routes Product): {{Climb On}}
+    Product name ({{climb-on}}): {{climb-on}}
+    Product file ({{climb-on.yaml}}): {{climb-on.yaml}}
+    Created {{routes.yaml}} API definition {{[routes:1.0.0]}}
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  WSDL 문서로부터 API 작성
+    {{$ apic create --type api --wsdl globalweather.wsdl}}
+    Created {{globalweather.yaml}} API definition {{[globalweather.yaml:1.0.0]}}
+
+  APIC의 기본 {{OAuth 2}} 제공자 템플리트를 사용하여 API 작성
+    {{$ apic create --type api --title "OAuth2 Provider" --template oauth2}}
+    Created {{oauth2-provider.yaml}} API definition {{[oauth2-provider:1.0.0]}}
+
+  사용자 템플리트 중 하나를 사용하여 API 작성
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy.hbs staging.hbs
+    {{$ apic create --type api --title "Proxy Provider" --template proxy}}
+    Created {{proxy-provider.yaml}} API definition {{[proxy-provider:1.0.0]}}
+
+  기본 템플리트를 사용하여 API 작성
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy.hbs staging.hbs
+    {{$ apic config:set --global template-default-api=staging}}
+    {{$ apic create --type api --title "Staging Provider"}}
+    Created {{staging-provider.yaml}} API definition {{[staging-provider:1.0.0]}}

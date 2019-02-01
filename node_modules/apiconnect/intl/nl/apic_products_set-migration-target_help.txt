@@ -1,0 +1,27 @@
+Syntaxis: apic {{products:set-migration-target}} OUDE_PRODUCTNAAM[:VERSIE] NIEUWE_PRODUCTNAAM[:VERSIE] [CATALOGUSOPTIES | RUIMTEOPTIES]
+
+  Migratiedoel instellen voor plannen van gepubliceerd of gedeprecieerd product in catalogus of ruimte met ander product
+
+  Opties voor catalogusbereik
+    --{{plans}} NAAM_BRONPLAN:NAAM_DOELPLAN ...   toewijzingen van oud naar nieuw productplan (verplicht)
+    {{-c}}, --{{catalog}} CATALOGUS          naam van catalogus (verplicht)
+    {{-0}}, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    {{-s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Opties voor ruimtebereik
+    --{{scope space}}
+    --{{space}} RUIMTE                       naam van ruimte (verplicht)
+    --{{plans}} NAAM_BRONPLAN:NAAM_DOELPLAN ...   toewijzingen van oud naar nieuw productplan (verplicht)
+    {{-c}}, --{{catalog}} CATALOGUS          naam van catalogus (verplicht)
+    {{-0}}, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    {{-s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Stabiliteit: prototype
+
+  Migratiedoel instellen voor de plannen van een product in een catalogus
+    {{$ apic products:set-migration-target climbon:1.0.0 climbon:1.1.0 --plans "basic:silver premium:gold" -c production -o climbonorg -s mgmnthost.com}}
+    Migratiedoel voor {{climbon}}:1.0.0 ingesteld op {{climbon}}:1.1.0 in {{climbonorg:production}}
+
+  Migratiedoel instellen voor de plannen van een product in een ruimte
+    {{$ apic products:set-migration-target --scope space climbon:1.0.0 climbon:1.1.0 --plans "basic:silver premium:gold" --space flights -c production -o climbonorg -s mgmnthost.com}}
+    Migratiedoel voor {{climbon}}:1.0.0 ingesteld op {{climbon}}:1.1.0 in {{climbonorg:production:flights}}

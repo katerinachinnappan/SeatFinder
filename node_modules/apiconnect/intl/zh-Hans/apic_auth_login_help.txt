@@ -1,0 +1,24 @@
+用法： apic {{login}}                  交互式
+       apic {{login}} OPTIONS          非交互式
+
+  通过管理服务器向 {{API Connect}} 云进行认证
+
+  选项
+    -u, --{{username}} USER              用户名（必需）
+    -p, --{{password}} PASSWORD          密码（必需）
+    -s, --{{server}} SERVER              管理服务器端点（必需）
+    --{{sso}}                            使用联合公司标识登录
+    -c, --{{passcode}} PASSCODE          {{JWT}} 的一次性密码
+    —k, --{{apikey}}  APIKEY             使用 Bluemix API 密钥登录
+
+  通过管理服务器登录到 {{API Connect}} 云
+    {{$ apic login}}
+    Enter your {{API Connect}} credentials
+    ? Server: {{mgmnthost.com}}
+    ? Username: {{tommy}}
+    ? Password (typing will be hidden) **********
+    Logged into {{mgmnthost.com}} successfully
+
+  非交互式登录
+    {{$ apic login --username tommy --password password --server mgmnthost.com}}
+    Logged into {{mgmnthost.com}} successfully

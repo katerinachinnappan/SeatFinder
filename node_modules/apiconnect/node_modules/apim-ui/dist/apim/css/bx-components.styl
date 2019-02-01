@@ -1,0 +1,440 @@
+/********************************************************* {COPYRIGHT-TOP} ***
+* Licensed Materials - Property of IBM
+* 5725-Z22, 5725-Z63, 5725-U33, 5725-Z63
+*
+* (C) Copyright IBM Corporation 2017
+*
+* All Rights Reserved.
+* US Government Users Restricted Rights - Use, duplication or disclosure
+* restricted by GSA ADP Schedule Contract with IBM Corp.
+********************************************************** {COPYRIGHT-END} **/
+.bx--search
+  border-right: none
+  height: 100%
+
+  input[type=search]
+    padding-left: 45px
+
+  &[role=search]
+    > input[type=search]
+      border-right: none
+
+    > button[type=reset].iconOnlyButton
+      background-color: rgba(61, 112, 178, .1)
+      padding: 0
+      position: relative
+      width: 40px
+
+.bx--search.bx--search--sm
+  input[type=search]
+    padding-left: 10px
+
+.bx--number__arrow--up
+  top: .5rem
+
+.bx--number__arrow--down
+  top: 1.5rem
+
+.bx--number__input
+  min-width: auto
+
+.bx--text__input
+  padding: 0 .825rem
+
+.bx--number__arrow, .bx--number__arrow--up, .bx--number__arrow--down
+  padding-right: .5rem
+
+button.bx--notification__close-button
+  &:hover
+    background-color: transparent
+
+.ng-dirty
+  .bx--text__input.ng-invalid
+  .bx--textarea__input.ng-invalid
+    box-shadow: 0 2px 0 0 #ff5050
+
+.bx--text__input.ng-invalid.ng-dirty
+  box-shadow: 0 2px 0 0 #ff5050
+
+  ~ bx--form__requirements
+    max-height: 12.5rem
+
+.bx--form__label-required.bx--form__label:after
+  content: ' *'
+  vertical-align: top
+
+.horizontalScrollPadBottom
+  padding-bottom: 20px
+
+.bx--global-light-ui
+  background-color: #f0f0f0
+
+  a.bx--link
+    text-decoration: underline
+
+div .bx--responsive-table-container
+  display: table
+
+.sectionTitleBanner.bx--inner__title
+  height: 50px
+
+.searchBanner.bx--inner__search__banner
+  height: 70px
+
+.stickyNote.bx--sticky__note
+  position: static
+
+.bx--form__dialog
+  width: 400px
+
+.bx--form__row-item:last-of-type
+  margin-bottom: 1rem
+
+td
+  .bx--form__row-item:last-of-type
+    margin-bottom: 0
+
+.bx--form__row-item
+  width: 100%
+
+.bx--form-group
+  padding: 28px
+
+.bx--sets-of-buttons
+  -webkit-justify-content: flex-end
+  justify-content: flex-end
+  margin-top: 2rem
+
+  .bx--modal__buttons
+    margin-top: 0
+
+.bx--form__requirements
+  font-size: .8rem
+  overflow: inherit
+
+.bx--form__dialog_large
+  width: 575px
+
+.checkbox_padding > .md-primary
+  margin: 10px
+
+.labeledSelect
+  .bx--select__arrow
+    float: right
+    position: relative
+    top: -3.5em
+
+.not-labeledSelect
+  .bx--select__arrow
+    float: right
+    position: relative
+    top: 0
+
+.bx--table-select
+  min-width: 9.375rem
+
+  .bx--select__input
+    margin-bottom: 0
+
+  .bx--select__arrow
+    float: right
+    top: 1em
+
+
+.productSettingsRateLimit
+.apiOperation
+  .bx--select
+    .bx--select__arrow
+      top: 1.2rem
+
+.bx--form_dialog-medium-height
+  height: 350px
+
+.bx--form__row
+  flex: 1
+
+  .bx--form__row-item:last-of-type
+    margin-right: 0
+
+  .bx--form__row-item
+    margin-right: 1.25rem
+
+.apis
+.products
+  button
+    &.iconOnlyButton
+      width: 1.15em
+
+.modal-open
+  .bx--modal
+    opacity: 1
+    visibility: visible
+    z-index: 9000
+
+.bx--modal
+  .bx--modal-inner.bx-modal-lg
+    width: 70%
+  .bx--modal-inner.bx-modal-xlg
+    width: 85%
+
+.webapiFormRow.layout
+  display: block
+
+.bx--button-group .bx--radio__label
+  margin-bottom: 5px
+  margin-top: 5px
+
+.floatLeft
+  float:left
+
+.modal-content
+  .bx--form__row-item:last-of-type
+    margin-bottom: 0
+    margin-right: 1rem
+
+  .bx--form__row-item
+    margin-bottom: 1rem
+
+.webapiFormRow.topMargin.layout > .md-primary
+  display: inline
+
+.addRegistry-header
+  margin: 3px 0 87px 20px
+
+._md.md-transition-in
+  overflow: hidden
+
+.icon-position.iconOnlyButton
+  padding: 0
+  position: relative
+  vertical-align: text-top
+
+  div.infoIcon
+    vertical-align: top
+
+.infoIconTopMargin
+  margin-top: -2px
+
+.navigate-visibility
+.model-editor
+apim-api-editor // @stylint ignore valid
+  .bx--select
+    width: 100%
+
+.roles-admin-editor
+  min-width: 904px
+
+.bx--module__overflow
+  display: table
+  width: 100%
+
+.bx--module__header
+  .bx--form__legend
+    margin-bottom: 0
+
+.bx--textarea__limit
+  min-height: 5%
+  resize: vertical
+
+.discovery-list
+  padding-bottom: 65px
+
+.bx--modal-inner.bx-modal-lg
+  .modal-body
+  .bx--modal-content
+    height: 387px
+    overflow: auto
+    overflow-x: hidden
+
+    .productApiList
+      height: 60%
+      overflow: auto
+      overflow-x: hidden
+
+.bx--modal-inner.bx-modal-xlg .modal-body
+  height: 400px
+  overflow: scroll
+  overflow-x: hidden
+
+.bx--modal-content
+  overflow-x: hidden
+
+  .modal-body
+    .bx--datasource-modal
+    .bx--add-loopback-modal
+      height: auto
+      max-height: 387px
+
+    .bx--add-openapi-modal
+    .bx--add-loopback-modal
+      .bx--select__input
+        margin-bottom: 0
+
+.bx--form__row-item.indentedRow
+  display: block
+  margin-right: 0
+  width: auto
+
+.install-connector-modal
+  .bx--modal-content
+    margin-bottom: 50px
+
+.bx--definitions-properties
+  display: table
+
+  .bx--table-row
+    display: table-row
+    &>span
+      display: table-cell
+      padding: 10px
+      vertical-align: middle
+      white-space: no-wrap
+    &>span.bxTablePaddingLeft
+      padding-left: 25px
+    &>span.bxTablePaddingRight
+      padding-right: 25px
+
+
+  .bx--table-head
+    display: table-header-group
+
+  .bx--table-body
+    display: table-row-group
+
+  .bx--table-header
+    display: table-cell
+
+  .bx--number
+    top: 4px
+
+  .bx--select:not(.bx--table-select)
+    position: relative
+    top: 12px
+
+apim-environment-roles // @stylint ignore valid
+  .detailsPage
+    margin-left: 280px
+  .dijitInline
+    margin-bottom: 10px
+
+.environmentsCollection
+  .leftColumnSize.whiteBackground.stretch
+    margin-left: 60px
+
+.makeSpaceForNav
+  .environmentDetails
+    .environmentsCollection
+      .leftColumnSize.whiteBackground.stretch
+        margin-left: 0
+
+.bx--left-nav-roles
+  margin-top: -25px
+
+.bx--right-nav-roles
+  background-color: white
+
+.bx--notification--new
+  button.bx--notification__close-button
+    &:hover
+    &:focus
+      background-color: transparent
+
+.bx--registry-modal
+  overflow-x: hidden
+
+.bx--modal-content // @stylint ignore duplicate
+div.detailsSection .horizSpace
+  .fileSelector
+    .fileSelect
+      &.btn
+        border: 2px solid #3d70b2
+        padding: 8px 1rem
+
+      &:hover
+        background-color: #3d70b2
+
+.bx--responsive-table td:last-child
+  padding-right: 14px
+  text-align: right
+
+.bx--table-body
+  .bx--table-row
+    .table-empty
+      text-align: center
+
+.bx--table-sort--ascending
+.bx--table-sort
+  &:not(.bx--table-sort-active)
+    svg
+      visibility: hidden
+
+@-moz-document url-prefix()
+  .bx--overflow-menu__options.bx--overflow-menu--open
+    right: -20px
+    width: 300px
+
+  .bx--table-overflow .bx--overflow-menu__options::before
+    right: 1.7rem
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+  .apim
+    .detailsEditor
+      .bx--form__row-item
+        .tagContainer
+          display: block
+
+  .bx--responsive-table-container
+    overflow: auto
+
+  .bx--table-overflow
+    .bx--overflow-menu__options::before
+      right: 2em
+
+@supports (-ms-ime-align:auto)
+  .bx--responsive-table-container
+    overflow: auto
+
+  .bx--overflow-menu__icon
+    width: 32px
+
+  .bx--overflow-menu__options::before
+    right: 2em
+
+.bx--no-label-checkbox
+  .bx--checkbox__appearance
+    margin: auto
+
+.bx--space_table
+  padding-top: 20px
+
+// Fix for overflow menu for IE10+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)
+  .bx--modal-tall.bx--modal
+    .bx--modal-content
+      height: calc(100vh - 300px)
+
+.apim
+  bx-notification-container
+    pointer-events: none
+
+  bx-notification-generic
+    pointer-events: auto
+
+.bx--new-lb-modal
+.bx--add-openapi-modal
+.bx--new-project-modal
+  .bx--form__requirements
+    padding-bottom: .5rem
+
+.bx--modal-content.filepicker.add-existing
+  padding: 0 1rem
+
+.bx--flex-table
+  width: 100%
+
+  .bx--flex-table-row
+    display: flex
+
+    span
+      flex-grow: 1
+      padding: 10px

@@ -1,0 +1,55 @@
+Syntaxe : apic {{products}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Répertorier les produits
+
+  Options de la portée catalogue
+    --{{catalog}} CATALOGUE | --{{all-catalogs}} (obligatoire)
+      {{-c}}, --{{catalog}} CATALOGUE            un catalogue spécifique
+      {{-c}}, --{{all-catalogs}}                 tous les catalogues
+    --{{organization}} ORGANISATION | --all-organizations (obligatoire)
+      {{-o}}, --{{organization}} ORGANISATION    une organisation de type fournisseur spécifique
+      {{-o}}, --{{all-organizations}}            toutes les organisations de type fournisseur
+    {{-s}}, --{{server}} SERVEUR                 noeud final du serveur de gestion (obligatoire)
+
+  Options de la portée espace
+    --{{scope space}}
+    --{{space}} ESPACE                         nom de l'espace (obligatoire)
+    {{-c}}, --{{catalog}} CATALOGUE            nom du catalogue (obligatoire)
+    {{-o}}, --{{organization}} ORGANISATION    nom de l'organisation de type fournisseur (obligatoire)
+    {{-s}}, --{{server}} SERVEUR               noeud final du serveur de gestion (obligatoire)
+
+  Répertorier les produits dans le catalogue {{production}}
+    {{$ apic products --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 dans {{climbonorg:production}}
+    {{climbon}}:1.0.1 dans {{climbonorg:production}}
+    {{yosar}}:2.0.0 dans {{climbonorg:production}}
+
+  Répertorier les produits dans tous les catalogues de toutes les organisations
+    {{$ apic products --all-catalogs --all-organizations --server mgmnthost.com}}
+    {{climbon}}:1.0.0 dans {{climbonorg:staging}}
+    {{climbon}}:1.0.0 dans {{climbonorg:production}}
+    {{climbon}}:1.0.1 dans {{climbonorg:sandbox}}
+    {{climbon}}:1.0.1 dans {{climbonorg:qa}}
+    {{climbon}}:1.0.1 dans {{climbonorg:production}}
+    {{yosar}}:2.0.0 dans {{climbonorg:production}}
+    {{trails}}:1.0.0 dans {{hikingorg:staging}}
+    {{trails}}:2.0.0 dans {{hikingorg:production}}
+
+  Répertorier les produits dans l'espace {{flights}}
+    {{$ apic products --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 dans {{climbonorg:production:flights}}
+    {{climbon}}:1.0.1 dans {{climbonorg:production:flights}}
+    {{yosar}}:2.0.0 dans {{climbonorg:production:flights}}
+
+Pour plus d'informations sur les commandes suivantes, entrez "apic COMMANDE -h" :
+
+  {{products:publish}}    publier un produit et ses API référencées dans un catalogue
+  {{products:get}}        Obtenir des informations sur un produit dans un catalogue
+  {{products:set}}        Mettre à jour un produit dans un catalogue
+  {{products:pull}}       Extraire un produit d'un catalogue
+  {{products:clone}}      Extraire tous les produits d'un catalogue
+  {{products:delete}}     Supprimer un produit d'un catalogue
+  {{products:clear}}      Effacer tous les produits d'un catalogue
+  {{products:replace}}    Remplacer un produit dans un catalogue par un autre produit
+  {{products:supersede}}  Remplacer un produit dans un catalogue par un autre produit
+  {{products:set-migration-target}}  Définir la cible de migration d'un produit dans un catalogue avec un autre produit

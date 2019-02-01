@@ -1,0 +1,36 @@
+Syntaxis: apic {{products:clone}} [CATALOGUSOPTIES | RUIMTEOPTIES]
+
+  Alle productdefinities ophalen
+
+  Opties voor catalogusbereik
+    --{{scope catalog}}                           (standaard)
+    --{{catalog}} CATALOGUS | --{{all-catalogs}}  (verplicht)
+      -{{c}}, --{{catalog}} CATALOG               een specifieke catalogus
+      -{{C}}, --{{all-catalogs}}                  alle catalogi
+    --{{organization}} ORGANISATIE | --{{all-organizations}} (verplicht)
+      -{{o}}, --{{organization}} ORGANIZATION     een specifieke providerorganisatie
+      -{{O}}, --{{all-organizations}}             alle providerorganisaties
+    -{{s}}, --{{server}} SERVER                   eindpunt van beheerserver (verplicht)
+
+  Opties voor ruimtebereik
+    --{{scope space}}
+    --{{space}} RUIMTE                       naam van ruimte (verplicht)
+    {{-c}}, --{{catalog}} CATALOGUS          naam van catalogus (verplicht)
+    {{-o}}, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    {{-s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Alle producten in een catalogus ophalen
+    {{$ apic products:clone --catalog production --organization climbonorg --server mgmnthost.com}}
+    Productdefinitie {{climbon}}:1.0.0 opgehaald uit {{climbonorg}}:production {{[climbon.yaml]}}
+    Productdefinitie {{globalweather-product}}:1.0.0 opgehaald uit {{climbonorg}}:production {{[globalweather-product_1.0.0.yaml]}}
+    Productdefinitie {{hiking}}:3.0.0 opgehaald uit {{climbonorg}}:production {{[hiking.yaml]}}
+    Productdefinitie {{hiking}}:3.0.1 opgehaald uit {{climbonorg}}:production {{[hiking-1.yaml]}}
+    API-definitie {{ascents}}:1.0.0 opgehaald uit {{climbonorg}}:production {{[ascents.yaml]}}
+
+  Alle producten in een ruimte ophalen
+    {{$ apic products:clone --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Productdefinitie {{climbon}}:1.0.0 opgehaald uit {{climbonorg}}:production:flights {{[climbon.yaml]}}
+    Productdefinitie {{climbon}}:1.0.1 opgehaald uit {{climbonorg}}:production:flights {{[climbon-2.yaml]}}
+    Productdefinitie {{globalweather-product}}:1.0.0 opgehaald uit {{climbonorg}}:production:flights {{[globalweather-product_1.0.0.yaml]}}
+    Productdefinitie {{hiking}}:3.0.0 opgehaald uit {{climbonorg}}:production:flights {{[hiking.yaml]}}
+    API-definitie {{ascents}}:1.0.0 opgehaald uit {{climbonorg}}:production:flights {{[ascents.yaml]}}

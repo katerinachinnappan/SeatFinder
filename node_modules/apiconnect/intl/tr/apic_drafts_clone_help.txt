@@ -1,0 +1,18 @@
+Kullanım: apic {{drafts:clone}} SEÇENEKLER
+
+  Taslaklardan tüm API ve ürün tanımlarını çeker
+
+  Seçenekler
+    -{{o}}, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    -{{s}}, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  $ apic drafts:clone --organization climbonorg --server mgmnthost.com
+  {{climbon}}:1.0.0 ürün tanımı {{climbonorg:drafts [climbon_1.0.0.yaml]}} içinden çekildi
+  {{climbon}}:1.0.1 ürün tanımı {{climbonorg:drafts [climbon_1.0.1.yaml]}} içinden çekildi
+  {{climbon}}:2.0.0 ürün tanımı {{climbonorg:drafts [climbon_2.0.0.yaml]}} içinden çekildi
+  {{hiking}}:3.0.0 ürün tanımı {{climbonorg:drafts [hiking_3.0.0.yaml]}} içinden çekildi
+  {{hiking}}:3.0.1 ürün tanımı {{climbonorg:drafts [hiking_3.0.1.yaml]}} içinden çekildi
+  {{ascents}}:1.0.0 API tanımı {{climbonorg:drafts [ascents_1.0.0.yaml]}} içinden çekildi
+  {{routes}}:1.0.0 API tanımı {{climbonorg:drafts [routes_1.0.0.yaml]}} içinden çekildi
+  {{routes}}:1.0.0 API tanımı {{climbonorg:drafts [routes_1.0.0.yaml]}} içinden çekildi
+  {{trails}}.4.0.0 API tanımı {{climbonorg:drafts [trails_4.0.0.yaml]}} içinden çekildi

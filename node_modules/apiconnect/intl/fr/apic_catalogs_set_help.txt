@@ -1,0 +1,16 @@
+Syntaxe : apic {{catalogs:set}} NOM_CATALOGUE OPTIONS
+
+  Définir ou mettre à jour des informations sur un catalogue dans une organisation
+
+  Options
+    --{{name}}
+    --{{display-name}}
+    --{{spaces enabled | disabled}}
+    -o, --{{organization}} ORGANISATION     organisation de type fournisseur spécifique (obligatoire)
+    -s, --{{server}} SERVEUR                noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  Mettre à jour le catalogue dans l'organisation climbonorg sur le serveur mgmnthost.com
+    {{$ apic catalogs:set qa --organization climbonorg --server mgmnthost.com --spaces enabled}}
+    Mise à jour du catalogue {{qa}} dans {{climbonorg}}

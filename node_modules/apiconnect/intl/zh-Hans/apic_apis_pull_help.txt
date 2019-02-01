@@ -1,0 +1,35 @@
+用法：{{apic apis:pull}} API_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  从目录或空间获取某个 API
+
+  catalog 作用域的选项
+    --{{scope catalog}}                       （缺省值）
+    -{{c}}, --{{catalog}} CATALOG             目录名称（必需）
+    -{{o}}, --{{organization}} ORGANIZATION   提供者组织名称（必需）
+    -{{s}}, --{{server}} SERVER               管理服务器端点（必需）
+
+  space 作用域的选项
+    --{{scope space}}
+    --{{space}} SPACE                         空间名称（必需）
+    -{{c}}, --{{catalog}} CATALOG             目录名称（必需）
+    -{{o}}, --{{organization}} ORGANIZATION   提供者组织名称（必需）
+    -{{s}}, --{{server}} SERVER               管理服务器端点（必需）
+
+  稳定性：原型
+
+  从目录获取 API
+    {{$ apic apis:pull routes --catalog production --organization climbonorg --server mgmnthost.com}}
+    Pulled {{routes:1.0.0}} API definition from {{climbonorg:production [routes.yaml]}}
+
+    {{$ apic apis:pull globalweather --catalog production --organization climbonorg --server mgmnthost.com}}
+  Pulled {{globalweather:1.0.0}} API definition from {{climbonorg:production [globalweather_1.0.0.yaml]}}
+  Pulled {{globalweather:1.0.0}} API WSDL definition from {{climbonorg:production [globalweather_1.0.0.wsdl]}}
+
+
+  从空间获取 API
+    {{$ apic apis:pull --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com routes}}
+    Pulled {{routes:1.0.0}} API definition from {{climbonorg:production:sp1 [routes.yaml]}}
+
+    {{$ apic apis:pull --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com globalweather}}
+    Pulled {{globalweather:1.0.0}} API definition from {{climbonorg:production:sp1 [globalweather_1.0.0.yaml]}}
+    Pulled {{globalweather:1.0.0}} API WSDL definition from {{climbonorg:production:sp1 [globalweather_1.0.0.wsdl]}}

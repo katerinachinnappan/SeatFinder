@@ -1,0 +1,21 @@
+使用法: apic swiftserver OPTIONS
+
+  Swift Server Generator アプリケーションを作成します
+
+  オプション
+  -n, --name NAME                  アプリケーションの名前 (オプション)
+
+  Stability: prototype
+
+  bookshop という名前のアプリケーションを作成します
+  $ apic swiftserver
+  ? アプリケーションの名前は何ですか? bookshop
+  ? プロジェクトを格納するディレクトリーの名前を入力してください: bookshop
+  ? データ・ストアを選択してください: メモリー
+
+「apic COMMAND -h」と入力すると、以下の関連コマンドのヘルプが表示されます
+
+  create                           成果物の定義を作成します
+  swiftserver:property             新しいモデル・プロパティーを作成します
+  swiftserver:refresh              製品と OpenAPI (Swagger) の定義を生成します
+

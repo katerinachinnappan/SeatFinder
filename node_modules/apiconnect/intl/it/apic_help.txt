@@ -1,0 +1,43 @@
+Utilizzo: OPZIONI COMANDO {{%APPNAME%}}
+
+  Opzioni
+    -h, --{{help}}        utilizzo comando
+    -v, --{{version}}     versione prodotto
+    --{{ext-version}}     versione dettagliata del toolkit
+
+Comandi (digitare apic COMANDO -h per ulteriori informazioni):
+
+  Creazione e convalida delle risorse
+    {{config}}          gestisce variabili configurazione
+    {{create}}          crea risorse di distribuzione
+    {{edit}}            esegue API Designer
+    {{explore}}         esegue API Explorer
+    {{validate}}        convalida risorsa di sviluppo
+
+  Creazione e test delle applicazioni
+    {{logs}}            visualizza i log del servizio
+    {{loopback}}        crea e gestisce applicazioni LoopBack
+    {{swiftserver}}     crea e gestisce applicazioni Swift Server Generator
+    {{microgateway}}    crea applicazioni Micro Gateway
+    {{props}}           proprietà servizio
+    {{services}}        gestisce il servizio
+    {{start}}           avvia i servizi
+    {{stop}}            arresta i servizi
+
+  Pubblicazione nel cloud
+    {{apis}}            gestisce le API in un catalogo
+    {{apps}}            gestisce le applicazioni provider
+    {{catalogs}}        gestisce i cataloghi in un'organizzazione
+    {{devapps}}         gestisce applicazioni consumer
+    {{drafts}}          gestisce le API ed i prodotti in bozze
+    {{extensions}}      gestisce le estensioni del fornitore in un catalogo
+    {{login}}           accede ad un cloud IBM API Connect
+    {{logout}}          disconnette da un cloud IBM API Connect
+    {{members}}         gestisce i membri
+    {{orgs}}            gestisce le organizzazioni
+    {{policies}}        gestisce le politiche in un catalogo
+    {{products}}        gestisce i prodotti in un catalogo
+    {{publish}}         pubblica i prodotti e le API in un catalogo
+    {{securegateways}}  gestisce i secure gateway
+    {{spaces}}          gestisce gli spazi in un catalogo
+    {{subscriptions}}   gestisce le sottoscrizioni

@@ -1,0 +1,58 @@
+Usage: apic {{products:set}} PRODUCT_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Update a product in a catalog or space
+
+  Options for catalog scope
+    --{{status}}
+        {{staged}}                       update the status to staged
+        {{published}}                    update the status to published
+        {{deprecated}}                   update the status to deprecated
+        {{retired}}                      update the status to retired
+        {{archived}}                     update the status to archived
+    --{{visibility}}
+        {{public}}                       unauthenticated or authenticated users
+        {{authenticated}}                authenticated users
+        ORG | TAG ...                users in the ORG or in any ORG tagged with TAG
+    --{{subscribability}}
+        {{authenticated}}                authenticated users
+        ORG | TAG ...                users in the ORG or in any ORG tagged with TAG
+    {{-c}}, --{{catalog}} CATALOG            catalog name (required)
+    {{-o}}, --{{organization}} ORGANIZATION  provider organization name (required)
+    {{-s}}, --{{server}} SERVER              management server endpoint (required)
+
+  Options for space scope
+    --{{scope space}}
+    --{{space}} SPACE                    space name (required)
+    --{{status}}
+        {{staged}}                       update the status to staged
+        {{published}}                    update the status to published
+        {{deprecated}}                   update the status to deprecated
+        {{retired}}                      update the status to retired
+        {{archived}}                     update the status to archived
+    --{{visibility}}
+        {{public}}                       unauthenticated or authenticated users
+        {{authenticated}}                authenticated users
+        ORG | TAG ...                users in the ORG or in any ORG tagged with TAG
+    --{{subscribability}}
+        {{authenticated}}                authenticated users
+        ORG | TAG ...                users in the ORG or in any ORG tagged with TAG
+    {{-c}}, --{{catalog}} CATALOG            catalog name (required)
+    {{-o}}, --{{organization}} ORGANIZATION  provider organization name (required)
+    {{-s}}, --{{server}} SERVER              management server endpoint (required)
+
+  Publish a product in a catalog
+    {{$ apic products:set climbon --status published --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated {{climbon}}:1.0.0 in {{climbonorg:production (status: published)}}
+
+  Update a product's visibility and subscribability in a catalog
+    {{$ apic products:set climbon --visibility public --subscribability authenticated --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated {{climbon}}:1.0.0 in {{climbonorg:production}} (visibility: {{public}}, subscribability: {{authenticated}})
+
+  Publish a product in a space
+    {{$ apic products:set --scope space climbon --status published --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated {{climbon}}:1.0.0 in {{climbonorg:production:flights (status: published)}}
+
+  Update a product's visibility and subscribability in a space
+    {{$ apic products:set --scope space climbon --visibility public --subscribability authenticated --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated {{climbon}}:1.0.0 in {{climbonorg:production:flights}} (visibility: {{public}}, subscribability: {{authenticated}})
+    

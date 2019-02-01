@@ -1,0 +1,16 @@
+Usage: apic {{build}} OPTIONS
+
+  Builds a LoopBack or Swift Server application to support deployment
+
+  Options
+    -f, --{{format}} zip | tar           output file format (defaults to zip)
+    -n, --{{no-install}}                 do not run {{`npm install`}} prior to packaging (LoopBack only)
+    -s, --{{scripts}}                    invoke {{scripts.build}} in {{package.json}} at {{`npm install`}} (LoopBack only)
+
+  Build a zip after running {{npm install}}
+    {{$ apic build}}
+    Built ../climbon-1.0.0.zip
+
+  Build a tar file without running {{npm install}}
+    {{$ apic build --no-install --format tar}}
+    Built ../climbon-1.0.0.tgz

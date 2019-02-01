@@ -1,0 +1,11 @@
+사용법: apic {{loopback:property}} OPTIONS
+
+  현재 {{LoopBack}} 애플리케이션에 새 {{LoopBack}} 모델 특성 작성
+
+  옵션
+    --{{skip-cache}}                     프롬프트 응답을 기억하지 않음
+
+  안정성: 프로토타입
+
+  기존 {{LoopBack}} 모델에 특성 추가
+    {{$ apic loopback:property}}

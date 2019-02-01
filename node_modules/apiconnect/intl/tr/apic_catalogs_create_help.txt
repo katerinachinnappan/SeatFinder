@@ -1,0 +1,18 @@
+Kullanım: apic {{catalogs:create}} GÖRÜNEN_AD SEÇENEKLERİ
+
+  Bir kuruluşta katalog yaratır
+
+  Seçenekler
+    --{{name}} AD                           katalog adı (varsayılan değerler görünen addan türetilir)
+    -o, --{{organization}} KURULUŞ          belirli bir sağlayıcı kuruluşu (zorunludur)
+    -s, --{{server}} SUNUCU                 yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  {{mgmnthost.com}} sunucusu üzerindeki {{climbonorg}} kuruluşunda benzersiz bir adla katalog yaratmak için:
+    {{$ apic catalogs:create Production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} yaratıldı
+
+  {{mgmnthost.com}} sunucusu üzerindeki {{climbonorg}} kuruluşunda katalog yaratmak için:
+    {{$ apic catalogs:create Production --name prod --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:prod}} yaratıldı

@@ -1,0 +1,20 @@
+Syntaxe : apic {{orgs}} OPTIONS
+       apic {{orgs}} --{{type provider}} OPTIONS
+
+  Répertorier les organisations de type fournisseur dont est membre l'utilisateur authentifié
+
+  Options
+    --{{type provider}}
+    -s, --{{server}} SERVEUR              noeud final du serveur de gestion (obligatoire)
+
+  Répertorier les organisations (de type fournisseur) dont est membre l'utilisateur authentifié sur mgmnthost.com
+    {{$ apic orgs --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+    {{$ apic orgs --type provider --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+  Entrez "apic COMMAND -h" pour accéder à l'aide sur les commandes liées suivantes :
+    {{orgs:get}}          Obtenir des informations sur une organisation de type fournisseur

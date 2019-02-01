@@ -1,0 +1,25 @@
+Uso: apic {{props:get}} OPCIONES NOMBRE
+
+  Obtener una propiedad de servicio
+
+  Opciones
+    -r, --{{remote}}                     utilizar el destino de aplicación remota (el valor predeterminado es local)
+    -S, --{{service}} NOMBRE_SERVICIO    nombre del servicio
+    -o, --{{organization}} ORGANIZACIÓN  organización de proveedores
+    -s, --{{server}} SERVIDOR            host de punto final de servidor
+
+  Obtener las propiedades del servicio de aplicaciones LoopBack
+    {{$ apic props:get prop1}}
+    [{{climbon}}] prop1: valor1
+
+  Obtener las propiedades del servicio de aplicaciones LoopBack explícitamente
+    {{$ apic props:get --service climbon prop1}}
+    prop1: valor1
+
+  Obtener las propiedades del servicio {{Micro Gateway}}
+    {{$ apic props:get --service climbon-gw prop1}}
+    prop1: valor1
+
+  Obtener las propiedades de la aplicación remota
+    {{$ apic props:get --remote --service climbon --organization climbon --server mgmnthost.com prop1}}
+    prop1: valor1

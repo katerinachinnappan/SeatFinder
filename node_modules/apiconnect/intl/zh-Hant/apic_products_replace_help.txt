@@ -1,0 +1,37 @@
+用法：apic {{products:replace}} OLD_PRODUCT_NAME[:VERSION] NEW_PRODUCT_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  將型錄或空間中的已發佈或已淘汰產品取代為另一個產品
+
+  型錄範圍的選項
+    --{{plans}} SOURCE_PLAN_NAME:TARGET_PLAN_NAME ...   舊與新產品計劃的對映（必要）
+    {{-c}}, --{{catalog}} CATALOG            型錄名稱（必要）
+    {{-o}}, --{{organization}} ORGANIZATION  提供者組織名稱（必要）
+    {{-s}}, --{{server}} SERVER              管理伺服器端點（必要）
+
+  空間範圍的選項
+    --{{scope space}}
+    --{{space}} SPACE                    空間名稱（必要）
+    --{{plans}} SOURCE_PLAN_NAME:TARGET_PLAN_NAME ...   舊與新產品計劃的對映（必要）
+    {{-c}}, --{{catalog}} CATALOG            型錄名稱（必要）
+    {{-o}}, --{{organization}} ORGANIZATION  提供者組織名稱（必要）
+    {{-s}}, --{{server}} SERVER              管理伺服器端點（必要）
+
+  穩定性：原型
+
+  使用型錄配置變數將產品取代為較新版本
+    {{$ config:set catalog=apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+    {{$ apic products:replace climbon:1.0.0 climbon:2.0.0}}
+    已在 {{climbon}}:sb 中將 {{climbon}}:1.0.0 取代為 {{climbon}}:2.0.0
+
+  將產品取代為不同的產品
+    {{$ apic products:replace climbon adventure-sports -c production -o climbonorg -s mgmnthost.com}}
+    已在 {{climbonorg:production}} 中將 {{climbon}}:2.0.1 取代為 {{adventure-sports}}:1.0.0
+
+  將產品取代為新版本，並將所有舊計劃對映至新計劃
+    {{$ apic products:replace climbon:1.0.1 climbon:1.1.0 --plans "freemium:silver basic:silver premium:gold" -c production -o climbonorg -s mgmnthost.com}}
+    已在 {{climbonorg:production}} 中將 {{climbon}}:1.0.1 取代為 {{climbon}}:1.1.0
+
+
+  將空間中的產品取代為不同的產品
+    {{$ apic products:replace --scope space climbon adventure-sports --space flights -c production -o climbonorg -s mgmnthost.com}}
+    已在 {{climbonorg:production:flights}} 中將 {{climbon}}:2.0.1 取代為 {{adventure-sports}}:1.0.0

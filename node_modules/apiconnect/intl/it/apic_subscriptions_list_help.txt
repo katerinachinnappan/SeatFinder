@@ -1,0 +1,56 @@
+Utilizzo: {{apic subscriptions}} [OPZIONI_CATALOGO | OPZIONI_SPAZIO | OPZIONI_ORG-CONSUMER]
+
+ Elenca le sottoscrizioni in un prodotto, un'applicazione, un catalogo o uno spazio
+
+  Opzioni per l'ambito del catalogo
+    --{{scope catalog}}                                     (predefinito)
+    -{{p}}, --{{product}} NOME_PRODOTTO[:VERSIONE[:NOME_PIANO]]    nome piano
+    -{{c}}, --{{catalog}} CATALOGO                                 nome catalogo (obbligatorio)
+    -{{o}}, --{{organization}} ORGANIZZAZIONE                      organizzazione provider specifica (obbligatorio)
+    -{{s}}, --{{server}} SERVER                                    endpoint server di gestione (obbligatorio)
+
+  Opzioni per l'ambito dello spazio
+    --{{scope space}}                                       (obbligatorio)
+    --{{space}}                                             nome spazio (obbligatorio)
+    -{{p}}, --{{product}} NOME_PRODOTTO[:VERSIONE[:NOME_PIANO]]    nome piano
+    -{{c}}, --{{catalog}} CATALOGO                                 nome catalogo (obbligatorio)
+    -{{o}}, --{{organization}} ORGANIZZAZIONE                      organizzazione provider specifica (obbligatorio)
+    -{{s}}, --{{server}} SERVER                                    endpoint server di gestione (obbligatorio)
+
+  Opzioni per l'ambito org-consumer
+    --{{scope consumer-org}}                                (obbligatorio)
+    -{{a}}, --{{application}} APPLICAZIONE                      applicazione sviluppatore (obbligatorio)
+    -{{c}}, --{{catalog}} CATALOGO                              nome catalogo (obbligatorio)
+    -{{o}}, --{{organization}} ORGANIZZAZIONE                   organizzazione provider specifica (obbligatorio)
+    -{{s}}, --{{server}} SERVER                                 endpoint server di gestione (obbligatorio)
+
+  Stabilità: prototipo
+
+  Elenca le sottoscrizioni in un catalogo
+    {{$ apic subscriptions --catalog production --organization climbonorg --server mgmnthost.com}}
+    sottoscrizione1 in {{climbonapp}} per {{climb-on:1.0.0:premimum}} in {{climbonorg:production}}
+    sottoscrizione2 in {{climbonapp}} per {{climb-on:1.0.0:fremimum}} in {{climbonorg:production}}
+    sottoscrizione3 in {{hikeonapp}} per {{hike-on:1.0.0:premimum}} in {{climbonorg:production}}
+
+  Elenca le sottoscrizioni per un prodotto:versione:piano in un catalogo
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --catalog production --organization climbonorg --server mgmnthost.com}}
+    sottoscrizione1 in {{climbonapp}} per {{climb-on:1.0.0:premimum}} in {{climbonorg:production}}
+
+  Elenca le sottoscrizioni in uno spazio
+    {{$ apic subscriptions --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    sottoscrizione1 in {{climbonapp}} per {{climb-on:1.0.0:premimum}} in {{climbonorg:production:flights}}
+    sottoscrizione2 in {{climbonapp}} per {{climb-on:1.0.0:fremimum}} in {{climbonorg:production:flights}}
+    sottoscrizione3 in {{hikeonapp}} per {{hike-on:1.0.0:premimum}} in {{climbonorg:production:flights}}
+
+  Elenca le sottoscrizioni per un prodotto:versione:piano in uno spazio
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    sottoscrizione2 in {{climbonapp}} per {{climb-on:1.0.0:premimum}} in {{climbonorg:production:flights}}
+
+  Elenca le sottoscrizioni per un'app
+    {{$ apic subscriptions --application climbonapp --scope consumer-org --catalog production --organization climbonorg --server mgmnthost.com}}
+    sottoscrizione1 in {{climbonapp}} per {{climb-on:1.0.0:premimum}} in {{climbonorg:production}}
+    sottoscrizione2 in {{climbonapp}} per {{climb-on:1.0.0:fremimum}} in {{climbonorg:production}}
+
+  Immettere "apic COMANDO --help" per ulteriori informazioni sui seguenti comandi:
+
+    {{subscriptions:get}}        Richiama le informazioni su una sottoscrizione

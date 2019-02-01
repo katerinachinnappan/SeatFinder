@@ -1,0 +1,18 @@
+사용법: apic {{drafts:clone}} OPTIONS
+
+  드래프트에서 모든 API 및 제품 정의 가져오기
+
+  옵션
+    -{{o}}, --{{organization}} ORGANIZATION  제공자 조직 이름(필수)
+    -{{s}}, --{{server}} SERVER              관리 서버 엔드포인트(필수)
+
+  $ apic drafts:clone --organization climbonorg --server mgmnthost.com
+  Pulled {{climbon}}:1.0.0 product definition from {{climbonorg:drafts [climbon_1.0.0.yaml]}}
+  Pulled {{climbon}}:1.0.1 product definition from {{climbonorg:drafts [climbon_1.0.1.yaml]}}
+  Pulled {{climbon}}:2.0.0 product definition from {{climbonorg:drafts [climbon_2.0.0.yaml]}}
+  Pulled {{hiking}}:3.0.0 product definition from {{climbonorg:drafts [hiking_3.0.0.yaml]}}
+  Pulled {{hiking}}:3.0.1 product definition from {{climbonorg:drafts [hiking_3.0.1.yaml]}}
+  Pulled {{ascents}}:1.0.0 API definition from {{climbonorg:drafts [ascents_1.0.0.yaml]}}
+  Pulled {{routes}}:1.0.0 API definition from {{climbonorg:drafts [routes_1.0.0.yaml]}}
+  Pulled {{routes}}:1.0.0 API definition from {{climbonorg:drafts [routes_1.0.0.yaml]}}
+  Pulled {{trails}}.4.0.0 API definition from {{climbonorg:drafts [trails_4.0.0.yaml]}}

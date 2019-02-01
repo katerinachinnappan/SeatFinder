@@ -1,0 +1,5 @@
+Syntaxe : apic {{plugins:uninstall}} PLUG-IN
+
+  Permet de désinstaller un plug-in. Vous pouvez utiliser `apic {{plugins:list}}` pour obtenir une liste des plug-in installés.
+
+  {{$ apic plugins:uninstall my-plugin}}

@@ -1,0 +1,27 @@
+Syntaxe : apic {{products:set-migration-target}} ANCIEN_NOM_PRODUIT[:VERSION] NOUVEAU_NOM_PRODUIT[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Définir la cible de la migration pour les plans d'un produit publié ou déprécié dans un catalogue ou un espace avec un autre produit
+
+  Options de la portée catalogue
+    --{{plans}} NOM_PLAN_SOURCE:NOM_PLAN_CIBLE ...   mappages ancien plan de produit/nouveau plan de produit (obligatoire)
+    {{-c}}, --{{catalog}} CATALOGUE                  nom du catalogue (obligatoire)
+    {{-o}}, --{{organization}} ORGANISATION          nom de l'organisation de type fournisseur (obligatoire)
+    {{-s}}, --{{server}} SERVEUR                     noeud final du serveur de gestion (obligatoire)
+
+  Options de la portée espace
+    --{{scope space}}
+    --{{space}} ESPACE                               nom de l'espace (obligatoire)
+    --{{plans}} NOM_PLAN_SOURCE:NOM_PLAN_CIBLE ...   mappages ancien plan de produit/nouveau plan de produit (obligatoire)
+    {{-c}}, --{{catalog}} CATALOGUE                  nom du catalogue (obligatoire)
+    {{-o}}, --{{organization}} ORGANISATION          nom de l'organisation de type fournisseur (obligatoire)
+    {{-s}}, --{{server}} SERVEUR                     noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  Définir la cible de la migration pour les plans d'un produit dans un catalogue
+  {{$ apic products:set-migration-target climbon:1.0.0 climbon:1.1.0 --plans "basic:silver premium:gold" -c production -o climbonorg -s mgmnthost.com}}
+  Cible de migration définie pour {{climbon}}:1.0.0 sur {{climbon}}:1.1.0 dans {{climbonorg:production}}
+
+  Définir la cible de la migration pour les plans d'un produit dans un espace
+    {{$ apic products:set-migration-target --scope space climbon:1.0.0 climbon:1.1.0 --plans "basic:silver premium:gold" --space flights -c production -o climbonorg -s mgmnthost.com}}
+    Cible de migration définie pour {{climbon}}:1.0.0 sur {{climbon}}:1.1.0 dans {{climbonorg:production:flights}}

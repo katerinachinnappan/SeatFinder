@@ -1,0 +1,70 @@
+사용법: apic {{config:get}} NAME
+
+  구성 변수 가져오기
+
+  옵션
+    -l, --{{local}}       로컬 애플리케이션 구성 변수 가져오기({{loopback}} 프로젝트 전용)
+    -g, --{{global}}      글로벌 구성 변수 가져오기
+
+  구성 변수:
+
+    {{catalog}}
+      카탈로그 구성 변수는 API Connect 카탈로그의 URI로
+      설정해야 합니다.  카탈로그의 값은 카탈로그의 요소를
+      관리하기 위해 사용되는 모든 명령에 대한 카탈로그의
+      기본 ID를 제공합니다.  카탈로그의 URI로 정의된
+      기본값은 --{{server}}, --{{organization}} 및
+      --{{catalog}} 명령행 옵션을 사용하여 대체할 수 있습니다.  카탈로그 URI의 양식은 다음과 같습니다.
+      apic-catalog://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/catalogs/CATALOG_NAME
+
+    {{app}}
+      앱 구성 변수는 API
+      Connect 앱의 URI로 설정되어야 합니다. 앱의 값은
+      앱의 측면을 관리하는 데 사용되는 모든 명령에 대해 앱의 기본 ID를
+      제공합니다. 앱의 URI에서 정의된 기본값은
+      --{{server}}, --{{organization}} 및 --{{app}} 명령행 옵션을 통해 대체할 수 있습니다.
+      앱 URI의 양식은 다음과 같습니다.
+      apic-app://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/apps/APP_NAME
+
+    {{org}}
+      앱 또는 카탈로그의 URI로 정의된 조직의 기본값은 조직 URI를 사용하여
+      대체할 수 있습니다.  조직 URI의 양식은 다음과 같습니다.
+      apic-org://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME
+
+    {{space}}
+      공간 구성 변수는 API Connect 공간의 URI로
+      설정해야 합니다.  공간의 값은 공간의 요소를
+      관리하기 위해 사용되는 모든 명령에 대한 공간의
+      기본 ID를 제공합니다.  공간의 URI에서 정의하는 기본값은
+      --{{server}}, --{{organization}}, --{{catalog}}, --{{space}}
+      명령행 옵션을 사용하여 대체할 수 있습니다.  공간 URI의 형식은 다음과 같습니다.
+      apic-space://MANAGEMENT_SERVER/orgs/ORGANIZATION_NAME/catalogs/CATALOG_NAME/spaces/SPACE_NAME
+
+    {{accessibility-mode}}
+      내게 필요한 옵션 기능을 사용으로 설정합니다. 값은 '{{enabled}}' 또는 '{{disabled}}'로 설정해야 합니다.
+            이 옵션을 설정하지 않을 경우 {{accessibility-mode}}가 사용 안함으로 설정됩니다.
+
+    {{oauth-redirect-uri}}
+      OAuth를 테스트하려면 OAuth 경로 재지정 URI를 설정해야 합니다. 이는 일반적으로 개발 포털을
+      사용하여 수행됩니다. 이 변수를 통해 툴킷만 사용하여 동일한 작업을 수행하십시오.
+
+    {{template-path}}
+      핸들바 템플리트를 검색할 위치의 목록
+
+    {{template-default-api}}
+      기본 API 템플리트 정의
+
+    {{template-default-product}}
+      기본 제품 템플리트 정의
+
+  {{$ apic config:get catalog}}
+  {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+
+  {{$ apic config:get org}}
+  {{org: apic-org://mgmnthost.com/orgs/climbon}}
+
+  {{$ apic config:get --global app}}
+  {{app: apic-app://mgmnthost.com/orgs/climbon/apps/sb}}
+
+  {{$ apic config:get template-path}}
+  {{template-path: /etc/templates}}

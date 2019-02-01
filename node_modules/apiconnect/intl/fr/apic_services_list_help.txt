@@ -1,0 +1,14 @@
+Syntaxe : apic {{services}}
+
+  Répertorier les services en cours d'exécution
+
+  {{$ apic services}}
+  Service {{climbon}} exécuté sur le port 4001
+  Service {{climbon-gw}} exécuté sur le port 4002
+
+Pour accéder à l'aide sur les commandes liées suivantes, entrez "apic COMMANDE -h" :
+
+  {{services:start}}    Démarrer un service
+  {{services:stop}}     Arrêter un service
+  {{services:logs}}     Obtenir les journaux
+  {{services:get}}      Obtenir un service

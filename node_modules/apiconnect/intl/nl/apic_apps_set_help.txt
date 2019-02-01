@@ -1,0 +1,21 @@
+Syntaxis: apic {{apps:set}} OPTIES
+
+  Een toepassing bijwerken
+
+  Opties
+    --{{status}}
+        {{online}}                       de toepassing online zetten
+        {{offline}}                      de toepassing offline halen
+    -a, --{{app}} APP                    doel van providerapp (verplicht)
+    -o, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    -s, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Stabiliteit: prototype
+
+  Een toepassing offline halen
+    {{$ apic apps:set --app climbon --organization climbonorg --server mgmnthost.com --status offline}}
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/climbon ({{status: offline}}) is bijgewerkt
+
+  Een toepassing online zetten
+    {{$ apic apps:set --app climbon --organization climbonorg --server mgmnthost.com --status online}}
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/climbon ({{status: online}}) is bijgewerkt

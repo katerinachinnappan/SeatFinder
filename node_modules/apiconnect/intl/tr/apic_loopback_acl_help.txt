@@ -1,0 +1,12 @@
+Kullanım: apic {{loopback:acl}} SEÇENEKLER
+
+  Geçerli {{LoopBack}} uygulamasına yeni biri ACL girişi ekler
+
+  Seçenekler
+    --skip-cache                     bilgi istemi yanıtlarını kaydetme
+
+  Kararlılık durumu: prototip
+
+  {{$ apic loopback:acl}}
+  Bu komut ACL seçeneklerini saptamak için birkaç soru sorar
+  ve sonra ilgili model JSON'a bir giriş ekler.

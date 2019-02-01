@@ -1,0 +1,25 @@
+用法：apic {{props:get}} OPTIONS NAME
+
+  获取服务属性
+
+  选项
+    -r, --{{remote}}                     使用远程应用程序目标（缺省为本地）
+    -S, --{{service}} SERVICE_NAME       服务名称
+    -o, --{{organization}} ORGANIZATION  提供者组织
+    -s, --{{server}} SERVER              服务器端点主机
+
+  获取 LoopBack 应用程序服务的属性
+    {{$ apic props:get prop1}}
+    [{{climbon}}] prop1: value1
+
+  显式获取 LoopBack 应用程序服务的属性
+    {{$ apic props:get --service climbon prop1}}
+    prop1: value1
+
+  获取 {{Micro Gateway}} 服务的属性
+    {{$ apic props:get --service climbon-gw prop1}}
+    prop1: value1
+
+  获取远程应用程序的属性
+    {{$ apic props:get --remote --service climbon --organization climbon --server mgmnthost.com prop1}}
+    prop1: value1

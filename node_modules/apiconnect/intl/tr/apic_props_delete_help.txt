@@ -1,0 +1,25 @@
+,ullanım: apic {{props:delete}} SEÇENEKLER AD ...
+
+  Bir ya da daha çok hizmet özelliğini siler
+
+  Seçenekler
+    -r, --{{remote}}                     uzak uygulama hedefini kullan (varsayılan değeri: local (yerel))
+    -S, --{{service}} SUNUCU_ADI         hizmet adı
+    -o, --{{organization}} KURULUŞ       sağlayıcı kuruluşu
+    -s, --{{server}} SUNUCU              sunucu uç noktası ana makinesi
+
+  LoopBack uygulaması hizmetinin bir özelliğini silmek için:
+    {{$ apic props:delete prop1}}
+    [{{climbon}}] prop1: value1 silindi
+
+  LoopBack uygulamasını hizmetinin bir özelliğini belirtik olarak silmek için:
+    {{$ apic props:delete --service climbon prop1}}
+    prop1: value1 silindi
+
+  {{Micro Gateway}} hizmetinin bir özelliğini silmek için:
+    {{$ apic props:delete --service climbon-gw prop1}}
+    prop1: value1 silindi
+
+  Uzak uygulamanın bir özelliğini silmek için:
+    {{$ apic props:delete --remote --service climbon --organization climbon --server mgmnthost.com prop1}}
+    prop1: value1 silindi

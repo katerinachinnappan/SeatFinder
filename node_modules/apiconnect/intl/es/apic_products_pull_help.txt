@@ -1,0 +1,39 @@
+Uso: apic {{products:pull}} NOMBRE_PRODUCTO[:VERSIÓN] [OPCIONES_CATÁLOGO | OPCIONES_ESPACIO]
+
+  Extraer un producto de un catálogo o espacio
+
+  Opciones para ámbito de catálogo
+    {{--product-only}}                   extraer el producto, pero no sus api de referencia
+    {{-c}}, --{{catalog}} CATÁLOGO           nombre de catálogo (obligatorio)
+    {{-o}}, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    {{-s}}, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Opciones para ámbito de espacio
+    --{{scope space}}
+    --{{space}} ESPACIO                  nombre de espacio (obligatorio)
+    {{--product-only}}                   extraer el producto, pero no sus api de referencia
+    {{-c}}, --{{catalog}} CATÁLOGO           nombre de catálogo (obligatorio)
+    {{-o}}, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    {{-s}}, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Extraer la definición de producto y sus API referenciadas
+    {{$ apic products:pull climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    Se ha extraído la definición de producto {{climbon}}:1.0.0 de {{climbonorg:production [climbon_1.0.0.yaml]}}
+    Se ha extraído la definición de API {{routes}}:1.0.0 de {{climbonorg:production [routes_1.0.0.yaml]}}
+    Se ha extraído la definición de API {{ascents}}:1.0.0 de {{climbonorg:production [ascents_1.0.0.yaml]}}
+
+  Extraer la definición de producto sin ninguna de sus API referenciadas
+    {{$ apic products:pull climbon --product-only --catalog production --organization climbonorg --server mgmnthost.com}}
+    Se ha extraído la definición de producto {{climbon:1.0.0}} de {{climbonorg:production [climbon_1.0.0.yaml]}}
+
+  Extraer la definición de producto y sus API referenciadas creadas desde un documento WSDL
+    {{$ apic products:pull globalweather-product --catalog production --organization climbonorg --server mgmnthost.com}}
+    Se ha extraído la definición de producto {{globalweather-product:1.0.0}} de {{climbonorg:production [globalweather-product_1.0.0.yaml]}}
+    Se ha extraído la definición de API {{globalweather:1.0.0}} de {{climbonorg:production [globalweather_1.0.0.yaml]}}
+    Se ha extraído la definición WSDL de API {{globalweather:1.0.0}} de {{climbonorg:production [globalweather_1.0.0.wsdl]}}
+
+  Extraer la definición de producto y sus API referenciadas de un espacio
+    {{$ apic products:pull --scope space climbon --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Se ha extraído la definición de producto {{climbon}}:1.0.0 de {{climbonorg:production [climbon_1.0.0.yaml]}}
+    Se ha extraído la definición de API {{routes}}:1.0.0 de {{climbonorg:production [routes_1.0.0.yaml]}}
+    Se ha extraído la definición de API {{ascents}}:1.0.0 de {{climbonorg:production [ascents_1.0.0.yaml]}}

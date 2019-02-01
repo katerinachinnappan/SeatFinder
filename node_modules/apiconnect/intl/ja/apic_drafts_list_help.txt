@@ -1,0 +1,41 @@
+使用法: apic {{drafts}} OPTIONS
+
+  ドラフト内の API および製品をリストします
+
+  オプション
+    --{{type api | product}}                               定義のタイプ別にリストのサブセットを作成する
+    --{{organization}} ORGANIZATION | --{{all-organizations}}  (必須)
+      -{{o}}, --{{organization}} ORGANIZATION                  特定のプロバイダー組織
+      -{{O}}, --{{all-organizations}}                          すべてのプロバイダー組織
+    -{{s}}, --{{server}} SERVER                                管理サーバー・エンドポイント (必須)
+
+  ドラフト内の API 定義と製品定義をリストします
+    {{$ apic drafts --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:drafts}} の {{climbon}}:1.0.0 製品定義
+    {{climbonorg:drafts}} の {{climbon}}:1.0.1 製品定義
+    {{climbonorg:drafts}} の {{routes}}:1.0.0 API 定義
+    {{climbonorg:drafts}} の {{ascents}}:1.0.0 API 定義
+
+  ドラフト内の API 定義をリストします
+    {{$ apic drafts --type api --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:drafts}} の {{routes}}:1.0.0 API 定義
+    {{climbonorg:drafts}} の {{ascents}}:1.0.0 API 定義
+
+  すべての組織のドラフト内の定義をリストします
+    {{$ apic drafts --all-organizations --server mgmnthost.com}}
+    {{climbonorg:drafts}} の {{climbon}}:1.0.0 製品定義
+    {{climbonorg:drafts}} の {{climbon}}:1.0.1 製品定義
+    {{climbonorg:drafts}} の {{routes}}:1.0.0 API 定義
+    {{climbonorg:drafts}} の {{ascents}}:1.0.0 API 定義
+    {{hikingorg:drafts}} の {{hiking}}:1.0.0 製品定義
+    {{hikingorg:drafts}} の {{trails}}:1.0.0 API 定義
+
+「apic COMMAND -h」と入力すると、以下のコマンドの詳細が表示されます
+
+  {{drafts:push}}     ローカルの API 定義または製品定義をドラフトにプッシュします
+  {{drafts:pull}}     API 定義または製品定義をドラフトからプルします
+  {{drafts:clone}}    すべての API 定義と製品定義をドラフトからプルします
+  {{drafts:get}}      ドラフト内の特定の API 定義または製品定義に関する情報を取得します
+  {{drafts:publish}}  ドラフト内の特定の製品とその参照先 API をカタログまたはスペースに公開します
+  {{drafts:delete}}   特定の API 定義または製品定義をドラフトから削除します
+  {{drafts:clear}}    ドラフト内のすべての API 定義と製品定義を削除します

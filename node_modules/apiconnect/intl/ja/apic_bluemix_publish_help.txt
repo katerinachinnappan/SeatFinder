@@ -1,0 +1,11 @@
+使用法: apic {{bluemix:publish}} OPTIONS
+
+   アプリケーションを {{IBM Bluemix}} に公開します。
+
+オプション:
+    --{{type}} appserver                 公開タイプをランタイム・サーバーに設定する
+    -o, --{{org}} ORGANIZATION           組織名
+    -s, --{{space}} SPACE_NAME           ランタイムのデプロイ先となるスペースの名前
+    -a, --{{app}} APP_NAME               アプリケーション名
+    -p, --{{providerOrg}} ORGANIZATION   使用するプロバイダー組織の名前
+    -c, --{{catalog}} CATALOG            プロバイダー組織内のカタログの名前

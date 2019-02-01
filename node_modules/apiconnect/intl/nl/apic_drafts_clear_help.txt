@@ -1,0 +1,19 @@
+Syntaxis: apic {{drafts:clear}} OPTIES
+
+  Alle API- en productdefinities wissen in concepten
+
+  Opties
+    --{{confirm drafts}}                     bevestiging (verplicht)
+    -{{o}}, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    -{{s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  {{$ apic drafts:clear --confirm drafts --organization climbonorg --server mgmnthost.com}}
+  Productdefinitie {{climbon}}:1.0.0 is gewist uit {{climbonorg:drafts}}
+  Productdefinitie {{climbon}}:1.0.1 is gewist uit {{climbonorg:drafts}}
+  Productdefinitie {{climbon}}:2.0.0 is gewist uit {{climbonorg:drafts}}
+  Productdefinitie {{hiking}}:3.0.0 is gewist uit {{climbonorg:drafts}}
+  Productdefinitie {{hiking}}:3.0.1 is gewist uit {{climbonorg:drafts}}
+  API-definitie {{routes}}:1.0.0 is gewist uit {{climbonorg:drafts}}
+  API-definitie {{routes}}:1.0.1 is gewist uit {{climbonorg:drafts}}
+  API-definitie {{ascents}}:1.0.0 is gewist uit {{climbonorg:drafts}}
+  API-definitie {{trails}}:4.0.0 is gewist uit {{climbonorg:drafts}}

@@ -1,0 +1,27 @@
+用法：apic {{extensions}} OPTIONS
+
+  列出型錄中的延伸
+
+  選項
+    --{{catalog}} CATALOG | --{{all-catalogs}}（必要）
+      -c, --{{catalog}} CATALOG            特定的型錄
+      -C, --{{all-catalogs}}               所有型錄
+    --{{organization}} ORGANIZATION | --{{all-organizations}}（必要）
+      -o, --{{organization}} ORGANIZATION  特定的提供者組織
+      -O, --{{all-organizations}}          所有提供者組織
+    -s, --{{server}} SERVER                管理伺服器端點（必要）
+
+  穩定性：原型
+
+  列出 production 型錄中的延伸
+    {{$ apic extensions --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} 中的 {{climbextension}}:1.0.0
+    {{climbonorg:productiong}} 中的 {{hikeextension}}:1.0.0
+
+  如需下列指令的相關資訊，請鍵入 "apic COMMAND -h"：
+
+    {{extensions:publish}}    將延伸發佈到型錄
+    {{extensions:get}}        取得型錄中延伸的相關資訊
+    {{extensions:pull}}       從型錄中取回延伸
+    {{extensions:clone}}      從型錄中取回所有延伸
+    {{extensions:delete}}     刪除型錄中的延伸

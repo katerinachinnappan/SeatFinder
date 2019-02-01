@@ -1,0 +1,15 @@
+Utilizzo: apic {{plugins}}
+
+  Elenca tutti i plug-in installati
+
+  {{$ apic plugins}}
+  apiconnect-cli-config 1.0.0
+  apiconnect-cli-create 1.0.0
+  apiconnect-cli-edit 1.0.0
+  ...
+  ...
+
+  Immettere "apic COMANDO --{{help}}" per ottenere la guida sui seguenti comandi correlati:
+
+  {{plugins:install}}      Installa un plug-in
+  {{plugins:uninstall}}    Disinstalla un plug-in

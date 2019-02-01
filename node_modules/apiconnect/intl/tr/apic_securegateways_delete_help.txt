@@ -1,0 +1,13 @@
+Kullanım: apic {{securegateways:delete}} AĞ_GEÇİDİ_TNCT SEÇENEKLERİ
+
+  Bir kuruluştaki güvenli ağ geçidini sil
+
+  Seçenekler
+    -o, --{{organization}} KURULUŞ          belirli bir sağlayıcı kuruluşu (zorunludur)
+    -s, --{{server}} SUNUCU                 yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  {{mgmnthost.com}} sunucusu üzerindeki {{climbonorg}} kuruluşunda güvenli ağ geçidini sil
+    {{$ apic securegateways:delete ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg}} içinde {{ctHEKS9ztEH_stage_ng}} güvenli ağ geçidi silindi

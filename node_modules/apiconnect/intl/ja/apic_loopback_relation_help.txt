@@ -1,0 +1,11 @@
+使用法: apic {{loopback:relation}} OPTIONS
+
+  {{LoopBack}} アプリケーションで、2 つのモデル間の新しい関係を作成します
+
+  オプション
+    --{{skip-cache}}                     プロンプトに対する応答を記憶しない
+
+  Stability: prototype
+
+  関係を追加します
+    {{$ apic loopback:relation}}

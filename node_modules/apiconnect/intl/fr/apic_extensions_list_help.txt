@@ -1,0 +1,27 @@
+Syntaxe : apic {{extensions}} OPTIONS
+
+  Répertorier les extensions dans un catalogue
+
+  Options
+    --{{catalog}} CATALOGUE | --{{all-catalogs}} (obligatoire)
+      -c, --{{catalog}} CATALOGUE          un catalogue spécifique
+      -C, --{{all-catalogs}}               tous les catalogues
+    --{{organization}} ORGANISATION | --{{all-organizations}} (obligatoire)
+      -o, --{{organization}} ORGANISATION  une application de type fournisseur spécifique
+      -O, --{{all-organizations}}          toutes les organisations de type fournisseur
+    -s, --{{server}} SERVEUR               noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  Répertorier les extensions dans le catalogue production
+    {{$ apic extensions --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbextension}}:1.0.0 dans {{climbonorg:production}}
+    {{hikeextension}}:1.0.0 dans {{climbonorg:productiong}}
+
+  Pour plus d'informations sur les commandes suivantes, entrez "apic COMMANDE -h" :
+
+    {{extensions:publish}}    Publier une extension dans un catalogue
+    {{extensions:get}}        Obtenir des informations sur une extension dans un catalogue
+    {{extensions:pull}}       Extraire une extension d'un catalogue
+    {{extensions:clone}}      Extraire toutes les extensions d'un catalogue
+    {{extensions:delete}}     Supprimer une extension d'un catalogue

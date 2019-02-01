@@ -1,0 +1,18 @@
+사용법: apic {{create --type datasource}} OPTIONS
+
+  {{LoopBack}} 애플리케이션에 {{LoopBack}} 데이터 소스 정의 작성
+
+  옵션
+    --{{name}} NAME                      데이터 소스 이름
+    --{{skip-cache}}                     프롬프트 응답을 기억하지 않음
+
+  {{LoopBack}} 애플리케이션 데이터 소스 작성
+    {{$ apic create --type datasource}}
+    ? Enter the data-source name: {{MemoryDB}}
+    ? Select the connector for {{MemoryDB}}: In-memory db (supported by {{StrongLoop}})
+    Connector-specific configuration:
+    ? {{window.localStorage}} key to use for persistence (browser only): {{MemoryDB}}
+    ? Full path to file for persistence (server only): {{~/.memorydb}}
+    Done running loopback generator
+    Updating {{swagger}} and product definitions
+    Created {{/Users/shane/mesh/examples/climbon/definitions/climbon.yaml}} {{swagger}} description

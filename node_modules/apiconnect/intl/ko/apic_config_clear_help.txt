@@ -1,0 +1,16 @@
+사용법: apic {{config:clear}} OPTIONS
+
+  모든 구성 변수 삭제
+
+  옵션
+    -l, --{{local}}      모든 로컬 애플리케이션 구성 변수 삭제({{loopback}} 프로젝트 전용)
+    -g, --{{global}}     모든 글로벌 구성 변수 삭제
+
+  {{$ apic config:clear}}
+  Deleted {{app: apic-app://mgmnthost.com/orgs/climbon/apps/sb}}
+  Deleted {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+  Deleted {{org: apic-org://mgmnthost.com/orgs/climbon}}
+  Deleted {{space: apic-space://mgmnthost.com/orgs/climbon/catalogs/sb/spaces/flights}}
+
+  {{$ apic config:clear --global}}
+  Deleted {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}

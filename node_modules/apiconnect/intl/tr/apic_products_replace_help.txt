@@ -1,0 +1,36 @@
+Kullanım: apic {{products:replace}} ESKİ_ÜRÜN_ADI[:SÜRÜM] YENİ_ÜRÜN_ADI[:SÜRÜM] [KATALOG_SEÇENEKLERİ | ALAN_SEÇENEKLERİ]
+
+  Bir katalogda ya da alanda yayınlanan veya kullanım dışı bırakılan ürünü başka bir ürünle değiştir
+
+  Katalog kapsamı için seçenekler
+    --{{plans}} KAYNAK_PLANI_ADI:HEDEF_PLAN_ADI ...   eski ve yeni ürün planı eşlemeleri (zorunludur)
+    {{-c}}, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    {{-o}}, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    {{-s}}, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Alan kapsamı için seçenekler
+    --{{scope space}}
+    --{{space}} ALAN                     alan adı (zorunludur)
+    --{{plans}} KAYNAK_PLANI_ADI:HEDEF_PLANı_ADı ...   eski ve yeni ürün planı eşlemeleri (zorunludur)
+    {{-c}}, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    {{-o}}, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    {{-s}}, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  Katalog yapılandırma değişkenini kullanarak bir ürünü daha yeni bir sürümle değiştirmek için:
+    {{$ config:set catalog=apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+    {{$ apic products:replace climbon:1.0.0 climbon:2.0.0}}
+    {{climbon}}:1.0.0, {{climbon}}:sb içinde {{climbon}}:2.0.0 ile değiştirildi
+
+  Bir ürünü farklı bir ürünle değiştirmek için:
+    {{$ apic products:replace climbon adventure-sports -c production -o climbonorg -s mgmnthost.com}}
+    {{climbon}}:2.0.1, {{climbonorg:production}} içinde {{adventure-sports}}:1.0.0 ile değiştirildi
+
+  Bir ürünü yeni bir sürümle değiştirmek ve eski planları yeni planlarla eşlemek için:
+    {{$ apic products:replace climbon:1.0.1 climbon:1.1.0 --plans "freemium:silver basic:silver premium:gold" -c production -o climbonorg -s mgmnthost.com}}
+    {{climbon}}:1.0.1, {{climbonorg:production}} içinde {{climbon}}:1.1.0 ile değiştirildi
+
+  Bir ürünü, alandaki farklı bir ürünle değiştir
+    {{$ apic products:replace --scope space climbon adventure-sports --space flights -c production -o climbonorg -s mgmnthost.com}}
+    {{climbon}}:2.0.1, {{climbonorg:production:flights}} içindeki {{adventure-sports}}:1.0.0 ile değiştirildi

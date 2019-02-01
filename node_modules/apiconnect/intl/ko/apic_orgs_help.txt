@@ -1,0 +1,11 @@
+사용법: apic {{orgs}} OPTIONS
+
+  현재 인증된 사용자가 구성원인 조직 나열
+
+  옵션
+    --{{type provider|consumer}}          기본값은 provider<안정성: 프로토타입>
+    -s, --{{server}} SERVER               관리 서버 엔드포인트(필수)
+
+  각 조직 유형에 대한 도움말을 보려면 다음 명령을 사용하십시오.
+    {{orgs --type provider -h}}
+    {{orgs --type consumer -h}}

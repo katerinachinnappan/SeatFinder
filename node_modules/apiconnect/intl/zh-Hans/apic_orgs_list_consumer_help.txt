@@ -1,0 +1,19 @@
+用法：apic {{orgs}} --{{type consumer}} OPTIONS
+
+  列出当前已认证的用户所属的使用者组织
+
+  选项
+    --{{space}} SPACE                    空间名称（可选）
+    -c, --{{catalog}} CATALOG            目录名称（必需）
+    -o, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    -s, --{{server}} SERVER              管理服务器端点（必需）
+
+  稳定性：原型
+
+  列出属于目录的使用者组织
+    {{$ apic orgs --type consumer --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{retailOrg owned by shavon}}
+    {{salesOrg owned by andre}}
+  
+  输入“{{apic COMMAND -h}}”获取有关以下命令的帮助：
+    {{orgs:get --type consumer}}         获取有关使用者组织的信息

@@ -1,0 +1,12 @@
+사용법: apic {{loopback:boot-script}} OPTIONS
+
+  {{LoopBack}} 애플리케이션에 새 부트 스크립트 작성
+
+  옵션
+    -n, --{{name}} NAME                  부트 스크립트 이름(선택사항)
+    --{{skip-cache}}                     프롬프트 응답을 기억하지 않음
+
+  안정성: 프로토타입
+
+  {{$ apic loopback:boot-script --name some_boot_script.js}}
+  {{/server/boot}}에 {{boot}} 스크립트를 생성합니다.

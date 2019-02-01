@@ -1,0 +1,45 @@
+用法：apic {{publish}} PRODUCT_FILENAME [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  将产品及其引用的 API 发布到目录或空间
+
+  目录作用域的选项
+    --{{stage}}                              使产品处于登台状态
+    --{{secure-gateway}} GATEWAY_ID          安全网关标识
+    {{-c}}, --{{catalog}} CATALOG            目录名称(必需)
+    {{-o}}, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    {{-s}}, --{{server}} SERVER              管理服务器端点（必需）
+
+  space 作用域的选项
+    --{{scope space}}
+    --{{space}} SPACE                        空间名称（必需）
+    --{{stage}}                              使产品处于登台状态
+    --{{secure-gateway}} GATEWAY_ID          安全网关标识
+    {{-c}}, --{{catalog}} CATALOG            目录名称（必需）
+    {{-o}}, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    {{-s}}, --{{server}} SERVER              管理服务器端点（必需）
+
+  将产品发布到目录
+    {{$ apic publish climbon.yaml --catalog production --organization climbonorg --server mgmnthost.com}}
+    Staged climbon.yaml to {{climbonorg:production [climbon:1.0.0]}}
+    Published climbon.yaml to {{climbonorg:production [climbon:1.0.0]}}
+
+  使用安全网关将产品发布到目录
+    {{$ apic publish climbon.yaml --catalog production --secure-gateway ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com}}
+    Staged climbon.yaml to {{climbonorg:production [climbon:1.0.0]}}
+    Published climbon.yaml to {{climbonorg:production [climbon:1.0.0]}}
+
+  使产品登台到目录
+    {{$ apic publish climbon.yaml --stage --catalog production --organization climbonorg --server mgmnthost.com}}
+    Staged climbon.yaml to {{climbonorg:production [climbon:1.0.0]}}
+
+
+  将产品发布到空间
+    {{$ apic publish --scope space climbon.yaml --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Staged climbon.yaml to {{climbonorg:production:flights [climbon:1.0.0]}}
+    Published climbon.yaml to {{climbonorg:production:flights [climbon:1.0.0]}}
+
+
+  使用安全网关将产品发布到空间
+    {{$ apic publish --scope space climbon.yaml --space flights --catalog production --secure-gateway ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com}}
+    Staged climbon.yaml to {{climbonorg:production:flights [climbon:1.0.0]}}
+    Published climbon.yaml to {{climbonorg:production:flights [climbon:1.0.0]}}

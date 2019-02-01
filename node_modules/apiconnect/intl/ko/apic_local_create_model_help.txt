@@ -1,0 +1,20 @@
+사용법: apic create --type model-swiftserver OPTIONS
+
+  Swift 서버 생성자 애플리케이션에서 모델 정의 작성
+
+  옵션
+  --name NAME                      모델의 이름
+
+  안정성: 프로토타입
+
+  모델 작성
+  $ apic create --type model-swiftserver
+  ? 모델 이름 입력: book
+  ? 사용자 정의 복수형 양식(REST URL을 빌드하는 데 사용됨): books
+  지금 일부 book 특성을 추가해 봅니다. 
+
+  완료되면 비어 있는 특성 이름을 입력하십시오.
+    ? 특성 이름 입력: title
+  ? 특성 유형: string
+    ? 필수 여부 아니오? 기본값 여부 아니오? 특성 이름 입력:
+

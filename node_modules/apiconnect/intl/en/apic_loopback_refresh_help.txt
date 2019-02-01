@@ -1,0 +1,7 @@
+Usage: apic {{loopback:refresh}}
+
+  Generate a product and an API definition from the {{LoopBack}} application models
+
+  Stability: prototype
+
+  {{$ apic loopback:refresh}}

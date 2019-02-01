@@ -1,0 +1,66 @@
+Kullanım: apic {{create --type api}}             etkileşimli
+          apic {{create --type api}} SEÇENEKLER  etkileşimli değil
+
+  Bir {{OpenAPI (Swagger)}} tanımı yaratır
+
+  Seçenekler
+    --{{title}} BAŞLIK                   başlık değeri (zorunludur)
+    --{{name}} AD                        {{x-ibm-name}} değeri (başlıktan türetilen varsayılan değer)
+    --{{basepath}} TEMELYOL              temel yol değeri (addan türetilen varsayılan değer)
+    --{{template}} Şablon                bir sağlayıcı şablonu kullan (boşsa, varsayılan olarak apic şablonu kullanılır)
+    --{{filename}} API_DOSYASIADI        dosya adı (addan türetilen varsayılan değer)
+    --{{product}} ÜRÜN_BAŞLIĞI           API'ye başvuran bir ürün tanımı oluştur
+    --{{hostname}} ANAMAKDADI            ana makine değeri (varsayılan değer: {{$(catalog.host)}})
+    --{{schemes}} ŞEMALAR                şemaların listesi (geçerli değerler: http, https, ws, wss)
+    --{{target-url}} HEDEF_URL           hedef url
+    -v, --{{version}} SÜRÜM              sürüm değeri (varsayılan değer: 1.0.0)
+    --{{wsdl}} DOSYAADI                  kaynak olarak kullanılacak wsdl dosyası ({{apic login}} ile kimlik doğrulaması zorunludur)
+
+  API yaratmak için:
+    {{$ apic create --type api --title Routes}}
+    {{routes.yaml}} API tanımı {{[routes:1.0.0]}} yaratıldı
+
+  API yaratmak ve API'ye başvuran bir ürün oluşturmak için:
+    {{$ apic create --type api --title Routes --product "Climb On"}}
+    {{routes.yaml}} API tanımı {{[routes:1.0.0]}} yaratıldı
+    {{climb-on.yaml}} ürün tanımı {{[climb-on:1.0.0]}} yaratıldı
+
+  Etkileşimli olarak API yaratmak için:
+    {{$ apic create --type api}}
+    Başlık: Routes
+    Ad ({{routes}}): {{routes}}
+    Dosya ({{routes.yaml}}): {{routes.yaml}}
+    Şablon: ()
+    Temel yol ({{/routes}}): {{/routes}}
+    Ana makine adı ({{$(catalog.host)}}): {{$(catalog.host)}}
+    Şemalar:
+    Hedef url: ()
+    Ürün yarat [true]: true
+    Ürün başlığı (Routes Product): {{Climb On}}
+    Ürün adı ({{climb-on}}): {{climb-on}}
+    Ürün dosyası ({{climb-on.yaml}}): {{climb-on.yaml}}
+    {{routes.yaml}} API tanımı {{[routes:1.0.0]}} yaratıldı
+    {{climb-on.yaml}} ürün tanımı {{[climb-on:1.0.0]}} yaratıldı
+
+  WSDL belgesinden API yaratmak için:
+    {{$ apic create --type api --wsdl globalweather.wsdl}}
+    {{globalweather.yaml}} API tanımı {{[globalweather.yaml:1.0.0]}} yaratıldı
+
+  APIC'in varsayılan {{OAuth 2}} sağlayıcı şablonunu kullanarak API yaratmak için:
+    {{$ apic create --type api --title "OAuth2 Provider" --template oauth2}}
+    {{oauth2-provider.yaml}} API tanımı {{[oauth2-provider:1.0.0]}} yaratıldı
+
+  Şablonlarınızdan birini kullanarak API yaratmak için:
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy.hbs staging.hbs
+    {{$ apic create --type api --title "Proxy Provider" --template proxy}}
+    {{proxy-provider.yaml}} API tanımı {{[proxy-provider:1.0.0]}} yaratıldı
+
+  Varsayılan şablonunuzla API yaratmak için:
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy.hbs staging.hbs
+    {{$ apic config:set --global template-default-api=staging}}
+    {{$ apic create --type api --title "Staging Provider"}}
+    {{staging-provider.yaml}} API tanımı {{[staging-provider:1.0.0]}} yaratıldı

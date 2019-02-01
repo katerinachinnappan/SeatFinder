@@ -1,0 +1,43 @@
+用法：{{%APPNAME%}} 命令选项
+
+  选项
+    -h, --{{help}}        命令用法
+    -v, --{{version}}     产品版本
+    --{{ext-version}}     详细的工具包版本
+
+命令（输入 apic COMMAND -h 以获取更多帮助）：
+
+  创建和验证工件
+    {{config}}          管理配置变量
+    {{create}}          创建开发工件
+    {{edit}}            运行 API Designer
+    {{explore}}         运行 API Explorer
+    {{validate}}        验证开发工件
+
+  创建和测试应用程序
+    {{logs}}            显示服务日志
+    {{loopback}}        创建和管理 LoopBack 应用程序
+    {{swiftserver}}     创建和管理 Swift Server Generator 应用程序
+    {{microgateway}}    创建 Micro Gateway 应用程序
+    {{props}}           服务属性
+    {{services}}        服务管理
+    {{start}}           启动服务
+    {{stop}}            停止服务
+
+  发布到云
+    {{apis}}            管理目录中的 API
+    {{apps}}            管理提供者应用程序
+    {{catalogs}}        管理组织中的目录
+    {{devapps}}         管理使用者应用程序
+    {{drafts}}          管理处于草稿状态的 API 和产品
+    {{extensions}}      管理目录中的供应商扩展
+    {{login}}           登录到 IBM API Connect 云
+    {{logout}}          注销 IBM API Connect 云
+    {{members}}         管理成员
+    {{orgs}}            管理组织
+    {{policies}}        管理目录中的策略
+    {{products}}        管理目录中的产品
+    {{publish}}         将产品和 API 发布到目录
+    {{securegateways}}  管理安全网关
+    {{spaces}}          管理目录中的空间
+    {{subscriptions}}   管理描述

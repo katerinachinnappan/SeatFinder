@@ -1,0 +1,11 @@
+Syntax: apic {{orgs}} OPTIONEN
+
+  Organisationen auflisten, bei denen der aktuell authentifizierte Benutzer Mitglied ist
+
+  Optionen
+    --{{type provider|consumer}}          standardmäßig der Provider <Stabilität: Prototyp>
+    -s, --{{server}} SERVER               Management-Server-Endpunkt (erforderlich)
+
+  Verwenden Sie die folgenden Befehle, um Hilfeinformationen zu jedem Organisationstyp anzuzeigen:
+    {{orgs --type provider -h}}
+    {{orgs --type consumer -h}}

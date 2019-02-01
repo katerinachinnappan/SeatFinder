@@ -1,0 +1,17 @@
+用法：apic {{apps:get}} OPTIONS
+
+获取有关应用程序的信息
+
+  选项
+    -a, --{{app}} APP                    提供者应用程序目标（必需）
+    -o, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    -s, --{{server}} SERVER              管理服务器端点（必需）
+
+  稳定性：原型
+
+  {{$ apic apps:get --app climbon --organization climbonorg --server mgmnthost.com}}
+  name: {{climbon}}
+  title: {{climbon}}
+  url: apic-app://mgmnthost.com/orgs/climbonorg/apps/climbon
+  status: {{online}}
+  organization: {{climbonorg}}

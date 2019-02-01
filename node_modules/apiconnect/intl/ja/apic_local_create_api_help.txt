@@ -1,0 +1,66 @@
+使用法: apic {{create --type api}}           対話式
+        apic {{create --type api}} OPTIONS   非対話式
+
+  {{OpenAPI (Swagger)}} 定義を作成します
+
+  オプション
+    --{{title}} TITLE                    タイトルの値 (必須)
+    --{{name}} NAME                      {{x-ibm-name}} の値 (デフォルト値はタイトルから派生)
+    --{{basepath}} BASEPATH              基本パスの値 (デフォルト値は名前から派生)
+    --{{template}} Template              プロバイダー・テンプレートを使用する (これを指定しなかった場合、APIC テンプレートがデフォルトで使用される)
+    --{{filename}} API_FILENAME          ファイル名 (デフォルト値は名前から派生)
+    --{{product}} PRODUCT_TITLE          API を参照する製品定義を生成する
+    --{{hostname}} HOSTNAME              ホスト値 (デフォルト値: {{$(catalog.host)}})
+    --{{schemes}} SCHEMES                スキームのリスト (有効なオプション: http、https、ws、および wss)
+    --{{target-url}} TARGET_URL          ターゲット URL
+    -v, --{{version}} VERSION            バージョンの値 (デフォルト値は 1.0.0)
+    --{{wsdl}} FILENAME                  ソースとして使用する wsdl ファイル ({{apic login}} 経由での認証が必要)
+
+  API 定義を作成します
+    {{$ apic create --type api --title Routes}}
+    {{routes.yaml}} API 定義 {{[routes:1.0.0]}} が作成されました
+
+  API を作成し、その API を参照する製品を生成します
+    {{$ apic create --type api --title Routes --product "Climb On"}}
+    {{routes.yaml}} API 定義 {{[routes:1.0.0]}} が作成されました
+    {{climb-on.yaml}} 製品定義 {{[climb-on:1.0.0]}} が作成されました
+
+  対話式で API を作成します
+    {{$ apic create --type api}}
+    タイトル: Routes
+    名前 ({{routes}}): {{routes}}
+    ファイル ({{routes.yaml}}): {{routes.yaml}}
+    テンプレート: ()
+    基本パス ({{/routes}}): {{/routes}}
+    ホスト名 ({{$(catalog.host)}}): {{$(catalog.host)}}
+    スキーム:
+    ターゲット URL: ()
+    製品を作成 [true]: true
+    製品のタイトル (Routes Product): {{Climb On}}
+    製品名 ({{climb-on}}): {{climb-on}}
+    製品ファイル ({{climb-on.yaml}}): {{climb-on.yaml}}
+    {{routes.yaml}} API 定義 {{[routes:1.0.0]}} が作成されました
+    {{climb-on.yaml}} 製品定義 {{[climb-on:1.0.0]}} が作成されました
+
+  WSDL 文書から API を作成します
+    {{$ apic create --type api --wsdl globalweather.wsdl}}
+    {{globalweather.yaml}} API 定義 {{[globalweather.yaml:1.0.0]}} が作成されました
+
+  APIC のデフォルトの {{OAuth 2}} プロバイダー・テンプレートを使用して API を作成します
+    {{$ apic create --type api --title "OAuth2 Provider" --template oauth2}}
+    {{oauth2-provider.yaml}} API 定義 {{[oauth2-provider:1.0.0]}} が作成されました
+
+  いずれかのテンプレートを使用して API を作成します
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy.hbs staging.hbs
+    {{$ apic create --type api --title "Proxy Provider" --template proxy}}
+    {{proxy-provider.yaml}} API 定義 {{[proxy-provider:1.0.0]}} が作成されました
+
+  デフォルトのテンプレートを使用して API を作成します
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy.hbs staging.hbs
+    {{$ apic config:set --global template-default-api=staging}}
+    {{$ apic create --type api --title "Staging Provider"}}
+    {{staging-provider.yaml}} API 定義 {{[staging-provider:1.0.0]}} が作成されました

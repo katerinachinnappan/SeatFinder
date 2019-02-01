@@ -1,0 +1,15 @@
+Syntaxis: apic {{plugins}}
+
+  Lijst afbeelden van alle geïnstalleerde plugins
+
+  {{$ apic plugins}}
+  apiconnect-cli-config 1.0.0
+  apiconnect-cli-create 1.0.0
+  apiconnect-cli-edit 1.0.0
+  ...
+  ...
+
+  Typ "apic COMMAND --{{help}}" voor Help over de volgende aanverwante opdrachten:
+
+  {{plugins:install}}      Een plugin installeren
+  {{plugins:uninstall}}    Een plugin verwijderen

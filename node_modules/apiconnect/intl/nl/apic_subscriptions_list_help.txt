@@ -1,0 +1,56 @@
+Syntaxis: {{apic subscriptions}} [CATALOGUSOPTIES | RUIMTEOPTIES | CONSUMENTENORG_OPTIES]
+
+ Een lijst afbeelden van abonnementen in een product, toepassing, catalogus of ruimte
+
+  Opties voor catalogusbereik
+    --{{scope catalog}}                      (standaard)
+    -{{p}}, --{{product}} PRODUCTNAAM[:VERSIE[:PLAN_NAAM]]      naam van plan
+    -{{c}}, --{{catalog}} CATALOGUS          naam van catalogus (verplicht)
+    -{{o}}, --{{organization}} ORGANISATIE   een specifieke providerorganisatie (verplicht)
+    -{{s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Opties voor ruimtebereik
+    --{{scope space}}                        (verplicht)
+    --{{space}} RUIMTE                       naam van ruimte (verplicht)
+    -{{p}}, --{{product}} PRODUCTNAAM[:VERSIE[:PLAN_NAAM]]      naam van plan
+    -{{c}}, --{{catalog}} CATALOGUS          naam van catalogus (verplicht)
+    -{{o}}, --{{organization}} ORGANISATIE   een specifieke providerorganisatie (verplicht)
+    -{{s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Opties voor bereik van consumentenorganisatie
+    --{{scope consumer-org}}                 (verplicht)
+    -{{a}}, --{{application}} TOEPASSING     ontwikkelaarstoepassing (verplicht)
+    -{{c}}, --{{catalog}} CATALOGUS          naam van catalogus (verplicht)
+    -{{o}}, --{{organization}} ORGANISATIE   een specifieke providerorganisatie (verplicht)
+    -{{s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Stabiliteit: prototype
+
+  Lijst afbeelden van de abonnementen in een catalogus
+    {{$ apic subscriptions --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} voor {{climb-on:1.0.0:premium}} in {{climbonorg:production}}
+    subscription2 in {{climbonapp}} voor {{climb-on:1.0.0:premium}} in {{climbonorg:production}}
+    subscription3 in {{hikeonapp}} voor {{hike-on:1.0.0:premium}} in {{climbonorg:production}}
+
+  Lijst afbeelden van de abonnementen voor een product:version:plan in een catalogus
+    {{$ apic subscriptions --product climb-on:1.0.0:premium --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} voor {{climb-on:1.0.0:premium}} in {{climbonorg:production}}
+
+  Lijst afbeelden van de abonnementen in een ruimte
+    {{$ apic subscriptions --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} voor {{climb-on:1.0.0:premium}} in {{climbonorg:production:flights}}
+    subscription2 in {{climbonapp}} voor {{climb-on:1.0.0:premium}} in {{climbonorg:production:flights}}
+    subscription3 in {{hikeonapp}} voor {{hike-on:1.0.0:premium}} in {{climbonorg:production:flights}}
+
+  Lijst afbeelden van de abonnementen voor een product:version:plan in een ruimte
+    {{$ apic subscriptions --product climb-on:1.0.0:premium --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} voor {{climb-on:1.0.0:premium}} in {{climbonorg:production:flights}}
+
+  Lijst afbeelden van de abonnementen voor een app
+    {{$ apic subscriptions --application climbonapp --scope consumer-org --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} voor {{climb-on:1.0.0:premium}} in {{climbonorg:production}}
+    subscription2 in {{climbonapp}} voor {{climb-on:1.0.0:premium}} in {{climbonorg:production}}
+
+  Typ "apic COMMAND --help" voor meer informatie over de volgende opdrachten:
+
+    {{subscriptions:get}}        Informatie over een abonnement oproepen

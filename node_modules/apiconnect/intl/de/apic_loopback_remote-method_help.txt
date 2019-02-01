@@ -1,0 +1,16 @@
+Syntax: apic {{loopback:remote-method}} OPTIONEN
+
+  Eine neue Remote-Methode in der {{LoopBack}}-Anwendung erstellen
+
+  Optionen
+    -m, --{{model}} MODELLNAME            Name des {{LoopBack}}-Modells (optional)
+    -r, --{{remote-method}} METHODENNAME  Name der Remote-Methode (optional)
+    --{{skip-cache}}                      Eingabeaufforderungsantworten nicht speichern
+
+  Stabilität: Prototyp
+
+  Eine neue Remote-Methode zu einem {{LoopBack}}-Modell hinzufügen
+    {{$ apic loopback:remote-method}}
+
+  Eine neue Remote-Methode für das Modell "note" mit dem Namen {{getCreationDate}} hinzufügen
+    {{$ apic loopback:remote-method --model note --remote-method getCreationDate}}

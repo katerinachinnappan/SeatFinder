@@ -1,0 +1,30 @@
+Uso: apic {{props:clear}} OPTIONS
+
+  Excluir todas as propriedades de serviço
+
+  Opções
+    -r, --{{remote}}                     usar o destino de aplicativo remoto (padronizado como local)
+    -S, --{{service}} SERVICE_NAME       nome do serviço
+    -o, --{{organization}} ORGANIZATION  organização do provedor
+    -s, --{{server}} SERVER              host do terminal do servidor
+
+  Limpar as propriedades do serviço de aplicativo LoopBack
+    {{$ apic props:clear}}
+    [{{climbon}}] Deleted prop1: value1
+    [{{climbon}}] Deleted prop2: value2
+    [{{climbon}}] Deleted prop3: value3
+
+  Limpar as propriedades do serviço de aplicativo LoopBack explicitamente
+    {{$ apic props:clear --service climbon}}
+    Deleted prop1: value1
+    Deleted prop2: value2
+    Deleted prop3: value3
+
+  Limpar as propriedades do serviço {{Micro Gateway}}
+    {{$ apic props:clear --service climbon-gw}}
+    Deleted prop1: value1
+    Deleted prop2: value2
+    Deleted prop3: value3
+
+  Limpar as propriedades do aplicativo remoto
+    {{$ apic props:clear --remote --service climbon --organization climbon --server mgmnthost.com}}

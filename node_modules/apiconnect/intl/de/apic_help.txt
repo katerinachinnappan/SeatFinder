@@ -1,0 +1,43 @@
+Syntax: {{%APPNAME%}} BEFEHLSOPTIONEN
+
+  Optionen
+    -h, --{{help}}        Befehlssyntax
+    -v, --{{version}}     Produktversion
+    --{{ext-version}}     detaillierte Toolkitversion
+
+Befehle (apic BEFEHL -h für zusätzliche Hilfe eingeben):
+
+  Artefakte erstellen und validieren
+    {{config}}          Konfigurationsvariablen verwalten
+    {{create}}          Entwicklungsartefakte erstellen
+    {{edit}}            API Designer ausführen
+    {{explore}}         API Explorer ausführen
+    {{validate}}        Entwicklungsartefakte validieren
+
+  Anwendungen erstellen und testen
+    {{logs}}            Serviceprotokolle anzeigen
+    {{loopback}}        LoopBack-Anwendungen erstellen und verwalten
+    {{swiftserver}}     Swift Server Generator-Anwendungen erstellen und verwalten
+    {{microgateway}}    Micro Gateway-Anwendungen erstellen
+    {{props}}           Serviceeigenschaften
+    {{services}}        Service-Management
+    {{start}}           Services starten
+    {{stop}}            Services stoppen
+
+  In der Cloud veröffentlichen
+    {{apis}}            APIs in einem Katalog verwalten
+    {{apps}}            Provideranwendungen verwalten
+    {{catalogs}}        Kataloge in einer Organisation verwalten
+    {{devapps}}         Konsumentenanwendungen verwalten
+    {{drafts}}          APIs und Produkte in Entwürfen verwalten
+    {{extensions}}      Anbietererweiterungen in einem Katalog verwalten
+    {{login}}           bei einer IBM API Connect-Cloud anmelden
+    {{logout}}          von einer IBM API Connect-Cloud abmelden
+    {{members}}         Mitglieder verwalten
+    {{orgs}}            Organisationen verwalten
+    {{policies}}        Richtlinien in einem Katalog verwalten
+    {{products}}        Produkte in einem Katalog verwalten
+    {{publish}}         Produkte und APIs in einem Katalog veröffentlichen
+    {{securegateways}}  Secure Gateways verwalten
+    {{spaces}}          Bereiche in einem Katalog verwalten
+    {{subscriptions}}   Abonnements verwalten

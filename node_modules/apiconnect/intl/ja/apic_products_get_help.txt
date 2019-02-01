@@ -1,0 +1,37 @@
+使用法: apic {{products:get}} PRODUCT_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  カタログまたはスペース内の製品に関する情報を取得します
+
+  カタログ・スコープ用のオプション
+    {{-c}}, --{{catalog}} CATALOG            カタログ名 (必須)
+    {{-o}}, --{{organization}} ORGANIZATION  プロバイダー組織名 (必須)
+    {{-s}}, --{{server}} SERVER              管理サーバー・エンドポイント (必須)
+
+  スペース・スコープ用のオプション
+    --{{scope space}}
+    --{{space}} SPACE                    スペース名 (必須)
+    {{-c}}, --{{catalog}} CATALOG            カタログ名 (必須)
+    {{-o}}, --{{organization}} ORGANIZATION  プロバイダー組織名 (必須)
+    {{-s}}, --{{server}} SERVER              管理サーバー・エンドポイント (必須)
+
+  カタログ内の製品を取得します
+    {{$ apic products:get climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    名前: {{climbon}}
+    バージョン: 1.0.0
+    タイトル: Climbing product
+    状況: {{staged}}
+    API: "{{routes}}:1.0.0" "{{ascents}}:2.0.0"
+    カタログ: {{production}}
+    組織: {{climbonorg}}
+
+
+  スペース内の製品を取得します
+    {{$ apic products:get --scope space climbon --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    名前: {{climbon}}
+    バージョン: 1.0.0
+    タイトル: Climbing product
+    状況: {{staged}}
+    API: "{{routes}}:1.0.0" "{{ascents}}:2.0.0"
+    カタログ: {{production}}
+    組織: {{climbonorg}}
+    スペース: {{flights}}

@@ -1,0 +1,27 @@
+用法：apic {{drafts:get}} OPTIONS NAME[:VERSION]
+
+  取得草稿中 API 或產品定義的相關資訊
+
+  選項
+    --{{type api | product}}             依定義類型將清單分組
+    -{{o}}, --{{organization}} ORGANIZATION  提供者組織名稱（必要）
+    -{{s}}, --{{server}} SERVER              管理伺服器端點（必要）
+
+  取得 API 定義的相關資訊
+    {{$ apic drafts:get routes --organization climbonorg --server mgmnthost.com}}
+    類型：{{API}}
+    名稱：{{routes}}
+    版本：1.0.0
+    標題：Climbing Routes API
+    基本路徑：{{/routes}}
+    產品：{{"climbon:1.0.0" "climbon:1.0.1"}}
+    組織：{{climbonorg}}
+
+  取得產品定義的相關資訊
+    {{$ apic drafts:get climbon}}
+    類型：{{product}}
+    名稱：{{climbon}}
+    版本：1.0.0
+    標題：Climbing product
+    API：{{"routes:1.0.0" "ascents:2.0.0"}}
+    組織：{{climbonorg}}

@@ -1,0 +1,17 @@
+사용법: apic {{extensions:get}} OPTIONS EXTENSION_NAME[:VERSION]
+
+  카탈로그의 확장에 대한 정보 가져오기
+
+  옵션
+    -c, --{{catalog}} CATALOG              카탈로그 이름(필수)
+    -o, --{{organization}} ORGANIZATION    제공자 조직 이름(필수)
+    -s, --{{server}} SERVER                관리 서버 엔드포인트(필수)
+
+  안정성: 프로토타입
+
+  {{$ apic extensions:get climbextension:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  이름: {{climbextension}}
+  버전: 1.0.0
+  제목: Climb Extension
+  카탈로그: {{production}}
+  조직: {{climbonorg}}

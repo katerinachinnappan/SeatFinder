@@ -1,0 +1,12 @@
+사용법: apic {{orgs:get}} ORG_NAME OPTIONS
+
+  제공자 조직에 대한 정보 가져오기
+
+  옵션
+    --{{type}} provider
+    -s, --{{server}} SERVER               관리 서버 엔드포인트(필수)
+
+  제공자 조직에 대한 정보 가져오기
+    {{$ apic orgs:get climbonorg --server mgmnthost.com}}
+    이름: climbonorg
+    표시 이름: Climbon Organization

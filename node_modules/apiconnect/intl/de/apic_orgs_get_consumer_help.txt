@@ -1,0 +1,21 @@
+Syntax: apic {{orgs:get}} ORGANISATIONSNAME --{{type consumer}} OPTIONEN
+
+  Informationen zu einer Konsumentenorganisation abrufen
+
+  Optionen
+    --{{space}} BEREICH                  Bereichsname (optional)
+    -c, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    -o, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+    -s, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  Informationen zu einer Konsumentenorganisation abrufen
+    {{$ apic orgs:get salesorg --catalog climbonorg.prod --server mgmnthost.com}}
+    name: {{salesorg}}
+    display name: {{Sales Organization}}
+    owner name: {{Shavon}}
+    owner email: {{shavon@ibm.com}}
+    owner username: {{shavon}}
+    status: active
+    communities: sales, partner

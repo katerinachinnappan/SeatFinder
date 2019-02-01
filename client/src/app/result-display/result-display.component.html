@@ -1,0 +1,84 @@
+<div [ngSwitch]="status">
+
+  <p *ngSwitchCase="'IDLE'">
+    <!-- nothing -->
+  </p>
+
+  <div *ngSwitchCase="'LOADING'">
+    <mat-spinner></mat-spinner>
+  </div>
+
+  <div *ngSwitchCase="'SHOW_SEATS'">
+    <mat-card class="result-card seatfinder-card-margin" >
+      <mat-card-header>
+        <mat-card-title> Here the list of the filtered items</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+        <div class="button-container">
+        <button *ngIf="isUserAStudent()" [disabled]="isreservationPossible()" mat-raised-button color="primary" (click)="reserveSeats()">RESERVE</button>
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Building</th>
+              <th scope="col">Floor</th>
+              <th scope="col">Select</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let seat of seats">
+            <tr *ngIf="isSeatVisible(seat)">
+              <th scope="row">{{seat.id}}</th>
+              <td>{{seat.buildingName}}</td>
+              <td>{{seat.floor}}</td>
+              <td>
+                <mat-checkbox *ngIf="isUserAStudent()" (click)="selectSeat($event, seat)" [disabled]="isCheckboxDisabled(seat)"></mat-checkbox>
+                <button *ngIf="isUserASchoolStaff()" mat-raised-button color="accent" (click)="deleteSeat(seat)">DELETE</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div *ngSwitchCase="'SHOW_ROOMS'">
+    <mat-card class="result-card seatfinder-card-margin">
+      <mat-card-header>
+        <mat-card-title> Here the list of the filtered items</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Building</th>
+              <th scope="col">Floor</th>
+              <th scope="col">Items</th>
+              <th scope="col">Select</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let room of rooms">
+            <tr *ngIf="isRoomVisible(room)">
+              <!-- <th>{{room.id}}</th> -->
+              <td scope="row">{{room.name}}</td>
+              <td>{{room.buildingName}}</td>
+              <td>{{room.floor}}</td>
+              <!-- <td>{{room.capacity}}</td> -->
+              <td>
+                <p *ngFor="let item of room.itemTypes">{{item.name}}</p>
+              <td>
+                <button *ngIf="isUserAStudent()" [disabled]="isreservationPossible()" mat-raised-button color="primary" (click)="reserveRoom(room)">RESERVE</button>
+                <button *ngIf="isUserASchoolStaff()" mat-raised-button color="accent" (click)="deleteRoom(room)">DELETE</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>

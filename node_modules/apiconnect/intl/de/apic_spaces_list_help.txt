@@ -1,0 +1,20 @@
+Usage: {{apic spaces}} OPTIONEN
+
+  In einem Katalog enthaltene Bereiche auflisten
+
+  Optionen
+    -c, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    -o, --{{organization}} ORGANISATION  eine bestimmte Provider-Organisation (erforderlich)
+    -s, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Bereiche im {{production}}-Katalog in der {{climbonorg}}-Organisation auf dem {{mgmnthost.com}}-Server auflisten
+    $ {{apic spaces --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{apic-space://mgmnthost.com/orgs/climbonorg/catalogs/production/spaces/flights}}
+    {{apic-space://mgmnthost.com/orgs/climbonorg/catalogs/production/spaces/hotels}}
+    {{apic-space://mgmnthost.com/orgs/climbonorg/catalogs/production/spaces/banks}}
+
+  Geben Sie "apic BEFEHL -h" für Hilfeinformationen zu den folgenden zugehörigen Befehlen ein:
+    {{spaces:create}}   Bereich in einem Katalog erstellen
+    {{spaces:get}}      Informationen zu einem Bereich in einem Katalog abrufen
+    {{spaces:set}}      Informationen zu einem Bereich in einem Katalog festlegen
+    {{spaces:delete}}   Bereich in einem Katalog löschen

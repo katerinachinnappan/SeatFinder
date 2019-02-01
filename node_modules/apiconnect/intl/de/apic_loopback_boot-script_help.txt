@@ -1,0 +1,12 @@
+Syntax: apic {{loopback:boot-script}} OPTIONEN
+
+  Erstellt ein neues Boot-Script in der {{LoopBack}}-Anwendung
+
+  Optionen
+    -n, --{{name}} NAME                  Name des Boot-Scripts (optional)
+    --{{skip-cache}}                     Eingabeaufforderungsantworten nicht speichern
+
+  Stabilität: Prototyp
+
+  {{$ apic loopback:boot-script --name some_boot_script.js}}
+  This generates a {{boot}} script in {{/server/boot.}}

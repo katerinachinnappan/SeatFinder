@@ -1,0 +1,22 @@
+Usage: apic {{securegateways}} OPTIONS
+
+  List secure gateways contained in organizations the currently authenticated
+  user is a member of
+
+  Options
+    -o, --{{organization}} ORGANIZATION     a specific provider organization (required)
+    -s, --{{server}} SERVER                 management server endpoint (required)
+
+  List the secure gateways (id - name) in the {{climbonorg}} organization on the {{mgmnthost.com}} server
+    {{$ apic securegateways --organization climbonorg --server mgmnthost.com}}
+    {{ctHEKS9ztEH_stage_ng - sandbox}}
+    {{TamqfesDaTP_stage_ng - qa}}
+    {{gIEbdFSyUPx_stage_ng - staging}}
+    {{Y6NyVfESVxo_stage_ng - production}}
+
+  Type "apic COMMAND -h" for help on the following related commands:
+
+    {{securegateways:create}}   Create a secure gateway in an organization
+    {{securegateways:get}}      Get information on a secure gateway in an organization
+    {{securegateways:set}}      Set or update information on a secure gateway in an organization
+    {{securegateways:delete}}   Delete a secure gateway in an organization

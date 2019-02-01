@@ -1,0 +1,15 @@
+
+Usage: apic {{securegateways:create}} OPTIONS
+
+  Create a secure gateway in an organization
+
+  Options
+    --{{name}} NAME                         secure gateway name (required)
+    -o, --{{organization}} ORGANIZATION     a specific provider organization (required)
+    -s, --{{server}} SERVER                 management server endpoint (required)
+
+  Stability: prototype
+
+  Create a secure gateway with a unique name in the {{climbonorg}} organization on the {{mgmnthost.com}} server
+    {{$ apic securegateways:create --name production --organization climbonorg --server mgmnthost.com}}
+    Created secure gateway {{ctHEKS9ztEH_stage_ng}} in {{climbonorg}}

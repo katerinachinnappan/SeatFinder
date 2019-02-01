@@ -1,0 +1,17 @@
+Uso: apic {{extensions:get}} OPCIONES NOMBRE_EXTENSIÓN[:VERSIÓN]
+
+  Obtener información sobre una extensión de un catálogo
+
+  Opciones
+    -c, --{{catalog}} CATÁLOGO           nombre de catálogo (obligatorio)
+    -o, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    -s, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  {{$ apic extensions:get climbextension:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  nombre: {{climbextension}}
+  versión: 1.0.0
+  título: Climb Extension
+  catálogo: {{production}}
+  organización: {{climbonorg}}

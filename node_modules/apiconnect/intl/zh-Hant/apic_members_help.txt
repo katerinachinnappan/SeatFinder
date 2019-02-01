@@ -1,0 +1,28 @@
+用法：{{apic members}} [ORG_OPTIONS | CONSUMER_ORG_OPTIONS]
+
+  列出範圍中的成員
+
+  組織範圍的選項
+    --{{scope org}}                               （預設值）
+    --{{organization}} ORGANIZATION | --{{all-organizations}} （必要）
+      -{{o}}, --{{organization}} ORGANIZATION         特定的提供者組織
+    -{{s}}, --{{server}} SERVER                       管理伺服器端點（必要）
+
+  消費者組織範圍的選項
+    --{{scope consumer-org}}                      （必要）
+    --{{consumer-org}} | --{{all-organizations}}      （必要）
+      --{{consumer-org}} ORGANIZATION             特定的客戶組織
+    -{{c}}, --{{catalog}} CATALOG                     型錄名稱（必要）
+    -{{o}}, --{{organization}} ORGANIZATION           提供者組織名稱（必要）
+    -{{s}}, --{{server}} SERVER                       管理伺服器端點（必要）
+
+  穩定性：原型
+
+  列出隸屬於提供者組織的成員
+    $ {{apic members --scope org -o climbon --server mgmnthost.com}}
+    在 {{climbon}} 組織中具有擁有者角色的使用者 ibmapim+steve@gmail.com
+    在 {{climbon}} 組織中具有開發者角色的使用者 ibmapim+shavon@gmail.com
+
+  列出隸屬於消費者組織的成員
+    $ {{apic members --scope consumer-org --consumer-org consumerorg -c qa -o climbon --server mgmnthost.com}}
+    在 {{consumerorg}} 組織中具有擁有者角色的使用者 ibmapim+andre@gmail.com

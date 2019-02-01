@@ -1,0 +1,12 @@
+사용법: apic {{loopback:middleware}} OPTIONS
+
+  {{LoopBack}} 애플리케이션에 새 미들웨어 작성
+
+  옵션
+    -n, --{{name}} NAME                  미들웨어 이름(선택사항)
+    --{{skip-cache}}                     프롬프트 응답을 기억하지 않음
+
+  안정성: 프로토타입
+
+  {{/server/middleware.json}}에 {{"myMiddleware"}} 미들웨어를 정의하는 항목 추가
+    {{$ apic loopback:middleware --name myMiddleware}}

@@ -1,0 +1,35 @@
+Syntax: {{apic subscriptions:get}} ABONNEMENTNAME [KATALOGOPTIONEN | BEREICHSOPTIONEN]
+
+  Informationen zu einem Abonnement abrufen
+
+  Optionen für Katalogbereich
+    --{{scope catalog}}                       (Standard)
+    -{{c}}, --{{catalog}} KATALOG             Katalogname (erforderlich)
+    -{{o}}, --{{organization}} ORGANISATION   eine bestimmte Provider-Organisation (erforderlich)
+    -{{s}}, --{{server}} SERVER               Management-Server-Endpunkt (erforderlich)
+
+  Optionen für Bereichsumfang
+    --{{scope space}}                      (erforderlich)
+    --{{space}}                            Bereichsname (erforderlich)
+    -{{c}}, --{{catalog}} KATALOG             Katalogname (erforderlich)
+    -{{o}}, --{{organization}} ORGANISATION   eine bestimmte Provider-Organisation (erforderlich)
+    -{{s}}, --{{server}} SERVER               Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  Informationen zu einem Abonnement in einem Katalog abrufen
+    {{$ apic subscriptions:get subscription1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    name: {{subscription1}}
+    app: climbonapp
+    product: {{climb-on:1.0.0:premimum}}
+    catalog: {{production}}
+    organization: {{climbonorg}}
+
+  Informationen zu einem Abonnement in einem Bereich abrufen
+    {{$ apic subscriptions:get subscription1 --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    name: {{subscription1}}
+    app: climbonapp
+    product: {{climb-on:1.0.0:premimum}}
+    space: {{flights}}
+    catalog: {{production}}
+    organization: {{climbonorg}}

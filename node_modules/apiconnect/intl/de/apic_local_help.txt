@@ -1,0 +1,10 @@
+Syntax: apic {{create --type api | product | model | datasource}} OPTIONEN
+
+  Eine API-, Produkt-, Modell- oder Datenquellendefinition erstellen
+
+Verwenden Sie die folgenden Befehle, um Hilfeinformationen zu jedem Definitionstyp anzuzeigen:
+
+  apic {{create --type api}} -h
+  apic {{create --type product}} -h
+  apic {{create --type model}} -h
+  apic {{create --type datasource}} -h

@@ -1,0 +1,11 @@
+用法：apic {{loopback:acl}} OPTIONS
+
+  將新的 ACL 項目新增至現行 {{LoopBack}} 應用程式
+
+  選項
+    --skip-cache                     不要記住提示回答
+
+  穩定性：原型
+
+  {{$ apic loopback:acl}}
+  這將會詢問幾個問題來決定 ACL 選項，然後將項目新增至對應的模型 JSON。

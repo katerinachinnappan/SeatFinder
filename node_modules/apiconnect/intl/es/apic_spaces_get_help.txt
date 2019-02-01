@@ -1,0 +1,17 @@
+Uso: {{apic spaces:get}} NOMBRE_ESPACIO OPCIONES
+
+  Obtener información sobre un espacio de un catálogo
+
+  Opciones
+    -c, --{{catalog}} CATÁLOGO           nombre de catálogo (obligatorio)
+    -o, --{{organization}} ORGANIZACIÓN  una organización de proveedores específica (obligatorio)
+    -s, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  Obtener un espacio en el catálogo {{production}} de la organización {{climbonorg}} del servidor {{mgmnthost.com}}
+    $ {{apic spaces:get flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    nombre: {{flights}}
+    nombre de visualización: {{Flights Space}}
+    catálogo: {{production}}
+    organización: {{climbonorg}}

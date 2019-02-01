@@ -1,0 +1,27 @@
+사용법: apic {{products:delete}} PRODUCT_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  카탈로그나 공간의 제품 삭제
+
+  카탈로그 범위 옵션
+    {{-c}}, --{{catalog}} CATALOG            카탈로그 이름(필수)
+    {{-o}}, --{{organization}} ORGANIZATION  제공자 조직 이름(필수)
+    {{-s}}, --{{server}} SERVER              관리 서버 엔드포인트(필수)
+
+  공간 범위 옵션
+    --{{scope space}}
+    --{{space}} SPACE                    공간 이름(필수)
+    {{-c}}, --{{catalog}} CATALOG            카탈로그 이름(필수)
+    {{-o}}, --{{organization}} ORGANIZATION  제공자 조직 이름(필수)
+    {{-s}}, --{{server}} SERVER              관리 서버 엔드포인트(필수)
+
+  카탈로그에서 제품 삭제
+    {{$ apic products:delete climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    Deleted {{climbon}}:1.0.0 product definition from {{climbonorg}}:production
+    Deleted {{routes}}:1.0.0 API definition from {{climbonorg}}:production
+    Deleted {{ascents}}:1.0.0 API definition from {{climbonorg}}:production
+
+  공간에서 제품 삭제
+    {{$ apic products:delete --scope space climbon --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Deleted {{climbon}}:1.0.0 product definition from {{climbonorg}}:production:flights
+    Deleted {{routes}}:1.0.0 API definition from {{climbonorg}}:production:flights
+    Deleted {{ascents}}:1.0.0 API definition from {{climbonorg}}:production:flights

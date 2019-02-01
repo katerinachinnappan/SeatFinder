@@ -1,0 +1,15 @@
+使用法: apic {{securegateways:set}} GATEWAY_ID OPTIONS
+
+  組織内のセキュア・ゲートウェイに関する情報を設定または更新します
+
+  オプション
+    --{{name}} NAME                                セキュア・ゲートウェイ名
+    --{{status enabled | disabled}} STATUS         セキュア・ゲートウェイの状況
+    -o, --{{organization}} ORGANIZATION            特定のプロバイダー組織 (必須)
+    -s, --{{server}} SERVER                        管理サーバー・エンドポイント (必須)
+
+  Stability: prototype
+
+  {{mgmnthost.com}} サーバーの {{climbonorg}} 組織内のセキュア・ゲートウェイを更新します
+    {{$ apic securegateways:set ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com --status enabled}}
+    {{climbonorg}} 内のセキュア・ゲートウェイ {{ctHEKS9ztEH_stage_ng}} が更新されました

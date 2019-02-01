@@ -1,0 +1,7 @@
+사용법: apic {{loopback:refresh}}
+
+  {{LoopBack}} 애플리케이션 모델로부터 제품 및 API 정의 생성
+
+  안정성: 프로토타입
+
+  {{$ apic loopback:refresh}}

@@ -1,0 +1,16 @@
+用法：apic {{loopback:remote-method}} OPTIONS
+
+  在 {{LoopBack}} 应用程序中创建新的远程方法
+
+  选项
+    -m, --{{model}} MODEL_NAME           {{LoopBack}} 模型的名称（可选）
+    -r, --{{remote-method}} METHOD_NAME  远程方法的名称（可选）
+    --{{skip-cache}}                     不记住提示答案
+
+  稳定性：原型
+
+  向 {{LoopBack}} 模型添加新的远程方法
+    {{$ apic loopback:remote-method}}
+
+  针对名为 {{getCreationDate}} 的注释模型添加新的远程方法
+    {{$ apic loopback:remote-method --model note --remote-method getCreationDate}}

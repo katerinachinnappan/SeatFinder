@@ -1,0 +1,44 @@
+사용법: apic {{create --type product}}           대화식
+       apic {{create --type product}} OPTIONS   비대화식
+
+  제품 정의 작성
+
+  옵션
+    --{{title}} TITLE                    제목 값(필수)
+    --{{name}} NAME                      이름 값(기본값은 제목에서 파생됨)
+    --{{apis}} API_FILENAME ...          참조할 API 목록
+    --{{filename}} PRODUCT_FILENAME      파일 이름(기본값은 이름에서 파생됨)
+    --{{template}} TEMPLATE              제공자 템플리트 사용(비어 있는 경우 기본값은 apic 템플리트)
+    -v, --{{version}} VERSION            버전 값(기본값은 1.0.0)
+
+  제품 작성
+    {{$ apic create --type product --title "Climb On"}}
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  대화식으로 제품 작성
+    {{$ apic create --type product}}
+    ? Title: {{Climb On}}
+    ? Name: {{climb-on}}
+    ? File: {{climb-on.yaml}}
+    ? Template:
+    ? API Files:
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  기존 API를 참조하여 제품 작성
+    {{$ apic create --type product --title "Climb On" --apis "routes.yaml ascents.yaml"}}
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  사용자 템플리트 중 하나를 사용하여 제품 작성
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic create --type product --title "Proxy Product" --template proxy}}
+    Created {{proxy-product.yaml}} product definition {{[proxy-product:1.0.0]}}
+
+  기본 템플리트를 사용하여 제품 작성
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic config:set --global template-default-product=staging}}
+    {{$ apic create --type product --title "Staging Product"}}
+    Created {{staging-product.yaml}} product definition {{[staging-product:1.0.0]}}

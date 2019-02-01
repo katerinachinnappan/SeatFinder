@@ -1,0 +1,33 @@
+Uso: apic {{drafts:publish}} [OPCIONES_CATÁLOGO | OPCIONES_ESPACIO] NOMBRE[:VERSIÓN]
+
+  Publicar un producto y sus API referenciadas en borradores en un catálogo o espacio
+
+  Opciones para ámbito de catálogo
+    --{{scope catalog}}                        (predeterminado)
+    --{{stage}}                                limitar la publicación al despliegue
+    -{{c}}, --{{catalog}} CATÁLOGO             nombre de catálogo (obligatorio)
+    -{{o}}, --{{organization}} ORGANIZACIÓN    nombre de organización de proveedores (obligatorio)
+    -{{s}}, --{{server}} SERVIDOR              punto final de servidor de gestión (obligatorio)
+
+  Opciones para ámbito de espacio
+    --{{scope space}}                          (obligatorio)
+    --{{space}} ESPACIO                        nombre de espacio (obligatorio)
+    --{{stage}}                                limitar la publicación al despliegue
+    -{{c}}, --{{catalog}} CATÁLOGO             nombre de catálogo (obligatorio)
+    -{{o}}, --{{organization}} ORGANIZACIÓN    nombre de organización de proveedores (obligatorio)
+    -{{s}}, --{{server}} SERVIDOR              punto final de servidor de gestión (obligatorio)
+
+  Publicar un producto de borradores en un catálogo
+    {{$ apic drafts:publish climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    Se ha desplegado {{climbon}}:1.0.0 en {{climbonorg:production}}
+    Se ha publicado {{climbon}}:1.0.0 en {{climbonorg:production}}
+
+  Desplegar un producto de borradores en un catálogo
+    {{$ apic drafts:publish --stage climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    se ha desplegado {{climbon}}:1.0.0 en {{climbonorg:production}}
+
+  Publicar un producto de borradores en un espacio
+    {{$ apic drafts:publish climbon --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Se ha desplegado {{climbon:1.0.0}} en {{climbonorg:production:flights}}
+    Se ha publicado {{climbon:1.0.0}} en {{climbonorg:production:flights}}
+

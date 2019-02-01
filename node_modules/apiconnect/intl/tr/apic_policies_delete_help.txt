@@ -1,0 +1,13 @@
+Kullanım: apic {{policies:delete}} SEÇENEKLER İLKE_ADI[:SÜRÜM]
+
+  Bir katalogdan ilke siler
+
+  Seçenekler
+    -c, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    -o, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    -s, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  {{$ apic policies:delete invokepolicy:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  {{invokepolicy}}:1.0.0 ilkesi {{climbonorg:production}} içinden silindi

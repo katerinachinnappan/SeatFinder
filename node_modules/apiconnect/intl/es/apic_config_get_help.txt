@@ -1,0 +1,68 @@
+Uso: apic {{config:get}} NOMBRE
+
+  Obtener una variable de configuración
+
+  Opciones
+    -l, --{{local}}                      obtener la variable de configuración de local (sólo proyecto {{loopback}})
+    -g, --{{global}}                     obtener la variable de configuración global
+
+  Variables de configuración:
+
+    {{catalog}}
+      La variable de configuración catalog debe establecerse en el URI de un catálogo de API Connect.  El valor del catálogo proporciona la identidad
+      predeterminada de un catálogo para todos los mandatos que se utilizan para gestionar aspectos de un catálogo.  Los valores predeterminados definidos
+      por el URI del catálogo pueden alterarse temporalmente utilizando las opciones de línea de mandatos --{{server}}, --{{organization}} y
+      --{{catalog}}.  El URI de catálogo tiene el formato:
+      apic-catalog://SERVIDOR_GESTIÓN/orgs/NOMBRE_ORGANIZACIÓN/catalogs/NOMBRE_CATÁLOGO
+
+    {{app}}
+      La variable de configuración app debe establecerse en el URI de una aplicación API Connect.  El valor de la aplicación proporciona la identidad
+      predeterminada de una aplicación para todos los mandatos que se utilizan para gestionar aspectos de una aplicación.  Los valores predeterminados
+      definidos por el URI de la aplicación pueden alterarse temporalmente utilizando las opciones de línea de mandatos --{{server}},
+      --{{organization}} y --{{app}}.
+      El URI de aplicación tiene el formato:
+      apic-app://SERVIDOR_GESTIÓN/orgs/NOMBRE_ORGANIZACIÓN/apps/NOMBRE_APP
+
+    {{org}}
+      El valor predeterminado de org definido por el URI de la aplicación o el catálogo puede establecerse utilizando el URI de la organización.  El URI de
+      organización tiene el formato:
+      apic-org://SERVIDOR_GESTIÓN/orgs/NOMBRE_ORGANIZACIÓN
+
+    {{space}}
+      La variable de configuración de espacio debe establecerse en el URI de un
+      espacio de API Connect.  El valor del espacio proporciona la identidad
+      predeterminada de un espacio para todos los mandatos que se utilizan para gestionar
+      aspectos de un espacio.  Los valores predeterminados definidos por el URI
+      del espacio pueden alterarse temporalmente mediante las opciones de
+      línea de mandatos --{{server}}, --{{organization}}, --{{catalog}} y
+      --{{space}}.  El URI de espacio tiene el formato:
+      apic-space://SERVIDOR_GESTIÓN/orgs/NMBRE_ORGANIZACIÓN/catalogs/NOMBRE_CATÁLOGO/spaces/NOMBRE_ESPACIO
+
+    {{accessibility-mode}}
+      Habilita funciones de accesibilidad. El valor debe establecerse en '{{enabled}}' o '{{disabled}}'.
+      Si no se establece, {{accessibility-mode}} está inhabilitada.
+
+    {{oauth-redirect-uri}}
+      Para probar OAuth, es necesario establecer el URI de redirección de OAuth; generalmente se realiza utilizando
+      el Portal de desarrollo. Utilice esta variable para lograr lo mismo utilizando sólo el kit de herramientas.
+
+    {{template-path}}
+      Lista de ubicaciones en las que buscar plantillas de barra de descriptor de contexto
+
+    {{template-default-api}}
+      Define la plantilla de api predeterminada
+
+    {{template-default-product}}
+      Define la plantilla de producto predeterminada
+
+  {{$ apic config:get catalog}}
+  {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+
+  {{$ apic config:get org}}
+  {{org: apic-org://mgmnthost.com/orgs/climbon}}
+
+  {{$ apic config:get --global app}}
+  {{app: apic-app://mgmnthost.com/orgs/climbon/apps/sb}}
+
+  {{$ apic config:get template-path}}
+  {{template-path: /etc/templates}}

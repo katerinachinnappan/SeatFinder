@@ -1,0 +1,11 @@
+Syntaxis: apic {{bluemix:publish}} OPTIES
+
+   Een app publiceren naar {{IBM Bluemix}}.
+
+Opties:
+    --{{type}} appserver                 Publicatietype instellen op runtime server
+    -o, --{{org}} ORGANISATIE            Naam van de organisatie
+    -s, --{{space}} NAAM_RUIMTE          Naam van de ruimte waarop de runtime moet worden geïmplementeerd
+    -a, --{{app}} NAAM_APP               Naam van de app
+    -p, --{{providerOrg}} ORGANISATIE    Naam van de providerorganisatie die moet worden gebruikt
+    -c, --{{catalog}} CATALOGUS          Naam van de catalogus in de providerorganisatie

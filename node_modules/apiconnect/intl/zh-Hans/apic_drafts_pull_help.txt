@@ -1,0 +1,23 @@
+用法：apic {{drafts:pull}} OPTIONS NAME[:VERSION]
+
+  从草稿获取 API 或产品定义
+
+  选项
+    --{{type api | product}}             按定义类型划分列表子集
+    --{{product-only}}                   获取产品但不获取其引用的 API
+    -{{o}}, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    -{{s}}, --{{server}} SERVER              管理服务器端点（必需）
+
+  获取 API 定义
+    {{$ apic drafts:pull routes --organization climbonorg --server mgmnthost.com}}
+    Pulled {{routes.yaml}} API definition from {{climbonorg:drafts [routes:1.0.0]}}
+
+  获取产品定义及其引用的 API
+    {{$ apic drafts:pull climbon --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon}}:1.0.0 product definition from {{climbonorg:drafts [climbon.yaml]}}
+    Pulled {{routes}}:1.0.0 API definition from {{climbonorg:drafts [routes.yaml]}}
+    Pulled {{ascents}}:1.0.0 API definition from {{climbonorg:drafts [ascent.yaml]}}
+
+  获取产品定义而不获取其引用的 API
+    {{$ apic drafts:pull climbon --product-only --organization climbonorg --server mgmnthost.com}}
+    Pulled {{climbon}}:1.0.0 product definition from {{climbonorg:drafts [climbon.yaml]}}

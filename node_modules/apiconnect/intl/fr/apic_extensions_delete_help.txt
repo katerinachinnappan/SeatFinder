@@ -1,0 +1,13 @@
+Syntaxe : apic {{extensions:delete}} OPTIONS NOM_EXTENSION[:VERSION]
+
+  Supprimer une extension d'un catalogue
+
+  Options
+    -c, --{{catalog}} CATALOGUE          nom du catalogue (obligatoire)
+    -o, --{{organization}} ORGANISATION  nom de l'organisation de type fournisseur (obligatoire)
+    -s, --{{server}} SERVEUR             noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  {{$ apic extensions:delete climbextension:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  Suppression de l'extension {{climbextension}}:1.0.0 de {{climbonorg:production}}

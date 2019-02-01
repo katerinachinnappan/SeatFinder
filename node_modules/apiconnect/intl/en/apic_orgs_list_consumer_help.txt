@@ -1,0 +1,19 @@
+Usage: apic {{orgs}} --{{type consumer}} OPTIONS
+
+  List consumer organizations the currently authenticated user is a member of
+
+  Options
+    --{{space}} SPACE                    space name (optional)
+    -c, --{{catalog}} CATALOG            catalog name (required)
+    -o, --{{organization}} ORGANIZATION  provider organization name (required)
+    -s, --{{server}} SERVER              management server endpoint (required)
+
+  Stability: prototype
+
+  List the consumer organizations that are part of a catalog
+    {{$ apic orgs --type consumer --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{retailOrg owned by shavon}}
+    {{salesOrg owned by andre}}
+  
+  Type "{{apic COMMAND -h}}" for help on the following related commands:
+    {{orgs:get --type consumer}}         Get information on a consumer organization

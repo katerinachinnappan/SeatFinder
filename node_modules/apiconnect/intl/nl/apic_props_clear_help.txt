@@ -1,0 +1,30 @@
+Syntaxis: apic {{props:clear}} OPTIES
+
+  Alle eigenschappen voor de service wissen
+
+  Opties
+    -r, --{{remote}}                     niet-lokale doelapp gebruiken (standaard ingesteld op local)
+    -S, --{{service}} SERVICENAAM        naam van service
+    -o, --{{organization}} ORGANISATIE   providerorganisatie
+    -s, --{{server}} SERVER              host van servereindpunt
+
+  De eigenschappen van de LoopBack-toepassingsservice wissen
+    {{$ apic props:clear}}
+    [{{climbon}}] prop1: value1 is gewist
+    [{{climbon}}] prop2: value2 is gewist
+    [{{climbon}}] prop3: value3 is gewist
+
+  De eigenschappen van de LoopBack-toepassingsservice expliciet wissen
+    {{$ apic props:clear --service climbon}}
+    prop1: value1 is gewist
+    prop2: value2 is gewist
+    prop3: value3 is gewist
+
+  De eigenschappen van de {{Micro Gateway}}-service wissen
+    {{$ apic props:clear --service climbon-gw}}
+    prop1: value1 is gewist
+    prop2: value2 is gewist
+    prop3: value3 is gewist
+
+  De eigenschappen van de niet-lokale toepassing wissen
+    {{$ apic props:clear --remote --service climbon --organization climbon --server mgmnthost.com}}

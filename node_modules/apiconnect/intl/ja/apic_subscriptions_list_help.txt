@@ -1,0 +1,56 @@
+使用法: {{apic subscriptions}} [CATALOG_OPTIONS | SPACE_OPTIONS | CONSUMER-ORG_OPTIONS]
+
+ 製品、アプリケーション、カタログ、またはスペース内のサブスクリプションをリストします
+
+  カタログ・スコープ用のオプション
+    --{{scope catalog}}                                     (デフォルト)
+    -{{p}}, --{{product}} PRODUCT_NAME[:VERSION[:PLAN_NAME]]    プラン名
+    -{{c}}, --{{catalog}} CATALOG                               カタログ名 (必須)
+    -{{o}}, --{{organization}} ORGANIZATION                     特定のプロバイダー組織 (必須)
+    -{{s}}, --{{server}} SERVER                                 管理サーバー・エンドポイント (必須)
+
+  スペース・スコープ用のオプション
+    --{{scope space}}                                       (必須)
+    --{{space}}                                             スペース名 (必須)
+    -{{p}}, --{{product}} PRODUCT_NAME[:VERSION[:PLAN_NAME]]    プラン名
+    -{{c}}, --{{catalog}} CATALOG                               カタログ名 (必須)
+    -{{o}}, --{{organization}} ORGANIZATION                     特定のプロバイダー組織 (必須)
+    -{{s}}, --{{server}} SERVER                                 管理サーバー・エンドポイント (必須)
+
+  コンシューマー組織スコープ用のオプション
+    --{{scope consumer-org}}                                (必須)
+    -{{a}}, --{{application}} APPLICATION                       開発者アプリケーション (必須)
+    -{{c}}, --{{catalog}} CATALOG                               カタログ名 (必須)
+    -{{o}}, --{{organization}} ORGANIZATION                     特定のプロバイダー組織 (必須)
+    -{{s}}, --{{server}} SERVER                                 管理サーバー・エンドポイント (必須)
+
+  Stability: prototype
+
+  カタログ内のサブスクリプションをリストします
+    {{$ apic subscriptions --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} の {{climb-on:1.0.0:premimum}} に対する {{climbonapp}} 内の subscription1
+    {{climbonorg:production}} の {{climb-on:1.0.0:fremimum}} に対する {{climbonapp}} 内の subscription2
+    {{climbonorg:production}} の {{hike-on:1.0.0:premimum}} に対する {{hikeonapp}} 内の subscription3
+
+  カタログ内の product:version:plan に対するサブスクリプションをリストします
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} の {{climb-on:1.0.0:premimum}} に対する {{climbonapp}} 内の subscription1
+
+  スペース内のサブスクリプションをリストします
+    {{$ apic subscriptions --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production:flights}} の {{climb-on:1.0.0:premimum}} に対する {{climbonapp}} 内の subscription1
+    {{climbonorg:production:flights}} の {{climb-on:1.0.0:fremimum}} に対する {{climbonapp}} 内の subscription2
+    {{climbonorg:production:flights}} の {{hike-on:1.0.0:premimum}} に対する {{hikeonapp}} 内の subscription3
+
+  スペース内の product:version:plan に対するサブスクリプションをリストします
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production:flights}} の {{climb-on:1.0.0:premimum}} に対する {{climbonapp}} 内の subscription1
+
+  アプリケーションに対するサブスクリプションをリストします
+    {{$ apic subscriptions --application climbonapp --scope consumer-org --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} の {{climb-on:1.0.0:premimum}} に対する {{climbonapp}} 内の subscription1
+    {{climbonorg:production}} の {{climb-on:1.0.0:fremimum}} に対する {{climbonapp}} 内の subscription2
+
+  「apic COMMAND --help」と入力すると、次のコマンドの詳細が表示されます
+
+    {{subscriptions:get}}        サブスクリプションに関する情報を取得します

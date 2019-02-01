@@ -1,0 +1,20 @@
+用法：apic {{orgs}} OPTIONS
+      apic {{orgs}} --{{type provider}} OPTIONS
+
+  列出目前已鑑別使用者所屬的提供者組織
+
+  選項
+    --{{type provider}}
+    -s, --{{server}} SERVER               管理伺服器端點（必要）
+
+  在 mgmnthost.com 上列出目前已鑑別使用者所屬的組織（提供者組織）
+    {{$ apic orgs --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+    {{$ apic orgs --type provider --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+  如需下列相關指令的說明，請鍵入 "apic COMMAND -h"：
+    {{orgs:get}}          取得提供者組織的相關資訊

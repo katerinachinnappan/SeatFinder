@@ -1,0 +1,5 @@
+用法：apic {{plugins:uninstall}} PLUGIN
+
+  卸载插件。您可以使用“apic {{plugins:list}}”以获取当前安装的插件的列表。
+
+  {{$ apic plugins:uninstall my-plugin}}

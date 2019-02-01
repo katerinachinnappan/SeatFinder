@@ -1,0 +1,35 @@
+사용법: {{apic subscriptions:get}} SUBSCRIPTION_NAME [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  등록 정보 가져오기
+
+  카탈로그 범위 옵션
+    --{{scope catalog}}                       (기본값)
+    -{{c}}, --{{catalog}} CATALOG             카탈로그 이름(필수)
+    -{{o}}, --{{organization}} ORGANIZATION   특정 제공자 조직(필수)
+    -{{s}}, --{{server}} SERVER               관리 서버 엔드포인트(필수)
+
+  공간 범위 옵션
+    --{{scope space}}                       (필수)
+    --{{space}}                             공간 이름(필수)
+    -{{c}}, --{{catalog}} CATALOG               카탈로그 이름(필수)
+    -{{o}}, --{{organization}} ORGANIZATION     특정 제공자 조직(필수)
+    -{{s}}, --{{server}} SERVER                 관리 서버 엔드포인트(필수)
+
+  안정성: 프로토타입
+
+  카탈로그의 등록에 대한 정보 가져오기
+    {{$ apic subscriptions:get subscription1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    이름: {{subscription1}}
+    애플리케이션: climbonapp
+    제품: {{climb-on:1.0.0:premimum}}
+    카탈로그: {{production}}
+    조직: {{climbonorg}}
+
+  공간의 등록에 대한 정보 가져오기
+    {{$ apic subscriptions:get subscription1 --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    이름: {{subscription1}}
+    애플리케이션: climbonapp
+    제품: {{climb-on:1.0.0:premimum}}
+    공간: {{flights}}
+    카탈로그: {{production}}
+    조직: {{climbonorg}}

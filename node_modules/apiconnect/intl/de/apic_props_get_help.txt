@@ -1,0 +1,25 @@
+Syntax: apic {{props:get}} OPTIONEN NAME
+
+  Eine Serviceeigenschaft abrufen
+
+  Optionen
+    -r, --{{remote}}                     das ferne Anwendungsziel verwenden (Standardwert ist lokal)
+    -S, --{{service}} SERVICENAME        Servicename
+    -o, --{{organization}} ORGANISATION  Provider-Organisation
+    -s, --{{server}} SERVER              Server-Endpunkt-Host
+
+  Die Eigenschaften des LoopBack-Anwendungsservice abrufen
+    {{$ apic props:get prop1}}
+    [{{climbon}}] prop1: value1
+
+  Die Eigenschaften des LoopBack-Anwendungsservice explizit abrufen
+    {{$ apic props:get --service climbon prop1}}
+    prop1: value1
+
+  Die Eigenschaften des {{Micro Gateway}}-Service abrufen
+    {{$ apic props:get --service climbon-gw prop1}}
+    prop1: value1
+
+  Die Eigenschaften der fernen Anwendung abrufen
+    {{$ apic props:get --remote --service climbon --organization climbon --server mgmnthost.com prop1}}
+    prop1: value1

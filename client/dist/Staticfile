@@ -1,0 +1,4 @@
+FORCE_HTTPS: true
+root: dist
+pushstate: enabled
+

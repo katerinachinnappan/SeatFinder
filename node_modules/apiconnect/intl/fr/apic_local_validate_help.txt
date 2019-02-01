@@ -1,0 +1,29 @@
+Syntaxe : apic {{validate}} OPTIONS NOM_FICHIER_API | NOM_FICHIER_PRODUIT
+
+  Valider une définition d'API ou de produit
+
+  Options
+    -p, --{{product-only}}               pour les définitions de produits, ne pas valider les API référencées
+    --{{no-extensions}}                  pour les définitions d'API, ne pas valider par rapport aux extensions {{IBM Swagger}}
+
+  Valider une définition d'API
+    {{$ apic validate routes.yaml}}
+    Validation de la définition d'API {{routes.yaml}} par rapport au schéma {{Swagger 2.0}} {{[routes:1.0.0]}}
+    Validation de la définition d'API {{routes.yaml}} par rapport au schéma {{IBM Swagger 2.0}} {{[routes:1.0.0]}}
+    Validation de définition d'API {{routes.yaml}} par rapport au schéma d'extensions {{IBM Swagger 2.0}} {{[routes:1.0.0]}}
+
+  Valider une définition d'API sans extensions IBM
+    {{$ apic validate --no-extensions routes.yaml}}
+    Validation de la définition d'API {{routes.yaml}} par rapport au schéma {{Swagger 2.0}} {{[routes:1.0.0]}}
+    Validation de la définition d'API {{routes.yaml}} par rapport au schéma {{IBM Swagger 2.0}} {{[routes:1.0.0]}}
+
+  Valider une définition de produit et ses API référencées
+    {{$ apic validate climb-on.yaml}}
+    Validation de la définition de produit {{climb-on.yaml}} {{[climb-on:1.0.0]}}
+    Validation de la définition d'API {{routes.yaml}} par rapport au schéma {{Swagger 2.0}} {{[routes:1.0.0]}}
+    Validation de la définition d'API {{routes.yaml}} par rapport au schéma {{IBM Swagger 2.0}} {{[routes:1.0.0]}}
+    Validation de la définition d'API {{routes.yaml}} par rapport au schéma d'extensions {{IBM Swagger 2.0}}  {{[routes:1.0.0]}}
+
+  Valider une définition de produit sans valider ses API référencées
+    {{$ apic validate --product-only climb-on.yaml}}
+    Validation de la définition de produit {{climb-on.yaml}} {{[climb-on:1.0.0]}}

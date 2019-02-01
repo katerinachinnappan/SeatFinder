@@ -1,0 +1,29 @@
+Usage: apic {{devapps}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  List consumer apps contained in an organization and a catalog or a space
+
+  Options for catalog scope
+    --{{scope catalog}}                    (default)
+    -{{c}}, --{{catalog}} CATALOG              catalog name (required)
+    -{{o}}, --{{organization}} ORGANIZATION    provider organization name (required)
+    -{{s}}, --{{server}} SERVER                management server endpoint (required)
+
+  Options for space scope
+    --{{scope space}}                      (required)
+    --{{space}} SPACE                      space name (required)
+    -{{c}}, --{{catalog}} CATALOG              catalog name (required)
+    -{{o}}, --{{organization}} ORGANIZATION    provider organization name (required)
+    -{{s}}, --{{server}} SERVER                management server endpoint (required)
+
+  Stability: prototype
+
+  List the consumer apps in the climbonorg organization and production catalog on the mgmnthost.com server
+    {{$ apic devapps --catalog production --organization climbonorg --server mgmnthost.com}}
+    flights in flightsOrg
+
+  List the consumer apps in the climbonorg organization and production catalog in s1 space on the mgmnthost.com server
+    {{$ apic devapps --scope space --space s1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    flights in flightsOrg
+
+  Type "apic COMMAND -h" for more information on the following commands:
+    devapps:get        Get information about an application

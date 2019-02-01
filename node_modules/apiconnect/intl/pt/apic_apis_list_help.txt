@@ -1,0 +1,46 @@
+Uso: {{apic apis}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Listar as APIs em um catálogo ou espaço
+
+  Opções para escopo de catálogo
+    --{{scope catalog}}                         (padrão)
+    --{{catalog}} CATALOG | --{{all-catalogs}}  (obrigatório)
+      -{{c}}, --{{catalog}} CATALOG             um catálogo específico
+      -{{C}}, --{{all-catalogs}}                todos os catálogos
+    --{{organization}} ORGANIZATION | --{{all-organizations}} (obrigatório)
+      -{{o}}, --{{organization}} ORGANIZATION   uma organização do provedor específica
+      -{{O}}, --{{all-organizations}}           todas as organizações do provedor
+    -{{s}}, --{{server}} SERVER                 terminal do servidor de gerenciamento obrigatório)
+
+  Opções para escopo de espaço
+    --{{scope space}}
+    --{{space}} SPACE
+    -{{c}}, --{{catalog}} CATALOG               um catálogo específico
+    -{{o}}, --{{organization}} ORGANIZATION     uma organização do provedor específica
+    -{{s}}, --{{server}} SERVER                 terminal do servidor de gerenciamento (obrigatório)
+
+  Estabilidade: protótipo
+
+  Listar as definições de API em um catálogo
+    {{$ apic apis --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{routes:2.0.0}} in {{climbonorg:production}}
+    {{trails:2.0.0}} in {{climbonorg:production}}
+
+  Listar as definições de API em todos os catálogos de todas as organizações
+    {{$ apic apis --all-catalogs --all-organizations --server mgmnthost.com}}
+    {{routes:1.0.0}} in {{climbonorg:staging}}
+    {{routes:2.0.0}} in {{climbonorg:production}}
+    {{trails:1.0.0}} in {{hikingorg:staging}}
+    {{trails:2.0.0}} in {{hikingorg:production}}
+
+  Listar as definições de API em um espaço
+    {{$ apic apis --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{routes:2.0.0}} in {{climbonorg:production:sp1}}
+    {{trails:2.0.0}} in {{climbonorg:production:sp1}}
+
+Digite "{{apic COMMAND --help}}" para obter mais informações sobre os comandos a seguir:
+
+  {{apis:get}}     Obter informações sobre uma API em um catálogo ou espaço
+  {{apis:set}}     Atualizar uma API em um catálogo ou espaço
+  {{apis:pull}}    Obter uma API de um catálogo ou espaço
+  {{apis:clone}}   Obter todas as APIs de um catálogo ou espaço

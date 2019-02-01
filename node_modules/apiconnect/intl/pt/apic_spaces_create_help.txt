@@ -1,0 +1,15 @@
+Uso: {{apic spaces:create}} DISPLAY_NAME OPTIONS
+
+  Crie um espaço em um catálogo
+
+  Opções
+    --name NAME                         nome do espaço (padrões derivados de um nome de exibição)
+    -c, --{{catalog}} CATALOG               nome do catálogo (obrigatório)
+    -o, --{{organization}} ORGANIZATION     uma organização do provedor específica (obrigatório)
+    -s, --{{server}} SERVER                 terminal do servidor de gerenciamento (obrigatório)
+
+  Estabilidade: protótipo
+
+  Criar um espaço no catálogo {{production}} na organização {{climbonorg}} no servidor {{mgmnthost.com}}
+    $ {{apic spaces:create flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production:flights}} criado

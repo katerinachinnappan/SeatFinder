@@ -1,0 +1,13 @@
+사용법: apic {{edit}} DIRECTORY
+
+  {{API Designer}} 열기
+
+  옵션
+    DIRECTORY                        API Designer를 열기 위한 디렉토리(선택사항)
+
+  {{API Designer}} 열기
+    {{$ apic edit}}
+
+  LoopBack 애플리케이션 디렉토리에서 {{API Designer}} 열기
+    {{$ apic loopback --name climbon_application}}
+    {{$ apic edit climbon_application}}

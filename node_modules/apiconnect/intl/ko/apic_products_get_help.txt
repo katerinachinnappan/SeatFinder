@@ -1,0 +1,36 @@
+사용법: apic {{products:get}} PRODUCT_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  카탈로그나 공간의 제품에 대한 정보 가져오기
+
+  카탈로그 범위 옵션
+    {{-c}}, --{{catalog}} CATALOG            카탈로그 이름(필수)
+    {{-o}}, --{{organization}} ORGANIZATION  제공자 조직 이름(필수)
+    {{-s}}, --{{server}} SERVER              관리 서버 엔드포인트(필수)
+
+  공간 범위 옵션
+    --{{scope space}}
+    --{{space}} SPACE                    공간 이름(필수)
+    {{-c}}, --{{catalog}} CATALOG            카탈로그 이름(필수)
+    {{-o}}, --{{organization}} ORGANIZATION  제공자 조직 이름(필수)
+    {{-s}}, --{{server}} SERVER              관리 서버 엔드포인트(필수)
+
+  카탈로그의 제품 가져오기
+    {{$ apic products:get climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    이름: {{climbon}}
+    버전: 1.0.0
+    제목: Climbing product
+    상태: {{staged}}
+    apis: "{{routes}}:1.0.0" "{{ascents}}:2.0.0"
+    카탈로그: {{production}}
+    조직: {{climbonorg}}
+
+  공간의 제품 가져오기
+    {{$ apic products:get --scope space climbon --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    이름: {{climbon}}
+    버전: 1.0.0
+    제목: Climbing product
+    상태: {{staged}}
+    apis: "{{routes}}:1.0.0" "{{ascents}}:2.0.0"
+    카탈로그: {{production}}
+    조직: {{climbonorg}}
+    공간: {{flights}}

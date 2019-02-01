@@ -1,0 +1,20 @@
+사용법: {{apic spaces}} OPTIONS
+
+  카탈로그에 포함된 공간 나열
+
+  옵션
+    -c, --{{catalog}} CATALOG               카탈로그 이름(필수)
+    -o, --{{organization}} ORGANIZATION     특정 제공자 조직(필수)
+    -s, --{{server}} SERVER                 관리 서버 엔드포인트(필수)
+
+  {{mgmnthost.com}} 서버의 {{climbonorg}} 조직에서 {{production}} 카탈로그의 공간 나열
+    $ {{apic spaces --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{apic-space://mgmnthost.com/orgs/climbonorg/catalogs/production/spaces/flights}}
+    {{apic-space://mgmnthost.com/orgs/climbonorg/catalogs/production/spaces/hotels}}
+    {{apic-space://mgmnthost.com/orgs/climbonorg/catalogs/production/spaces/banks}}
+
+  다음 관련 명령에 대한 도움말을 보려면 "apic COMMAND -h"를 입력하십시오.
+    {{spaces:create}}   카탈로그에 공간 작성
+    {{spaces:get}}      카탈로그의 공간에 대한 정보 가져오기
+    {{spaces:set}}      카탈로그의 공간에 대한 정보 설정
+    {{spaces:delete}}   카탈로그의 공간 삭제

@@ -1,0 +1,24 @@
+Kullanım: apic {{stop}} SEÇENEKLER
+
+  Bir LoopBack uygulaması bağlamında, LoopBack uygulamasını ve {{Micro Gateway}}'i
+  durdurur.  LoopBack dışı uygulamalarda Micro Gateway'i durdurur.
+
+  Seçenekler
+    --{{all}}                            tüm LoopBack uygulamalarını ve {{Micro Gateway}} ağ geçitlerini durdur
+    -S, --{{service}} HİZMET_ADI         durdurulacak hizmetin adı
+
+  Geçerli uygulamaya ilişkin tüm hizmetleri durdurmak için:
+  {{$ apic stop}}
+  {{climbon}} durduruldu
+  {{climbon-gw}} durduruldu
+
+  Geçerli uygulamada çalışan belirli bir hizmeti durdurmak için:
+  {{$ apic stop --service climbon-gw}}
+  {{climbon-gw}} durduruldu
+
+  Tüm uygulamalarda çalışan tüm hizmetleri durdurmak için:
+  {{$ apic stop --all}}
+  {{climbon}} durduruldu
+  {{climbon-gw}} durduruldu
+  {{hikeon}} durduruldu
+  {{hikeon-gw}} durduruldu

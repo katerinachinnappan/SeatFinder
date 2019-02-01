@@ -1,0 +1,24 @@
+Usage: apic {{login}}                  interactive
+       apic {{login}} OPTIONS          non-interactive
+
+  Authenticate with an {{API Connect}} cloud via the management server
+
+  Options
+    -u, --{{username}} USER              user name (required)
+    -p, --{{password}} PASSWORD          password (required)
+    -s, --{{server}} SERVER              management server endpoint (required)
+    --{{sso}}                            login using federated corporate ID
+    -c, --{{passcode}} PASSCODE          one-time passcode for {{JWT}}
+    —k, --{{apikey}}  APIKEY             login using a Bluemix API Key
+
+  Login to an {{API Connect}} cloud via its management server
+    {{$ apic login}}
+    Enter your {{API Connect}} credentials
+    ? Server: {{mgmnthost.com}}
+    ? Username: {{tommy}}
+    ? Password (typing will be hidden) **********
+    Logged into {{mgmnthost.com}} successfully
+
+  Non-interactive login
+    {{$ apic login --username tommy --password password --server mgmnthost.com}}
+    Logged into {{mgmnthost.com}} successfully

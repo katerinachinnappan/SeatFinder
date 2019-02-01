@@ -1,0 +1,12 @@
+Syntaxis: apic {{loopback:acl}} OPTIES
+
+  Een nieuw ACL-item toevoegen aan de huidige {{LoopBack}}-toepassing
+
+  Opties
+    --skip-cache                     promptantwoorden niet onthouden
+
+  Stabiliteit: prototype
+
+  {{$ apic loopback:acl}}
+  Hierna worden verschillende vragen gesteld om ACL-opties te bepalen en
+  vervolgens een item toe te voegen aan het overeenkomende JSON-modelobject.

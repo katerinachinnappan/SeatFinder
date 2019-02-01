@@ -1,0 +1,35 @@
+Usage: apic {{catalogs}} OPTIONS
+
+  List catalogs contained in organizations the currently authenticated
+  user is a member of
+
+  Options
+    --{{organization}} ORGANIZATION | --{{all-organizations}} (required)
+      -o, --{{organization}} ORGANIZATION  a specific provider organization
+      -O, --{{all-organizations}}          all provider organizations
+    -s, --{{server}} SERVER                management server endpoint (required)
+
+  List the catalogs in the {{climbonorg}} organization on the {{mgmnthost.com}} server
+    {{$ apic catalogs --organization climbonorg --server mgmnthost.com}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/sandbox}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/qa}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/staging}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/production}}
+
+  List the catalogs in all organizations
+    {{$ apic catalogs --all-organizations --server mgmnthost.com}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/sandbox}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/qa}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/staging}}
+    {{apic-catalog://mgmnthost.com/orgs/climbonorg/catalogs/production}}
+    {{apic-catalog://mgmnthost.com/orgs/hikingorg/catalogs/sandbox}}
+    {{apic-catalog://mgmnthost.com/orgs/hikingorg/catalogs/qa}}
+    {{apic-catalog://mgmnthost.com/orgs/hikingorg/catalogs/staging}}
+    {{apic-catalog://mgmnthost.com/orgs/hikingorg/catalogs/production}}
+
+  Type "apic COMMAND -h" for help on the following related commands:
+
+    {{catalogs:create}}   Create a catalog in an organization
+    {{catalogs:get}}      Get information on a catalog in an organization
+    {{catalogs:set}}      Set or update information on a catalog in an organization
+    {{catalogs:delete}}   Delete a catalog in an organization

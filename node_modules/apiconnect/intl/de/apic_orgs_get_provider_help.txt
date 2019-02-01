@@ -1,0 +1,12 @@
+Syntax: apic {{orgs:get}} ORGANISATIONSNAME OPTIONEN
+
+  Informationen zu einer Provider-Organisation abrufen
+
+  Optionen
+    --{{type}} provider
+    -s, --{{server}} SERVER               Management-Server-Endpunkt (erforderlich)
+
+  Informationen zu einer Provider-Organisation abrufen
+    {{$ apic orgs:get climbonorg --server mgmnthost.com}}
+    name: climbonorg
+    display name: Climbon Organization

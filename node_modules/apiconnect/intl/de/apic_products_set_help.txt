@@ -1,0 +1,57 @@
+Syntax: apic {{products:set}} PRODUKTNAME[:VERSION] [KATALOGOPTIONEN | BEREICHSOPTIONEN]
+
+  Ein Produkt in einem Katalog oder Bereich aktualisieren
+
+  Optionen für Katalogbereich
+    --{{status}}
+        {{staged}}                       den Status auf "Bereitgestellt" aktualisieren
+        {{published}}                    den Status auf "Veröffentlicht" aktualisieren
+        {{deprecated}}                   den Status auf "Nicht weiter unterstützt" aktualisieren
+        {{retired}}                      den Status auf "Zurückgezogen" aktualisieren
+        {{archived}}                     den Status auf "Archiviert" aktualisieren
+    --{{visibility}}
+        {{public}}                       nicht authentifizierte oder authentifizierte Benutzer
+        {{authenticated}}                authentifizierte Benutzer
+        ORG | TAG ...                Benutzer in der ORG oder in einer ORG, die mit TAG versehen ist
+    --{{subscribability}}
+        {{authenticated}}                authentifizierte Benutzer
+        ORG | TAG ...                Benutzer in der ORG oder in einer ORG, die mit TAG versehen ist
+    {{-c}}, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    {{-o}}, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+    {{-s}}, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Optionen für Bereichsumfang
+    --{{scope space}}
+    --{{space}} BEREICH                  Bereichsname (erforderlich)
+    --{{status}}
+        {{staged}}                       den Status auf "Bereitgestellt" aktualisieren
+        {{published}}                    den Status auf "Veröffentlicht" aktualisieren
+        {{deprecated}}                   den Status auf "Nicht weiter unterstützt" aktualisieren
+        {{retired}}                      den Status auf "Zurückgezogen" aktualisieren
+        {{archived}}                     den Status auf "Archiviert" aktualisieren
+    --{{visibility}}
+        {{public}}                       nicht authentifizierte oder authentifizierte Benutzer
+        {{authenticated}}                authentifizierte Benutzer
+        ORG | TAG ...                Benutzer in der ORG oder in einer ORG, die mit TAG versehen ist
+    --{{subscribability}}
+        {{authenticated}}                authentifizierte Benutzer
+        ORG | TAG ...                Benutzer in der ORG oder in einer ORG, die mit TAG versehen ist
+    {{-c}}, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    {{-o}}, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+    {{-s}}, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Ein Produkt in einem Katalog veröffentlichen
+    {{$ apic products:set climbon --status published --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated {{climbon}}:1.0.0 in {{climbonorg:production (status: published)}}
+
+  Sichtbarkeit und Abonnierbarkeit eines Produkts in einem Katalog aktualisieren
+    {{$ apic products:set climbon --visibility public --subscribability authenticated --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated {{climbon}}:1.0.0 in {{climbonorg:production}} (visibility: {{public}}, subscribability: {{authenticated}})
+
+  Ein Produkt in einem Bereich veröffentlichen
+    {{$ apic products:set --scope space climbon --status published --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated {{climbon}}:1.0.0 in {{climbonorg:production:flights (status: published)}}
+
+  Sichtbarkeit und Abonnierbarkeit eines Produkts in einem Bereich aktualisieren
+    {{$ apic products:set --scope space climbon --visibility public --subscribability authenticated --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated {{climbon}}:1.0.0 in {{climbonorg:production:flights}} (visibility: {{public}}, subscribability: {{authenticated}})

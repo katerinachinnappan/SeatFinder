@@ -1,0 +1,30 @@
+Syntaxis: apic {{loopback}} OPTIES
+
+  Een {{LoopBack}}-toepassing maken
+
+  Opties
+    -n, --{{name}} NAAM                  naam van de toepassing (optioneel)
+    --{{skip-install}}                   dependency's niet automatisch installeren
+    --{{skip-next-steps}}                geen informatie over "volgende stappen" afdrukken
+    --{{explorer}}                       LoopBack Explorer toevoegen aan het project
+
+  Een {{LoopBack}}-toepassing met de naam {{climbon}} maken
+    {{$ apic loopback --name climbon}}
+    ? Wat is de naam van uw toepassing? {{climbon}}
+    ? Geef de naam op van de directory voor het project: {{climbon}}
+    ? Welk type toepassing hebt u in gedachten? hello-world (project met basiswerkvoorbeeld, inclusief geheugendatabase)
+
+Typ "apic COMMAND -h" voor Help over de volgende aanverwante opdrachten:
+
+  {{create}}                           Artefactdefinities maken
+  {{edit}}                             API Designer uitvoeren
+  {{services}}                         Servicebeheer
+  {{loopback:acl}}                     Een ACL maken
+  {{loopback:boot-script}}             Een {{boot}}-script maken
+  {{loopback:export-api-def}}          {{OpenAPI (Swagger)}}-definities op basis van modellen
+  {{loopback:middleware}}              Middleware maken
+  {{loopback:property}}                Een nieuwe modeleigenschap maken
+  {{loopback:relation}}                Een nieuwe relatie tussen modellen maken
+  {{loopback:remote-method}}           Een nieuwe niet-lokale methode maken
+  {{loopback:swagger}}                 Toepassing genereren op basis van {{OpenAPI (Swagger)}}-definitie
+  {{loopback:refresh}}                 Product- en {{OpenAPI (Swagger)}}-definitie genereren

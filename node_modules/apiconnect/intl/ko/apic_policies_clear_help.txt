@@ -1,0 +1,16 @@
+사용법: apic {{policies:clear}} OPTIONS
+
+  카탈로그의 모든 정책 삭제<구현되지 않음>
+
+  옵션
+    --{{confirm}} CATALOG                확인(필수)
+    -c, --{{catalog}} CATALOG            카탈로그 이름(필수)
+    -o, --{{organization}} ORGANIZATION  제공자 조직 이름(필수)
+    -s, --{{server}} SERVER              관리 서버 엔드포인트(필수)
+
+  안정성: 프로토타입
+
+  {{$ apic policies:clear --confirm production --catalog production --organization climbonorg --server mgmnthost.com}}
+  Deleted {{invokepolicy}}:1.0.0 policy from {{climbonorg:production}}
+  Deleted {{encryptpolicy}}:1.0.0 policy from {{climbonorg:production}}
+  Deleted {{decryptpolicy}}:1.0.0 policy from {{climbonorg:production}}

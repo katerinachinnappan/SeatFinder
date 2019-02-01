@@ -1,0 +1,24 @@
+사용법: apic {{login}}                  대화식
+       apic {{login}} OPTIONS          비대화식
+
+  관리 서버를 통해 {{API Connect}} 클라우드에 인증
+
+  옵션
+    -u, --{{username}} USER              사용자 이름(필수)
+    -p, --{{password}} PASSWORD          비밀번호(필수)
+    -s, --{{server}} SERVER              관리 서버 엔드포인트(필수)
+    --{{sso}}                            연합 회사 ID를 사용하여 로그인
+    -c, --{{passcode}} PASSCODE          {{JWT}}에 대한 일회성 패스코드
+    —k, --{{apikey}}  APIKEY             Bluemix API 키를 사용하여 로그인
+
+  해당 관리 서버를 통해 {{API Connect}} 클라우드에 로그인
+    {{$ apic login}}
+    Enter your {{API Connect}} credentials
+    ? Server: {{mgmnthost.com}}
+    ? Username: {{tommy}}
+    ? Password (typing will be hidden) **********
+    Logged into {{mgmnthost.com}} successfully
+
+  비대화식 로그인
+    {{$ apic login --username tommy --password password --server mgmnthost.com}}
+    Logged into {{mgmnthost.com}} successfully

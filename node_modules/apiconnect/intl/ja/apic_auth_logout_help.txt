@@ -1,0 +1,10 @@
+使用法: apic {{logout}} OPTIONS
+
+  {{API Connect}} クラウドのローカルの認証資格情報を削除します
+
+  オプション
+    -s, --{{server}} SERVER              サーバーの資格情報を削除する (必須)
+
+  {{mgmnthost.com}} のローカルの認証資格情報をクリアします
+    {{$ apic logout --server mgmnthost.com}}
+    {{tommy}} がサーバー {{mgmnthost.com}} からログアウトされました

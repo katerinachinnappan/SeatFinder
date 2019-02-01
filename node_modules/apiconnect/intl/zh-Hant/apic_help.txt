@@ -1,0 +1,43 @@
+用法：{{%APPNAME%}} COMMAND OPTIONS
+
+  選項
+    -h, --{{help}}        指令用法
+    -v, --{{version}}     產品版本
+    --{{ext-version}}     詳細的工具箱版本
+
+指令（鍵入 apic COMMAND -h 以取得其他說明）：
+
+  建立和驗證構件
+    {{config}}          管理配置變數
+    {{create}}          建立開發構件
+    {{edit}}            執行 API 設計程式
+    {{explore}}         執行 API 瀏覽器
+    {{validate}}        驗證開發構件
+
+  建立和測試應用程式
+    {{logs}}            顯示服務日誌
+    {{loopback}}        建立和管理 LoopBack 應用程式
+    {{swiftserver}}     建立和管理 Swift Server Generator 應用程式
+    {{microgateway}}    建立 Micro 閘道應用程式
+    {{props}}           服務內容
+    {{services}}        服務管理
+    {{start}}           啟動服務
+    {{stop}}            停止服務
+
+  發佈到雲端
+    {{apis}}            管理型錄中的 API
+    {{apps}}            管理提供者應用程式
+    {{catalogs}}        管理組織中的型錄
+    {{devapps}}         管理消費者應用程式
+    {{drafts}}          管理草稿中的 API 和產品
+    {{extensions}}      管理型錄中的供應商延伸
+    {{login}}           登入 IBM API Connect 雲端
+    {{logout}}          登出 IBM API Connect 雲端
+    {{members}}         管理成員
+    {{orgs}}            管理組織
+    {{policies}}        管理型錄中的原則
+    {{products}}        管理型錄中的產品
+    {{publish}}         將產品和 API 發佈到型錄
+    {{securegateways}}  管理 Secure Gateway
+    {{spaces}}          管理型錄中的空間
+    {{subscriptions}}   管理訂閱

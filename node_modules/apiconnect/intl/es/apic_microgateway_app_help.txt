@@ -1,0 +1,24 @@
+Uso: apic {{microgateway}} OPCIONES
+
+  Crear una aplicación {{Micro Gateway}}
+
+  Opciones
+    -n, --{{name}} NOMBRE                nombre de la aplicación
+    -s, --{{server}} SERVIDOR            punto final del servidor de gestión
+
+  Estabilidad: prototipo
+
+  Crear una aplicación {{Micro Gateway}} denominada {{my-personal-microgateway}}
+    {{$ apic microgateway --server mgmnthost.com --name my-personal-microgateway}}
+    Creando aplicación microgateway en /Users/user/{{my-personal-microgateway}}
+    Instalando aplicación {{Micro Gateway}}
+    La creación de {{Micro Gateway}} ha sido satisfactoria.
+
+  Crear una aplicación {{Micro Gateway}} en el directorio actual (debe estar vacío)
+    {{$ mkdir my-second-microgateway}}
+    {{$ cd my-second-microgateway}}
+    {{$ apic microgateway --server mgmnthost.com}}
+    ? ¿Cuál es el nombre de la aplicación? ({{my-second-microgateway}})
+    Creando aplicación microgateway en /Users/user/{{my-second-microgateway}}
+    Instalando aplicación {{Micro Gateway}}
+    La creación de {{Micro Gateway}} ha sido satisfactoria.

@@ -1,0 +1,11 @@
+Utilizzo: apic {{loopback:relation}} OPZIONI
+
+  Crea una nuova relazione tra due modelli nell'applicazione {{LoopBack}}
+
+  Opzioni
+    --{{skip-cache}}                     non ricorda le risposte
+
+  Stabilità: prototipo
+
+  Aggiungi una relazione
+    {{$ apic loopback:relation}}

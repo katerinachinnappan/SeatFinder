@@ -1,0 +1,35 @@
+使用法: apic {{apps}} OPTIONS
+
+  現在認証されているユーザーがメンバーとして属している組織内のプロバイダー・
+  アプリケーションをリストします
+
+  オプション
+    --{{organization}} ORGANIZATION | --{{all-organizations}} (必須)
+      -o, --{{organization}} ORGANIZATION  特定のプロバイダー組織
+      -O, --{{all-organizations}}          すべてのプロバイダー組織
+    -s, --{{server}} SERVER                管理サーバー・エンドポイント (必須)
+
+  mgmnthost.com サーバーの {{climbonorg}} 組織内のプロバイダー・アプリケーションをリストします
+    {{$ apic apps --organization climbonorg --server mgmnthost.com}}
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-sandbox
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-qa
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-staging
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-production
+
+  すべての組織内のプロバイダー・アプリケーションをリストします
+    {{$ apic apps --all-organizations --server mgmnthost.com}}
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-sandbox
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-qa
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-staging
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-production
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-sandbox
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-qa
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-staging
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-production
+
+「apic COMMAND -h」と入力すると、以下のコマンドの詳細が表示されます
+
+  {{apps:get}}        アプリケーションに関する情報を取得します
+  {{apps:set}}        アプリケーションを更新します
+  {{apps:build}}      アプリケーションを作成します
+  {{apps:publish}}    アプリケーションをプロバイダー・アプリケーションに公開します

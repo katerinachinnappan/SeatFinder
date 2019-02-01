@@ -1,0 +1,6 @@
+Utilizzo: apic {{plugins:uninstall}} PLUG-IN
+
+  Disinstalla un plug-in. È possibile utilizzare `apic {{plugins:list}}` per richiamare un elenco di
+  plug-in attualmente installati.
+
+  {{$ apic plugins:uninstall my-plugin}}

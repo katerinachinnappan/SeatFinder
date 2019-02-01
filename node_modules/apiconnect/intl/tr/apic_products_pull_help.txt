@@ -1,0 +1,39 @@
+Kullanım: apic {{products:pull}} ÜRÜN_ADI[:SÜRÜM] [KATALOG_SEÇENEKLERİ | ALAN_SEÇENEKLERİ]
+
+  Bir katalogdan ya da alandan ürün çek
+
+  Katalog kapsamı için seçenekler
+    {{--product-only}}                   ürünü çek, ancak başvuru api'lerini çekme
+    {{-c}}, --{{catalog}} KATALOG        katalog adı (zorunludur)
+    {{-o}}, --{{organization}} KURULUŞ   sağlayıcı kuruluşu adı (zorunludur)
+    {{-s}}, --{{server}} SUNUCU          yönetim sunucusu uç noktası (zorunludur)
+
+  Alan kapsamı için seçenekler
+    --{{scope space}}
+    --{{space}} ALAN                     alan adı (zorunludur)
+    {{--product-only}}                   ürünü çek, ancak başvuru api'lerini çekme
+    {{-c}}, --{{catalog}} KATALOG        katalog adı (zorunludur)
+    {{-o}}, --{{organization}} KURULUŞ   sağlayıcı kuruluşu adı (zorunludur)
+    {{-s}}, --{{server}} SUNUCU          yönetim sunucusu uç noktası (zorunludur)
+
+  Ürün tanımını ve başvurulan API'lerini çekmek için:
+    {{$ apic products:pull climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 ürün tanımı {{climbonorg:production [climbon_1.0.0.yaml]}} içinden çekildi
+    {{routes}}:1.0.0 API tanımı {{climbonorg:production [routes_1.0.0.yaml]}} içinden çekildi
+    {{ascents}}:1.0.0 API tanımı {{climbonorg:production [ascents_1.0.0.yaml]}} içinden çekildi
+
+  Başvurulan API'leri olmaksızın ürün tanımını çekmek için:
+    {{$ apic products:pull climbon --product-only --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon:1.0.0}} ürün tanımı {{climbonorg:production [climbon_1.0.0.yaml]}} içinden çekildi
+
+  Ürün tanımını ve başvurulan API'lerini bir WSDL belgesinden çekmek için:
+    {{$ apic products:pull globalweather-product --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{globalweather-product:1.0.0}} ürün tanımı {{climbonorg:production [globalweather-product_1.0.0.yaml]}} içinden çekildi
+    {{globalweather:1.0.0}} API tanımı {{climbonorg:production [globalweather_1.0.0.yaml]}} içinden çekildi
+    {{globalweather:1.0.0}} API WSDL tanımı {{climbonorg:production [globalweather_1.0.0.wsdl]}} içinden çekildi
+
+  Bir alandan ürün tanımını ve başvurulan API'lerini çek
+    {{$ apic products:pull --scope space climbon --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 ürün tanımı {{climbonorg:production [climbon_1.0.0.yaml]}} içinden çekildi
+    {{routes}}:1.0.0 API tanımı {{climbonorg:production [routes_1.0.0.yaml]}} içinden çekildi
+    {{ascents}}:1.0.0 API tanımı {{climbonorg:production [ascents_1.0.0.yaml]}} içinden çekildi

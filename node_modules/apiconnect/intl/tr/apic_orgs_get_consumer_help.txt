@@ -1,0 +1,21 @@
+Kullanım: apic {{orgs:get}} KURULUŞ_ADI --{{type consumer}} SEÇENEKLER
+
+  Bir tüketici kuruluşuyla ilgili bilgileri alır
+
+  Seçenekler
+    --{{space}} ALAN                     alan adı (isteğe bağlıdır)
+    -c, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    -o, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    -s, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  Bir tüketici kuruluşuyla ilgili bilgi al
+    {{$ apic orgs:get salesorg --catalog climbonorg.prod --server mgmnthost.com}}
+    ad: {{salesorg}}
+    görünen ad: {{Sales Organization}}
+    sahip adı: {{Shavon}}
+    sahibin e-postası: {{shavon@ibm.com}}
+    sahibin kullanıcı adı: {{shavon}}
+    durum: active
+    topluluklar: sales, partner

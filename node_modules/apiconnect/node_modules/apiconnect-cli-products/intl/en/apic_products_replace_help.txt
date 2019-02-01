@@ -1,0 +1,36 @@
+Usage: apic {{products:replace}} OLD_PRODUCT_NAME[:VERSION] NEW_PRODUCT_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Replace a published or deprecated product in a catalog or space with another product
+
+  Options for catalog scope
+    --{{plans}} SOURCE_PLAN_NAME:TARGET_PLAN_NAME ...   old to new product plan mappings (required)
+    {{-c}}, --{{catalog}} CATALOG            catalog name (required)
+    {{-o}}, --{{organization}} ORGANIZATION  provider organization name (required)
+    {{-s}}, --{{server}} SERVER              management server endpoint (required)
+
+  Options for space scope
+    --{{scope space}}
+    --{{space}} SPACE                    space name (required)
+    --{{plans}} SOURCE_PLAN_NAME:TARGET_PLAN_NAME ...   old to new product plan mappings (required)
+    {{-c}}, --{{catalog}} CATALOG            catalog name (required)
+    {{-o}}, --{{organization}} ORGANIZATION  provider organization name (required)
+    {{-s}}, --{{server}} SERVER              management server endpoint (required)
+
+  Stability: prototype
+
+  Replace a product with a more recent version using the catalog configuration variable
+    {{$ config:set catalog=apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+    {{$ apic products:replace climbon:1.0.0 climbon:2.0.0}}
+    Replaced {{climbon}}:1.0.0 with {{climbon}}:2.0.0 in {{climbon}}:sb
+
+  Replace a product with a different product
+    {{$ apic products:replace climbon adventure-sports -c production -o climbonorg -s mgmnthost.com}}
+    Replaced {{climbon}}:2.0.1 with {{adventure-sports}}:1.0.0 in {{climbonorg:production}}
+
+  Replace a product with a new version and map all the old plans to new plans
+    {{$ apic products:replace climbon:1.0.1 climbon:1.1.0 --plans "freemium:silver basic:silver premium:gold" -c production -o climbonorg -s mgmnthost.com}}
+    Replaced {{climbon}}:1.0.1 with {{climbon}}:1.1.0 in {{climbonorg:production}}
+
+  Replace a product with a different product in a space
+    {{$ apic products:replace --scope space climbon adventure-sports --space flights -c production -o climbonorg -s mgmnthost.com}}
+    Replaced {{climbon}}:2.0.1 with {{adventure-sports}}:1.0.0 in {{climbonorg:production:flights}}

@@ -1,0 +1,44 @@
+Kullanım: {{apic apis:get}} API_ADI[:SÜRÜM] [KATALOG_SEÇENEKLERİ | ALAN_SEÇENEKLERİ]
+
+  Bir katalogdaki ya da alandaki API ile ilgili bilgileri al
+
+  Katalog kapsamı için seçenekler
+    --{{scope catalog}}                       (varsayılan)
+    -{{c}}, --{{catalog}} KATALOG             katalog adı (zorunludur)
+    -{{o}}, --{{organization}} KURULUŞ        sağlayıcı kuruluşu adı (zorunludur)
+    -{{s}}, --{{server}} SUNUCU               yönetim sunucusu uç noktası (zorunludur)
+
+  Alan kapsamı için seçenekler
+    --{{scope space}}
+    --{{space}} ALAN                          alan adı (zorunludur)
+    -{{c}}, --{{catalog}} KATALOG             katalog adı (zorunludur)
+    -{{o}}, --{{organization}} KURULUŞ        sağlayıcı kuruluşu adı (zorunludur)
+    -{{s}}, --{{server}} SUNUCU               yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  Bir katalogdan API al
+    {{$ apic apis:get routes --catalog production --organization climbonorg --server mgmnthost.com}}
+    ad: {{routes}}
+    sürüm: {{1.0.0}}
+    başlık: Climbing routes
+    temel yol: {{/routes}}
+    durum: Online
+    üretim uç noktaları: {{https://gatewayhost.com/climbonorg/production/v1/routes}}
+    geliştirme uç noktaları: {{https://gatewayhost.com/climbonorg/production/v1/routes}}         ürünler: {{"climbon:1.0.0" "climbon:2.0.0"}}
+    katalog: {{production}}
+    kuruluş: {{climbonorg}}
+
+  Bir alandan API al
+    {{$ apic apis:get routes --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    ad: {{routes}}
+    sürüm: {{1.0.0}}
+    başlık: Climbing routes
+    temel yol: {{/routes}}
+    durum: Online
+    üretim uç noktaları: {{https://gatewayhost.com/climbonorg/production/v1/routes}}
+    geliştirme uç noktaları: {{https://gatewayhost.com/climbonorg/production/v1/routes}}
+    ürünler: {{"climbon:1.0.0" "climbon:2.0.0"}}
+    alanlar: {{sp1}}
+    katalog: {{production}}
+    kuruluş: {{climbonorg}}

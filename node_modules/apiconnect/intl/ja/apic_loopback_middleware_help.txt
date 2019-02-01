@@ -1,0 +1,12 @@
+使用法: apic {{loopback:middleware}} OPTIONS
+
+  {{LoopBack}} アプリケーションで新しいミドルウェアを作成します
+
+  オプション
+    -n, --{{name}} NAME                  ミドルウェア名 (オプション)
+    --{{skip-cache}}                     プロンプトに対する応答を記憶しない
+
+  Stability: prototype
+
+  ミドルウェア {{"myMiddleware"}} を定義するエントリーを {{/server/middleware.json}} に追加します
+    {{$ apic loopback:middleware --name myMiddleware}}

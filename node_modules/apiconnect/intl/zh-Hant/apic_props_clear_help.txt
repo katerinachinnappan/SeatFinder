@@ -1,0 +1,30 @@
+用法：apic {{props:clear}} OPTIONS
+
+  刪除所有服務內容
+
+  選項
+    -r, --{{remote}}                     使用遠端應用程式目標（預設為本端）
+    -S, --{{service}} SERVICE_NAME       服務名稱
+    -o, --{{organization}} ORGANIZATION  提供者組織
+    -s, --{{server}} SERVER              伺服器端點主機
+
+  清除 LoopBack 應用程式服務的內容
+    {{$ apic props:clear}}
+    [{{climbon}}] 已刪除 prop1: value1
+    [{{climbon}}] 已刪除 prop2: value2
+    [{{climbon}}] 已刪除 prop3: value3
+
+  明確清除 LoopBack 應用程式服務的內容
+    {{$ apic props:clear --service climbon}}
+    已刪除 prop1: value1
+    已刪除 prop2: value2
+    已刪除 prop3: value3
+
+  清除 {{Micro Gateway}} 服務的內容
+    {{$ apic props:clear --service climbon-gw}}
+    已刪除 prop1: value1
+    已刪除 prop2: value2
+    已刪除 prop3: value3
+
+  清除遠端應用程式的內容
+    {{$ apic props:clear --remote --service climbon --organization climbon --server mgmnthost.com}}

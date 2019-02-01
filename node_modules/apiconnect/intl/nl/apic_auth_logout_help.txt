@@ -1,0 +1,10 @@
+Syntaxis: apic {{logout}} OPTIES
+
+  Legitimatiegegevens voor lokale verificatie van {{API Connect}}-cloud verwijderen
+
+  Opties
+    -s, --{{server}} SERVER              legitimatiegegevens voor de server verwijderen (verplicht)
+
+  Legitimatiegegevens voor lokale verificatie van {{mgmnthost.com}} wissen
+    {{$ apic logout --server mgmnthost.com}}
+    {{tommy}} afgemeld van server {{mgmnthost.com}}

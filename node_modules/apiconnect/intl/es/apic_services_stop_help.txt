@@ -1,0 +1,23 @@
+Uso: apic {{stop}} OPCIONES
+
+  En el contexto de una aplicación LoopBack, detener la aplicación LoopBack y {{Micro Gateway}}.  En aplicaciones no LoopBack, detener Micro Gateway.
+
+  Opciones
+    --{{all}}                            detiene todas las aplicaciones LoopBack y {{Micro Gateways}}
+    -S, --{{service}} NOMBRE_SERVICIO    nombre del servicio que debe detenerse
+
+  Detener todos los servicios de la aplicación actual
+  {{$ apic stop}}
+  Se ha detenido {{climbon}}
+  Se ha detenido {{climbon-gw}}
+
+  Detener un servicio específico en ejecución en la aplicación actual
+  {{$ apic stop --service climbon-gw}}
+  Se ha detenido {{climbon-gw}}
+
+  Detener todos los servicios en ejecución en todas las aplicaciones
+  {{$ apic stop --all}}
+  Se ha detenido {{climbon}}
+  Se ha detenido {{climbon-gw}}
+  Se ha detenido {{hikeon}}
+  Se ha detenido {{hikeon-gw}}

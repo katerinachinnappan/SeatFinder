@@ -1,0 +1,30 @@
+使用法: apic {{props:clear}} OPTIONS
+
+  すべてのサービス・プロパティーを削除します
+
+  オプション
+    -r, --{{remote}}                     リモートのアプリケーション・ターゲットを使用する (デフォルトはローカル)
+    -S, --{{service}} SERVICE_NAME       サービス名
+    -o, --{{organization}} ORGANIZATION  プロバイダー組織
+    -s, --{{server}} SERVER              サーバー・エンドポイント・ホスト
+
+  LoopBack アプリケーション・サービスのプロパティーをクリアします
+    {{$ apic props:clear}}
+    [{{climbon}}] prop1 が削除されました: value1
+    [{{climbon}}] prop2 が削除されました: value2
+    [{{climbon}}] prop3 が削除されました: value3
+
+  LoopBack アプリケーション・サービスのプロパティーを明示的にクリアします
+    {{$ apic props:clear --service climbon}}
+    prop1 が削除されました: value1
+    prop2 が削除されました: value2
+    prop3 が削除されました: value3
+
+  {{Micro Gateway}} サービスのプロパティーをクリアします
+    {{$ apic props:clear --service climbon-gw}}
+    prop1 が削除されました: value1
+    prop2 が削除されました: value2
+    prop3 が削除されました: value3
+
+  リモート・アプリケーションのプロパティーをクリアします
+    {{$ apic props:clear --remote --service climbon --organization climbon --server mgmnthost.com}}

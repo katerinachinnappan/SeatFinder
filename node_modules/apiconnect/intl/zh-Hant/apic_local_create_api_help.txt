@@ -1,0 +1,66 @@
+用法：apic {{create --type api}}             互動式
+      apic {{create --type api}} OPTIONS   非互動式
+
+  建立 {{OpenAPI (Swagger)}} 定義
+
+  選項
+    --{{title}} TITLE                    標題值（必要）
+    --{{name}} NAME                      {{x-ibm-name}} 值（預設值衍生自標題）
+    --{{basepath}} BASEPATH              基本路徑值（預設值衍生自名稱）
+    --{{template}} Template              使用提供者範本（如果空白，則預設為 apic 範本）
+    --{{filename}} API_FILENAME          檔名（預設值衍生自名稱）
+    --{{product}} PRODUCT_TITLE          產生一個參照 API 的產品定義
+    --{{hostname}} HOSTNAME              主機值（預設為 {{$(catalog.host)}}）
+    --{{schemes}} SCHEMES                架構清單（有效選項為 http、https、ws 和 wss）
+    --{{target-url}} TARGET_URL          目標 URL
+    -v, --{{version}} VERSION            版本值（預設為 1.0.0）
+    --{{wsdl}} FILENAME                  作為來源的 wsdl 檔（透過 {{apic login}} 鑑別時需要）
+
+  建立 API
+    {{$ apic create --type api --title Routes}}
+    已建立 {{routes.yaml}} API 定義 {{[routes:1.0.0]}}
+
+  建立 API 並產生參照此 API 的產品
+    {{$ apic create --type api --title Routes --product "Climb On"}}
+    已建立 {{routes.yaml}} API 定義 {{[routes:1.0.0]}}
+    已建立 {{climb-on.yaml}} 產品定義 {{[climb-on:1.0.0]}}
+
+  以互動方式建立 API
+    {{$ apic create --type api}}
+    標題：Routes
+    名稱 ({{routes}})：{{routes}}
+    檔案 ({{routes.yaml}})：{{routes.yaml}}
+    範本：()
+    基本路徑 ({{/routes}})：{{/routes}}
+    主機名稱 ({{$(catalog.host)}})：{{$(catalog.host)}}
+    架構：
+    目標 URL：()
+    建立產品 [true]：true
+    產品標題（Routes 產品）：{{Climb On}}
+    產品名稱 ({{climb-on}})：{{climb-on}}
+    產品檔案 ({{climb-on.yaml}})：{{climb-on.yaml}}
+    已建立 {{routes.yaml}} API 定義 {{[routes:1.0.0]}}
+    已建立 {{climb-on.yaml}} 產品定義 {{[climb-on:1.0.0]}}
+
+  從 WSDL 文件建立 API
+    {{$ apic create --type api --wsdl globalweather.wsdl}}
+    已建立 {{globalweather.yaml}} API 定義 {{[globalweather.yaml:1.0.0]}}
+
+  使用 APIC 的預設 {{OAuth 2}} 提供者範本建立 API
+    {{$ apic create --type api --title "OAuth2 Provider" --template oauth2}}
+    已建立 {{oauth2-provider.yaml}} API 定義 {{[oauth2-provider:1.0.0]}}
+
+  使用您的其中一個範本建立 API
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy.hbs staging.hbs
+    {{$ apic create --type api --title "Proxy Provider" --template proxy}}
+    已建立 {{proxy-provider.yaml}} API 定義 {{[proxy-provider:1.0.0]}}
+
+  使用您的預設範本建立 API
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy.hbs staging.hbs
+    {{$ apic config:set --global template-default-api=staging}}
+    {{$ apic create --type api --title "Staging Provider"}}
+    已建立 {{staging-provider.yaml}} API 定義 {{[staging-provider:1.0.0]}}

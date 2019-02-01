@@ -1,0 +1,21 @@
+用法：apic {{plugins:install}} PLUGIN
+
+將外掛程式安裝到 apic 指令行公用程式。
+PLUGIN 可以是下列其中一項：
+
+透過 Tarball 保存檔來安裝 -- 內容為 {{npm}} 套件的 {{.tgz}} 檔：
+{{$ apic plugins:install my-plugin-v1.0.0.tgz}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +-- my-plugin@1.0.0
+
+透過目錄路徑來安裝 -- 含有 {{npm}} 套件的資料夾的磁碟內存路徑：
+{{$ apic plugins:install path/to/my-plugin}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +-- my-plugin@1.0.0
+
+透過 npm 登錄來安裝（預設值）-- 將從預設 {{npm}} 登錄中擷取的套件名稱 ({{npm config get registry}})：
+{{$ apic plugins:install my-plugin}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +-- my-plugin@1.0.0
+
+執行這個指令之後，您可以執行 `apic {{plugins:list}}`，以檢查您的外掛程式是否已安裝。

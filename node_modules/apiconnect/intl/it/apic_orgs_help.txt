@@ -1,0 +1,11 @@
+Utilizzo: apic {{orgs}} OPZIONI
+
+  Elenca le organizzazioni di cui è membro l'utente attualmente autenticato
+
+  Opzioni
+    --{{type provider|consumer}}          valore predefinito provider <Stabilità: prototipo>
+    -s, --{{server}} SERVER               endpoint server di gestione (obbligatorio)
+  
+  Utilizzare i seguenti comandi per aprire la guida per ciascun tipo di organizzazione:
+    {{orgs --type provider -h}}
+    {{orgs --type consumer -h}}

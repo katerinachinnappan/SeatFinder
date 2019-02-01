@@ -1,0 +1,25 @@
+使用法: apic {{components}}
+
+  コンポーネントをリストします
+
+  オプション
+    --{{organization}} ORGANIZATION | --all-organizations (必須)
+      {{-o}}, --{{organization}} ORGANIZATION  特定のプロバイダー組織
+      {{-o}}, --{{all-organizations}}          すべてのプロバイダー組織
+    {{-s}}, --{{server}} SERVER                管理サーバー・エンドポイント (必須)
+
+  すべての組織内のすべてのコンポーネントをリストします
+    {{$ apic components --all-organizations --server mgmnthost.com}}
+    {{climbonorg:staging}} の {{climbon}}:1.0.0
+    {{climbonorg:production}} の {{climbon}}:1.0.0
+    {{climbonorg:sandbox}} の {{climbon}}:1.0.1
+    {{climbonorg:qa}} の {{climbon}}:1.0.1
+    {{climbonorg:production}} の {{climbon}}:1.0.1
+    {{climbonorg:production}} の {{yosar}}:2.0.0
+    {{hikingorg:staging}} の {{trails}}:1.0.0
+    {{hikingorg:production}} の {{trails}}:2.0.0
+
+「apic COMMAND -h」と入力すると、以下のコマンドの詳細が表示されます
+
+  {{components:get}}                      カタログ内のコンポーネントに関する情報を取得します
+

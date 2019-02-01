@@ -1,0 +1,21 @@
+Kullanım: apic swiftserver SEÇENEKLER
+
+  Bir Swift Server Generator uygulaması oluştur
+
+  Seçenekler
+  -n, --name NAME                  uygulama adı (isteğe bağlı)
+
+  Kararlılık durumu: prototip
+
+  Bookshop adında bir uygulama oluşturun
+  $ apic swiftserver
+  ? Uygulamanızın adı ne? bookshop
+  ? Projeyi içerecek dizin adını girin: bookshop
+  ? Veri deposunu seçin: memory
+
+Aşağıdaki ilgili komutlara ilişkin yardım için "apic KOMUT -h" yazın:
+
+  create                           Yapay nesne tanımları oluştur
+  swiftserver:property             Yeni bir model özelliği oluştur
+  swiftserver:refresh              Bir ürün ve OpenAPI (Swagger) tanımı oluştur
+

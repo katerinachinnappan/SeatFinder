@@ -1,0 +1,15 @@
+Syntax: apic {{securegateways:set}} GATEWAY-ID OPTIONEN
+
+  Informationen zu einem Secure Gateway in einer Organisation festlegen oder aktualisieren
+
+  Optionen
+    --{{name}} NAME                            Name des Secure Gateway
+    --{{status enabled | disabled}} STATUS     Status des Secure Gateway
+    -o, --{{organization}} ORGANISATION        eine bestimmte Provider-Organisation (erforderlich)
+    -s, --{{server}} SERVER                    Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  Secure Gateway in der {{climbonorg}}-Organisation auf dem {{mgmnthost.com}}-Server aktualisieren
+    {{$ apic securegateways:set ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com --status enabled}}
+    Updated secure gateway {{ctHEKS9ztEH_stage_ng}} in {{climbonorg}}

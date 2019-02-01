@@ -1,0 +1,27 @@
+用法：apic {{policies}} OPTIONS
+
+  列出目录中的策略
+
+  选项
+    --{{catalog}} CATALOG | --{{all-catalogs}} （必需）
+      -c, --{{catalog}} CATALOG            特定目录
+      -C, --{{all-catalogs}}               所有目录
+    --{{organization}} ORGANIZATION | --{{all-organizations}} （必需）
+      -o, --{{organization}} ORGANIZATION  特定提供者组织
+      -O, --{{all-organizations}}          所有提供者组织
+    -s, --{{server}} SERVER                管理服务器端点（必需）
+
+  稳定性：原型
+
+  列出生产目录中的策略
+    {{$ apic policies --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{invokepolicy}}:1.0.0 in {{climbonorg:production}}
+    {{jwepolicy}}:1.0.0 in {{climbonorg:productiong}}
+
+  输入“apic COMMAND -h”以获取有关以下命令的更多信息：
+
+    {{policies:publish}}    将策略发布到目录
+    {{policies:get}}        获取有关目录中策略的信息
+    {{policies:pull}}       从目录获取某个策略
+    {{policies:clone}}      从目录获取所有策略
+    {{policies:delete}}     删除目录中的某个策略

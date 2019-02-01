@@ -1,0 +1,15 @@
+Kullanım: apic {{plugins}}
+
+  Kurulu olan tüm eklentileri listeler
+
+  {{$ apic plugins}}
+  apiconnect-cli-config 1.0.0
+  apiconnect-cli-create 1.0.0
+  apiconnect-cli-edit 1.0.0
+  ...
+  ...
+
+  Aşağıdaki komutlarla ilgili yardım için "apic KOMUT --{{help}}" yazın:
+
+  {{plugins:install}}      Bir eklenti kur
+  {{plugins:uninstall}}    Bir eklentiyi kaldır

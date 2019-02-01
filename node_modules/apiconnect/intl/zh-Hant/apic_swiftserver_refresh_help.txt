@@ -1,0 +1,9 @@
+用法：apic swiftserver:refresh
+
+  從 Swift Server Generator 應用程式模型產生
+  產品和 API 定義
+
+  穩定性：原型
+
+  $ apic swiftserver:refresh
+

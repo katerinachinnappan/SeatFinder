@@ -1,0 +1,26 @@
+Syntaxis: apic {{policies}} OPTIES
+
+  Lijst van beleidsdefinities in een catalogus
+
+  Opties
+    --{{catalog}} CATALOGUS | --{{all-catalogs}} (verplicht)
+      -c, --{{catalog}} CATALOGUS          een specifieke catalogus
+      -C, --{{all-catalogs}}               alle catalogi
+    --{{organization}} ORGANISATIE | --{{all-organizations}} (verplicht)
+      -o, --{{organization}} ORGANISATIE   een specifieke providerorganisatie
+      -O, --{{all-organizations}}          alle providerorganisaties
+    -s, --{{server}} SERVER                eindpunt van beheerserver (verplicht)
+
+  Stabiliteit: prototype
+
+  Lijst afbeelden van beleidsdefinities in de catalogus production     {{$ apic policies --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{invokepolicy}}:1.0.0 in {{climbonorg:production}}
+    {{jwepolicy}}:1.0.0 in {{climbonorg:productiong}}
+
+  Typ "apic COMMAND -h" voor meer informatie over de volgende opdrachten:
+
+    {{policies:publish}}    Een beleid publiceren naar een catalogus
+    {{policies:get}}        Informatie over een beleid in een catalogus ophalen
+    {{policies:pull}}       Beleid ophalen uit een catalogus
+    {{policies:clone}}      Alle beleidsdefinities ophalen uit een catalogus
+    {{policies:delete}}     Een beleid in een catalogus wissen

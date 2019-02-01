@@ -1,0 +1,41 @@
+Syntaxe : apic {{drafts}} OPTIONS
+
+  Répertorier les API et les produits dans les brouillons
+
+  Options
+    --{{type api | product}}                                      classer la liste par type de définition
+    --{{organization}} ORGANISATION | --{{all-organizations}}     (obligatoire)
+      -{{o}}, --{{organization}} ORGANISATION                     une organisation de type fournisseur spécifique
+      -{{O}}, --{{all-organizations}}                             toutes les organisations de type fournisseur
+      -{{s}}, --{{server}} SERVEUR                                noeud final du serveur de gestion (obligatoire)
+
+  Répertorier les définitions d'API et de produit dans les brouillons
+    {{$ apic drafts --organization climbonorg --server mgmnthost.com}}
+    Définition de produit {{climbon}}:1.0.0 dans {{climbonorg:drafts}}
+    Définition de produit {{climbon}}:1.0.1 dans {{climbonorg:drafts}}
+    Définition d'API {{routes}}:1.0.0 dans {{climbonorg:drafts}}
+    Définition d'API {{ascents}}:1.0.0 dans {{climbonorg:drafts}}
+
+  Répertorier les définitions d'API dans les brouillons
+ {{$ apic drafts --type api --organization climbonorg --server mgmnthost.com}}
+    Définition d'API {{routes}}:1.0.0 dans {{climbonorg:drafts}}
+    Définition d'API {{ascents}}:1.0.0 dans {{climbonorg:drafts}}
+
+  Répertorier les définitions dans les brouillons dans toutes les organisations
+    {{$ apic drafts --all-organizations --server mgmnthost.com}}
+    Définition de produit {{climbon}}:1.0.0 dans {{climbonorg:drafts}}
+    Définition de produit {{climbon}}:1.0.1 dans {{climbonorg:drafts}}
+    Définition d'API {{routes}}:1.0.0 dans {{climbonorg:drafts}}
+    Définition d'API {{ascents}}:1.0.0 dans {{climbonorg:drafts}}
+    Définition de produit {{hiking}}:1.0.0 dans {{hikingorg:drafts}}
+    Définition d'API {{trails}}:1.0.0 dans {{hikingorg:drafts}}
+
+Pour plus d'informations sur les commandes suivantes, entrez "apic COMMANDE -h" :
+
+  {{drafts:push}}     Envoyer les définitions de produit ou d'API locales dans des brouillons
+  {{drafts:pull}}     Extraire des définitions d'API ou de produit depuis des brouillons
+  {{drafts:clone}}    Extraire toutes les définitions d'API et de produit des brouillons
+  {{drafts:get}}      Obtenir des informations sur une définition d'API ou de produit dans les brouillons
+  {{drafts:publish}}  Publier un produit et ses API référencées dans des brouillons vers un catalogue ou un espace
+  {{drafts:delete}}   Supprimer une définition d'API ou de produit des brouillons
+  {{drafts:clear}}    Supprimer toutes les définitions d'API et de produit des brouillons

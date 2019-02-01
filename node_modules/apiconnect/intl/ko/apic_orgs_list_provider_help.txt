@@ -1,0 +1,20 @@
+사용법: apic {{orgs}} OPTIONS
+       apic {{orgs}} --{{type provider}} OPTIONS
+
+  현재 인증된 사용자가 구성원인 제공자 조직 나열
+
+  옵션
+    --{{type provider}}
+    -s, --{{server}} SERVER               관리 서버 엔드포인트(필수)
+
+  현재 인증된 사용자가 mgmnthost.com의 구성원인 조직(제공자 조직) 나열
+    {{$ apic orgs --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+    {{$ apic orgs --type provider --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+  다음 관련 명령에 대한 도움말을 보려면 "apic COMMAND -h"를 입력하십시오.
+    {{orgs:get}}          제공자 조직에 대한 정보 가져오기

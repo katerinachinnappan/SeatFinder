@@ -1,0 +1,16 @@
+Usage: apic {{loopback:export-api-def}} OPTIONS
+
+  Generate {{OpenAPI (Swagger)}} definitions from the {{LoopBack}} application models
+
+  Options
+    -o, --{{output}} FILE                output file name
+    --{{json}}                           use JSON representation (default is YAML)
+    --{{skip-cache}}                     do not remember prompt answers
+
+  Stability: prototype
+
+  Generate {{OpenAPI (Swagger)}} in YAML format to standard output
+    {{$ apic loopback:export-api-def}}
+
+  Generate {{OpenAPI (Swagger)}} in JSON format to the file {{swagger.json}}
+    {{$ apic loopback:export-api-def --json --output swagger}}

@@ -1,0 +1,66 @@
+用法： apic {{create --type api}}           交互式
+       apic {{create --type api}} OPTIONS   非交互式
+
+  创建 {{OpenAPI (Swagger)}} 定义
+
+  选项
+    --{{title}} TITLE                    标题值（必需）
+    --{{name}} NAME                      {{x-ibm-name}} 值（派生自标题的缺省值）
+    --{{basepath}} BASEPATH              基本路径值（派生自名称的缺省值）
+    --{{template}} Template              使用提供者模板（如果为空，那么缺省值为 apic 模板）
+    --{{filename}} API_FILENAME          文件名（派生自名称的缺省值）
+    --{{product}} PRODUCT_TITLE          生成引用 API 的产品定义
+    --{{hostname}} HOSTNAME              主机值（缺省值 {{$(catalog.host)}}）
+    --{{schemes}} SCHEMES                方案列表（有效选项为 http、https、ws 和 wss）
+    --{{target-url}} TARGET_URL          目标 URL
+    -v, --{{version}} VERSION            版本值（缺省值为 1.0.0）
+    --{{wsdl}} FILENAME                  要用作源的 wsdl 文件（需要通过 {{apic login}} 进行认证）
+
+  创建 API
+    {{$ apic create --type api --title Routes}}
+    Created {{routes.yaml}} API definition {{[routes:1.0.0]}}
+
+  创建 API 并生成引用 API 的产品
+    {{$ apic create --type api --title Routes --product "Climb On"}}
+    Created {{routes.yaml}} API definition {{[routes:1.0.0]}}
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  以交互方式创建 API
+    {{$ apic create --type api}}
+    Title: Routes
+    Name ({{routes}}): {{routes}}
+    File ({{routes.yaml}}): {{routes.yaml}}
+    Template: ()
+    Basepath ({{/routes}}): {{/routes}}
+    Hostname ({{$(catalog.host)}}): {{$(catalog.host)}}
+    Schemes:
+    Target url: ()
+    Create product [true]: true
+    Product title (Routes Product): {{Climb On}}
+    Product name ({{climb-on}}): {{climb-on}}
+    Product file ({{climb-on.yaml}}): {{climb-on.yaml}}
+    Created {{routes.yaml}} API definition {{[routes:1.0.0]}}
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  从 WSDL 文档创建 API
+    {{$ apic create --type api --wsdl globalweather.wsdl}}
+    Created {{globalweather.yaml}} API definition {{[globalweather.yaml:1.0.0]}}
+
+  使用 APIC 的缺省 {{OAuth 2}} 提供者模板创建 API
+    {{$ apic create --type api --title "OAuth2 Provider" --template oauth2}}
+    Created {{oauth2-provider.yaml}} API definition {{[oauth2-provider:1.0.0]}}
+
+  使用您的一个模板创建 API
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy.hbs staging.hbs
+    {{$ apic create --type api --title "Proxy Provider" --template proxy}}
+    Created {{proxy-provider.yaml}} API definition {{[proxy-provider:1.0.0]}}
+
+  使用缺省模板创建 API
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy.hbs staging.hbs
+    {{$ apic config:set --global template-default-api=staging}}
+    {{$ apic create --type api --title "Staging Provider"}}
+    Created {{staging-provider.yaml}} API definition {{[staging-provider:1.0.0]}}

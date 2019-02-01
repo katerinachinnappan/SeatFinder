@@ -1,0 +1,24 @@
+Syntaxe : apic {{login}}                  interactif
+       apic {{login}} OPTIONS          non interactif
+
+  S'authentifier auprès d'un cloud {{API Connect}} via le sereur de gestion
+
+  Options
+    -u, --{{username}} UTILISATEUR       nom d'utilisateur (obligatoire)
+    -p, --{{password}} MOT DE PASSE      mot de passe (obligatoire)
+    -s, --{{server}} SERVEUR             noeud final du serveur de gestion (obligatoire)
+    --{{sso}}                            connexion à l'aide d'un ID d'entreprise fédéré
+    -c, --{{passcode}} CODE ACCES        code d'accès à usage unique pour {{JWT}}
+    —k, --{{apikey}}  CLE D'API          connexion à l'aide d'une clé d'API Bluemix
+
+  Se connecter à un cloud {{API Connect}} par le biais de son serveur de gestion
+    {{$ apic login}}
+    Entrer vos données d'identification {{API Connect}}
+    ? Serveur : {{mgmnthost.com}}
+    ? Nom d'utilisateur : {{tommy}}
+    ? Mot de passe ((le mot de passe sera masqué) **********
+    La connexion à {{mgmnthost.com}} a abouti
+
+  Connexion non interactive
+    {{$ apic login --username tommy --password password --server mgmnthost.com}}
+    La connexion à {{mgmnthost.com}} a abouti

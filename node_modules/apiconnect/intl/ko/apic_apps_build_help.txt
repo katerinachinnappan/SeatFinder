@@ -1,0 +1,16 @@
+사용법: apic {{build}} OPTIONS
+
+  배치를 지원하도록 LoopBack 또는 Swift 서버 애플리케이션을 빌드함
+
+  옵션
+    -f, --{{format}} zip | tar           출력 파일 형식(기본값은 zip)
+    -n, --{{no-install}}                 패키징 전에 {{`npm install`}}을(를) 실행하지 않음(LoopBack 전용)
+    -s, --{{scripts}}                    {{`npm install`}}의 {{package.json}}에서 {{scripts.build}} 호출(LoopBack 전용)
+
+  {{npm install}} 실행 후 zip 빌드
+    {{$ apic build}}
+    Built ../climbon-1.0.0.zip
+
+  {{npm install}}을 실행하지 않고 tar 파일 빌드
+    {{$ apic build --no-install --format tar}}
+    Built ../climbon-1.0.0.tgz

@@ -1,0 +1,16 @@
+用法：apic {{build}} OPTIONS
+
+  建置 LoopBack 或 Swift Server 應用程式來支援部署
+
+  選項
+    -f, --{{format}} zip | tar           輸出檔格式（預設為 zip）
+    -n, --{{no-install}}                 在包裝之前不執行 {{`npm install`}}（僅限 LoopBack）
+    -s, --{{scripts}}                    在 {{package.json}} 上於 {{`npm install`}} 呼叫 {{scripts.build}}（僅限 LoopBack）
+
+  執行 {{npm install}} 之後建置 zip
+    {{$ apic build}}
+    已建置 ../climbon-1.0.0.zip
+
+  建置 Tar 檔而不執行 {{npm install}}
+    {{$ apic build --no-install --format tar}}
+    已建置 ../climbon-1.0.0.tgz

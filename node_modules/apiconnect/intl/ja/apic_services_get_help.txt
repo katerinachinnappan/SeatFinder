@@ -1,0 +1,20 @@
+使用法: apic {{services:get}} OPTIONS
+
+  オプション
+    -S, --{{service}} SERVICE_NAME       サービス名
+
+  実行中のサービスに関する情報を取得します
+
+  現行アプリケーションの Loopback サービスを取得します
+  {{$ apic services:get}}
+  名前: {{climbon}}
+  ポート: 4001
+  supervisor_pid: 4853
+  worker_pids: 4854
+
+  {{Micro Gateway}} サービスを取得します
+  {{$ apic services:get --service climbon-gw}}
+  名前: {{climbon-gw}}
+  ポート: 4002
+  supervisor_pid: 4855
+  worker_pids: 4856

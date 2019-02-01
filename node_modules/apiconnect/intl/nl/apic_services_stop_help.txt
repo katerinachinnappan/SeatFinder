@@ -1,0 +1,24 @@
+Syntaxis: apic {{stop}} OPTIES
+
+  In geval van een LoopBack-toepassing, de LoopBack-toepassing en de {{Micro Gateway}} stoppen.
+  In geval van niet-LoopBack-toepassingen de Micro Gateway stoppen.
+
+  Opties
+    --{{all}}                            stopt alle LoopBack-toepassingen en {{Micro Gateways}}
+    -S, --{{service}} NAAM_SERVICE       naam van service die moet worden gestopt
+
+  Alle services voor de huidige toepassing stoppen
+  {{$ apic stop}}
+  {{climbon}} gestopt
+  {{climbon-gw}} gestopt
+
+  Een specifieke service die actief is in de huidige toepassing stoppen
+  {{$ apic stop --service climbon-gw}}
+  {{climbon-gw}} gestopt
+
+  Alle services die actief zijn binnen alle toepassingen stoppen
+  {{$ apic stop --all}}
+  {{climbon}} gestopt
+  {{climbon-gw}} gestopt
+  {{hikeon}} gestopt
+  {{hikeon-gw}} gestopt

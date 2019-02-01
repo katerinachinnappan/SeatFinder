@@ -1,0 +1,21 @@
+Uso: apic {{plugins:install}} PLUGIN
+
+Instala un plugin en el programa de utilidad de línea de mandatos de apic.
+PLUGIN puede ser una de las opciones siguientes:
+
+Instalar por medio de un archivo tarball archive -- un archivo {{.tgz}} cuyo contenido es un paquete {{npm}}:
+{{$ apic plugins:install my-plugin-v1.0.0.tgz}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +-- my-plugin@1.0.0
+
+Instalar por medio de vía de acceso de directorio -- una vía de acceso en disco a una carpeta con un paquete {{npm}}:
+{{$ apic plugins:install path/to/my-plugin}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +-- my-plugin@1.0.0
+
+Instalar por medio de registro npm (valor predeterminado) -- un nombre de paquete que se recuperará del registro predeterminado {{npm}}
+({{npm config get registry}}): {{$ apic plugins:install my-plugin}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +-- my-plugin@1.0.0
+
+Después de ejecutarlo, puede ejecutar `apic {{plugins:list}}` para ver si el plugin se ha instalado.

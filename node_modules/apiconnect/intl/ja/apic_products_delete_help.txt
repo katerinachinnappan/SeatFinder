@@ -1,0 +1,28 @@
+使用法: apic {{products:delete}} PRODUCT_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  カタログまたはスペース内の製品を削除します
+
+  カタログ・スコープ用のオプション
+    {{-c}}, --{{catalog}} CATALOG            カタログ名 (必須)
+    {{-o}}, --{{organization}} ORGANIZATION  プロバイダー組織名 (必須)
+    {{-s}}, --{{server}} SERVER              管理サーバー・エンドポイント (必須)
+
+  スペース・スコープ用のオプション
+    --{{scope space}}
+    --{{space}} SPACE                    スペース名 (必須)
+    {{-c}}, --{{catalog}} CATALOG            カタログ名 (必須)
+    {{-o}}, --{{organization}} ORGANIZATION  プロバイダー組織名 (必須)
+    {{-s}}, --{{server}} SERVER              管理サーバー・エンドポイント (必須)
+
+  カタログから製品を削除します
+  {{$ apic products:delete climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+  {{climbon}}:1.0.0 製品定義が {{climbonorg}}:production から削除されました
+  {{routes}}:1.0.0 API 定義が {{climbonorg}}:production から削除されました
+  {{ascents}}:1.0.0 API 定義が {{climbonorg}}:production から削除されました
+
+
+  スペースから製品を削除します
+    {{$ apic products:delete --scope space climbon --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 製品定義が {{climbonorg}}:production:flights から削除されました
+    {{routes}}:1.0.0 API 定義が {{climbonorg}}:production:flights から削除されました
+    {{ascents}}:1.0.0 API 定義が {{climbonorg}}:production:flights から削除されました

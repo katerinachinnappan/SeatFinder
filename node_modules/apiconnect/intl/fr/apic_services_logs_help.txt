@@ -1,0 +1,33 @@
+Syntaxe : apic {{logs}} OPTIONS
+
+  Afficher la fin des journaux de service
+
+  Options
+    -n, --{{no-tail}}                    affiche le journal mais pas sa fin
+    -S, --{{service}} NOM_SERVICE        nom du service à consigner
+
+  Afficher la fin des journaux d'application LoopBack
+  {{$ apic logs}}
+  Affichage de la fin des journaux pour `{{climbon}}`
+  2016-03-16T04:25:59.891Z pid:89271 worker:0 INFO strong-agent v2.0.56 profiling app 'climbon' pid '89271'
+  2016-03-16T04:25:59.897Z pid:89271 worker:0 INFO strong-agent[89271] started profiling agent
+  2016-03-16T04:25:59.899Z pid:89271 worker:0 INFO supervisor starting (pid 89271)
+  2016-03-16T04:25:59.900Z pid:89271 worker:0 INFO strong-agent strong-agent using strong-cluster-control v2.2.10
+  2016-03-16T04:25:59.904Z pid:89271 worker:0 INFO supervisor reporting metrics to `internal:`
+
+  Afficher les journaux d'application LoopBack mais pas la fin
+  {{$ apic logs -n --service climbon}}
+  2016-03-16T04:31:19.128Z pid:89306 worker:0 INFO strong-agent v2.0.56 profiling app 'climbon' pid '89306'
+  2016-03-16T04:31:19.132Z pid:89306 worker:0 INFO strong-agent[89306] started profiling agent
+  2016-03-16T04:31:19.133Z pid:89306 worker:0 INFO supervisor starting (pid 89306)
+  2016-03-16T04:31:19.135Z pid:89306 worker:0 INFO strong-agent strong-agent using strong-cluster-control v2.2.10
+  2016-03-16T04:31:19.137Z pid:89306 worker:0 INFO supervisor reporting metrics to `internal:`
+
+  Afficher la fin des journaux {{Micro Gateway}}
+  {{$ apic logs --service climbon-gw}}
+  Affichage de la fin des journaux pour `{{climbon-gw}}`
+  2016-03-16T04:31:21.378Z pid:89308 worker:0 INFO strong-agent v2.0.56 profiling app 'apiconnect-microgateway' pid '89308'
+  2016-03-16T04:31:21.383Z pid:89308 worker:0 INFO strong-agent[89308] started profiling agent
+  2016-03-16T04:31:21.384Z pid:89308 worker:0 INFO supervisor starting (pid 89308)
+  2016-03-16T04:31:21.385Z pid:89308 worker:0 INFO strong-agent strong-agent using strong-cluster-control v2.2.10
+  2016-03-16T04:31:21.388Z pid:89308 worker:0 INFO supervisor reporting metrics to `internal:`

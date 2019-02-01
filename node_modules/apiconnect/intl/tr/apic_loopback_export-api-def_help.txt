@@ -1,0 +1,16 @@
+Kullanım: apic {{loopback:export-api-def}} SEÇENEKLER
+
+  {{LoopBack}} uygulaması modellerinden {{OpenAPI (Swagger)}} tanımları oluşturur
+
+  Seçenekler
+    -o, --{{output}} DOSYA               çıkış dosyası adı
+    --{{json}}                           JSON gösterimini kullan (varsayılan değer: YAML)
+    --{{skip-cache}}                     bilgi istemi yanıtlarını kaydetme
+
+  Kararlılık durumu: prototip
+
+  Standart çıkışa YAML biçiminde {{OpenAPI (Swagger)}} oluşturmak için:
+    {{$ apic loopback:export-api-def}}
+
+  {{swagger.json}} dosyasına JSON biçiminde {{OpenAPI (Swagger)}} oluşturmak için:
+    {{$ apic loopback:export-api-def --json --output swagger}}

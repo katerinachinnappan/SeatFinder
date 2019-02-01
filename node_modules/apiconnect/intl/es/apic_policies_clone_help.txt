@@ -1,0 +1,15 @@
+Uso: apic {{policies:clone}} OPCIONES
+
+  Extraer todas las políticas de un catálogo
+
+  Opciones
+    -c, --{{catalog}} CATÁLOGO           nombre de catálogo (obligatorio)
+    -o, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    -s, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  {{$ apic policies:clone --catalog production --organization climbonorg --server mgmnthost.com}}
+  Se ha extraído la política {{invokepolicy}}:1.0.0 de {{climbonorg:production [invokepolicy_1.0.0]}}
+  Se ha extraído la política {{encryptpolicy}}:1.0.0 de {{climbonorg:production [encryptpolicy_1.0.0]}}
+  Se ha extraído la política {{decryptpolicy}}:1.0.0 de {{climbonorg:production [decryptpolicy_1.0.0]}}

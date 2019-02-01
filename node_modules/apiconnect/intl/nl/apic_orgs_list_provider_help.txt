@@ -1,0 +1,20 @@
+Syntaxis: apic {{orgs}} OPTIES
+          apic {{orgs}} --{{type provider}} OPTIES
+
+  Lijst afbeelden van providerorganisaties waarvan de momenteel geverifieerde gebruiker lid is
+
+  Opties
+    --{{type provider}}
+    -s, --{{server}} SERVER               eindpunt van beheerserver (verplicht)
+
+  Lijst afbeelden van organisaties (providerorganisaties) waarvan momenteel geverifieerde gebruiker lid is op mgmnthost.com
+    {{$ apic orgs --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+    {{$ apic orgs --type provider --server mgmnthost.com}}
+    climbonorg
+    hikingorg
+
+  Typ "apic COMMAND -h" voor Help-informatie over de volgende gerelateerde opdrachten:
+    {{orgs:get}}          Informatie over een providerorganisatie ophalen

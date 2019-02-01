@@ -1,0 +1,35 @@
+Syntaxis: apic {{apps}} OPTIES
+
+  Lijst afbeelden van providerapps in organisaties waarvan de momenteel geverifieerde
+  gebruiker lid is
+
+  Opties
+    --{{organization}} ORGANISATIE | --{{all-organizations}} (verplicht)
+      -o, --{{organization}} ORGANISATIE   een specifieke providerorganisatie
+      -O, --{{all-organizations}}          alle providerorganisaties
+    -s, --{{server}} SERVER                eindpunt van beheerserver (verplicht)
+
+  Lijst afbeelden van providerapps in organisatie {{climbonorg}} op server mgmnthost.com
+    {{$ apic apps --organization climbonorg --server mgmnthost.com}}
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-sandbox
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-qa
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-staging
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-production
+
+  Lijst afbeelden van providerapps in alle organisaties
+    {{$ apic apps --all-organizations --server mgmnthost.com}}
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-sandbox
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-qa
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-staging
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-production
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-sandbox
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-qa
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-staging
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-production
+
+Typ "apic COMMAND -h" voor meer informatie over de volgende opdrachten:
+
+  {{apps:get}}        Informatie over een toepassing ophalen
+  {{apps:set}}        Een toepassing bijwerken
+  {{apps:build}}      Een toepassing bouwen
+  {{apps:publish}}    Een toepassing publiceren naar een providerapp

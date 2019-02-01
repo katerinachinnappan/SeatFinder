@@ -1,0 +1,30 @@
+Syntaxis: apic {{devapps}} [CATALOGUSOPTIES | RUIMTEOPTIES]
+
+  Lijst afbeelden van consumentenapps in een organisatie en een catalogs of ruimte
+
+  Opties voor catalogusbereik
+    --{{scope catalog}}                     (standaard)
+    -{{c}}, --{{catalog}} CATALOGUS          naam van catalogus (verplicht)
+    -{{o}}, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    -{{s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht) 
+
+  Opties voor ruimtebereik
+    --{{scope space}}                        (verplicht)
+    --{{space}} RUIMTE                       naam van ruimte (verplicht)
+    -{{c}}, --{{catalog}} CATALOGUS          naam van catalogus (verplicht)
+    -{{o}}, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    -{{s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Stabiliteit: prototype
+
+  Lijst afbeelden van consumentenapps in organisatie climbonorg en productiecatalogus op server mgmnthost.com
+    {{$ apic devapps --catalog production --organization climbonorg --server mgmnthost.com}}
+    flights in flightsOrg
+
+  Lijst afbeelden van consumentenapps in organisatie climbonorg en productiecatalogus in ruimte s1 op server mgmnthost.com
+    {{$ apic devapps --scope space --space s1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    flights in flightsOrg
+
+
+  Typ "apic COMMAND -h" voor meer informatie over de volgende opdrachten:
+    devapps:get        Informatie over een toepassing ophalen

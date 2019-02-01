@@ -1,0 +1,21 @@
+Syntaxe : apic {{orgs:get}} NOM_ORG --{{type consumer}} OPTIONS
+
+  Obtenir des informations sur une organisation de type consommateur
+
+  Options
+    --{{space}} ESPACE                   nom de l'espace (facultatif)
+    -c, --{{catalog}} CATALOG            nom du catalogue (obligatoire)
+    -o, --{{organization}} ORGANISATION  nom de l'organisation de type fournisseur (obligatoire)
+    -s, --{{server}} SERVEUR             noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  Obtenir des informations sur une organisation de type consommateur
+    {{$ apic orgs:get salesorg --catalog climbonorg.prod --server mgmnthost.com}}
+    nom : {{salesorg}}
+    nom d'affichage : {{Sales Organization}}
+    nom du propriétaire : {{Shavon}}
+    adresse électronique du propriétaire : {{shavon@ibm.com}}
+    nom d'utilisateur du propriétaire : {{shavon}}
+    statut : active
+    communautés : sales, partner

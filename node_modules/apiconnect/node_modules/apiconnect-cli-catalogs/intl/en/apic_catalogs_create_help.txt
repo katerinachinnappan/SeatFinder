@@ -1,0 +1,18 @@
+Usage: apic {{catalogs:create}} DISPLAY_NAME OPTIONS
+
+  Create a catalog in an organization
+
+  Options
+    --{{name}} NAME                         catalog name (defaults derived from display name)
+    -o, --{{organization}} ORGANIZATION     a specific provider organization (required)
+    -s, --{{server}} SERVER                 management server endpoint (required)
+
+  Stability: prototype
+
+  Create a catalog with a unique name in the {{climbonorg}} organization on the {{mgmnthost.com}} server
+    {{$ apic catalogs:create Production --organization climbonorg --server mgmnthost.com}}
+    Created {{climbonorg:production}}
+
+  Create a catalog in the {{climbonorg}} organization on the {{mgmnthost.com}} server
+    {{$ apic catalogs:create Production --name prod --organization climbonorg --server mgmnthost.com}}
+    Created {{climbonorg:prod}}

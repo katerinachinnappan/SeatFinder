@@ -1,0 +1,27 @@
+Syntaxe : apic {{drafts:get}} OPTIONS NOM[:VERSION]
+
+  Obtenir des informations sur une définition d'API ou de produit dans les brouillons
+
+  Options
+    --{{type api | product}}             classer la liste par type de définition
+    -{{o}}, --{{organization}} ORGANISATION  nom de l'organisation de type fournisseur (obligatoire)
+    -{{s}}, --{{server}} SERVEUR              noeud final du serveur de gestion (obligatoire)
+
+  Obtenir des informations sur une définition d'API
+    {{$ apic drafts:get routes --organization climbonorg --server mgmnthost.com}}
+    type : {{API}}
+    nom : {{routes}}
+    version : 1.0.0
+    titre : Climbing Routes API
+    chemin de base : {{/routes}}
+    produits : {{"climbon:1.0.0" "climbon:1.0.1"}}
+    organisation : {{climbonorg}}
+
+  Obtenir des informations sur une définition de produit
+    {{$ apic drafts:get climbon}}
+    type : {{product}}
+    nom : {{climbon}}
+    version : 1.0.0
+    titre : Climbing product
+    api : {{"routes:1.0.0" "ascents:2.0.0"}}
+    organisation : {{climbonorg}}

@@ -1,0 +1,14 @@
+Uso: apic {{extensions:pull}} OPTIONS EXTENSION_NAME[:VERSION]
+
+  Extrair uma extensão de um catálogo
+
+  Opções
+    -c, --{{catalog}} CATALOG            nome do catálogo (obrigatório)
+    -o, --{{organization}} ORGANIZATION  nome da organização do provedor (obrigatório)
+    -s, --{{server}} SERVER              terminal do servidor de gerenciamento (obrigatório)
+
+  Estabilidade: protótipo
+
+  Extrair uma extensão de um catálogo
+    {{$ apic extensions:pull climbextension:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+    Extensão {{climbextension}}:1.0.0 extraída de {{climbonorg:production [climbextension_1.0.0.yaml]}}

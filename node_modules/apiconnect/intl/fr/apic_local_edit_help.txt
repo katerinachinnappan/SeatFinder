@@ -1,0 +1,13 @@
+Syntaxe : apic {{edit}} DIRECTORY
+
+  Ouvrir {{API Designer}}
+
+  Options
+    REPERTOIRE                        répertoire dans lequel ouvrir API Designer (facultatif)
+
+  Ouvrir {{API Designer}}
+    {{$ apic edit}}
+
+  Ouvrir {{API Designer}} dans un répertoire d'application LoopBack
+    {{$ apic loopback --name climbon_application}}
+    {{$ apic edit climbon_application}}

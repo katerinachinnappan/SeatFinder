@@ -1,0 +1,21 @@
+使用法: apic {{orgs:get}} ORG_NAME --{{type consumer}} OPTIONS
+
+  コンシューマー組織に関する情報を取得します
+
+  オプション
+    --{{space}} SPACE                    スペース名 (オプション)
+    -c, --{{catalog}} CATALOG            カタログ名 (必須)
+    -o, --{{organization}} ORGANIZATION  プロバイダー組織名 (必須)
+    -s, --{{server}} SERVER              管理サーバー・エンドポイント (必須)
+
+  Stability: prototype
+
+  コンシューマー組織に関する情報を取得します
+    {{$ apic orgs:get salesorg --catalog climbonorg.prod --server mgmnthost.com}}
+    名前: {{salesorg}}
+    表示名: {{Sales Organization}}
+    所有者名: {{Shavon}}
+    所有者の E メール: {{shavon@ibm.com}}
+    所有者のユーザー名: {{shavon}}
+    状況: active
+    コミュニティー: sales, partner

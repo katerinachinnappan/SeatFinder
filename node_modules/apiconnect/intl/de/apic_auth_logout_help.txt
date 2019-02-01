@@ -1,0 +1,10 @@
+Syntax: apic {{logout}} OPTIONEN
+
+  Lokale Authentifizierungsnachweise für eine {{API Connect}}-Cloud entfernen
+
+  Optionen
+    -s, --{{server}} SERVER              Berechtigungsnachweise für den Server entfernen (erforderlich)
+
+  Lokale Authentifizierungsnachweise für {{mgmnthost.com}} löschen
+    {{$ apic logout --server mgmnthost.com}}
+    Logged {{tommy}} out of server {{mgmnthost.com}}

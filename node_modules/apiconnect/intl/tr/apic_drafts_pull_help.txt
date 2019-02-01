@@ -1,0 +1,23 @@
+Kullanım: apic {{drafts:pull}} SEÇENEKLER AD[:SÜRÜM]
+
+  Taslaklardan API ya da ürün tanımlarını çeker
+
+  Seçenekler
+    --{{type api | product}}             tanım tipine göre listenin alt kümesini oluştur
+    --{{product-only}}                   ürünü çek, ancak başvurulan api'lerini çekme
+    -{{o}}, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    -{{s}}, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Bir API tanımını çek
+    {{$ apic drafts:pull routes --organization climbonorg --server mgmnthost.com}}
+    {{routes.yaml}} API tanımı {{climbonorg:drafts [routes:1.0.0]}} içinden çekildi
+
+  Bir ürün tanımını ve başvurulan API'lerini çek
+    {{$ apic drafts:pull climbon --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 ürün tanımı {{climbonorg:drafts [climbon.yaml]}} içinden çekildi
+    {{routes}}:1.0.0 API tanımı {{climbonorg:drafts [routes.yaml]}} içinden çekildi
+    {{ascents}}:1.0.0 API tanımı {{climbonorg:drafts [ascent.yaml]}} içinden çekildi
+
+  Bir ürün tanımını, başvurulan API'leri olmaksızın çek
+    {{$ apic drafts:pull climbon --product-only --organization climbonorg --server mgmnthost.com}}
+    {{climbon}}:1.0.0 ürün tanımı {{climbonorg:drafts [climbon.yaml]}} içinden çekildi

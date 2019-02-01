@@ -1,0 +1,41 @@
+Uso: apic {{drafts}} OPCIONES
+
+  Listar las API y productos de borradores
+
+  Opciones
+    --{{type api | product}}                                   crear subconjuntos de la lista  por tipo de definición
+    --{{organization}} ORGANIZACIÓN | --{{all-organizations}}  (obligatorio)
+      -{{o}}, --{{organization}} ORGANIZACIÓN                  una organización de proveedores específica
+      -{{O}}, --{{all-organizations}}                          todas las organizaciones de proveedores
+    -{{s}}, --{{server}} SERVIDOR                              punto final de servidor de gestión (obligatorio)
+
+  Listar las definiciones de API y producto de los borradores
+    {{$ apic drafts --organization climbonorg --server mgmnthost.com}}
+    Definición de producto {{climbon}}:1.0.0 en {{climbonorg:drafts}}
+    Definición de producto {{climbon}}:1.0.1 en {{climbonorg:drafts}}
+    Definición de API {{routes}}:1.0.0 API en {{climbonorg:drafts}}
+    Definición de API {{ascents}}:1.0.0 API en {{climbonorg:drafts}}
+
+  Listar las definiciones de API de borradores
+    {{$ apic drafts --type api --organization climbonorg --server mgmnthost.com}}
+    Definición de API {{routes}}:1.0.0 en {{climbonorg:drafts}}
+    Definición de API {{ascents}}:1.0.0 API en {{climbonorg:drafts}}
+
+  Listar las definiciones de los borradores de todas las organizaciones
+    {{$ apic drafts --all-organizations --server mgmnthost.com}}
+    Definición del producto {{climbon}}:1.0.0 en {{climbonorg:drafts}}
+    Definición del producto {{climbon}}:1.0.1 en {{climbonorg:drafts}}
+    Definición de API {{routes}}:1.0.0 en {{climbonorg:drafts}}
+    Definición de API {{ascents}}:1.0.0 API en {{climbonorg:drafts}}
+    Definición de producto {{hiking}}:1.0.0 en {{hikingorg:drafts}}
+    Definición de API {{trails}}:1.0.0 API en {{hikingorg:drafts}}
+
+Escriba "apic MANDATO -h" para obtener más información acerca de los mandatos siguientes:
+
+  {{drafts:push}}     Enviar definiciones de producto o API local a borradores
+  {{drafts:pull}}     Extraer definiciones de producto o API de borradores
+  {{drafts:clone}}    Extraer todas las definiciones de producto o API de borradores
+  {{drafts:get}}      Obtener información acerca de una definición de API o producto de borradores
+  {{drafts:publish}}  Publicar un producto y sus API referenciadas en los borradores de un catálogo
+  {{drafts:delete}}   Suprimir una definición de API o producto de los borradores
+  {{drafts:clear}}    Suprimir todas las definiciones de API y producto de los borradores

@@ -1,0 +1,10 @@
+Uso: apic {{explore}} [api...] OPCIONES
+
+  Abre {{API Explorer}}
+
+  Opciones
+    -e, --{{external}}                   abre el explorador en 0.0.0.0 en lugar del 127.0.0.1 predeterminado. Esto enlaza el servidor con todas las IP de la máquina y será accesible en la red más amplia.
+
+  Si se suministran apis, se representarán en el explorador.
+
+  Si no se suministran apis, se representarán todas las apis del proyecto actual.

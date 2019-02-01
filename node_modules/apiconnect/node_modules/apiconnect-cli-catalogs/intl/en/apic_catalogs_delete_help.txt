@@ -1,0 +1,13 @@
+Usage: apic {{catalogs:delete}} CATALOG_NAME OPTIONS
+
+  Delete a catalog in an organization
+
+  Options
+    -o, --{{organization}} ORGANIZATION     a specific provider organization (required)
+    -s, --{{server}} SERVER                 management server endpoint (required)
+
+  Stability: prototype
+
+  Delete a catalog in the {{climbonorg}} organization on the {{mgmnthost.com}} server
+    {{$ apic catalogs:delete staging --organization climbonorg --server mgmnthost.com}}
+    Deleted {{climbonorg:staging}}

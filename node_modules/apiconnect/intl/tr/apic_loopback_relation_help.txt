@@ -1,0 +1,11 @@
+Kullanım: apic {{loopback:relation}} SEÇENEKLER
+
+  {{LoopBack}} uygulamasındaki iki model arasında yeni bir ilişki yaratır
+
+  Seçenekler
+    --{{skip-cache}}                     bilgi istemi yanıtlarını kaydetme
+
+  Kararlılık durumu: prototip
+
+  İlişki ekle
+    {{$ apic loopback:relation}}

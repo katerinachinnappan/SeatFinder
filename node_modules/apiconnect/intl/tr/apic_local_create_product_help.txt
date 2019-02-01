@@ -1,0 +1,44 @@
+Kullanım: apic {{create --type product}}             etkileşimli
+          apic {{create --type product}} SEÇENEKLER  etkileşimli değil
+
+  Bir ürün tanımı yaratır
+
+  Seçenekler
+    --{{title}} BAŞLIK                   başlık değeri (zorunludur)
+    --{{name}} AD                        ad değeri (varsayılan değer başlıktan türetilir)
+    --{{apis}} API_DOSYAADI ...          başvurulacak API'lerin listesi
+    --{{filename}} ÜRÜN_DOSYAADI         dosya adı (varsayılan değer addan türetilir)
+    --{{template}} ŞABLON                bir sağlayıcı şablonu kullan (boşsa, varsayılan olarak apic şablonu kullanılır)
+    -v, --{{version}} SÜRÜM              sürüm değeri (varsayılan değeri 1.0.0'dır)
+
+  Ürün yaratmak için:
+    {{$ apic create --type product --title "Climb On"}}
+    {{climb-on.yaml}} ürün tanımı {{[climb-on:1.0.0]}} yaratıldı
+
+  Etkileşimli olarak ürün yaratmak için:
+    {{$ apic create --type product}}
+    ? Başlık: {{Climb On}}
+    ? Ad: {{climb-on}}
+    ? Dosya: {{climb-on.yaml}}
+    ? Şablon:
+    ? API Dosyaları:
+    {{climb-on.yaml}} ürün tanımı {{[climb-on:1.0.0]}} yaratıldı
+
+  Var olan API'lere başvuran bir ürün yaratmak için:
+    {{$ apic create --type product --title "Climb On" --apis "routes.yaml ascents.yaml"}}
+    {{climb-on.yaml}} ürün tanımı {{[climb-on:1.0.0]}} yaratıldı
+
+  Şablonlarınızdan birini kullanarak ürün yaratmak için:
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic create --type product --title "Proxy Product" --template proxy}}
+    {{proxy-product.yaml}} ürün tanımı {{[proxy-product:1.0.0]}} yaratıldı
+
+  Varsayılan şablonunuzu kullanarak ürün yaratmak için:
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic config:set --global template-default-product=staging}}
+    {{$ apic create --type product --title "Staging Product"}}
+    {{staging-product.yaml}} ürün tanımı {{[staging-product:1.0.0]}} yaratıldı

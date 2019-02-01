@@ -1,0 +1,27 @@
+Kullanım: apic {{extensions}} SEÇENEKLER
+
+  Bir katalogda uzantıları listele
+
+  Seçenekler
+    --{{catalog}} KATALOG | --{{all-catalogs}} (zorunludur)
+      -c, --{{catalog}} KATALOG            belirli bir katalog
+      -C, --{{all-catalogs}}               tüm kataloglar
+    --{{organization}} KURULUŞ      | --{{all-organizations}} (zorunludur)
+      -o, --{{organization}} KURULUŞ       belirli bir sağlayıcı kuruluşu
+      -O, --{{all-organizations}}          tüm sağlayıcı kuruluşları
+    -s, --{{server}} SUNUCU                yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  Üretim kataloğunda uzantıları listele
+    {{$ apic extensions --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbextension}}:1.0.0 in {{climbonorg:production}}
+    {{hikeextension}}:1.0.0 in {{climbonorg:productiong}}
+
+  Aşağıdaki komutlar hakkında daha fazla bilgi için "apic KOMUT -h" yazın:
+
+    {{extensions:publish}}    Bir katalogda uzantı yayınla
+    {{extensions:get}}        Bir katalogda uzantıyla ilgili bilgi al
+    {{extensions:pull}}       Bir katalogdan uzantı çek
+    {{extensions:clone}}      Bir katalogdan tüm uzantıları çek
+    {{extensions:delete}}     Bir katalogda uzantı sil

@@ -1,0 +1,20 @@
+Uso: apic {{policies:publish}} OPTIONS
+
+  Publicar uma política em um catálogo
+
+  Opções
+    -c, --{{catalog}} CATALOG            nome do catálogo (obrigatório)
+    -o, --{{organization}} ORGANIZATION  nome da organização do provedor (obrigatório)
+    -s, --{{server}} SERVER              terminal do servidor de gerenciamento (obrigatório)
+    --{{directory}} DIRECTORY            diretório da política (padronizado como o diretório padrão)
+
+  Estabilidade: protótipo
+
+  Publicar uma política do diretório jwe em um catálogo
+    {{$ apic policies:publish --directory jwe --catalog production --organization climbonorg --server mgmnthost.com}}
+    Published {{jwe}} to {{climbonorg:production [jwe-encrypt:1.0.0]}}
+
+  Publicar uma política do diretório atual em um catálogo
+    {{$ cd jwe}}
+    {{$ apic policies:publish --catalog production --organization climbonorg --server mgmnthost.com}}
+    Published {{jwe climbonorg:production [jwe-encrypt:1.0.0]}}

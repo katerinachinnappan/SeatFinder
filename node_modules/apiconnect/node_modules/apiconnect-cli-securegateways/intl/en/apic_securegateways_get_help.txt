@@ -1,0 +1,18 @@
+Usage: apic {{securegateways:get}} GATEWAY_ID OPTIONS
+
+  Get information on a secure gateway in an organization
+
+  Options
+    -o, --{{organization}} ORGANIZATION     a specific provider organization (required)
+    -s, --{{server}} SERVER                 management server endpoint (required)
+
+  Stability: prototype
+
+  Get a secure gateway in the {{climbonorg}} organization on the {{mgmnthost.com}} server
+    {{$ apic securegateways:get ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com}}
+    name: sandbox
+    organization: {{climbonorg}}
+    status: ENABLED
+    active clients: 0
+    id: {{ctHEKS9ztEH_stage_ng}}
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb25maWd1cmF0aW9uX2lkIjoiY3RIRUtTOXp0RUhfcWFiYXJlX2RlZGljYXRlZCIsInJlZ2lvbiI6ImRlZGljYXRlZCIsImlhdCI6MTQ3NTE4MjEwNSwiZXhwIjoxNDgyOTU4MTA1fQ.m-dXQAYojwCK4viMz5fx9JuUccN94TiC2oWlZ4VghRE

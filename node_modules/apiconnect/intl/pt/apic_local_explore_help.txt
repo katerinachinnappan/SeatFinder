@@ -1,0 +1,10 @@
+Uso: apic {{explore}} [api...] OPTIONS
+
+  Abre o {{API Explorer}}
+
+  Opções
+    -e, --{{external}}                   abre o explorer em 0.0.0.0 em vez do padrão 127.0.0.1. Isso liga o servidor a todos os IPs na máquina e será acessível na rede maior.
+
+  Se forem fornecidas APIs, essas APIs serão renderizadas no explorer.
+
+  Se nenhuma API for fornecida, todas as APIs no projeto atual serão renderizadas.

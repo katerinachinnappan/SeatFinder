@@ -1,0 +1,16 @@
+Syntaxis: apic {{build}} OPTIES
+
+  LoopBack- of Swift Server-toepassing bouwen ter ondersteuning van implementatie
+
+  Opties
+    -f, --{{format}} zip | tar           indeling van uitvoerbestand (standaard ingesteld op zip)
+    -n, --{{no-install}}                 {{'npm install'}} niet uitvoeren voorafgaand aan verpakking (alleen LoopBack)
+    -s, --{{scripts}}                    {{scripts.build}} in {{package.json}} oproepen bij {{'npm install'}}
+
+  ZIP-bestand maken na uitvoering van {{npm install}}
+    {{$ apic build}}
+    ../climbon-1.0.0.zip gemaakt
+
+  TAR-bestand maken zonder het uitvoeren van {{npm install}}
+    {{$ apic build --no-install --format tar}}
+    ../climbon-1.0.0.tgz gemaakt

@@ -1,0 +1,22 @@
+Syntax: apic create --type model-swiftserver OPTIONEN
+
+  Eine Modelldefinition in einer Swift Server Generator-Anwendung erstellen
+
+  Optionen
+  --name NAME                      Name des Modells
+
+  Stabilität: Prototyp
+
+  Modell erstellen
+  $ apic create --type model-swiftserver
+  ? Enter the model name: book
+  ? Custom plural form (used to build REST URL): books
+  Fügen Sie jetzt einige Eigenschaften für "book" hinzu.
+
+  Geben Sie einen leeren Eigenschaftsnamen ein, wenn Sie fertig sind.
+    ? Enter the property name: title
+  ? Property type: string
+    ? Required? No
+  ? Default? No
+  ? Enter the property name:
+

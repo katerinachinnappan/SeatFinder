@@ -1,0 +1,12 @@
+사용법: apic {{loopback:acl}} OPTIONS
+
+  현재 {{LoopBack}} 애플리케이션에 새 ACL 항목 추가
+
+  옵션
+    --skip-cache                     프롬프트 응답을 기억하지 않음
+
+  안정성: 프로토타입
+
+  {{$ apic loopback:acl}}
+  몇 가지 질문을 통해 ACL 옵션을 판별한 후
+  해당하는 모델의 JSON에 항목을 추가합니다.

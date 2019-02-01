@@ -1,0 +1,16 @@
+Uso: apic {{config:clear}} OPCIONES
+
+  Suprimir todas las variables de configuración
+
+  Opciones
+    -l, --{{local}}                      suprimir las variables de configuración de aplicación local (sólo proyecto {{loopback}})
+    -g, --{{global}}                     suprimir las variables de configuración global
+
+  {{$ apic config:clear}}
+  Se ha suprimido {{app: apic-app://mgmnthost.com/orgs/climbon/apps/sb}}
+  Se ha suprimido {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+  Se ha suprimido {{org: apic-org://mgmnthost.com/orgs/climbon}}
+  Se ha suprimido {{space: apic-space://mgmnthost.com/orgs/climbon/catalogs/sb/spaces/flights}}
+
+  {{$ apic config:clear --global}}
+  Se ha suprimido {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}

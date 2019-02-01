@@ -1,0 +1,41 @@
+Uso: {{apic apis:clone}} [OPCIONES_CATÁLOGO | OPCIONES_ESPACIO]
+
+  Extraer todas las definiciones de API de un catálogo o espacio
+
+  Opciones para ámbito de catálogo
+    --{{scope catalog}}                         (valor predeterminado)
+    --{{catalog}} CATÁLOGO | --{{all-catalogs}} (obligatorio)
+      -{{c}}, --{{catalog}} CATÁLOGO            un catálogo especificado
+      -{{C}}, --{{all-catalogs}}                todos los catálogos
+    --{{organization}} ORGANIZACIÓN | --{{all-organizations}} (obligatorio)
+      -{{o}}, --{{organization}} ORGANIZACIÓN   una organización de proveedores específica
+      -{{O}}, --{{all-organizations}}           todas las organizaciones de proveedores
+    -{{s}}, --{{server}} SERVIDOR               punto final de servidor de gestión (obligatorio)
+
+  Opciones para ámbito de espacio
+    --{{scope space}}
+    --{{space}} ESPACIO                       nombre de espacio (obligatorio)
+    -{{c}}, --{{catalog}} CATÁLOGO            nombre de catálogo (obligatorio)
+    -{{o}}, --{{organization}} ORGANIZACIÓN   nombre de organización de proveedores (obligatorio)
+    -{{s}}, --{{server}} SERVIDOR             punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  Extraer todos los productos de un catálogo
+  {{$ apic apis:clone --catalog production --organization climbonorg --server mgmnthost.com}}
+  Se ha extraído la definición de API {{ascents:1.0.0}} de {{climbonorg:production [ascents.yaml]}}
+  Se ha extraído la definición de API {{globalweather:1.0.0}} de {{climbonorg:production [globalweather_1.0.0.yaml]}}
+  Se ha extraído la definición WSDL de API {{globalweather:1.0.0}} {{from climbonorg:production [globalweather_1.0.0.wsdl]}}
+  Se ha extraído la definición de API {{routes:1.0.0}} de {{climbonorg:production [routes.yaml]}}
+  Se ha extraído la definición de API {{routes:1.0.1}} de {{climbonorg:production [routes-2.yaml]}}
+  Se ha extraído la definición de API {{trails:4.0.0}} de {{climbonorg:production [trails.yaml]}}
+
+
+  Extraer todas las APIs de un espacio
+    {{$ apic apis:clone --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    Se ha extraído la definición de API {{ascents:1.0.0}} de {{climbonorg:production:sp1 [ascents.yaml]}}
+    Se ha extraído la definición de API {{globalweather:1.0.0}} de {{climbonorg:production:sp1 [globalweather_1.0.0.yaml]}}
+    Se ha extraído la definición WSDL de API {{globalweather:1.0.0}} {{from climbonorg:production:sp1 [globalweather_1.0.0.wsdl]}}
+    Se ha extraído la definición de API {{routes:1.0.0}} de {{climbonorg:production:sp1 [routes.yaml]}}
+    Se ha extraído la definición de API {{routes:1.0.1}} de {{climbonorg:production:sp1 [routes-2.yaml]}}
+    Se ha extraído la definición de API {{trails:4.0.0}} de {{climbonorg:production:sp1 [trails.yaml]}}

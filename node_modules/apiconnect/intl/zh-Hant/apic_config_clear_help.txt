@@ -1,0 +1,16 @@
+用法：apic {{config:clear}} OPTIONS
+
+  刪除所有配置變數
+
+  選項
+    -l, --{{local}}      刪除所有本端應用程式配置變數（僅限 {{loopback}} 專案）
+    -g, --{{global}}     刪除所有廣域配置變數
+
+  {{$ apic config:clear}}
+  已刪除 {{app: apic-app://mgmnthost.com/orgs/climbon/apps/sb}}
+  已刪除 {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+  已刪除 {{org: apic-org://mgmnthost.com/orgs/climbon}}
+  已刪除 {{space: apic-space://mgmnthost.com/orgs/climbon/catalogs/sb/spaces/flights}}
+
+  {{$ apic config:clear --global}}
+  已刪除 {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}

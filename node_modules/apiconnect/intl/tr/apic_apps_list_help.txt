@@ -1,0 +1,35 @@
+Kullanım: apic {{apps}} SEÇENEKLER
+
+  Kimliği doğrulanmış kullanıcının üyesi olduğu kuruluşlarda bulunan sağlayıcı
+  uygulamalarını listeler
+
+  Seçenekler
+    --{{organization}} KURULUŞ      | --{{all-organizations}} (zorunludur)
+      -o, --{{organization}} KURULUŞ       belirli bir sağlayıcı kuruluşu
+      -O, --{{all-organizations}}          tüm sağlayıcı kuruluşları
+    -s, --{{server}} SUNUCU                yönetim sunucusu uç noktası (zorunludur)
+
+  mgmnthost.com sunucusu üzerindeki {{climbonorg}} kuruluşunda bulunan sağlayıcı uygulamalarını listelemek için:
+    {{$ apic apps --organization climbonorg --server mgmnthost.com}}
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-sandbox
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-qa
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-staging
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-production
+
+  Tüm kuruluşlardaki sağlayıcı uygulamalarını listelemek için:
+    {{$ apic apps --all-organizations --server mgmnthost.com}}
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-sandbox
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-qa
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-staging
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-production
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-sandbox
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-qa
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-staging
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-production
+
+Aşağıdaki komutlar hakkında daha fazla bilgi için "apic KOMUT -h" yazın:
+
+  {{apps:get}}        Bir uygulamayla ilgili bilgileri al
+  {{apps:set}}        Bir uygulamayı güncelle
+  {{apps:build}}      Bir uygulama oluştur
+  {{apps:publish}}    Bir uygulamayı bir sağlayıcı uygulamasına yayınla

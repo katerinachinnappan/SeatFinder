@@ -1,0 +1,18 @@
+Kullanım: apic {{create --type datasource}} SEÇENEKLER
+
+  Bir {{LoopBack}} uygulamasında {{LoopBack}} veri kaynağı tanımı yaratır
+
+  Seçenekler
+    --{{name}} AD                        veri kaynağının adı
+    --{{skip-cache}}                     bilgi istemi yanıtlarını kaydetme
+
+  Bir {{LoopBack}} uygulaması veri kaynağı yaratmak için:
+    {{$ apic create --type datasource}}
+    ? Veri kaynağı adını girin: {{MemoryDB}}
+    ? {{MemoryDB}} için bağlayıcıyı seçin: In-memory db ({{StrongLoop}} tarafından desteklenir)
+    Bağlayıcıya özgü yapılandırma:
+    ? Kalıcılık için kullanılacak {{window.localStorage}} anahtarı (yalnızca tarayıcı): {{MemoryDB}}
+    ? Kalıcılık için kullanılacak dosyanın tam yolu (yalnızca sunucu): {{~/.memorydb}}
+    loopback oluşturucunun çalıştırılması bitti
+    {{swagger}} ve ürün tanımları güncelleniyor
+    {{/Users/shane/mesh/examples/climbon/definitions/climbon.yaml}} {{swagger}} açıklaması yaratıldı

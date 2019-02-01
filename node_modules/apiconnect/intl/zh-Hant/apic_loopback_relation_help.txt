@@ -1,0 +1,11 @@
+用法：apic {{loopback:relation}} OPTIONS
+
+  在 {{LoopBack}} 應用程式中的兩個模型之間建立新的關係
+
+  選項
+    --{{skip-cache}}                     不要記住提示回答
+
+  穩定性：原型
+
+  新增關係
+    {{$ apic loopback:relation}}

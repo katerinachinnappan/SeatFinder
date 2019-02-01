@@ -1,0 +1,12 @@
+Syntaxis: apic {{loopback:boot-script}} OPTIES
+
+  Een nieuw opstartscript maken in de {{LoopBack}}-toepassing
+
+  Opties
+    -n, --{{name}} NAAM                  naam van het opstartscript (optioneel)
+    --{{skip-cache}}                     promptantwoorden niet onthouden
+
+  Stabiliteit: prototype
+
+  {{$ apic loopback:boot-script --name some_boot_script.js}}
+  Hiermee wordt er een {{boot}}-script gegenereerd in {{/server/boot.}}

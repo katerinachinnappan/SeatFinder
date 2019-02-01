@@ -1,0 +1,14 @@
+Kullanım: {{apic spaces:create}} GÖRÜNEN_AD SEÇENEKLERİ
+
+  Bir katalogda alan yarat
+
+  Seçenekler
+    --name AD                            alan adı (varsayılan değerler görünen addan türetilir) -c, --{{catalog}} KATALOG        katalog adı (zorunludur)
+    -o, --{{organization}} KURULUŞ       belirli bir sağlayıcı kuruluşu (zorunludur)
+    -s, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  {{mgmnthost.com}} sunucusunda {{climbonorg}} kuruluşunda {{production}} kataloğunda bir alan yarat
+    $ {{apic spaces:create flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production:flights}} yaratıldı

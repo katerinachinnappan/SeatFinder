@@ -1,0 +1,33 @@
+Uso: apic {{drafts:publish}} [CATALOG_OPTIONS | SPCAE_OPTIONS] NAME[:VERSION]
+
+  Publicar um produto e suas APIs de referência em rascunhos para um catálogo ou espaço
+
+  Opções para escopo do catálogo
+    --{{scope catalog}}                  (padrão)
+    --{{stage}}                          limitar a publicação para preparação
+    -{{c}}, --{{catalog}} CATALOG            nome do catálogo (necessário)
+    -{{o}}, --{{organization}} ORGANIZATION  nome da organização do provedor (necessário)
+    -{{s}}, --{{server}} SERVER              terminal do servidor de gerenciamento (necessário)
+
+  Opções para escopo de escopo
+    --{{scope space}}                    (necessário)
+    --{{space}} SPACE                    nome de espaço (necessário)
+    --{{stage}}                          limitar a publicação para preparação
+    -{{c}}, --{{catalog}} CATALOG            nome do catálogo (necessário)
+    -{{o}}, --{{organization}} ORGANIZATION  nome da organização do provedor (necessário)
+    -{{s}}, --{{server}} SERVER              terminal do servidor de gerenciamento (necessário)
+
+  Publicar um produto em rascunhos para um catálogo
+    {{$ apic drafts:publish climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    Staged {{climbon}}:1.0.0 to {{climbonorg:production}}
+    Published {{climbon}}:1.0.0 to {{climbonorg:production}}
+
+  Migrar um produto em rascunhos para um catálogo
+    {{$ apic drafts:publish --stage climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+    Staged {{climbon}}:1.0.0 to {{climbonorg:production}}
+
+  Publicar um produto em rascunhos para um espaço
+    {{$ apic drafts:publish climbon --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Staged {{climbon:1.0.0}} to {{climbonorg:production:flights}}
+    Published {{climbon:1.0.0}} to {{climbonorg:production:flights}}
+

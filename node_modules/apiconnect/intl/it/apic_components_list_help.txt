@@ -1,0 +1,25 @@
+Utilizzo: apic {{components}}
+
+  Elenca i componenti
+
+  Opzioni
+    --{{organization}} ORGANIZATION | --all-organizations (obbligatorio)
+      {{-o}}, --{{organization}} ORGANIZATION  un'organizzazione provider specifica
+      {{-o}}, --{{all-organizations}}          tutte le organizzazioni provider
+    {{-s}}, --{{server}} SERVER                endpoint server di gestione (obbligatorio)
+
+  Elenca i componenti in tutte le organizzazioni
+    {{$ apic components --all-organizations --server mgmnthost.com}}
+    {{climbon}}:1.0.0 in {{climbonorg:staging}}
+    {{climbon}}:1.0.0 in {{climbonorg:production}}
+    {{climbon}}:1.0.1 in {{climbonorg:sandbox}}
+    {{climbon}}:1.0.1 in {{climbonorg:qa}}
+    {{climbon}}:1.0.1 in {{climbonorg:production}}
+    {{yosar}}:2.0.0 in {{climbonorg:production}}
+    {{trails}}:1.0.0 in {{hikingorg:staging}}
+    {{trails}}:2.0.0 in {{hikingorg:production}}
+
+Immettere "apic COMANDO -h" per ulteriori informazioni sul seguente comando:
+
+  {{components:get}}                      Richiama le informazioni su un componente in un catalogo
+

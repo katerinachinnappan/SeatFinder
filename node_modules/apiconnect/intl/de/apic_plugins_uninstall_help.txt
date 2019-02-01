@@ -1,0 +1,6 @@
+Syntax: apic {{plugins:uninstall}} PLUG-IN
+
+  Ein Plug-in deinstallieren. Sie können den Befehl "apic {{plugins:list}}" verwenden, um eine Liste der
+  Plug-ins abzurufen, die derzeit installiert sind.
+
+  {{$ apic plugins:uninstall my-plugin}}

@@ -1,0 +1,14 @@
+Utilizzo: apic {{services}}
+
+  Elenca i servizi attualmente in esecuzione
+
+  {{$ apic services}}
+  Servizio {{climbon}} in esecuzione sulla porta 4001
+  Servizio {{climbon-gw}} in esecuzione sulla porta 4002
+
+Immettere "apic COMANDO --help" per la guida ai seguenti comandi correlati:
+
+  {{services:start}}    Avvia un servizio
+  {{services:stop}}     Arresta un servizio
+  {{services:logs}}     Richiama i log
+  {{services:get}}      Richiama un servizio

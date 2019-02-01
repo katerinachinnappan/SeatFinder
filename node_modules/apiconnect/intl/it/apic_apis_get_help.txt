@@ -1,0 +1,45 @@
+Utilizzo: {{apic apis:get}} NOME_API[:VERSIONE] [OPZIONI_CATALOGO | OPZIONI_SPAZIO]
+
+  Richiama le informazioni su un'API in un catalogo o uno spazio
+
+  Opzioni per l'ambito del catalogo
+    --{{scope catalog}}                       (impostazione predefinita)
+    -{{c}}, --{{catalog}} CATALOGO            nome catalogo (obbligatorio)
+    -{{o}}, --{{organization}} ORGANIZZAZIONE nome organizzazione provider (obbligatorio)
+    -{{s}}, --{{server}} SERVER               endpoint server di gestione (obbligatorio)
+
+  Opzioni per l'ambito dello spazio
+    --{{scope space}}
+    --{{space}} SPAZIO                         nome spazio (obbligatorio)
+    -{{c}}, --{{catalog}} CATALOGO             nome catalogo (obbligatorio)
+    -{{o}}, --{{organization}} ORGANIZZAZIONE  nome organizzazione provider (obbligatorio)
+    -{{s}}, --{{server}} SERVER                endpoint server di gestione (obbligatorio)
+
+  Stabilità: prototipo
+
+  Richiamo di un'API da un catalogo
+    {{$ apic apis:get routes --catalog production --organization climbonorg --server mgmnthost.com}}
+    nome: {{routes}}
+    versione: {{1.0.0}}
+    titolo: Climbing routes
+    basepath: {{/routes}}
+    stato: Online
+    endpoint di produzione: {{https://gatewayhost.com/climbonorg/production/v1/routes}}
+    endpoint di sviluppo: {{https://gatewayhost.com/climbonorg/production/v1/routes}}
+    prodotti: {{"climbon:1.0.0" "climbon:2.0.0"}}
+    catalogo: {{production}}
+    organizzazione: {{climbonorg}}
+
+  Richiamo di un'API da uno spazio
+    {{$ apic apis:get routes --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    nome: {{routes}}
+    versione: {{1.0.0}}
+    titolo: Climbing routes
+    basepath: {{/routes}}
+    stato: Online
+    endpoint di produzione: {{https://gatewayhost.com/climbonorg/production/v1/routes}}
+    endpoint di sviluppo: {{https://gatewayhost.com/climbonorg/production/v1/routes}}
+    prodotti: {{"climbon:1.0.0" "climbon:2.0.0"}}
+    spazi: {{sp1}}
+    catalogo: {{production}}
+    organizzazione: {{climbonorg}}

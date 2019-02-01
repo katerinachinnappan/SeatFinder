@@ -1,0 +1,29 @@
+用法：apic {{validate}} OPTIONS API_FILENAME | PRODUCT_FILENAME
+
+  驗證 API 或產品定義
+
+  選項
+    -p, --{{product-only}}               如果是產品定義，不要驗證參照的 API
+    --{{no-extensions}}                  如果是 API 定義，不要根據 {{IBM Swagger}} 延伸來驗證
+
+  驗證 API 定義
+    {{$ apic validate routes.yaml}}
+    已根據 {{Swagger 2.0}} 綱目 {{[routes:1.0.0]}} 來驗證 {{routes.yaml}} API 定義
+    已根據 {{IBM Swagger 2.0}} 綱目 {{[routes:1.0.0]}} 來驗證 {{routes.yaml}} API 定義
+    已根據 {{IBM Swagger 2.0}} 延伸綱目 {{[routes:1.0.0]}} 來驗證 {{routes.yaml}} API 定義
+
+  驗證 API 定義，但不使用 IBM 延伸
+    {{$ apic validate --no-extensions routes.yaml}}
+    已根據 {{Swagger 2.0}} 綱目 {{[routes:1.0.0]}} 來驗證 {{routes.yaml}} API 定義
+    已根據 {{IBM Swagger 2.0}} 綱目 {{[routes:1.0.0]}} 來驗證 {{routes.yaml}} API 定義
+
+  驗證產品定義及其參照的 API
+    {{$ apic validate climb-on.yaml}}
+    已驗證 {{climb-on.yaml}} 產品定義 {{[climb-on:1.0.0]}}
+    已根據 {{Swagger 2.0}} 綱目 {{[routes:1.0.0]}} 來驗證 {{routes.yaml}} API 定義
+    已根據 {{IBM Swagger 2.0}} 綱目 {{[routes:1.0.0]}} 來驗證 {{routes.yaml}} API 定義
+    已根據 {{IBM Swagger 2.0}} 延伸綱目 {{[routes:1.0.0]}} 來驗證 {{routes.yaml}} API 定義
+
+  驗證產品定義，但不驗證其參照的 API
+    {{$ apic validate --product-only climb-on.yaml}}
+    已驗證 {{climb-on.yaml}} 產品定義 {{[climb-on:1.0.0]}}

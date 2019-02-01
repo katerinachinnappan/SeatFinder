@@ -1,0 +1,16 @@
+Usage: {{apic spaces:set}} SPACE_NAME OPTIONS
+
+  Set or update information on a space in a catalog
+
+  Options
+    --name
+    --display-name
+    -c, --{{catalog}} CATALOG               catalog name (required)
+    -o, --{{organization}} ORGANIZATION     a specific provider organization (required)
+    -s, --{{server}} SERVER                 management server endpoint (required)
+
+  Stability: prototype
+
+  Update the space in the {{production}} catalog in {{climbonorg}} organization on the {{mgmnthost.com}} server
+    $ {{apic spaces:set flights --display-name "Flights Space" --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated space {{flights}} in catalog {{production}} in {{climbonorg}} organization

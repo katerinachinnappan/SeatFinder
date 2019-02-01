@@ -1,0 +1,44 @@
+Syntaxis: apic {{create --type product}}           interactief
+          apic {{create --type product}} OPTIES    niet-interactief
+
+  Een productdefinitie maken
+
+  Opties
+    --{{title}} TITEL                    waarde van titel (verplicht)
+    --{{name}} NAAM                      waarde van naam (standaardwaarde afgeleid van titel)
+    --{{apis}} BESTANDSNAAM_API ...      lijst van API's waarnaar moet worden verwezen
+    --{{filename}} BESTANDSNAAM_PRODUCT  bestandsnaam (standaardwaarde afgeleid van naam)
+    --{{template}} SJABLOON              providersjabloon gebruiken (indien leeg standaard ingesteld op apic-sjabloon)
+    -v, --{{version}} VERSIE             versiewaarde (standaard ingesteld op 1.0.0)
+
+  Een product maken
+    {{$ apic create --type product --title "Climb On"}}
+    Productdefinitie {{climb-on.yaml}} gemaakt {{[climb-on:1.0.0]}}
+
+  Interactief een product maken
+    {{$ apic create --type product}}
+    ? Titel: {{Climb On}}
+    ? Naam: {{climb-on}}
+    ? Bestand: {{climb-on.yaml}}
+    ? Sjabloon:
+    ? API-bestanden:
+    Productdefinitie {{climb-on.yaml}} gemaakt {{[climb-on:1.0.0]}}
+
+  Een product maken op basis van bestaande API's
+    {{$ apic create --type product --title "Climb On" --apis "routes.yaml ascents.yaml"}}
+    Productdefinitie {{climb-on.yaml}} gemaakt {{[climb-on:1.0.0]}}
+
+  Een product maken met behulp van een van uw sjablonen
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic create --type product --title "Proxy Product" --template proxy}}
+    Productdefinitie {{proxy-product.yaml}} gemaakt {{[proxy-product:1.0.0]}}
+
+  Een product maken met behulp van uw standaardsjabloon
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic config:set --global template-default-product=staging}}
+    {{$ apic create --type product --title "Staging Product"}}
+    Productdefinitie {{staging-product.yaml}} gemaakt {{[staging-product:1.0.0]}}

@@ -1,0 +1,44 @@
+用法： apic {{create --type product}}           交互式
+       apic {{create --type product}} OPTIONS   非交互式
+
+  创建产品定义
+
+  选项
+    --{{title}} TITLE                    标题值（必需）
+    --{{name}} NAME                      名称值（从标题派生的缺省值）
+    --{{apis}} API_FILENAME ...          要引用的 API 列表
+    --{{filename}} PRODUCT_FILENAME      文件名（从名称派生的缺省值）
+    --{{template}} TEMPLATE              使用提供者模板（如果为空，那么缺省值为 apic 模板）
+    -v, --{{version}} VERSION            版本值（缺省值为 1.0.0）
+
+  创建产品
+    {{$ apic create --type product --title "Climb On"}}
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  以交互方式创建产品
+    {{$ apic create --type product}}
+    ? Title: {{Climb On}}
+    ? Name: {{climb-on}}
+    ? File: {{climb-on.yaml}}
+    ? Template:
+    ? API Files:
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  创建引用现有 API 的产品
+    {{$ apic create --type product --title "Climb On" --apis "routes.yaml ascents.yaml"}}
+    Created {{climb-on.yaml}} product definition {{[climb-on:1.0.0]}}
+
+  使用您的一个模板创建产品
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic create --type product --title "Proxy Product" --template proxy}}
+    Created {{proxy-product.yaml}} product definition {{[proxy-product:1.0.0]}}
+
+  使用缺省模板创建产品
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic config:set --global template-default-product=staging}}
+    {{$ apic create --type product --title "Staging Product"}}
+    Created {{staging-product.yaml}} product definition {{[staging-product:1.0.0]}}

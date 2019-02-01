@@ -1,0 +1,16 @@
+Kullanım: apic {{build}} SEÇENEKLER
+
+  Konuşlandırmayı desteklemek için bir LoopBack ya da Swift Server uygulaması oluşturur
+
+  Seçenekler
+    -f, --{{format}} zip | tar           çıkış dosyası biçimi (varsayılan değer: zip)
+    -n, --{{no-install}}                 {{`npm install`}} komutunu paketlemeden önce çalıştırma
+    -s, --{{scripts}}                    {{`npm install`}} sırasında {{package.json}} paketinde {{scripts.build}} komutunu çalıştır (yalnızca LoopBack)
+
+  {{npm install}} komutunu çalıştırdıktan sonra zip dosyası oluşturmak için:
+    {{$ apic build}}
+    ../climbon-1.0.0.zip oluşturuldu
+
+  {{npm install}} komutunu çalıştırmadan tar dosyası oluşturmak için:
+    {{$ apic build --no-install --format tar}}
+    ../climbon-1.0.0.tgz oluşturuldu

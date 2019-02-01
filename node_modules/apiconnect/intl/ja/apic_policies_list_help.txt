@@ -1,0 +1,27 @@
+使用法: apic {{policies}} OPTIONS
+
+  カタログ内のポリシーをリストします
+
+  オプション
+    --{{catalog}} CATALOG | --{{all-catalogs}} (必須)
+      -c, --{{catalog}} CATALOG            特定のカタログ
+      -C, --{{all-catalogs}}               すべてのカタログ
+    --{{organization}} ORGANIZATION | --{{all-organizations}} (必須)
+      -o, --{{organization}} ORGANIZATION  特定のプロバイダー組織
+      -O, --{{all-organizations}}          すべてのプロバイダー組織
+    -s, --{{server}} SERVER                管理サーバー・エンドポイント (必須)
+
+  Stability: prototype
+
+  実稼働カタログ内のポリシーをリストします
+    {{$ apic policies --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbonorg:production}} の {{invokepolicy}}:1.0.0
+    {{climbonorg:productiong}} の {{jwepolicy}}:1.0.0
+
+  「apic COMMAND -h」と入力すると、以下のコマンドの詳細が表示されます
+
+    {{policies:publish}}    特定のポリシーをカタログに公開します
+    {{policies:get}}        カタログ内の特定のポリシーに関する情報を取得します
+    {{policies:pull}}       特定のポリシーをカタログからプルします
+    {{policies:clone}}      すべてのポリシーをカタログからプルします
+    {{policies:delete}}     カタログ内の特定のポリシーを削除します

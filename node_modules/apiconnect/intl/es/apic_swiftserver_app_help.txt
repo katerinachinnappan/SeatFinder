@@ -1,0 +1,21 @@
+Uso: apic swiftserver OPCIONES
+
+  Crear una aplicación Swift Server Generator 
+
+  Opciones
+  -n, --name NOMBRE                  nombre de la aplicación (opcional)
+
+  Estabilidad: prototipo
+
+  Crear una aplicación denominada bookshop
+  $ apic swiftserver
+  ? ¿Cuál es el nombre de la aplicación? bookshop
+  ? Especifique el nombre del directorio que debe contener el proyecto: bookshop
+  ? Seleccione el almacén de datos: memoria
+
+Especifique "apic MANDATO -h" para obtener ayuda acerca de los siguientes mandatos relacionados:
+
+  create                           Crear definiciones de artefacto
+  swiftserver:property             Crear una propiedad de modelo
+  swiftserver:refresh              Generar una definición de OpenAPI y producto (Swagger)
+

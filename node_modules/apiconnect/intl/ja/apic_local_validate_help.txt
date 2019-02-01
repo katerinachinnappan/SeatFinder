@@ -1,0 +1,29 @@
+使用法: apic {{validate}} OPTIONS API_FILENAME | PRODUCT_FILENAME
+
+  API 定義または製品定義を検証します
+
+  オプション
+    -p, --{{product-only}}               製品定義の場合は、参照先 API を検証しない
+    --{{no-extensions}}                  API 定義の場合は、{{IBM Swagger}} 拡張に対する検証を行わない
+
+  API 定義を検証します
+    {{$ apic validate routes.yaml}}
+    {{routes.yaml}} API 定義が {{Swagger 2.0}} スキーマ {{[routes:1.0.0]}} に対して検証されました
+    {{routes.yaml}} API 定義が {{IBM Swagger 2.0}} スキーマ {{[routes:1.0.0]}} に対して検証されました
+    {{routes.yaml}} API 定義が {{IBM Swagger 2.0}} 拡張スキーマ {{[routes:1.0.0]}} に対して検証されました
+
+  API 定義だけを検証し、IBM 拡張は検証しません
+    {{$ apic validate --no-extensions routes.yaml}}
+    {{routes.yaml}} API 定義が {{Swagger 2.0}} スキーマ {{[routes:1.0.0]}} に対して検証されました
+    {{routes.yaml}} API 定義が {{IBM Swagger 2.0}} スキーマ {{[routes:1.0.0]}} に対して検証されました
+
+  製品定義とその参照先 API を検証します
+    {{$ apic validate climb-on.yaml}}
+    {{climb-on.yaml}} 製品定義 {{[climb-on:1.0.0]}} が検証されました
+    {{routes.yaml}} API 定義が {{Swagger 2.0}} スキーマ {{[routes:1.0.0]}} に対して検証されました
+    {{routes.yaml}} API 定義が {{IBM Swagger 2.0}} スキーマ {{[routes:1.0.0]}} に対して検証されました
+    {{routes.yaml}} API 定義が {{IBM Swagger 2.0}} 拡張スキーマ {{[routes:1.0.0]}} に対して検証されました
+
+  製品定義だけを検証し、その製品定義の参照先 API は検証しません
+    {{$ apic validate --product-only climb-on.yaml}}
+    {{climb-on.yaml}} 製品定義 {{[climb-on:1.0.0]}} が検証されました

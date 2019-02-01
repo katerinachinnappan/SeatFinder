@@ -1,0 +1,19 @@
+Kullanım: apic {{drafts:clear}} SEÇENEKLER
+
+  Taslaklardaki tüm API ve ürün tanımlarını siler
+
+  Seçenekler
+    --{{confirm drafts}}                 onay (zorunludur)
+    -{{o}}, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    -{{s}}, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  {{$ apic drafts:clear --confirm drafts --organization climbonorg --server mgmnthost.com}}
+  {{climbon}}:1.0.0 ürün tanımı {{climbonorg:drafts}} içinden silindi
+  {{climbon}}:1.0.1 ürün tanımı {{climbonorg:drafts}} içinden silindi
+  {{climbon}}:2.0.0 ürün tanımı {{climbonorg:drafts}} içinden silindi
+  {{hiking}}:3.0.0 ürün tanımı {{climbonorg:drafts}} içinden silindi
+  {{hiking}}:3.0.1 ürün tanımı {{climbonorg:drafts}} içinden silindi
+  {{routes}}:1.0.0 API tanımı {{climbonorg:drafts}} içinden silindi
+  {{routes}}:1.0.1 API tanımı {{climbonorg:drafts}} içinden silindi
+  {{ascents}}:1.0.0 API tanımı {{climbonorg:drafts}} içinden silindi
+  {{trails}}:4.0.0 API tanımı {{climbonorg:drafts}} içinden silindi

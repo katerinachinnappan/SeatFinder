@@ -1,0 +1,25 @@
+Syntaxis: apic {{props:delete}} OPTIES NAAM ...
+
+  Een of meer service-eigenschappen wissen
+
+  Opties
+    -r, --{{remote}}                     niet-lokale doelapp gebruiken (standaard ingesteld op local)
+    -S, --{{service}} SERVICENAAM        naam van service
+    -o, --{{organization}} ORGANISATIE   providerorganisatie
+    -s, --{{server}} SERVER              host van servereindpunt
+
+  Een eigenschap van de LoopBack-toepassingsservice wissen
+    {{$ apic props:delete prop1}}
+    [{{climbon}}] prop1: value1 is gewist
+
+  Een eigenschap van de LoopBack-toepassingsservice expliciet wissen
+    {{$ apic props:delete --service climbon prop1}}
+    prop1: value1 is gewist
+
+  Een eigenschap van de {{Micro Gateway}}-service wissen
+    {{$ apic props:delete --service climbon-gw prop1}}
+    prop1: value1 is gewist
+
+  Een eigenschap van de niet-lokale toepassing wissen
+    {{$ apic props:delete --remote --service climbon --organization climbon --server mgmnthost.com prop1}}
+    prop1: value1 is gewist

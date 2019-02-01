@@ -1,0 +1,11 @@
+Usage: apic {{loopback:property}} OPTIONS
+
+  Create a new {{LoopBack}} model property in the current {{LoopBack}} application
+
+  Options
+    --{{skip-cache}}                     do not remember prompt answers
+
+  Stability: prototype
+
+  Add a property to an existing {{LoopBack}} model
+    {{$ apic loopback:property}}

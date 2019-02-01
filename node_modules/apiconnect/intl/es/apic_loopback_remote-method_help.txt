@@ -1,0 +1,16 @@
+Uso: apic {{loopback:remote-method}} OPCIONES
+
+  Crear un método remoto en la aplicación {{LoopBack}}
+
+  Opciones
+    -m, --{{model}} NOMBRE_MODELO         nombre del modelo {{LoopBack}} (opcional)
+    -r, --{{remote-method}} NOMBRE_MÉTODO nombre del método remoto (opcional)
+    --{{skip-cache}}                      no recordar respuestas de solicitud
+
+  Estabilidad: prototipo
+
+  Añadir un nuevo método remoto a un modelo {{LoopBack}}
+    {{$ apic loopback:remote-method}}
+
+  Añadir un nuevo método remoto para el modelo note denominado {{getCreationDate}}
+    {{$ apic loopback:remote-method --model note --remote-method getCreationDate}}

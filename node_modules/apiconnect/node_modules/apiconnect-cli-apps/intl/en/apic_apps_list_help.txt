@@ -1,0 +1,35 @@
+Usage: apic {{apps}} OPTIONS
+
+  List provider apps contained in organizations the currently authenticated
+  user is a member of
+
+  Options
+    --{{organization}} ORGANIZATION | --{{all-organizations}} (required)
+      -o, --{{organization}} ORGANIZATION  a specific provider organization
+      -O, --{{all-organizations}}          all provider organizations
+    -s, --{{server}} SERVER                management server endpoint (required)
+
+  List the provider apps in the {{climbonorg}} organization on the mgmnthost.com server
+    {{$ apic apps --organization climbonorg --server mgmnthost.com}}
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-sandbox
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-qa
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-staging
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-production
+
+  List the provider apps in all organizations
+    {{$ apic apps --all-organizations --server mgmnthost.com}}
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-sandbox
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-qa
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-staging
+    apic-app://mgmnthost.com/orgs/climbonorg/apps/app-production
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-sandbox
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-qa
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-staging
+    apic-app://mgmnthost.com/orgs/hikingorg/apps/app-production
+
+Type "apic COMMAND -h" for more information on the following commands:
+
+  {{apps:get}}        Get information about an application
+  {{apps:set}}        Update an application
+  {{apps:build}}      Build an application
+  {{apps:publish}}    Publish an application to a provider app

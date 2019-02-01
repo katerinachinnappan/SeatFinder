@@ -1,0 +1,30 @@
+Syntaxe : apic {{loopback}} OPTIONS
+
+  Créer une application {{LoopBack}}
+
+  Options
+    -n, --{{name}} NOM                   nom de l'application (facultatif)
+    --{{skip-install}}                   ne pas installer automatiquement les dépendances
+    --{{skip-next-steps}}                ne pas imprimer les informations "étapes suivantes"
+    --{{explorer}}                       ajouter LoopBack Explorer au projet
+
+  Créer une application {{LoopBack}} nommée {{climbon}}
+    {{$ apic loopback --name climbon}}
+    ? Quel est le nom de votre application ? {{climbon}}
+    ? Entrez le nom du répertoire destiné à contenir le projet : {{climbon}}
+    ? Quel type d'application avez-vous en tête ? hello-world (projet contenant un exemple fonctionnel de base qui comprend une base de données de mémoire)
+
+Pour accéder à l'aide sur les commandes liées suivantes, entrez "apic COMMANDE -h" :
+
+  {{create}}                           Créer des définitions d'artefact
+  {{edit}}                             Exécuter API Designer
+  {{services}}                         Gestion des services
+  {{loopback:acl}}                     Créer une ACL
+  {{loopback:boot-script}}             Créer un script {{boot}}
+  {{loopback:export-api-def}}          Générer des définitions {{OpenAPI (Swagger)}} à partir de modèles
+  {{loopback:middleware}}              Créer un middleware
+  {{loopback:property}}                Créer une propriété de modèle
+  {{loopback:relation}}                Créer une relation entre des modèles
+  {{loopback:remote-method}}           Créer une méthode distante
+  {{loopback:swagger}}                 Générer une application à partir d'une définition {{OpenAPI (Swagger)}}
+  {{loopback:refresh}}                 Générer une définition de produit et {{OpenAPI (Swagger)}}

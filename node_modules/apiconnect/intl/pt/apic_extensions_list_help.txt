@@ -1,0 +1,27 @@
+Uso: apic {{extensions}} OPTIONS
+
+  Listar as extensões em um catálogo
+
+  Opções
+    --{{catalog}} CATALOG | --{{all-catalogs}} (obrigatório)
+      -c, --{{catalog}} CATALOG            um catálogo específico
+      -C, --{{all-catalogs}}               todos os catálogos
+    --{{organization}} ORGANIZATION | --{{all-organizations}} (obrigatório)
+      -o, --{{organization}} ORGANIZATION  uma organização do provedor específica
+      -O, --{{all-organizations}}          todas as organizações do provedor
+    -s, --{{server}} SERVER                terminal do servidor de gerenciamento (obrigatório)
+
+  Estabilidade: protótipo
+
+  Listar as extensões no catálogo de produção
+    {{$ apic extensions --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{climbextension}}:1.0.0 em {{climbonorg:production}}
+    {{hikeextension}}:1.0.0 em {{climbonorg:productiong}}
+
+  Digite "apic COMMAND -h" para obter mais informações sobre os seguintes comandos:
+
+    {{extensions:publish}}    Publicar uma extensão em um catálogo
+    {{extensions:get}}        Obter informações sobre uma extensão em um catálogo
+    {{extensions:pull}}       Extrair ma extensão de um catálogo
+    {{extensions:clone}}      Extrair todas as extensões de um catálogo
+    {{extensions:delete}}     Excluir uma extensão de um catálogo

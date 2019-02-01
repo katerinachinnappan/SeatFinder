@@ -1,0 +1,20 @@
+Syntaxis: apic {{plugins:install}} PLUGIN
+
+Een plugin in het opdrachtregelprogramma apic installeren.
+PLUGIN kan een van de volgende opties zijn:
+
+Installeren via tarball-archief - een {{.tgz}}-bestand waarvan de inhoud een {{npm}}-pakket is:
+{{$ apic plugins:install'-plugin-v1.0.0.tgz}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +--'-plugin@1.0.0
+
+Installeren via directorypad - een on-disk pad naar een map met een {{npm}}-pakket:
+{{$ apic plugins:install path/to/my-plugin}}
+  /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +--'-plugin@1.0.0
+
+Installeren via npm-register (standaard) - een pakketnaam die wordt opgehaald op basis van het standaard {{npm}}-register ({{npm config get registry}}):
+  {{$ apic plugins:install'-plugin}} /var/folders/p_/hrr_clx54431npnrdl11fggc0000gn/T/0.45662643294781446-1468622107605/lib
+  +--'-plugin@1.0.0
+
+Nadat u dit hebt gedaan, kunt u 'apic {{plugins:list}}' uitvoeren om te zien of uw plugin is geïnstalleerd.

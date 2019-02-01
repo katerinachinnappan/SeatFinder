@@ -1,0 +1,19 @@
+Kullanım: apic {{orgs}} --{{type consumer}} SEÇENEKLER
+
+  Kimliği doğrulanmış kullanıcının bir üyesi olduğu tüketici kuruluşlarını listeler
+
+  Seçenekler
+    --{{space}} ALAN                     alan adı (isteğe bağlıdır)
+    -c, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    -o, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    -s, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  Bir kataloğun parçası olan tüketici kuruluşlarını listele
+    {{$ apic orgs --type consumer --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{retailOrg sahibi shavon}}
+    {{salesOrg sahibi andre}}
+  
+  Şu ilgili komutlara ilişkin yardım için "{{apic COMMAND -h}}" yazın:
+    {{orgs:get --type consumer}}         Bir tüketici kuruluşuyla ilgili bilgi al

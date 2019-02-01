@@ -1,0 +1,18 @@
+Usage: apic {{create --type datasource}} OPTIONS
+
+  Create a {{LoopBack}} datasource definition in a {{LoopBack}} application
+
+  Options
+    --{{name}} NAME                      name of the data source
+    --{{skip-cache}}                     do not remember prompt answers
+
+  Create a {{LoopBack}} application datasource
+    {{$ apic create --type datasource}}
+    ? Enter the data-source name: {{MemoryDB}}
+    ? Select the connector for {{MemoryDB}}: In-memory db (supported by {{StrongLoop}})
+    Connector-specific configuration:
+    ? {{window.localStorage}} key to use for persistence (browser only): {{MemoryDB}}
+    ? Full path to file for persistence (server only): {{~/.memorydb}}
+    Done running loopback generator
+    Updating {{swagger}} and product definitions
+    Created {{/Users/shane/mesh/examples/climbon/definitions/climbon.yaml}} {{swagger}} description

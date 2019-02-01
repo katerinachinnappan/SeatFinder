@@ -1,0 +1,16 @@
+使用法: apic {{config:clear}} OPTIONS
+
+  すべての構成変数を削除します
+
+  オプション
+    -l, --{{local}}      アプリケーションのローカル構成変数をすべて削除する ({{loopback}} プロジェクトのみ)
+    -g, --{{global}}     グローバル構成変数をすべて削除する
+
+  {{$ apic config:clear}}
+  {{app: apic-app://mgmnthost.com/orgs/climbon/apps/sb}} が削除されました
+  {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}} が削除されました
+  {{org: apic-org://mgmnthost.com/orgs/climbon}} が削除されました
+  {{space: apic-space://mgmnthost.com/orgs/climbon/catalogs/sb/spaces/flights}} が削除されました
+
+  {{$ apic config:clear --global}}
+  {{catalog: apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}} が削除されました

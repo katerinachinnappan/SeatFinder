@@ -1,0 +1,16 @@
+Syntax: apic {{catalogs:set}} KATALOGNAME OPTIONEN
+
+  Informationen zu einem Katalog in einer Organisation festlegen oder aktualisieren
+
+  Optionen
+    --{{name}}
+    --{{display-name}}
+    --{{spaces enabled | disabled}}
+    -o, --{{organization}} ORGANISATION     eine bestimmte Provider-Organisation (erforderlich)
+    -s, --{{server}} SERVER                 Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  Katalog in der climbonorg-Organisation auf dem mgmnthost.com-Server aktualisieren
+    {{$ apic catalogs:set qa --organization climbonorg --server mgmnthost.com --spaces enabled}}
+    Updated catalog {{qa}} in {{climbonorg}}

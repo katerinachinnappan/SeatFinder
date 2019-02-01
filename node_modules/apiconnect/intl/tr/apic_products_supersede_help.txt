@@ -1,0 +1,36 @@
+Kullanım: apic {{products:supersede}} EKSİ_ÜRÜN_ADI[:SÜRÜM] YENİ_ÜRÜN_ADI[:SÜRÜM] [KATALOG_SEÇENEKLERİ | ALAN_SEÇENEKLERİ]
+
+  Bir katalogda ya da alanda yayınlanan veya kullanım dışı bırakılan ürünün yerine başka bir ürünü geçir
+
+  Katalog kapsamı için seçenekler
+    --{{plans}} KAYNAK_PLANI_ADI:HEDEF_PLAN_ADI ...   eski ve yeni ürün planı eşlemeleri (zorunludur)
+    {{-c}}, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    {{-o}}, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    {{-s}}, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Alan kapsamı için seçenekler
+    --{{scope space}}
+    --{{space}} ALAN                     alan adı (zorunludur)
+    --{{plans}} KAYNAK_PLANI_ADI:HEDEF_PLANı_ADı ...   eski ve yeni ürün planı eşlemeleri (zorunludur)
+    {{-c}}, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    {{-o}}, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    {{-s}}, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  Katalog yapılandırma değişkenini kullanarak bir ürünün yerine daha yeni bir sürümü geçirmek için:
+    {{$ config:set catalog=apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+    {{$ apic products:supersede climbon:1.0.0 climbon:2.0.0}}
+    {{climbon}}:sb içinde, {{climbon}}:1.0.0 yerine {{climbon}}:2.0.0 geçirildi
+
+  Bir ürünün yerine farklı bir ürünü geçirmek için:
+    {{$ apic products:supersede climbon adventure-sports -c production -o climbonorg -s mgmnthost.com}}
+    {{climbonorg:production}} içinde {{climbon}}:2.0.1 yerine {{adventure-sports}}:1.0.0 geçirildi
+
+  Bir ürünün yerine yeni bir sürümü geçirmek ve eski planları yeni planlarla eşlemek için:
+    {{$ apic products:supersede climbon:1.0.1 climbon:1.1.0 --plans "basic:silver premium:gold" -c production -o climbonorg -s mgmnthost.com}}
+    {{climbonorg:production}} içinde {{climbon}}:1.0.1 yerine {{climbon}}:1.1.0 geçirildi
+
+  Bir alanda bir ürünün yerine farklı bir ürünü geçir
+    {{$ apic products:supersede --scope space climbon adventure-sports --space flights -c production -o climbonorg -s mgmnthost.com}}
+    {{climbonorg:production:flights}} içinde {{climbon}}:2.0.1 yerine {{adventure-sports}}:1.0.0 geçirildi

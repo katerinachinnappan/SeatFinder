@@ -1,0 +1,12 @@
+Syntaxe : apic {{loopback:acl}} OPTIONS
+
+  Ajouter une nouvelle entrée ACL à l'application {{LoopBack}} en cours
+
+  Options
+    --skip-cache                     ne pas mémoriser les réponses aux invites
+
+  Stabilité : prototype
+
+  {{$ apic loopback:acl}}
+  Cela permet de poser plusieurs questions pour déterminer les options ACL et
+  d'ajouter ensuite une entrée au JSON du modèle correspondant.

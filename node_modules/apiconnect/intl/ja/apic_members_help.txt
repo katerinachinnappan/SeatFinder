@@ -1,0 +1,28 @@
+使用法: {{apic members}} [ORG_OPTIONS | CONSUMER_ORG_OPTIONS]
+
+  スコープ内のメンバーをリストします
+
+  組織スコープ用のオプション
+    --{{scope org}}                               (デフォルト)
+    --{{organization}} ORGANIZATION | --{{all-organizations}} (必須)
+      -{{o}}, --{{organization}} ORGANIZATION         特定のプロバイダー組織
+    -{{s}}, --{{server}} SERVER                       管理サーバー・エンドポイント (必須)
+
+  コンシューマー組織スコープ用のオプション
+    --{{scope consumer-org}}                      (必須)
+    --{{consumer-org}} | --{{all-organizations}}      (必須)
+      --{{consumer-org}} ORGANIZATION             特定のコンシューマー組織
+    -{{c}}, --{{catalog}} CATALOG                     カタログ名 (必須)
+    -{{o}}, --{{organization}} ORGANIZATION           プロバイダー組織名 (必須)
+    -{{s}}, --{{server}} SERVER                       管理サーバー・エンドポイント (必須)
+
+  Stability: prototype
+
+  プロバイダー組織に属するメンバーをリストします
+    $ {{apic members --scope org -o climbon --server mgmnthost.com}}
+    {{climbon}} 組織に所有者ロールを持つユーザー ibmapim+steve@gmail.com
+    {{climbon}} 組織に開発者ロールを持つユーザー ibmapim+shavon@gmail.com
+
+  コンシューマー組織に属するメンバーをリストします
+    $ {{apic members --scope consumer-org --consumer-org consumerorg -c qa -o climbon --server mgmnthost.com}}
+    {{consumerorg}} 組織に所有者ロールを持つユーザー ibmapim+andre@gmail.com

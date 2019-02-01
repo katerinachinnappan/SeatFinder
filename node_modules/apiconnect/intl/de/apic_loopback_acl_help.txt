@@ -1,0 +1,12 @@
+Syntax: apic {{loopback:acl}} OPTIONEN
+
+  Fügt einen neuen ACL-Eintrag zur aktuellen {{LoopBack}}-Anwendung hinzu
+
+  Optionen
+    --skip-cache                     Eingabeaufforderungsantworten nicht speichern
+
+  Stabilität: Prototyp
+
+  {{$ apic loopback:acl}}
+  This will ask several questions do determine ACL options and
+  then add an entry to the corresponding model JSON.

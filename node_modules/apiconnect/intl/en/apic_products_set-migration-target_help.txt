@@ -1,0 +1,27 @@
+Usage: apic {{products:set-migration-target}} OLD_PRODUCT_NAME[:VERSION] NEW_PRODUCT_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  Set migration target for the plans of a published or deprecated product in a catalog or space with another product
+
+  Options for catalog scope
+    --{{plans}} SOURCE_PLAN_NAME:TARGET_PLAN_NAME ...   old to new product plan mappings (required)
+    {{-c}}, --{{catalog}} CATALOG            catalog name (required)
+    {{-o}}, --{{organization}} ORGANIZATION  provider organization name (required)
+    {{-s}}, --{{server}} SERVER              management server endpoint (required)
+
+  Options for space scope
+    --{{scope space}}
+    --{{space}} SPACE                    space name (required)
+    --{{plans}} SOURCE_PLAN_NAME:TARGET_PLAN_NAME ...   old to new product plan mappings (required)
+    {{-c}}, --{{catalog}} CATALOG            catalog name (required)
+    {{-o}}, --{{organization}} ORGANIZATION  provider organization name (required)
+    {{-s}}, --{{server}} SERVER              management server endpoint (required)
+
+  Stability: prototype
+
+  Set migration target for the plans of a product in a catalog
+    {{$ apic products:set-migration-target climbon:1.0.0 climbon:1.1.0 --plans "basic:silver premium:gold" -c production -o climbonorg -s mgmnthost.com}}
+    Migration target set for {{climbon}}:1.0.0 to {{climbon}}:1.1.0 in {{climbonorg:production}}
+
+  Set migration target for the plans of a product in a space
+    {{$ apic products:set-migration-target --scope space climbon:1.0.0 climbon:1.1.0 --plans "basic:silver premium:gold" --space flights -c production -o climbonorg -s mgmnthost.com}}
+    Migration target set for {{climbon}}:1.0.0 to {{climbon}}:1.1.0 in {{climbonorg:production:flights}}

@@ -1,0 +1,14 @@
+Uso: apic {{policies:pull}} OPCIONES NOMBRE_POLÍTICA[:VERSIÓN]
+
+  Extraer una política de un catálogo
+
+  Opciones
+    -c, --{{catalog}} CATÁLOGO           nombre de catálogo (obligatorio)
+    -o, --{{organization}} ORGANIZACIÓN  nombre de organización de proveedores (obligatorio)
+    -s, --{{server}} SERVIDOR            punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  Extraer la política
+    {{$ apic policies:pull invokepolicy:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+    Se ha extraído la política {{invokepolicy}}:1.0.0 de {{climbonorg:production [invokepolicy_1.0.0]}}

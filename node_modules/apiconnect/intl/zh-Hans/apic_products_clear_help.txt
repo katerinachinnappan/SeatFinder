@@ -1,0 +1,35 @@
+用法：apic {{products:clear}} [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  删除目录或空间中的所有产品
+
+  catalog 作用域的选项
+    --{{confirm}} CATALOG                确认（必需）
+    {{-c}}, --{{catalog}} CATALOG            目录名称（必需）
+    {{-o}}, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    {{-s}}, --{{server}} SERVER              管理服务器端点（必需）
+
+  space 作用域的选项
+    --{{scope space}}
+    --{{confirm}} CATALOG                确认（必需）
+    --{{space}} SPACE                    空间名称（必需）
+    {{-c}}, --{{catalog}} CATALOG            目录名称（必需）
+    {{-o}}, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    {{-s}}, --{{server}} SERVER              管理服务器端点（必需）
+
+  稳定性：原型
+
+  清除目录中的所有产品
+    {{$ apic products:clear --confirm production --catalog production --organization climbonorg --server mgmnthost.com}}
+    Deleted {{climbon}}:1.0.0 product definition from {{climbonorg}}:production
+    Deleted {{climbon}}:1.0.1 product definition from {{climbonorg}}:production
+    Deleted {{climbon}}:2.0.0 product definition from {{climbonorg}}:production
+    Deleted {{hiking}}:3.0.0 product definition from {{climbonorg}}:production
+    Deleted {{hiking}}:3.0.1 product definition from {{climbonorg}}:production
+
+  清除空间中的所有产品
+    {{$ apic products:clear --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com --confirm production}}
+    Deleted {{climbon}}:1.0.0 product definition from {{climbonorg}}:production:flights
+    Deleted {{climbon}}:1.0.1 product definition from {{climbonorg}}:production:flights
+    Deleted {{climbon}}:2.0.0 product definition from {{climbonorg}}:production:flights
+    Deleted {{hiking}}:3.0.0 product definition from {{climbonorg}}:production:flights
+    Deleted {{hiking}}:3.0.1 product definition from {{climbonorg}}:production:flights

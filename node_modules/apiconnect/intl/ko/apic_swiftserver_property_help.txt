@@ -1,0 +1,9 @@
+사용법: apic swiftserver:property
+
+  현재 애플리케이션에서 새 Swift 서버 생성자 모델 특성 작성
+
+  안정성: 프로토타입
+
+  기존 모델에 특성 추가
+  $ apic swiftserver:property
+

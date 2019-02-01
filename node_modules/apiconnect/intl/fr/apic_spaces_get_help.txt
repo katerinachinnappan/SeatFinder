@@ -1,0 +1,17 @@
+Syntaxe : {{apic spaces:get}} NOM_ESPACE OPTIONS
+
+  Obtenir des informations sur un espace dans un catalogue
+
+  Options
+    -c, --{{catalog}} CATALOGUE          nom du catalogue (obligatoire)
+    -o, --{{organization}} ORGANISATION  organisation de type fournisseur spécifique (obligatoire)
+    -s, --{{server}} SERVEUR             noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  Obtenir un espace dans le catalogue {{production}} dans l'organisation {{climbonorg}} sur le serveur {{mgmnthost.com}}
+    $ {{apic spaces:get flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    nom : {{flights}}
+    nom d'affichage : {{Flights Space}}
+    catalogue : {{production}}
+    organisation : {{climbonorg}}

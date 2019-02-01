@@ -1,0 +1,40 @@
+用法：{{apic apis:set}} API_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  更新目录或空间中的 API
+
+  catalog 作用域的选项
+    --{{scope catalog}}                       （缺省值）
+    --{{status}}                              API 状态（必需）
+        {{online}}                            使 API 联机
+        {{offline}}                           使 API 脱机
+    -{{c}}, --{{catalog}} CATALOG             目录名称（必需）
+    -{{o}}, --{{organization}} ORGANIZATION   提供者组织名称（必需）
+    -{{s}}, --{{server}} SERVER               管理服务器端点（必需）
+
+  space 作用域的选项
+    --{{scope space}}
+    --{{status}}                              API 状态（必需）
+        {{online}}                            使 API 联机
+        {{offline}}                           使 API 脱机
+    --{{space}} SPACE                         空间名称（必需）
+    -{{c}}, --{{catalog}} CATALOG             目录名称（必需）
+    -{{o}}, --{{organization}} ORGANIZATION   提供者组织名称（必需）
+    -{{s}}, --{{server}} SERVER               管理服务器端点（必需）
+
+  稳定性：原型
+
+  在目录中使 API 脱机
+    {{$ apic apis:set routes --status offline --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated {{routes:1.0.0}} in {{climbonorg:production}} (status: {{offline}})
+
+  在目录中使 API 联机
+    {{$ apic apis:set routes --status online --catalog production --organization climbonorg --server mgmnthost.com}}
+    Updated {{routes:1.0.0}} in {{climbonorg:production}} (status: {{online}})
+
+  在空间中使 API 脱机
+    {{$ apic apis:set --scope space --status offline --space sp1 --catalog production --organization climbonorg --server mgmnthost.com routes}}
+    Updated {{routes:1.0.0}} in {{climbonorg:production:sp1}} (status: {{offline}})
+
+  在空间中使 API 联机
+    {{$ apic apis:set --scope space --status online --space sp1 --catalog production --organization climbonorg --server mgmnthost.com routes}}
+    Updated {{routes:1.0.0}} in {{climbonorg:production:sp1}} (status: {{online}})

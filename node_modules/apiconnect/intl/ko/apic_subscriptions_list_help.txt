@@ -1,0 +1,56 @@
+사용법: {{apic subscriptions}} [CATALOG_OPTIONS | SPACE_OPTIONS | CONSUMER-ORG_OPTIONS]
+
+ 제품, 애플리케이션, 카탈로그 또는 공간의 등록 나열
+
+  카탈로그 공간 옵션
+    --{{scope catalog}}                                     (기본값)
+    -{{p}}, --{{product}} PRODUCT_NAME[:VERSION[:PLAN_NAME]]    플랜 이름
+    -{{c}}, --{{catalog}} CATALOG                               카탈로그 이름(필수)
+    -{{o}}, --{{organization}} ORGANIZATION                     특정 제공자 조직(필수)
+    -{{s}}, --{{server}} SERVER                                 관리 서버 엔드포인트(필수)
+
+  공간 범위 옵션
+    --{{scope space}}                                       (필수)
+    --{{space}}                                             공간 이름(필수)
+    -{{p}}, --{{product}} PRODUCT_NAME[:VERSION[:PLAN_NAME]]    플랜 이름
+    -{{c}}, --{{catalog}} CATALOG                               카탈로그 이름(필수)
+    -{{o}}, --{{organization}} ORGANIZATION                     특정 제공자 조직(필수)
+    -{{s}}, --{{server}} SERVER                                 관리 서버 엔드포인트(필수)
+
+   consumer-org 범위 옵션
+    --{{scope consumer-org}}                                (필수)
+    -{{a}}, --{{application}} APPLICATION                       개발자 애플리케이션(필수)
+    -{{c}}, --{{catalog}} CATALOG                               카탈로그 이름(필수)
+    -{{o}}, --{{organization}} ORGANIZATION                     특정 제공자 조직(필수)
+    -{{s}}, --{{server}} SERVER                                 관리 서버 엔드포인트(필수)
+
+  안정성: 프로토타입
+
+  카탈로그의 등록 나열
+    {{$ apic subscriptions --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production}}
+    subscription2 in {{climbonapp}} for {{climb-on:1.0.0:fremimum}} in {{climbonorg:production}}
+    subscription3 in {{hikeonapp}} for {{hike-on:1.0.0:premimum}} in {{climbonorg:production}}
+
+  카탈로그의 product:version:plan에 대한 등록 나열
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production}}
+
+  공간의 등록 나열
+    {{$ apic subscriptions --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production:flights}}
+    subscription2 in {{climbonapp}} for {{climb-on:1.0.0:fremimum}} in {{climbonorg:production:flights}}
+    subscription3 in {{hikeonapp}} for {{hike-on:1.0.0:premimum}} in {{climbonorg:production:flights}}
+
+  공간의 product:version:plan에 대한 등록 나열
+    {{$ apic subscriptions --product climb-on:1.0.0:premimum --scope space --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production:flights}}
+
+  앱의 등록 나열
+    {{$ apic subscriptions --application climbonapp --scope consumer-org --catalog production --organization climbonorg --server mgmnthost.com}}
+    subscription1 in {{climbonapp}} for {{climb-on:1.0.0:premimum}} in {{climbonorg:production}}
+    subscription2 in {{climbonapp}} for {{climb-on:1.0.0:fremimum}} in {{climbonorg:production}}
+
+  다음 명령에 대한 자세한 정보를 보려면 "apic COMMAND --help"를 입력하십시오. 
+
+    {{subscriptions:get}}        등록 정보 가져오기

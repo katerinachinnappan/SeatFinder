@@ -1,0 +1,11 @@
+Syntaxis: apic {{loopback:property}} OPTIES
+
+  Nieuwe eigenschap voor {{LoopBack}}-model maken in huidige {{LoopBack}}-toepassing
+
+  Opties
+    --{{skip-cache}}                     promptantwoorden niet onthouden
+
+  Stabiliteit: prototype
+
+  Een eigenschap toevoegen aan een bestaand {{LoopBack}}-model
+    {{$ apic loopback:property}}

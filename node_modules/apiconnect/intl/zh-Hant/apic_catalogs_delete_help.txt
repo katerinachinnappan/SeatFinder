@@ -1,0 +1,13 @@
+用法：apic {{catalogs:delete}} CATALOG_NAME OPTIONS
+
+  刪除組織中的型錄
+
+  選項
+    -o, --{{organization}} ORGANIZATION     特定的提供者組織（必要）
+    -s, --{{server}} SERVER                 管理伺服器端點（必要）
+
+  穩定性：原型
+
+  在 {{mgmnthost.com}} 伺服器上，刪除 {{climbonorg}} 組織中的型錄
+    {{$ apic catalogs:delete staging --organization climbonorg --server mgmnthost.com}}
+    已刪除 {{climbonorg:staging}}

@@ -1,0 +1,36 @@
+Syntax: apic {{products:supersede}} ALTER_PRODUKTNAME[:VERSION] NEUER_PRODUKTNAME[:VERSION] [KATALOGOPTIONEN | BEREICHSOPTIONEN]
+
+  Ein veröffentlichtes oder veraltetes Produkt in einem Katalog oder Bereich durch ein anderes Produkt außer Kraft setzen
+
+  Optionen für Katalogbereich
+  --{{plans}} QUELLENPLANNAME:ZIELPLANNAME ...   Zuordnungen zwischen altem und neuem Produktplan (erforderlich)
+  {{-c}}, --{{catalog}} KATALOG            Katalogname (erforderlich)
+  {{-o}}, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+  {{-s}}, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Optionen für Bereichsumfang
+    --{{scope space}}
+    --{{space}} BEREICH                    Bereichsname (erforderlich)
+    --{{plans}} QUELLENPLANNAME:ZIELPLANNAME ...   Zuordnungen zwischen altem und neuem Produktplan (erforderlich)
+    {{-c}}, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    {{-o}}, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+    {{-s}}, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  Ein Produkt mithilfe der Konfigurationsvariable durch eine aktuellere Version außer Kraft setzen
+    {{$ config:set catalog=apic-catalog://mgmnthost.com/orgs/climbon/catalogs/sb}}
+    {{$ apic products:supersede climbon:1.0.0 climbon:2.0.0}}
+    Superseded {{climbon}}:1.0.0 with {{climbon}}:2.0.0 in {{climbon}}:sb
+
+  Ein Produkt durch ein anderes Produkt außer Kraft setzen
+    {{$ apic products:supersede climbon adventure-sports -c production -o climbonorg -s mgmnthost.com}}
+    Superseded {{climbon}}:2.0.1 with {{adventure-sports}}:1.0.0 in {{climbonorg:production}}
+
+  Ein Produkt durch eine neue Version außer Kraft setzen und alle alten Pläne neuen Plänen zuordnen
+    {{$ apic products:supersede climbon:1.0.1 climbon:1.1.0 --plans "basic:silver premium:gold" -c production -o climbonorg -s mgmnthost.com}}
+    Superseded {{climbon}}:1.0.1 with {{climbon}}:1.1.0 in {{climbonorg:production}}
+
+  Ein Produkt durch ein anderes Produkt in einem Bereich außer Kraft setzen
+    {{$ apic products:supersede --scope space climbon adventure-sports --space flights -c production -o climbonorg -s mgmnthost.com}}
+    Superseded {{climbon}}:2.0.1 with {{adventure-sports}}:1.0.0 in {{climbonorg:production:flights}}

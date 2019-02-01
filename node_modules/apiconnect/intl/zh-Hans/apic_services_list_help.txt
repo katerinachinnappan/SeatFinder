@@ -1,0 +1,14 @@
+用法：apic {{services}}
+
+  列出当前正在执行的服务
+
+  {{$ apic services}}
+  Service {{climbon}} running on port 4001
+  Service {{climbon-gw}} running on port 4002
+
+输入“apic COMMAND -h”以获取有关以下相关命令的帮助：
+
+  {{services:start}}    启动服务
+  {{services:stop}}     停止服务
+  {{services:logs}}     获取日志
+  {{services:get}}      获取服务

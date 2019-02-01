@@ -1,0 +1,12 @@
+使用法: apic {{loopback:acl}} OPTIONS
+
+  新しい ACL エントリーを現在の {{LoopBack}} アプリケーションに追加します
+
+  オプション
+    --skip-cache                     プロンプトに対する応答を記憶しない
+
+  Stability: prototype
+
+  {{$ apic loopback:acl}}
+  ACL オプションを決定するための質問がいくつか表示され、
+  その後、対応するモデルの JSON にエントリーが追加されます。

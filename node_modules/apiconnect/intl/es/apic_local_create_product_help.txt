@@ -1,0 +1,44 @@
+Uso:   apic {{create --type product}}           interactivo
+       apic {{create --type product}} OPCIONES  no interactivo
+
+  Crear una definición de producto
+
+  Opciones
+    --{{title}} TÍTULO                   valor de título (obligatorio)
+    --{{name}} NOMBRE                    valor de nombre (valor predeterminado derivado del título)
+    --{{apis}} NOMBRE_ARCHIVO_API...     lista de APIs a referenciar
+    --{{filename}} NOMBRE_ARCHIVO_PROD   nombre de archivo (el valor predeterminado se deriva del nombre)
+    --{{template}} PLANTILLA             utilizar una plantilla de proveedor (si está vacía, el valor predeterminado es la plantilla de apic)
+    -v, --{{version}} VERSIÓN            valor de versión (el valor predeterminado es 1.0.0)
+
+  Crear un producto
+    {{$ apic create --type product --title "Climb On"}}
+    Se ha creado la definición del producto {{climb-on.yaml}} {{[climb-on:1.0.0]}}
+
+  Crear un producto interactivamente
+    {{$ apic create --type product}}
+    ? Título: {{Climb On}}
+    ? Nombre: {{climb-on}}
+    ? Archivo: {{climb-on.yaml}}
+    ? Plantilla:
+    ? Archivos de API:
+    Se ha creado la definición del producto {{climb-on.yaml}} {{[climb-on:1.0.0]}}
+
+  Crear un producto que haga referencia a APIs existentes
+    {{$ apic create --type product --title "Climb On" --apis "routes.yaml ascents.yaml"}}
+    Se ha creado la definición del producto {{climb-on.yaml}} {{[climb-on:1.0.0]}}
+
+  Crear un producto utilizando una de las plantillas
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic create --type product --title "Proxy Product" --template proxy}}
+    Se ha creado la definición del producto {{proxy-product.yaml}} {{[proxy-product:1.0.0]}}
+
+  Crear un producto utilizando la plantilla predeterminada
+    {{$ apic config:set --global template-path="/etc/templates"}}
+    {{$ ls /etc/templates}}
+    proxy-product.hbs staging-product.hbs
+    {{$ apic config:set --global template-default-product=staging}}
+    {{$ apic create --type product --title "Staging Product"}}
+    Se ha creado la definición del producto {{staging-product.yaml}} {{[staging-product:1.0.0]}}

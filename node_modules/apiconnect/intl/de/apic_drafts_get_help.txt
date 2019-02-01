@@ -1,0 +1,27 @@
+Syntax: apic {{drafts:get}} OPTIONEN NAME[:VERSION]
+
+  Informationen zu einer API- oder Produktdefinition in den Entwürfen abrufen
+
+  Optionen
+    --{{type api | product}}             Untergruppe der Liste nach Definitionstyp
+    -{{o}}, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+    -{{s}}, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Informationen zu einer API-Definition abrufen
+    {{$ apic drafts:get routes --organization climbonorg --server mgmnthost.com}}
+    type: {{API}}
+    name: {{routes}}
+    version: 1.0.0
+    title: Climbing Routes API
+    basepath: {{/routes}}
+    products: {{"climbon:1.0.0" "climbon:1.0.1"}}
+    organization: {{climbonorg}}
+
+  Informationen zu einer Produktdefinition abrufen
+    {{$ apic drafts:get climbon}}
+    type: {{product}}
+    name: {{climbon}}
+    version: 1.0.0
+    title: Climbing product
+    apis: {{"routes:1.0.0" "ascents:2.0.0"}}
+    organization: {{climbonorg}}

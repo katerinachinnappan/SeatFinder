@@ -1,0 +1,30 @@
+用法：apic {{loopback}} OPTIONS
+
+  创建 {{LoopBack}} 应用程序
+
+  选项
+    -n, --{{name}} NAME                  应用程序的名称（可选）
+    --{{skip-install}}                   不自动安装依赖关系
+    --{{skip-next-steps}}                不打印“后续步骤”信息
+    --{{explorer}}                       将 LoopBack Explorer 添加到项目
+
+  创建名为 {{climbon}} 的 {{LoopBack}} 应用程序
+    {{$ apic loopback --name climbon}}
+    ? 您的应用程序的名称是什么？{{climbon}}
+    ? 输入要包含项目的目录的名称：{{climbon}}
+    ? 您想要什么种类的应用程序？hello-world（包含基本工作示例的项目，包括内存数据库）
+
+输入“apic COMMAND -h”以获取有关以下相关命令的帮助：
+
+  {{create}}                           创建工件定义
+  {{edit}}                             运行 API Designer
+  {{services}}                         服务管理
+  {{loopback:acl}}                     创建 ACL
+  {{loopback:boot-script}}             创建 {{boot}} 脚本
+  {{loopback:export-api-def}}          从模型生成 {{OpenAPI (Swagger)}} 定义
+  {{loopback:middleware}}              创建中间件
+  {{loopback:property}}                创建新的模型属性
+  {{loopback:relation}}                创建模型之间的新关系
+  {{loopback:remote-method}}           创建新的远程方法
+  {{loopback:swagger}}                 从 {{OpenAPI (Swagger)}} 定义生成应用程序
+  {{loopback:refresh}}                 生成产品和 {{OpenAPI (Swagger)}} 定义

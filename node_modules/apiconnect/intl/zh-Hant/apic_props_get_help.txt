@@ -1,0 +1,25 @@
+用法：apic {{props:get}} OPTIONS NAME
+
+  取得服務內容
+
+  選項
+    -r, --{{remote}}                     使用遠端應用程式目標（預設為本端）
+    -S, --{{service}} SERVICE_NAME       服務名稱
+    -o, --{{organization}} ORGANIZATION  提供者組織
+    -s, --{{server}} SERVER              伺服器端點主機
+
+  取得 LoopBack 應用程式服務的內容
+    {{$ apic props:get prop1}}
+    [{{climbon}}] prop1: value1
+
+  明確取得 LoopBack 應用程式服務的內容
+    {{$ apic props:get --service climbon prop1}}
+    prop1: value1
+
+  取得 {{Micro Gateway}} 服務的內容
+    {{$ apic props:get --service climbon-gw prop1}}
+    prop1: value1
+
+  取得遠端應用程式的內容
+    {{$ apic props:get --remote --service climbon --organization climbon --server mgmnthost.com prop1}}
+    prop1: value1

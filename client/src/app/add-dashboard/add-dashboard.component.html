@@ -1,0 +1,65 @@
+
+  <mat-card calss="seatfinder-card-margin">
+  <mat-card-header>
+    <div mat-card-avatar>
+      <mat-icon>filter_list</mat-icon>
+    </div>
+    <mat-card-title>Add room or seat</mat-card-title>
+    <mat-card-subtitle>Input attributes of room/seat</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-tab-group (selectedTabChange)="setTabActive($event)">
+
+      <mat-tab label="{{tabList[0]}}">
+        <mat-form-field class="margin">
+          <mat-select placeholder="Building" (selectionChange)="onBuildingSelectionChangedSeat($event)">
+            <mat-option *ngFor="let building of buildingList" [value]="building">
+              {{building.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="margin">
+          <mat-select placeholder="Floor" disabled="{{getFloorFileldAvailabilitySeat()}}" (selectionChange)="onFloorSelectionChangedSeat($event)">
+            <mat-option *ngFor="let number of displayedFloorsSeat" [value]="number">
+              {{number}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </mat-tab>
+      <mat-tab label="{{tabList[1]}}">
+
+        <mat-form-field class="margin">
+          <mat-select placeholder="Building" (selectionChange)="onBuildingSelectionChangedRoom($event)">
+            <mat-option *ngFor="let building of buildingList" [value]="building">
+              {{building.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="margin">
+          <mat-select placeholder="Floor" disabled="{{getFloorFileldAvailabilityRoom()}}" (selectionChange)="onFloorSelectionChangedRoom($event)">
+            <mat-option *ngFor="let number of displayedFloorsRoom" [value]="number">
+              {{number}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="margin">
+            <input matInput placeholder="Name of room" type="text" (change)="onNameChange($event)"/>
+        </mat-form-field>
+        <br>
+        <section class="checkbox-container"> 
+        Items: 
+        <mat-checkbox class="margin" *ngFor="let item of itemList" (change)="updateItemSelection($event, item)"> {{item.name}}</mat-checkbox>
+        <br>
+      </section>  
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card-content>
+  <mat-card-actions class="button-container">
+    <button mat-button (click)="add()" mat-raised-button color="primary">ADD</button>
+  </mat-card-actions>
+  </mat-card>
+
+  <app-result-display></app-result-display>

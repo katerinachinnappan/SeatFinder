@@ -1,0 +1,36 @@
+Utilizzo: apic {{products:get}} NOME_PRODOTTO[:VERSIONE] [OPZIONI_CATALOGO | OPZIONI_SPAZIO]
+
+  Richiama le informazioni su un prodotto in un catalogo o uno spazio
+
+  Opzioni per l'ambito del catalogo
+    {{-c}}, --{{catalog}} CATALOGO             nome catalogo (obbligatorio)
+    {{-o}}, --{{organization}} ORGANIZZAZIONE  nome organizzazione provider (obbligatorio)
+    {{-s}}, --{{server}} SERVER                endpoint server di gestione (obbligatorio)
+
+  Opzioni per l'ambito dello spazio
+    --{{scope space}}
+    --{{space}} SPAZIO                         nome spazio (obbligatorio)
+    {{-c}}, --{{catalog}} CATALOGO             nome catalogo (obbligatorio)
+    {{-o}}, --{{organization}} ORGANIZZAZIONE  nome organizzazione provider (obbligatorio)
+    {{-s}}, --{{server}} SERVER                endpoint server di gestione (obbligatorio)
+
+  Richiamo di un prodotto in un catalogo
+  {{$ apic products:get climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+  nome: {{climbon}}
+  versione: 1.0.0
+  titolo: Climbing product
+  stato: {{staged}}
+  apis: "{{routes}}:1.0.0" "{{ascents}}:2.0.0"
+  catalogo: {{production}}
+  organizzazione: {{climbonorg}}
+
+  Richiamo di un prodotto in uno spazio
+    {{$ apic products:get --scope space climbon --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    nome: {{climbon}}
+    versione: 1.0.0
+    titolo: Climbing product
+    stato: {{staged}}
+    apis: "{{routes}}:1.0.0" "{{ascents}}:2.0.0"
+    catalogo: {{production}}
+    organizzazione: {{climbonorg}}
+    spazio: {{flights}}

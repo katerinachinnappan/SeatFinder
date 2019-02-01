@@ -1,0 +1,27 @@
+Usage: apic {{policies}} OPTIONS
+
+  List policies in a catalog
+
+  Options
+    --{{catalog}} CATALOG | --{{all-catalogs}} (required)
+      -c, --{{catalog}} CATALOG            a specific catalog
+      -C, --{{all-catalogs}}               all catalogs
+    --{{organization}} ORGANIZATION | --{{all-organizations}} (required)
+      -o, --{{organization}} ORGANIZATION  a specific provider organization
+      -O, --{{all-organizations}}          all provider organizations
+    -s, --{{server}} SERVER                management server endpoint (required)
+
+  Stability: prototype
+
+  List the policies in the production catalog
+    {{$ apic policies --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{invokepolicy}}:1.0.0 in {{climbonorg:production}}
+    {{jwepolicy}}:1.0.0 in {{climbonorg:productiong}}
+
+  Type "apic COMMAND -h" for more information on the following commands:
+
+    {{policies:publish}}    Publish a policy to a catalog
+    {{policies:get}}        Get information on a policy in a catalog
+    {{policies:pull}}       Pull a policy from a catalog
+    {{policies:clone}}      Pull all policies from a catalog
+    {{policies:delete}}     Delete a policy in a catalog

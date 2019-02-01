@@ -1,0 +1,37 @@
+用法：apic {{products:get}} PRODUCT_NAME[:VERSION] [CATALOG_OPTIONS | SPACE_OPTIONS]
+
+  取得型錄或空間中產品的相關資訊
+
+  型錄範圍的選項
+    {{-c}}, --{{catalog}} CATALOG            型錄名稱（必要）
+    {{-o}}, --{{organization}} ORGANIZATION  提供者組織名稱（必要）
+    {{-s}}, --{{server}} SERVER              管理伺服器端點（必要）
+
+  空間範圍的選項
+    --{{scope space}}
+    --{{space}} SPACE                         空間名稱（必要）
+    {{-c}}, --{{catalog}} CATALOG             型錄名稱（必要）
+    {{-o}}, --{{organization}} ORGANIZATION   提供者組織名稱（必要）
+    {{-s}}, --{{server}} SERVER               管理伺服器端點（必要）
+
+  取得型錄中的產品
+  {{$ apic products:get climbon --catalog production --organization climbonorg --server mgmnthost.com}}
+  名稱：{{climbon}}
+  版本：1.0.0
+  標題：Climbing product
+  狀態：{{staged}}
+  API："{{routes}}:1.0.0" "{{ascents}}:2.0.0"
+  型錄：{{production}}
+  組織：{{climbonorg}}
+
+
+  取得空間中的產品
+  {{$ apic products:get --scope space climbon --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+  名稱：{{climbon}}
+  版本：1.0.0
+  標題：Climbing product
+  狀態：{{staged}}
+  API："{{routes}}:1.0.0" "{{ascents}}:2.0.0"
+  型錄：{{production}}
+  組織：{{climbonorg}}
+  空間：{{flights}}

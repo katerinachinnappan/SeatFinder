@@ -1,0 +1,13 @@
+Utilizzo: apic {{edit}} DIRECTORY
+
+  Apre {{API Designer}}
+
+  Opzioni
+    DIRECTORY                        la directory in cui aprire API Designer (facoltativo)
+
+  Aperture di {{API Designer}}
+    {{$ apic edit}}
+
+  Apertura di {{API Designer}} in una directory dell'applicazione LoopBack
+    {{$ apic loopback --name climbon_application}}
+    {{$ apic edit climbon_application}}

@@ -1,0 +1,9 @@
+Kullanım: apic swiftserver:property
+
+  Geçerli uygulamada yeni bir Swift Server Generator model özelliği oluşturun
+
+  Kararlılık durumu: prototip
+
+  Var olan bir modele özellik ekle
+  $ apic swiftserver:property
+

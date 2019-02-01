@@ -1,0 +1,28 @@
+Uso: {{apic members}} [OPCIONES_ORG | OPCIONES_ORG_CONSUMIDOR]
+
+  Listar los miembros de un ámbito
+
+  Opciones para ámbito de organización
+    --{{scope org}}                               (valor predeterminado)
+    --{{organization}} ORGANIZACIÓN | --{{all-organizations}} (obligatorio)
+      -{{o}}, --{{organization}} ORGANIZACIÓN         una organización de proveedores específica
+    -{{s}}, --{{server}} SERVIDOR                     punto final de servidor de gestión (obligatorio)
+
+  Opciones para ámbito de organización de consumidor
+    --{{scope consumer-org}}                          (obligatorio)
+    --{{consumer-org}} | --{{all-organizations}}      (obligatorio)
+      --{{consumer-org}} ORGANIZACIÓN                 una organización de cliente específica
+    -{{c}}, --{{catalog}} CATÁLOGO                    nombre de catálogo (obligatorio)
+    -{{o}}, --{{organization}} ORGANIZACIÓN           nombre de organización de proveedores (obligatorio)
+    -{{s}}, --{{server}} SERVIDOR                     punto final de servidor de gestión (obligatorio)
+
+  Estabilidad: prototipo
+
+  Listar los miembros que forman parte de una organización de proveedores
+    $ {{apic members --scope org -o climbon --server mgmnthost.com}}
+    Usuario ibmapim+steve@gmail.com con el rol de propietario en la organización {{climbon}}
+    Usuario ibmapim+shavon@gmail.com con el rol de desarrollador en la organización {{climbon}}
+
+  Listar los miembros que forman parte de una organización de consumidor
+    $ {{apic members --scope consumer-org --consumer-org consumerorg -c qa -o climbon --server mgmnthost.com}}
+    Usuario ibmapim+andre@gmail.com con el rol de propietario en la organización {{consumerorg}}

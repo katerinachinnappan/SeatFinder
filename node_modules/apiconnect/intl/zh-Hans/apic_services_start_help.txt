@@ -1,0 +1,17 @@
+用法：apic {{start}} OPTIONS
+
+  在 LoopBack 应用程序的上下文中，启动 LoopBack 应用程序和 {{Micro Gateway}}。在非 LoopBack 应用程序中，启动 {{Micro Gateway}}。后续执行将重新启动 LoopBack 应用程序和 {{Micro Gateway}}。当提供的 --{{service}} 选项与正在运行的进程匹配时，它将重新启动。如果 --{{service}} 不匹配正在运行的进程但是匹配当前目录中的应用程序，那么此应用程序将启动。
+
+  选项
+    -S, --{{sevice}} SERVICE_NAME        要启动的服务名称
+
+  创建 LoopBack 应用程序并启动应用程序和 {{Micro Gateway}}
+  {{$ apic loopback --name climbon}}
+  {{$ cd climbon}}
+  {{$ apic start}}
+  Service {{climbon}} started on port 4001
+  Service {{climbon-gw}} started on port 4002
+
+  启动非 LoopBack 应用程序目录中的 {{Micro Gateway}}
+  {{$ apic start}}
+  Service {{climbon-gw}} started on port 4001

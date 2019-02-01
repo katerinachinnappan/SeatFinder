@@ -1,0 +1,46 @@
+Syntax: {{apic apis}} [KATALOGOPTIONEN | BEREICHSOPTIONEN]
+
+  APIs in einem Katalog oder Bereich auflisten
+
+  Optionen für Katalogbereich
+    --{{scope catalog}}                         (Standard)
+    --{{catalog}} KATALOG | --{{all-catalogs}}  (erforderlich)
+      -{{c}}, --{{catalog}} KATALOG             ein bestimmter Katalog
+      -{{C}}, --{{all-catalogs}}                alle Kataloge
+    --{{organization}} ORGANISATION | --{{all-organizations}} (erforderlich)
+      -{{o}}, --{{organization}} ORGANISATION   eine bestimmte Provider-Organisation
+      -{{O}}, --{{all-organizations}}           alle Provider-Organisationen
+    -{{s}}, --{{server}} SERVER                 Management-Server-Endpunkt (erforderlich)
+
+  Optionen für Bereichsumfang
+    --{{scope space}}
+    --{{space}} BEREICH
+    -{{c}}, --{{catalog}} KATALOG               ein bestimmter Katalog
+    -{{o}}, --{{organization}} ORGANISATION     eine bestimmte Provider-Organisation
+    -{{s}}, --{{server}} SERVER                 Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  API-Definitionen in einem Katalog auflisten
+    {{$ apic apis --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{routes:2.0.0}} in {{climbonorg:production}}
+    {{trails:2.0.0}} in {{climbonorg:production}}
+
+  API-Definitionen in allen Katalogen aller Organisationen auflisten
+    {{$ apic apis --all-catalogs --all-organizations --server mgmnthost.com}}
+    {{routes:1.0.0}} in {{climbonorg:staging}}
+    {{routes:2.0.0}} in {{climbonorg:production}}
+    {{trails:1.0.0}} in {{hikingorg:staging}}
+    {{trails:2.0.0}} in {{hikingorg:production}}
+
+  API-Definitionen in einem Bereich auflisten
+    {{$ apic apis --scope space --space sp1 --catalog production --organization climbonorg --server mgmnthost.com}}
+    {{routes:2.0.0}} in {{climbonorg:production:sp1}}
+    {{trails:2.0.0}} in {{climbonorg:production:sp1}}
+
+Geben Sie "{{apic BEFEHL --help}}" für weitere Informationen zu den folgenden Befehlen ein:
+
+  {{apis:get}}     Informationen zu einer API in einem Katalog oder Bereich abrufen
+  {{apis:set}}     Eine API in einem Katalog oder Bereich aktualisieren
+  {{apis:pull}}    Eine API mit Pull-Operation aus einem Katalog oder Bereich extrahieren
+  {{apis:clone}}   Alle APIs mit Pull-Operation aus einem Katalog oder Bereich extrahieren

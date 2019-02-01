@@ -1,0 +1,16 @@
+使用法: apic {{loopback:remote-method}} OPTIONS
+
+  {{LoopBack}} アプリケーションで新しいリモート・メソッドを作成します
+
+  オプション
+    -m, --{{model}} MODEL_NAME           {{LoopBack}} モデルの名前 (オプション)
+    -r, --{{remote-method}} METHOD_NAME  リモート・メソッドの名前 (オプション)
+    --{{skip-cache}}                     プロンプトに対する応答を記憶しない
+
+  Stability: prototype
+
+  新しいリモート・メソッドを {{LoopBack}} モデルに追加します
+    {{$ apic loopback:remote-method}}
+
+  {{getCreationDate}} という名前の注記モデルに新しいリモート・メソッドを追加します
+    {{$ apic loopback:remote-method --model note --remote-method getCreationDate}}

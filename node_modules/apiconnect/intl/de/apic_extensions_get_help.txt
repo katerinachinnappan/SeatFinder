@@ -1,0 +1,17 @@
+Syntax: apic {{extensions:get}} OPTIONEN ERWEITERUNGSNAME[:VERSION]
+
+  Informationen zu einer Erweiterung in einem Katalog abrufen
+
+  Optionen
+    -c, --{{catalog}} KATALOG            Katalogname (erforderlich)
+    -o, --{{organization}} ORGANISATION  Name der Provider-Organisation (erforderlich)
+    -s, --{{server}} SERVER              Management-Server-Endpunkt (erforderlich)
+
+  Stabilität: Prototyp
+
+  {{$ apic extensions:get climbextension:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  name: {{climbextension}}
+  version: 1.0.0
+  title: Climb Extension
+  catalog: {{production}}
+  organization: {{climbonorg}}

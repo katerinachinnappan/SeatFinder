@@ -1,0 +1,11 @@
+用法：apic {{loopback:property}} OPTIONS
+
+  在現行 {{LoopBack}} 應用程式中建立新的 {{LoopBack}} 模型內容
+
+  選項
+    --{{skip-cache}}                     不要記住提示回答
+
+  穩定性：原型
+
+  將內容新增至現有的 {{LoopBack}} 模型
+    {{$ apic loopback:property}}

@@ -1,0 +1,17 @@
+用法：apic {{extensions:get}} OPTIONS EXTENSION_NAME[:VERSION]
+
+  获取有关目录中扩展的信息
+
+  选项
+    -c, --{{catalog}} CATALOG            目录名称（必需）
+    -o, --{{organization}} ORGANIZATION  提供者组织名称（必需）
+    -s, --{{server}} SERVER              管理服务器端点（必需）
+
+  稳定性：原型
+
+  {{$ apic extensions:get climbextension:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  name: {{climbextension}}
+  version: 1.0.0
+  title: Climb Extension
+  catalog: {{production}}
+  organization: {{climbonorg}}

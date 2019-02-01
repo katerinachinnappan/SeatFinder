@@ -1,0 +1,43 @@
+使用法: {{%APPNAME%}} COMMAND OPTIONS
+
+  オプション
+    -h, --{{help}}        コマンドの使用法
+    -v, --{{version}}     製品のバージョン
+    --{{ext-version}}     ツールキットの詳細なバージョン情報
+
+コマンド (「apic COMMAND -h」と入力すると、追加のヘルプが表示されます):
+
+  成果物の作成と検証
+    {{config}}          構成変数を管理します
+    {{create}}          開発成果物を作成します
+    {{edit}}            API Designer を実行します
+    {{explore}}         API Explorer を実行します
+    {{validate}}        開発成果物を検証します
+
+  アプリケーションの作成とテスト
+    {{logs}}            サービス・ログを表示します
+    {{loopback}}        LoopBack アプリケーションの作成と管理を行います
+    {{swiftserver}}     Swift Server Generator アプリケーションの作成と管理を行います
+    {{microgateway}}    Micro Gateway アプリケーションを作成します
+    {{props}}           サービス・プロパティーを処理します
+    {{services}}        サービスを管理します
+    {{start}}           サービスを開始します
+    {{stop}}            サービスを停止します
+
+  クラウドへの公開
+    {{apis}}            カタログ内の API を管理します
+    {{apps}}            プロバイダー・アプリケーションを管理します
+    {{catalogs}}        組織内のカタログを管理します
+    {{devapps}}         コンシューマー・アプリケーションを管理します
+    {{drafts}}          ドラフト内の API と製品を管理します
+    {{extensions}}      カタログ内のベンダー拡張を管理します
+    {{login}}           IBM API Connect クラウドにログインします
+    {{logout}}          IBM API Connect クラウドからログアウトします
+    {{members}}         メンバーを管理します
+    {{orgs}}            組織を管理します
+    {{policies}}        カタログ内のポリシーを管理します
+    {{products}}        カタログ内の製品を管理します
+    {{publish}}         製品と API をカタログに公開します
+    {{securegateways}}  セキュア・ゲートウェイを管理します
+    {{spaces}}          カタログ内のスペースを管理します
+    {{subscriptions}}   サブスクリプションを管理します

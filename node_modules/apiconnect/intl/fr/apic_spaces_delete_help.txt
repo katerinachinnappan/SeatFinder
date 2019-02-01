@@ -1,0 +1,14 @@
+Syntaxe : {{apic spaces:delete}} NOM_ESPACE OPTIONS
+
+  Supprimer un espace d'un catalogue dans une organisation
+
+  Options
+    -c, --{{catalog}} CATALOGUE          nom du catalogue (obligatoire)
+    -o, --{{organization}} ORGANISATION  organisation de type fournisseur spécifique (obligatoire)
+    -s, --{{server}} SERVEUR             noeud final du serveur de gestion (obligatoire)
+
+  Stabilité : prototype
+
+  Supprimer un espace du catalogue {{production}} dans l'organisation {{climbonorg}} sur le serveur {{mgmnthost.com}}
+    $ {{apic spaces:delete flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    Suppression de {{climbonorg:production:flights}}

@@ -1,0 +1,24 @@
+用法：apic {{login}}                  互動式
+      apic {{login}} OPTIONS        非互動式
+
+  透過管理伺服器向 {{API Connect}} 雲端鑑別
+
+  選項
+    -u, --{{username}} USER              使用者名稱（必要）
+    -p, --{{password}} PASSWORD          密碼（必要）
+    -s, --{{server}} SERVER              管理伺服器端點（必要）
+    --{{sso}}                            使用聯合公司 ID 登入
+    -c, --{{passcode}} PASSCODE          {{JWT}} 的一次性密碼
+    -k, --{{apikey}}  APIKEY             使用 Bluemix API 金鑰登入
+
+  透過 {{API Connect}} 雲端的管理伺服器來登入該雲端
+    {{$ apic login}}
+    請輸入您的 {{API Connect}} 認證
+    ? 伺服器：{{mgmnthost.com}}
+    ? 使用者名稱：{{tommy}}
+    ? 密碼（鍵入時將隱藏）**********
+    已順利登入 {{mgmnthost.com}}
+
+  非互動式登入
+    {{$ apic login --username tommy --password password --server mgmnthost.com}}
+    已順利登入 {{mgmnthost.com}}

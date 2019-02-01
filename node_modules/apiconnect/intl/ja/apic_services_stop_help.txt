@@ -1,0 +1,24 @@
+使用法: apic {{stop}} OPTIONS
+
+  LoopBack アプリケーションのコンテキスト内で、LoopBack アプリケーションと {{Micro Gateway}} を停止します。
+  LoopBack 以外のアプリケーションの場合は、Micro Gateway だけを停止します。
+
+  オプション
+    --{{all}}                            すべての LoopBack アプリケーションと {{Micro Gateways}} を停止する
+    -S, --{{service}} SERVICE_NAME       停止するサービスの名前
+
+  現行アプリケーションのすべてのサービスを停止します
+  {{$ apic stop}}
+  {{climbon}} が停止しました
+  {{climbon-gw}} が停止しました
+
+  現行アプリケーション内で実行されている特定のサービスを停止します
+  {{$ apic stop --service climbon-gw}}
+  {{climbon-gw}} が停止しました
+
+  すべてのアプリケーションで実行されているすべてのサービスを停止します
+  {{$ apic stop --all}}
+  {{climbon}} が停止しました
+  {{climbon-gw}} が停止しました
+  {{hikeon}} が停止しました
+  {{hikeon-gw}} が停止しました

@@ -1,0 +1,32 @@
+用法：apic {{props:set}} OPTIONS NAME=VALUE ...
+
+  设置或更新一个或多个服务属性
+
+  选项
+    -r, --{{remote}}                     使用远程应用程序目标（缺省为本地）
+    -S, --{{sevice}} SERVICE_NAME        服务名称
+    -o, --{{organization}} ORGANIZATION  提供者组织
+    -s, --{{server}} SERVER              服务器端点主机
+
+  设置 LoopBack 应用程序服务的属性
+  {{$ apic props:set prop1=value1}}
+  [{{climbon}}] prop1: value1
+
+  设置若干个 LoopBack 应用程序服务属性
+  {{$ apic props:set prop1=value1 prop2=value2 prop3=value3}}
+  [{{climbon}}] prop1: value1
+  [{{climbon}}] prop2: value2
+  [{{climbon}}] prop3: value3
+
+  显式设置 LoopBack 应用程序服务的属性
+  {{$ apic props:set --service climbon prop1=value1}}
+  {{prop1: value1}}
+
+  设置 {{Micro Gateway}} 服务的属性
+  {{$ apic props:set --service climbon-gw prop1=value1}}
+  {{prop1: value1}}
+
+  设置远程应用程序的属性
+  {{$ apic props:set --remote --service climbon --organization climbon --server mgmnthost.com prop1=value1 prop2=value2}}
+  {{prop1: value1}}
+  {{prop2: value2}}

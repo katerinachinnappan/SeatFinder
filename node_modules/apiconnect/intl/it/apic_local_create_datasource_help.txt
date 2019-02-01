@@ -1,0 +1,18 @@
+Utilizzo: apic {{create --type datasource}} OPZIONI
+
+  Crea una definizione dell'origine dati {{LoopBack}} in un'applicazione {{LoopBack}}
+
+  Opzioni
+    --{{name}} NOME                      nome dell'origine dati
+    --{{skip-cache}}                     non ricorda le risposte
+
+  Creazione di un'origine dati dell'applicazione {{LoopBack}}
+    {{$ apic create --type datasource}}
+    ? Immettere il nome dell'origine dati: {{MemoryDB}}
+    ? Selezionare il connettore per {{MemoryDB}}: DB in memoria (supportato da {{StrongLoop}})
+    Configurazione specifica del connettore:
+    ? La chiave {{window.localStorage}} da utilizzare per la persistenza (solo browser): {{MemoryDB}}
+    ? Percorso completo al file per la persistenza (solo server): {{~/.memorydb}}
+    Esecuzione del generatore loopback completata
+    Aggiornamento {{swagger}} e definizioni del prodotto
+    Creata descrizione {{/Users/shane/mesh/examples/climbon/definitions/climbon.yaml}} {{swagger}}

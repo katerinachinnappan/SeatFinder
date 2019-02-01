@@ -1,0 +1,12 @@
+Uso: apic {{loopback:acl}} OPCIONES
+
+  Añade una nueva entrada de ACL a la aplicación {{LoopBack}} actual
+
+  Opciones
+    --skip-cache                     no recordar respuestas de solicitud
+
+  Estabilidad: prototipo
+
+  {{$ apic loopback:acl}}
+  Este manato formulará varias preguntas para determinar las opciones de ACL y
+  luego añadirá una entrada al JSON del modelo correspondiente.

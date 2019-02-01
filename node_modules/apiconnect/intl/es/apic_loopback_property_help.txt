@@ -1,0 +1,11 @@
+Uso: apic {{loopback:property}} OPCIONES
+
+  Crear una propiedad de modelo {{LoopBack}} en la aplicación {{LoopBack}} actual
+
+  Opciones
+    --{{skip-cache}}                     no recordar respuestas de solicitud
+
+  Estabilidad: prototipo
+
+  Añadir una propiedad a un modelo {{LoopBack}} existente
+    {{$ apic loopback:property}}

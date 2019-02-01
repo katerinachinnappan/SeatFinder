@@ -1,0 +1,11 @@
+Syntax: apic {{loopback:relation}} OPTIONEN
+
+  Eine neue Beziehung zwischen zwei Modellen in der {{LoopBack}}-Anwendung erstellen
+
+  Optionen
+    --{{skip-cache}}                     Eingabeaufforderungsantworten nicht speichern
+
+  Stabilität: Prototyp
+
+  Eine Beziehung hinzufügen
+    {{$ apic loopback:relation}}

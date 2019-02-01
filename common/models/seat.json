@@ -1,0 +1,37 @@
+{
+  "name": "Seat",
+  "plural": "Seats",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "availability": {
+      "type": "boolean",
+      "required": false
+    },
+    "buildingName": {
+      "type": "string",
+      "required": false
+    },
+    "floor": {
+      "type": "number",
+      "required": false
+    },
+    "id": {
+      "type": "string",
+      "id": false,
+      "required": false,
+      "isArray": false
+    },
+    "roomNumber": {
+      "type": "number",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

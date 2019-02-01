@@ -1,0 +1,9 @@
+Usage: apic swiftserver:refresh
+
+  Generate a product and an API definition from the Swift Server
+  Generator application models
+
+  Stabilità: prototipo
+
+  $ apic swiftserver:refresh
+

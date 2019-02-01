@@ -1,0 +1,13 @@
+Kullanım: apic {{extensions:delete}} SEÇENEKLER UZANTI_ADI[:SÜRÜM]
+
+  Bir katalogda bir uzantıyı sil
+
+  Seçenekler
+    -c, --{{catalog}} KATALOG            katalog adı (zorunludur)
+    -o, --{{organization}} KURULUŞ       sağlayıcı kuruluşu adı (zorunludur)
+    -s, --{{server}} SUNUCU              yönetim sunucusu uç noktası (zorunludur)
+
+  Kararlılık durumu: prototip
+
+  {{$ apic extensions:delete climbextension:1.0.0 --catalog production --organization climbonorg --server mgmnthost.com}}
+  {{climbonorg:production}} konumundan {{climbextension}}:1.0.0 uzantısı silindi

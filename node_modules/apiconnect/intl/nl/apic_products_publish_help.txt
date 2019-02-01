@@ -1,0 +1,45 @@
+Syntaxis: apic {{publish}} PRODUCBESTANDSNAAM [CATALOGUSOPTIES | RUIMTEOPTIES]
+
+  Een product en de daarin gebruikte API's publiceren in een catalogus of ruimte
+
+  Opties voor catalogusbereik
+    --{{stage}}                              het product in de klaargezette (staged) status laten
+    --{{secure-gateway}} GATEWAY_ID          ID van veilige gateway
+    {{-c}}, --{{catalog}} CATALOGUS          naam van catalogus (verplicht)
+    {{-o}}, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    {{-s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht) 
+
+  Opties voor ruimtebereik
+    --{{scope space}}
+    --{{space}} RUIMTE                       naam van ruimte (verplicht)
+    --{{stage}}                              het product in de klaargezette (staged) status laten
+    --{{secure-gateway}} GATEWAY_ID          ID van veilige gateway
+    {{-c}}, --{{catalog}} CATALOGUS          naam van catalogus (verplicht)
+    {{-0}}, --{{organization}} ORGANISATIE   naam van providerorganisatie (verplicht)
+    {{-s}}, --{{server}} SERVER              eindpunt van beheerserver (verplicht)
+
+  Een product publiceren naar een catalogus
+    {{$ apic publish climbon.yaml --catalog production --organization climbonorg --server mgmnthost.com}}
+    climbon.yaml klaargezet voor {{climbonorg:production [climbon:1.0.0]}}
+    climbon.yaml gepubliceerd naar {{climbonorg:production [climbon:1.0.0]}}
+
+  Een product publiceren naar een catalogus
+    {{$ apic publish climbon.yaml --catalog production --secure-gateway ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com}}
+    climbon.yaml klaargezet voor {{climbonorg:production [climbon:1.0.0]}}
+    climbon.yaml gepubliceerd naar {{climbonorg:production [climbon:1.0.0]}}
+
+  Een product klaarzetten voor een catalogus
+    {{$ apic publish climbon.yaml --stage --catalog production --organization climbonorg --server mgmnthost.com}}
+    climbon.yaml klaargezet voor {{climbonorg:production [climbon:1.0.0]}}
+
+
+  Een product publiceren naar een ruimte
+    {{$ apic publish --scope space climbon.yaml --space flights --catalog production --organization climbonorg --server mgmnthost.com}}
+    climbon.yaml klaargezet voor {{climbonorg:production:flights [climbon:1.0.0]}}
+    climbon.yaml gepubliceerd naar {{climbonorg:production:flights [climbon:1.0.0]}}
+
+
+  Een product publiceren naar een ruimte met een veilige gateway
+    {{$ apic publish --scope space climbon.yaml --space flights --catalog production --secure-gateway ctHEKS9ztEH_stage_ng --organization climbonorg --server mgmnthost.com}}
+    climbon.yaml klaargezet voor {{climbonorg:production:flights [climbon:1.0.0]}}
+    climbon.yaml gepubliceerd naar {{climbonorg:production:flights [climbon:1.0.0]}}
